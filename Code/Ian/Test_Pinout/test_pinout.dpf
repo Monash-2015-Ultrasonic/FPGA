@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="DRAM_DQ[0..31]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="oDRAM0_A[0..12]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oDRAM0_BA[0..1]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oDRAM1_A[0..12]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oDRAM1_BA[0..1]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="ENET_D[0..15]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="oFLASH_A[0..21]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="FLASH_DQ[0..14]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_0[0..31]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_1[0..31]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX0_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX1_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX2_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX3_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX4_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX5_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX6_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oHEX7_D[0..6]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="iKEY[0..3]" direction="Input Group" source="Pin Planner" >
+		</pin>
+		<pin name="LCD_D[0..7]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="oLEDG[0..8]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oOTG_A[0..1]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="OTG_D[0..15]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="oSRAM_A[0..18]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oSRAM_BE_N[0..3]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="SRAM_DPA[0..3]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="SRAM_DQ[0..31]" direction="Bidir Group" source="Pin Planner" >
+		</pin>
+		<pin name="iTD1_D[0..7]" direction="Input Group" source="Pin Planner" >
+		</pin>
+		<pin name="iTD2_D[0..7]" direction="Input Group" source="Pin Planner" >
+		</pin>
+		<pin name="oVGA_B[0..9]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oVGA_G[0..9]" direction="Output Group" source="Pin Planner" >
+		</pin>
+		<pin name="oVGA_R[0..9]" direction="Output Group" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+		<bus name="DRAM_DQ[0..31]" direction="Bidir Group" >
+			<member name="DRAM_DQ[0]" />
+			<member name="DRAM_DQ[1]" />
+			<member name="DRAM_DQ[2]" />
+			<member name="DRAM_DQ[3]" />
+			<member name="DRAM_DQ[4]" />
+			<member name="DRAM_DQ[5]" />
+			<member name="DRAM_DQ[6]" />
+			<member name="DRAM_DQ[7]" />
+			<member name="DRAM_DQ[8]" />
+			<member name="DRAM_DQ[9]" />
+			<member name="DRAM_DQ[10]" />
+			<member name="DRAM_DQ[11]" />
+			<member name="DRAM_DQ[12]" />
+			<member name="DRAM_DQ[13]" />
+			<member name="DRAM_DQ[14]" />
+			<member name="DRAM_DQ[15]" />
+			<member name="DRAM_DQ[16]" />
+			<member name="DRAM_DQ[17]" />
+			<member name="DRAM_DQ[18]" />
+			<member name="DRAM_DQ[19]" />
+			<member name="DRAM_DQ[20]" />
+			<member name="DRAM_DQ[21]" />
+			<member name="DRAM_DQ[22]" />
+			<member name="DRAM_DQ[23]" />
+			<member name="DRAM_DQ[24]" />
+			<member name="DRAM_DQ[25]" />
+			<member name="DRAM_DQ[26]" />
+			<member name="DRAM_DQ[27]" />
+			<member name="DRAM_DQ[28]" />
+			<member name="DRAM_DQ[29]" />
+			<member name="DRAM_DQ[30]" />
+			<member name="DRAM_DQ[31]" />
+		</bus>
+		<bus name="oDRAM0_A[0..12]" direction="Output Group" >
+			<member name="oDRAM0_A[0]" />
+			<member name="oDRAM0_A[1]" />
+			<member name="oDRAM0_A[2]" />
+			<member name="oDRAM0_A[3]" />
+			<member name="oDRAM0_A[4]" />
+			<member name="oDRAM0_A[5]" />
+			<member name="oDRAM0_A[6]" />
+			<member name="oDRAM0_A[7]" />
+			<member name="oDRAM0_A[8]" />
+			<member name="oDRAM0_A[9]" />
+			<member name="oDRAM0_A[10]" />
+			<member name="oDRAM0_A[11]" />
+			<member name="oDRAM0_A[12]" />
+		</bus>
+		<bus name="oDRAM0_BA[0..1]" direction="Output Group" >
+			<member name="oDRAM0_BA[0]" />
+			<member name="oDRAM0_BA[1]" />
+		</bus>
+		<bus name="oDRAM1_A[0..12]" direction="Output Group" >
+			<member name="oDRAM1_A[0]" />
+			<member name="oDRAM1_A[1]" />
+			<member name="oDRAM1_A[2]" />
+			<member name="oDRAM1_A[3]" />
+			<member name="oDRAM1_A[4]" />
+			<member name="oDRAM1_A[5]" />
+			<member name="oDRAM1_A[6]" />
+			<member name="oDRAM1_A[7]" />
+			<member name="oDRAM1_A[8]" />
+			<member name="oDRAM1_A[9]" />
+			<member name="oDRAM1_A[10]" />
+			<member name="oDRAM1_A[11]" />
+			<member name="oDRAM1_A[12]" />
+		</bus>
+		<bus name="oDRAM1_BA[0..1]" direction="Output Group" >
+			<member name="oDRAM1_BA[0]" />
+			<member name="oDRAM1_BA[1]" />
+		</bus>
+		<bus name="ENET_D[0..15]" direction="Bidir Group" >
+			<member name="ENET_D[0]" />
+			<member name="ENET_D[1]" />
+			<member name="ENET_D[2]" />
+			<member name="ENET_D[3]" />
+			<member name="ENET_D[4]" />
+			<member name="ENET_D[5]" />
+			<member name="ENET_D[6]" />
+			<member name="ENET_D[7]" />
+			<member name="ENET_D[8]" />
+			<member name="ENET_D[9]" />
+			<member name="ENET_D[10]" />
+			<member name="ENET_D[11]" />
+			<member name="ENET_D[12]" />
+			<member name="ENET_D[13]" />
+			<member name="ENET_D[14]" />
+			<member name="ENET_D[15]" />
+		</bus>
+		<bus name="oFLASH_A[0..21]" direction="Output Group" >
+			<member name="oFLASH_A[0]" />
+			<member name="oFLASH_A[1]" />
+			<member name="oFLASH_A[2]" />
+			<member name="oFLASH_A[3]" />
+			<member name="oFLASH_A[4]" />
+			<member name="oFLASH_A[5]" />
+			<member name="oFLASH_A[6]" />
+			<member name="oFLASH_A[7]" />
+			<member name="oFLASH_A[8]" />
+			<member name="oFLASH_A[9]" />
+			<member name="oFLASH_A[10]" />
+			<member name="oFLASH_A[11]" />
+			<member name="oFLASH_A[12]" />
+			<member name="oFLASH_A[13]" />
+			<member name="oFLASH_A[14]" />
+			<member name="oFLASH_A[15]" />
+			<member name="oFLASH_A[16]" />
+			<member name="oFLASH_A[17]" />
+			<member name="oFLASH_A[18]" />
+			<member name="oFLASH_A[19]" />
+			<member name="oFLASH_A[20]" />
+			<member name="oFLASH_A[21]" />
+		</bus>
+		<bus name="FLASH_DQ[0..14]" direction="Bidir Group" >
+			<member name="FLASH_DQ[0]" />
+			<member name="FLASH_DQ[1]" />
+			<member name="FLASH_DQ[2]" />
+			<member name="FLASH_DQ[3]" />
+			<member name="FLASH_DQ[4]" />
+			<member name="FLASH_DQ[5]" />
+			<member name="FLASH_DQ[6]" />
+			<member name="FLASH_DQ[7]" />
+			<member name="FLASH_DQ[8]" />
+			<member name="FLASH_DQ[9]" />
+			<member name="FLASH_DQ[10]" />
+			<member name="FLASH_DQ[11]" />
+			<member name="FLASH_DQ[12]" />
+			<member name="FLASH_DQ[13]" />
+			<member name="FLASH_DQ[14]" />
+		</bus>
+		<bus name="GPIO_0[0..31]" direction="Bidir Group" >
+			<member name="GPIO_0[0]" />
+			<member name="GPIO_0[1]" />
+			<member name="GPIO_0[2]" />
+			<member name="GPIO_0[3]" />
+			<member name="GPIO_0[4]" />
+			<member name="GPIO_0[5]" />
+			<member name="GPIO_0[6]" />
+			<member name="GPIO_0[7]" />
+			<member name="GPIO_0[8]" />
+			<member name="GPIO_0[9]" />
+			<member name="GPIO_0[10]" />
+			<member name="GPIO_0[11]" />
+			<member name="GPIO_0[12]" />
+			<member name="GPIO_0[13]" />
+			<member name="GPIO_0[14]" />
+			<member name="GPIO_0[15]" />
+			<member name="GPIO_0[16]" />
+			<member name="GPIO_0[17]" />
+			<member name="GPIO_0[18]" />
+			<member name="GPIO_0[19]" />
+			<member name="GPIO_0[20]" />
+			<member name="GPIO_0[21]" />
+			<member name="GPIO_0[22]" />
+			<member name="GPIO_0[23]" />
+			<member name="GPIO_0[24]" />
+			<member name="GPIO_0[25]" />
+			<member name="GPIO_0[26]" />
+			<member name="GPIO_0[27]" />
+			<member name="GPIO_0[28]" />
+			<member name="GPIO_0[29]" />
+			<member name="GPIO_0[30]" />
+			<member name="GPIO_0[31]" />
+		</bus>
+		<bus name="GPIO_1[0..31]" direction="Bidir Group" >
+			<member name="GPIO_1[0]" />
+			<member name="GPIO_1[1]" />
+			<member name="GPIO_1[2]" />
+			<member name="GPIO_1[3]" />
+			<member name="GPIO_1[4]" />
+			<member name="GPIO_1[5]" />
+			<member name="GPIO_1[6]" />
+			<member name="GPIO_1[7]" />
+			<member name="GPIO_1[8]" />
+			<member name="GPIO_1[9]" />
+			<member name="GPIO_1[10]" />
+			<member name="GPIO_1[11]" />
+			<member name="GPIO_1[12]" />
+			<member name="GPIO_1[13]" />
+			<member name="GPIO_1[14]" />
+			<member name="GPIO_1[15]" />
+			<member name="GPIO_1[16]" />
+			<member name="GPIO_1[17]" />
+			<member name="GPIO_1[18]" />
+			<member name="GPIO_1[19]" />
+			<member name="GPIO_1[20]" />
+			<member name="GPIO_1[21]" />
+			<member name="GPIO_1[22]" />
+			<member name="GPIO_1[23]" />
+			<member name="GPIO_1[24]" />
+			<member name="GPIO_1[25]" />
+			<member name="GPIO_1[26]" />
+			<member name="GPIO_1[27]" />
+			<member name="GPIO_1[28]" />
+			<member name="GPIO_1[29]" />
+			<member name="GPIO_1[30]" />
+			<member name="GPIO_1[31]" />
+		</bus>
+		<bus name="oHEX0_D[0..6]" direction="Output Group" >
+			<member name="oHEX0_D[0]" />
+			<member name="oHEX0_D[1]" />
+			<member name="oHEX0_D[2]" />
+			<member name="oHEX0_D[3]" />
+			<member name="oHEX0_D[4]" />
+			<member name="oHEX0_D[5]" />
+			<member name="oHEX0_D[6]" />
+		</bus>
+		<bus name="oHEX1_D[0..6]" direction="Output Group" >
+			<member name="oHEX1_D[0]" />
+			<member name="oHEX1_D[1]" />
+			<member name="oHEX1_D[2]" />
+			<member name="oHEX1_D[3]" />
+			<member name="oHEX1_D[4]" />
+			<member name="oHEX1_D[5]" />
+			<member name="oHEX1_D[6]" />
+		</bus>
+		<bus name="oHEX2_D[0..6]" direction="Output Group" >
+			<member name="oHEX2_D[0]" />
+			<member name="oHEX2_D[1]" />
+			<member name="oHEX2_D[2]" />
+			<member name="oHEX2_D[3]" />
+			<member name="oHEX2_D[4]" />
+			<member name="oHEX2_D[5]" />
+			<member name="oHEX2_D[6]" />
+		</bus>
+		<bus name="oHEX3_D[0..6]" direction="Output Group" >
+			<member name="oHEX3_D[0]" />
+			<member name="oHEX3_D[1]" />
+			<member name="oHEX3_D[2]" />
+			<member name="oHEX3_D[3]" />
+			<member name="oHEX3_D[4]" />
+			<member name="oHEX3_D[5]" />
+			<member name="oHEX3_D[6]" />
+		</bus>
+		<bus name="oHEX4_D[0..6]" direction="Output Group" >
+			<member name="oHEX4_D[0]" />
+			<member name="oHEX4_D[1]" />
+			<member name="oHEX4_D[2]" />
+			<member name="oHEX4_D[3]" />
+			<member name="oHEX4_D[4]" />
+			<member name="oHEX4_D[5]" />
+			<member name="oHEX4_D[6]" />
+		</bus>
+		<bus name="oHEX5_D[0..6]" direction="Output Group" >
+			<member name="oHEX5_D[0]" />
+			<member name="oHEX5_D[1]" />
+			<member name="oHEX5_D[2]" />
+			<member name="oHEX5_D[3]" />
+			<member name="oHEX5_D[4]" />
+			<member name="oHEX5_D[5]" />
+			<member name="oHEX5_D[6]" />
+		</bus>
+		<bus name="oHEX6_D[0..6]" direction="Output Group" >
+			<member name="oHEX6_D[0]" />
+			<member name="oHEX6_D[1]" />
+			<member name="oHEX6_D[2]" />
+			<member name="oHEX6_D[3]" />
+			<member name="oHEX6_D[4]" />
+			<member name="oHEX6_D[5]" />
+			<member name="oHEX6_D[6]" />
+		</bus>
+		<bus name="oHEX7_D[0..6]" direction="Output Group" >
+			<member name="oHEX7_D[0]" />
+			<member name="oHEX7_D[1]" />
+			<member name="oHEX7_D[2]" />
+			<member name="oHEX7_D[3]" />
+			<member name="oHEX7_D[4]" />
+			<member name="oHEX7_D[5]" />
+			<member name="oHEX7_D[6]" />
+		</bus>
+		<bus name="iKEY[0..3]" direction="Input Group" >
+			<member name="iKEY[0]" />
+			<member name="iKEY[1]" />
+			<member name="iKEY[2]" />
+			<member name="iKEY[3]" />
+		</bus>
+		<bus name="LCD_D[0..7]" direction="Bidir Group" >
+			<member name="LCD_D[0]" />
+			<member name="LCD_D[1]" />
+			<member name="LCD_D[2]" />
+			<member name="LCD_D[3]" />
+			<member name="LCD_D[4]" />
+			<member name="LCD_D[5]" />
+			<member name="LCD_D[6]" />
+			<member name="LCD_D[7]" />
+		</bus>
+		<bus name="oLEDG[0..8]" direction="Output Group" >
+			<member name="oLEDG[0]" />
+			<member name="oLEDG[1]" />
+			<member name="oLEDG[2]" />
+			<member name="oLEDG[3]" />
+			<member name="oLEDG[4]" />
+			<member name="oLEDG[5]" />
+			<member name="oLEDG[6]" />
+			<member name="oLEDG[7]" />
+			<member name="oLEDG[8]" />
+		</bus>
+		<bus name="oOTG_A[0..1]" direction="Output Group" >
+			<member name="oOTG_A[0]" />
+			<member name="oOTG_A[1]" />
+		</bus>
+		<bus name="OTG_D[0..15]" direction="Bidir Group" >
+			<member name="OTG_D[0]" />
+			<member name="OTG_D[1]" />
+			<member name="OTG_D[2]" />
+			<member name="OTG_D[3]" />
+			<member name="OTG_D[4]" />
+			<member name="OTG_D[5]" />
+			<member name="OTG_D[6]" />
+			<member name="OTG_D[7]" />
+			<member name="OTG_D[8]" />
+			<member name="OTG_D[9]" />
+			<member name="OTG_D[10]" />
+			<member name="OTG_D[11]" />
+			<member name="OTG_D[12]" />
+			<member name="OTG_D[13]" />
+			<member name="OTG_D[14]" />
+			<member name="OTG_D[15]" />
+		</bus>
+		<bus name="oSRAM_A[0..18]" direction="Output Group" >
+			<member name="oSRAM_A[0]" />
+			<member name="oSRAM_A[1]" />
+			<member name="oSRAM_A[2]" />
+			<member name="oSRAM_A[3]" />
+			<member name="oSRAM_A[4]" />
+			<member name="oSRAM_A[5]" />
+			<member name="oSRAM_A[6]" />
+			<member name="oSRAM_A[7]" />
+			<member name="oSRAM_A[8]" />
+			<member name="oSRAM_A[9]" />
+			<member name="oSRAM_A[10]" />
+			<member name="oSRAM_A[11]" />
+			<member name="oSRAM_A[12]" />
+			<member name="oSRAM_A[13]" />
+			<member name="oSRAM_A[14]" />
+			<member name="oSRAM_A[15]" />
+			<member name="oSRAM_A[16]" />
+			<member name="oSRAM_A[17]" />
+			<member name="oSRAM_A[18]" />
+		</bus>
+		<bus name="oSRAM_BE_N[0..3]" direction="Output Group" >
+			<member name="oSRAM_BE_N[0]" />
+			<member name="oSRAM_BE_N[1]" />
+			<member name="oSRAM_BE_N[2]" />
+			<member name="oSRAM_BE_N[3]" />
+		</bus>
+		<bus name="SRAM_DPA[0..3]" direction="Bidir Group" >
+			<member name="SRAM_DPA[0]" />
+			<member name="SRAM_DPA[1]" />
+			<member name="SRAM_DPA[2]" />
+			<member name="SRAM_DPA[3]" />
+		</bus>
+		<bus name="SRAM_DQ[0..31]" direction="Bidir Group" >
+			<member name="SRAM_DQ[0]" />
+			<member name="SRAM_DQ[1]" />
+			<member name="SRAM_DQ[2]" />
+			<member name="SRAM_DQ[3]" />
+			<member name="SRAM_DQ[4]" />
+			<member name="SRAM_DQ[5]" />
+			<member name="SRAM_DQ[6]" />
+			<member name="SRAM_DQ[7]" />
+			<member name="SRAM_DQ[8]" />
+			<member name="SRAM_DQ[9]" />
+			<member name="SRAM_DQ[10]" />
+			<member name="SRAM_DQ[11]" />
+			<member name="SRAM_DQ[12]" />
+			<member name="SRAM_DQ[13]" />
+			<member name="SRAM_DQ[14]" />
+			<member name="SRAM_DQ[15]" />
+			<member name="SRAM_DQ[16]" />
+			<member name="SRAM_DQ[17]" />
+			<member name="SRAM_DQ[18]" />
+			<member name="SRAM_DQ[19]" />
+			<member name="SRAM_DQ[20]" />
+			<member name="SRAM_DQ[21]" />
+			<member name="SRAM_DQ[22]" />
+			<member name="SRAM_DQ[23]" />
+			<member name="SRAM_DQ[24]" />
+			<member name="SRAM_DQ[25]" />
+			<member name="SRAM_DQ[26]" />
+			<member name="SRAM_DQ[27]" />
+			<member name="SRAM_DQ[28]" />
+			<member name="SRAM_DQ[29]" />
+			<member name="SRAM_DQ[30]" />
+			<member name="SRAM_DQ[31]" />
+		</bus>
+		<bus name="iTD1_D[0..7]" direction="Input Group" >
+			<member name="iTD1_D[0]" />
+			<member name="iTD1_D[1]" />
+			<member name="iTD1_D[2]" />
+			<member name="iTD1_D[3]" />
+			<member name="iTD1_D[4]" />
+			<member name="iTD1_D[5]" />
+			<member name="iTD1_D[6]" />
+			<member name="iTD1_D[7]" />
+		</bus>
+		<bus name="iTD2_D[0..7]" direction="Input Group" >
+			<member name="iTD2_D[0]" />
+			<member name="iTD2_D[1]" />
+			<member name="iTD2_D[2]" />
+			<member name="iTD2_D[3]" />
+			<member name="iTD2_D[4]" />
+			<member name="iTD2_D[5]" />
+			<member name="iTD2_D[6]" />
+			<member name="iTD2_D[7]" />
+		</bus>
+		<bus name="oVGA_B[0..9]" direction="Output Group" >
+			<member name="oVGA_B[0]" />
+			<member name="oVGA_B[1]" />
+			<member name="oVGA_B[2]" />
+			<member name="oVGA_B[3]" />
+			<member name="oVGA_B[4]" />
+			<member name="oVGA_B[5]" />
+			<member name="oVGA_B[6]" />
+			<member name="oVGA_B[7]" />
+			<member name="oVGA_B[8]" />
+			<member name="oVGA_B[9]" />
+		</bus>
+		<bus name="oVGA_G[0..9]" direction="Output Group" >
+			<member name="oVGA_G[0]" />
+			<member name="oVGA_G[1]" />
+			<member name="oVGA_G[2]" />
+			<member name="oVGA_G[3]" />
+			<member name="oVGA_G[4]" />
+			<member name="oVGA_G[5]" />
+			<member name="oVGA_G[6]" />
+			<member name="oVGA_G[7]" />
+			<member name="oVGA_G[8]" />
+			<member name="oVGA_G[9]" />
+		</bus>
+		<bus name="oVGA_R[0..9]" direction="Output Group" >
+			<member name="oVGA_R[0]" />
+			<member name="oVGA_R[1]" />
+			<member name="oVGA_R[2]" />
+			<member name="oVGA_R[3]" />
+			<member name="oVGA_R[4]" />
+			<member name="oVGA_R[5]" />
+			<member name="oVGA_R[6]" />
+			<member name="oVGA_R[7]" />
+			<member name="oVGA_R[8]" />
+			<member name="oVGA_R[9]" />
+		</bus>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

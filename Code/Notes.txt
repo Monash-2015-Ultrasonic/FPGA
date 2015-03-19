@@ -1,0 +1,4 @@
+Device Settings:
+	Device and Pin Options
+		Dual-Purpose Pins
+			* nCEO = Use Regular I/O
