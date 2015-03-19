@@ -1,0 +1,97 @@
+|CustomClock
+iCLK_50 => iCLK_50.IN1
+c0 <= PllClock:PllClock_inst.c0
+oLEDR[0] <= counter2[0].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[1] <= counter2[1].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[2] <= counter2[2].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[3] <= counter2[3].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[4] <= counter2[4].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[5] <= counter2[5].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[6] <= counter2[6].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[7] <= counter2[7].DB_MAX_OUTPUT_PORT_TYPE
+oLEDR[8] <= <GND>
+oLEDR[9] <= <GND>
+oLEDR[10] <= <GND>
+oLEDR[11] <= <GND>
+oLEDR[12] <= <GND>
+oLEDR[13] <= <GND>
+oLEDR[14] <= <GND>
+oLEDR[15] <= <GND>
+oLEDR[16] <= <GND>
+oLEDR[17] <= <GND>
+oLEDG[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[4] <= counter[4].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[5] <= counter[5].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[6] <= counter[6].DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[7] <= counter[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CustomClock|PllClock:PllClock_inst
+inclk0 => sub_wire3[0].IN1
+c0 <= altpll:altpll_component.clk
+
+
+|CustomClock|PllClock:PllClock_inst|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= <GND>
+clk[2] <= <GND>
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
