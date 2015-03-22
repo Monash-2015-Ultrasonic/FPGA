@@ -35,14 +35,14 @@ module Counter(
 	always @(posedge iCLK_50)
 	begin
 		if (clk_1Hz[clk_1Hz_MSB])
-			clk_1Hz = 0;
+			clk_1Hz <= 0;
 		else
-			clk_1Hz = clk_1Hz + 1;
+			clk_1Hz <= clk_1Hz + 1;
 	end
 		
 	always @(posedge clk_1Hz[clk_1Hz_MSB])
 	begin
-		counter = counter + 1;
+		counter <= counter + 1;
 	end
 		
 	assign oLEDG = counter;

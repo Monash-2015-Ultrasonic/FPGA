@@ -1,0 +1,1095 @@
+TimeQuest Timing Analyzer report for SPI_Master
+Sun Mar 22 23:25:52 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+ 12. Slow Model Hold: 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+ 13. Slow Model Minimum Pulse Width: 'iCLK_50'
+ 14. Slow Model Minimum Pulse Width: 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+ 25. Fast Model Hold: 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+ 26. Fast Model Minimum Pulse Width: 'iCLK_50'
+ 27. Fast Model Minimum Pulse Width: 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Multicorner Timing Analysis Summary
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Setup Transfers
+ 38. Hold Transfers
+ 39. Report TCCS
+ 40. Report RSKM
+ 41. Unconstrained Paths
+ 42. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; SPI_Master                                                         ;
+; Device Family      ; Cyclone II                                                         ;
+; Device Name        ; EP2C70F896C6                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Combined                                                           ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                       ;
++------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+--------------------------------------------+----------------------------------------------+
+; Clock Name                               ; Type      ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master  ; Source                                     ; Targets                                      ;
++------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+--------------------------------------------+----------------------------------------------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; Generated ; 50.000 ; 20.0 MHz  ; 0.000 ; 25.000 ; 50.00      ; 5         ; 2           ;       ;        ;           ;            ; false    ; iCLK_50 ; CLK_PLL_inst|altpll_component|pll|inclk[0] ; { CLK_PLL_inst|altpll_component|pll|clk[0] } ;
+; iCLK_50                                  ; Base      ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;         ;                                            ; { iCLK_50 }                                  ;
++------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+--------------------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                        ;
++------------+-----------------+------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                               ; Note ;
++------------+-----------------+------------------------------------------+------+
+; 337.27 MHz ; 337.27 MHz      ; CLK_PLL_inst|altpll_component|pll|clk[0] ;      ;
++------------+-----------------+------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------------+
+; Slow Model Setup Summary                                          ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; 47.035 ; 0.000         ;
++------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Slow Model Hold Summary                                          ;
++------------------------------------------+-------+---------------+
+; Clock                                    ; Slack ; End Point TNS ;
++------------------------------------------+-------+---------------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.391 ; 0.000         ;
++------------------------------------------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                            ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; iCLK_50                                  ; 10.000 ; 0.000         ;
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; 24.000 ; 0.000         ;
++------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK_PLL_inst|altpll_component|pll|clk[0]'                                                                                                                            ;
++--------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock                             ; Latch Clock                              ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; 47.035 ; CS                     ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.035 ; CS                     ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 3.004      ;
+; 47.449 ; byte_data_received[15] ; oLEDG[3]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.003      ; 2.590      ;
+; 47.892 ; byte_data_received[8]  ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.003     ; 2.141      ;
+; 48.244 ; bitcnt[1]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.792      ;
+; 48.292 ; bitcnt[2]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.744      ;
+; 48.510 ; bitcnt[0]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.526      ;
+; 48.626 ; CS                     ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.626 ; CS                     ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.410      ;
+; 48.667 ; CS                     ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.369      ;
+; 48.764 ; CS                     ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.272      ;
+; 48.914 ; bitcnt[0]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.122      ;
+; 48.916 ; byte_two_received      ; CS                     ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.120      ;
+; 48.919 ; byte_two_received      ; oLEDG[7]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.117      ;
+; 48.923 ; bitcnt[1]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.113      ;
+; 48.926 ; byte_data_received[6]  ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.110      ;
+; 48.946 ; bitcnt[0]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.090      ;
+; 48.999 ; bitcnt[3]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.037      ;
+; 49.036 ; CS                     ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 1.000      ;
+; 49.092 ; byte_data_received[10] ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.944      ;
+; 49.093 ; byte_data_received[9]  ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.943      ;
+; 49.095 ; byte_data_received[7]  ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.941      ;
+; 49.095 ; byte_data_received[13] ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.941      ;
+; 49.095 ; bitcnt[1]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.941      ;
+; 49.096 ; byte_data_received[5]  ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.940      ;
+; 49.097 ; byte_data_received[14] ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.939      ;
+; 49.100 ; byte_data_received[3]  ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.936      ;
+; 49.100 ; byte_data_received[14] ; oLEDG[2]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.936      ;
+; 49.110 ; byte_data_received[13] ; oLEDG[1]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.002      ; 0.928      ;
+; 49.113 ; MISOr[1]               ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.923      ;
+; 49.223 ; bitcnt[0]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.813      ;
+; 49.232 ; byte_data_received[12] ; oLEDG[0]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.804      ;
+; 49.233 ; byte_data_received[12] ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.803      ;
+; 49.242 ; byte_data_received[11] ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.794      ;
+; 49.244 ; byte_data_received[0]  ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.792      ;
+; 49.244 ; byte_data_received[2]  ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.792      ;
+; 49.245 ; byte_data_received[4]  ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.791      ;
+; 49.245 ; bitcnt[2]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.791      ;
+; 49.247 ; byte_data_received[1]  ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.789      ;
+; 49.251 ; MISOr[0]               ; MISOr[1]               ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.785      ;
+; 49.379 ; bitcnt[0]              ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.657      ;
+; 49.379 ; bitcnt[3]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.657      ;
+; 49.379 ; bitcnt[2]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.657      ;
+; 49.379 ; bitcnt[1]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.657      ;
++--------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLK_PLL_inst|altpll_component|pll|clk[0]'                                                                                                                            ;
++-------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock                             ; Latch Clock                              ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; 0.391 ; bitcnt[0]              ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; bitcnt[1]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; bitcnt[2]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; bitcnt[3]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.519 ; MISOr[0]               ; MISOr[1]               ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.785      ;
+; 0.523 ; byte_data_received[1]  ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.789      ;
+; 0.525 ; bitcnt[2]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.791      ;
+; 0.525 ; byte_data_received[4]  ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.791      ;
+; 0.526 ; byte_data_received[0]  ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; byte_data_received[2]  ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.792      ;
+; 0.528 ; byte_data_received[11] ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.794      ;
+; 0.537 ; byte_data_received[12] ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.803      ;
+; 0.538 ; byte_data_received[12] ; oLEDG[0]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.804      ;
+; 0.547 ; bitcnt[0]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.813      ;
+; 0.657 ; MISOr[1]               ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.923      ;
+; 0.660 ; byte_data_received[13] ; oLEDG[1]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.002      ; 0.928      ;
+; 0.670 ; byte_data_received[3]  ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.936      ;
+; 0.670 ; byte_data_received[14] ; oLEDG[2]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.936      ;
+; 0.673 ; byte_data_received[14] ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.939      ;
+; 0.674 ; byte_data_received[5]  ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.940      ;
+; 0.675 ; byte_data_received[7]  ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.941      ;
+; 0.675 ; byte_data_received[13] ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.941      ;
+; 0.675 ; bitcnt[1]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.941      ;
+; 0.677 ; byte_data_received[9]  ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.943      ;
+; 0.678 ; byte_data_received[10] ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.944      ;
+; 0.734 ; CS                     ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.000      ;
+; 0.771 ; bitcnt[3]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.037      ;
+; 0.824 ; bitcnt[0]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.090      ;
+; 0.844 ; byte_data_received[6]  ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.110      ;
+; 0.847 ; bitcnt[1]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.113      ;
+; 0.851 ; byte_two_received      ; oLEDG[7]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.117      ;
+; 0.854 ; byte_two_received      ; CS                     ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.120      ;
+; 0.856 ; bitcnt[0]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.122      ;
+; 1.006 ; CS                     ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.272      ;
+; 1.103 ; CS                     ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.369      ;
+; 1.144 ; CS                     ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.144 ; CS                     ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.410      ;
+; 1.260 ; bitcnt[0]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.526      ;
+; 1.478 ; bitcnt[2]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.744      ;
+; 1.526 ; bitcnt[1]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.792      ;
+; 1.878 ; byte_data_received[8]  ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.003     ; 2.141      ;
+; 2.321 ; byte_data_received[15] ; oLEDG[3]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 2.590      ;
+; 2.735 ; CS                     ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
+; 2.735 ; CS                     ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.003      ; 3.004      ;
++-------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'iCLK_50'                                                                                     ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                     ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; iCLK_50|combout                            ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; iCLK_50|combout                            ;
+; 17.620 ; 20.000       ; 2.380          ; Port Rate        ; iCLK_50 ; Rise       ; iCLK_50                                    ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLK_PLL_inst|altpll_component|pll|clk[0]'                                                                                               ;
++--------+--------------+----------------+------------------+------------------------------------------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                    ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+------------------------------------------+------------+------------------------------------------------------+
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS                                                   ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS                                                   ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[6]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[6]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[7]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[7]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[8]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[8]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[9]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[9]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_two_received                                    ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_two_received                                    ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[0]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[0]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[1]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[1]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[2]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[2]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[3]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[3]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[7]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[7]~reg0                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS|clk                                               ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS|clk                                               ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]|clk                            ;
++--------+--------------+----------------+------------------+------------------------------------------+------------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                     ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 8.867 ; 8.867 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[3] ; iCLK_50    ; 8.867 ; 8.867 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                        ;
++------------+------------+--------+--------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                          ;
++------------+------------+--------+--------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; -8.637 ; -8.637 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[3] ; iCLK_50    ; -8.637 ; -8.637 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+--------+--------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 9.136 ; 9.136 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[0] ; iCLK_50    ; 9.136 ; 9.136 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ; 2.654 ;       ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50    ; 7.549 ; 7.549 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50    ; 7.188 ; 7.188 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[1]  ; iCLK_50    ; 7.549 ; 7.549 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[2]  ; iCLK_50    ; 6.074 ; 6.074 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[3]  ; iCLK_50    ; 6.866 ; 6.866 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50    ; 6.015 ; 6.015 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDR[*]   ; iCLK_50    ; 5.453 ; 5.453 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[0]  ; iCLK_50    ; 4.341 ; 4.341 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[1]  ; iCLK_50    ; 3.899 ; 3.899 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[2]  ; iCLK_50    ; 3.900 ; 3.900 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[3]  ; iCLK_50    ; 3.900 ; 3.900 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[4]  ; iCLK_50    ; 4.129 ; 4.129 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[5]  ; iCLK_50    ; 3.901 ; 3.901 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[6]  ; iCLK_50    ; 4.118 ; 4.118 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[7]  ; iCLK_50    ; 4.345 ; 4.345 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[8]  ; iCLK_50    ; 4.118 ; 4.118 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[9]  ; iCLK_50    ; 4.086 ; 4.086 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[10] ; iCLK_50    ; 3.845 ; 3.845 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[11] ; iCLK_50    ; 3.835 ; 3.835 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[16] ; iCLK_50    ; 5.453 ; 5.453 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[17] ; iCLK_50    ; 4.804 ; 4.804 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_0[*]  ; iCLK_50    ;       ; 2.654 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ;       ; 2.654 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 2.654 ; 9.136 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[0] ; iCLK_50    ; 9.136 ; 9.136 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ; 2.654 ;       ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50    ; 6.015 ; 6.015 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50    ; 7.188 ; 7.188 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[1]  ; iCLK_50    ; 7.549 ; 7.549 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[2]  ; iCLK_50    ; 6.074 ; 6.074 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[3]  ; iCLK_50    ; 6.866 ; 6.866 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50    ; 6.015 ; 6.015 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDR[*]   ; iCLK_50    ; 3.835 ; 3.835 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[0]  ; iCLK_50    ; 4.341 ; 4.341 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[1]  ; iCLK_50    ; 3.899 ; 3.899 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[2]  ; iCLK_50    ; 3.900 ; 3.900 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[3]  ; iCLK_50    ; 3.900 ; 3.900 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[4]  ; iCLK_50    ; 4.129 ; 4.129 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[5]  ; iCLK_50    ; 3.901 ; 3.901 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[6]  ; iCLK_50    ; 4.118 ; 4.118 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[7]  ; iCLK_50    ; 4.345 ; 4.345 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[8]  ; iCLK_50    ; 4.118 ; 4.118 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[9]  ; iCLK_50    ; 4.086 ; 4.086 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[10] ; iCLK_50    ; 3.845 ; 3.845 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[11] ; iCLK_50    ; 3.835 ; 3.835 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[16] ; iCLK_50    ; 5.453 ; 5.453 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[17] ; iCLK_50    ; 4.804 ; 4.804 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_0[*]  ; iCLK_50    ;       ; 2.654 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ;       ; 2.654 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Fast Model Setup Summary                                          ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; 48.558 ; 0.000         ;
++------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Fast Model Hold Summary                                          ;
++------------------------------------------+-------+---------------+
+; Clock                                    ; Slack ; End Point TNS ;
++------------------------------------------+-------+---------------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.215 ; 0.000         ;
++------------------------------------------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                            ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; iCLK_50                                  ; 10.000 ; 0.000         ;
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; 24.000 ; 0.000         ;
++------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK_PLL_inst|altpll_component|pll|clk[0]'                                                                                                                            ;
++--------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock                             ; Latch Clock                              ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; 48.558 ; CS                     ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.558 ; CS                     ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.473      ;
+; 48.828 ; byte_data_received[15] ; oLEDG[3]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; -0.001     ; 1.203      ;
+; 48.991 ; byte_data_received[8]  ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.001      ; 1.042      ;
+; 49.196 ; bitcnt[1]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.836      ;
+; 49.219 ; bitcnt[2]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.813      ;
+; 49.275 ; CS                     ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.275 ; CS                     ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.757      ;
+; 49.325 ; bitcnt[0]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.707      ;
+; 49.367 ; CS                     ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.665      ;
+; 49.426 ; CS                     ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.606      ;
+; 49.464 ; byte_two_received      ; CS                     ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.568      ;
+; 49.467 ; byte_two_received      ; oLEDG[7]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.565      ;
+; 49.471 ; byte_data_received[6]  ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.561      ;
+; 49.491 ; bitcnt[0]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.541      ;
+; 49.494 ; bitcnt[0]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.538      ;
+; 49.500 ; bitcnt[1]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.532      ;
+; 49.516 ; bitcnt[3]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.516      ;
+; 49.545 ; byte_data_received[14] ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.487      ;
+; 49.545 ; CS                     ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.487      ;
+; 49.546 ; byte_data_received[7]  ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.486      ;
+; 49.546 ; byte_data_received[9]  ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.486      ;
+; 49.547 ; byte_data_received[10] ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.485      ;
+; 49.548 ; byte_data_received[5]  ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.484      ;
+; 49.548 ; byte_data_received[13] ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.484      ;
+; 49.549 ; byte_data_received[14] ; oLEDG[2]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.483      ;
+; 49.550 ; bitcnt[1]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.482      ;
+; 49.551 ; byte_data_received[3]  ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.481      ;
+; 49.556 ; MISOr[1]               ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.476      ;
+; 49.572 ; byte_data_received[13] ; oLEDG[1]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.001      ; 0.461      ;
+; 49.624 ; bitcnt[0]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.408      ;
+; 49.629 ; byte_data_received[12] ; oLEDG[0]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.403      ;
+; 49.631 ; byte_data_received[12] ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.401      ;
+; 49.637 ; byte_data_received[11] ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.395      ;
+; 49.637 ; bitcnt[2]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.395      ;
+; 49.638 ; byte_data_received[0]  ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.394      ;
+; 49.640 ; MISOr[0]               ; MISOr[1]               ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.392      ;
+; 49.640 ; byte_data_received[2]  ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.392      ;
+; 49.640 ; byte_data_received[4]  ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.392      ;
+; 49.641 ; byte_data_received[1]  ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.391      ;
+; 49.665 ; bitcnt[0]              ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.367      ;
+; 49.665 ; bitcnt[3]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.367      ;
+; 49.665 ; bitcnt[2]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.367      ;
+; 49.665 ; bitcnt[1]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 50.000       ; 0.000      ; 0.367      ;
++--------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLK_PLL_inst|altpll_component|pll|clk[0]'                                                                                                                            ;
++-------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock                             ; Latch Clock                              ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; 0.215 ; bitcnt[0]              ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; bitcnt[1]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; bitcnt[2]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; bitcnt[3]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.239 ; byte_data_received[1]  ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; MISOr[0]               ; MISOr[1]               ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; byte_data_received[2]  ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; byte_data_received[4]  ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.392      ;
+; 0.242 ; byte_data_received[0]  ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; bitcnt[2]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; byte_data_received[11] ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.395      ;
+; 0.249 ; byte_data_received[12] ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.401      ;
+; 0.251 ; byte_data_received[12] ; oLEDG[0]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.403      ;
+; 0.256 ; bitcnt[0]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.408      ;
+; 0.308 ; byte_data_received[13] ; oLEDG[1]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.001      ; 0.461      ;
+; 0.324 ; MISOr[1]               ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.476      ;
+; 0.329 ; byte_data_received[3]  ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.481      ;
+; 0.330 ; bitcnt[1]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.482      ;
+; 0.331 ; byte_data_received[14] ; oLEDG[2]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.483      ;
+; 0.332 ; byte_data_received[5]  ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.484      ;
+; 0.332 ; byte_data_received[13] ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.484      ;
+; 0.333 ; byte_data_received[10] ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.485      ;
+; 0.334 ; byte_data_received[7]  ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.486      ;
+; 0.334 ; byte_data_received[9]  ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.486      ;
+; 0.335 ; byte_data_received[14] ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.487      ;
+; 0.335 ; CS                     ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.487      ;
+; 0.364 ; bitcnt[3]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.516      ;
+; 0.380 ; bitcnt[1]              ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.532      ;
+; 0.386 ; bitcnt[0]              ; bitcnt[1]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.538      ;
+; 0.389 ; bitcnt[0]              ; byte_two_received      ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.541      ;
+; 0.409 ; byte_data_received[6]  ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.561      ;
+; 0.413 ; byte_two_received      ; oLEDG[7]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.565      ;
+; 0.416 ; byte_two_received      ; CS                     ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.568      ;
+; 0.454 ; CS                     ; bitcnt[2]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.606      ;
+; 0.513 ; CS                     ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.665      ;
+; 0.555 ; bitcnt[0]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.707      ;
+; 0.605 ; CS                     ; bitcnt[0]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[10] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[11] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[12] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[13] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[14] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.605 ; CS                     ; byte_data_received[15] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.757      ;
+; 0.661 ; bitcnt[2]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.813      ;
+; 0.684 ; bitcnt[1]              ; bitcnt[3]              ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.836      ;
+; 0.889 ; byte_data_received[8]  ; byte_data_received[9]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; 0.001      ; 1.042      ;
+; 1.052 ; byte_data_received[15] ; oLEDG[3]~reg0          ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.203      ;
+; 1.322 ; CS                     ; byte_data_received[0]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[1]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[2]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[3]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[4]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[5]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[6]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[7]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
+; 1.322 ; CS                     ; byte_data_received[8]  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000        ; -0.001     ; 1.473      ;
++-------+------------------------+------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'iCLK_50'                                                                                     ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                     ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLK_PLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; iCLK_50|combout                            ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; iCLK_50|combout                            ;
+; 17.620 ; 20.000       ; 2.380          ; Port Rate        ; iCLK_50 ; Rise       ; iCLK_50                                    ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLK_PLL_inst|altpll_component|pll|clk[0]'                                                                                               ;
++--------+--------------+----------------+------------------+------------------------------------------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                    ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+------------------------------------------+------------+------------------------------------------------------+
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS                                                   ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS                                                   ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]                                             ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]                                            ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]                               ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]                               ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[6]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[6]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[7]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[7]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[8]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[8]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[9]                                ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[9]                                ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_two_received                                    ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_two_received                                    ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[0]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[0]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[1]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[1]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[2]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[2]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[3]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[3]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[7]~reg0                                        ;
+; 24.000 ; 25.000       ; 1.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; oLEDG[7]~reg0                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLK_PLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS|clk                                               ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; CS|clk                                               ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[0]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; MISOr[1]|clk                                         ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[0]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[1]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[2]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; bitcnt[3]|clk                                        ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[0]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[10]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[11]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[12]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[13]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[14]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[15]|clk                           ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[1]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[2]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[3]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[4]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; High Pulse Width ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]|clk                            ;
+; 25.000 ; 25.000       ; 0.000          ; Low Pulse Width  ; CLK_PLL_inst|altpll_component|pll|clk[0] ; Rise       ; byte_data_received[5]|clk                            ;
++--------+--------------+----------------+------------------+------------------------------------------+------------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                     ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 5.066 ; 5.066 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[3] ; iCLK_50    ; 5.066 ; 5.066 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                        ;
++------------+------------+--------+--------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                          ;
++------------+------------+--------+--------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; -4.946 ; -4.946 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[3] ; iCLK_50    ; -4.946 ; -4.946 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+--------+--------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 4.645 ; 4.645 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[0] ; iCLK_50    ; 4.645 ; 4.645 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ; 1.386 ;       ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50    ; 3.783 ; 3.783 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50    ; 3.680 ; 3.680 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[1]  ; iCLK_50    ; 3.783 ; 3.783 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[2]  ; iCLK_50    ; 3.163 ; 3.163 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[3]  ; iCLK_50    ; 3.575 ; 3.575 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50    ; 3.112 ; 3.112 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDR[*]   ; iCLK_50    ; 2.794 ; 2.794 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[0]  ; iCLK_50    ; 2.314 ; 2.314 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[1]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[2]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[3]  ; iCLK_50    ; 2.120 ; 2.120 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[4]  ; iCLK_50    ; 2.227 ; 2.227 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[5]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[6]  ; iCLK_50    ; 2.218 ; 2.218 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[7]  ; iCLK_50    ; 2.321 ; 2.321 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[8]  ; iCLK_50    ; 2.216 ; 2.216 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[9]  ; iCLK_50    ; 2.179 ; 2.179 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[10] ; iCLK_50    ; 2.069 ; 2.069 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[11] ; iCLK_50    ; 2.059 ; 2.059 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[16] ; iCLK_50    ; 2.794 ; 2.794 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[17] ; iCLK_50    ; 2.521 ; 2.521 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_0[*]  ; iCLK_50    ;       ; 1.386 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ;       ; 1.386 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 1.386 ; 4.645 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[0] ; iCLK_50    ; 4.645 ; 4.645 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ; 1.386 ;       ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50    ; 3.112 ; 3.112 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50    ; 3.680 ; 3.680 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[1]  ; iCLK_50    ; 3.783 ; 3.783 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[2]  ; iCLK_50    ; 3.163 ; 3.163 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[3]  ; iCLK_50    ; 3.575 ; 3.575 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50    ; 3.112 ; 3.112 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDR[*]   ; iCLK_50    ; 2.059 ; 2.059 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[0]  ; iCLK_50    ; 2.314 ; 2.314 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[1]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[2]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[3]  ; iCLK_50    ; 2.120 ; 2.120 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[4]  ; iCLK_50    ; 2.227 ; 2.227 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[5]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[6]  ; iCLK_50    ; 2.218 ; 2.218 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[7]  ; iCLK_50    ; 2.321 ; 2.321 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[8]  ; iCLK_50    ; 2.216 ; 2.216 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[9]  ; iCLK_50    ; 2.179 ; 2.179 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[10] ; iCLK_50    ; 2.069 ; 2.069 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[11] ; iCLK_50    ; 2.059 ; 2.059 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[16] ; iCLK_50    ; 2.794 ; 2.794 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[17] ; iCLK_50    ; 2.521 ; 2.521 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_0[*]  ; iCLK_50    ;       ; 1.386 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ;       ; 1.386 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                   ;
++-------------------------------------------+--------+-------+----------+---------+---------------------+
+; Clock                                     ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack                          ; 47.035 ; 0.215 ; N/A      ; N/A     ; 10.000              ;
+;  CLK_PLL_inst|altpll_component|pll|clk[0] ; 47.035 ; 0.215 ; N/A      ; N/A     ; 24.000              ;
+;  iCLK_50                                  ; N/A    ; N/A   ; N/A      ; N/A     ; 10.000              ;
+; Design-wide TNS                           ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLK_PLL_inst|altpll_component|pll|clk[0] ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  iCLK_50                                  ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
++-------------------------------------------+--------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                     ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 8.867 ; 8.867 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[3] ; iCLK_50    ; 8.867 ; 8.867 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                        ;
++------------+------------+--------+--------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                          ;
++------------+------------+--------+--------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; -4.946 ; -4.946 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[3] ; iCLK_50    ; -4.946 ; -4.946 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+--------+--------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 9.136 ; 9.136 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[0] ; iCLK_50    ; 9.136 ; 9.136 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ; 2.654 ;       ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50    ; 7.549 ; 7.549 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50    ; 7.188 ; 7.188 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[1]  ; iCLK_50    ; 7.549 ; 7.549 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[2]  ; iCLK_50    ; 6.074 ; 6.074 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[3]  ; iCLK_50    ; 6.866 ; 6.866 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50    ; 6.015 ; 6.015 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDR[*]   ; iCLK_50    ; 5.453 ; 5.453 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[0]  ; iCLK_50    ; 4.341 ; 4.341 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[1]  ; iCLK_50    ; 3.899 ; 3.899 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[2]  ; iCLK_50    ; 3.900 ; 3.900 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[3]  ; iCLK_50    ; 3.900 ; 3.900 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[4]  ; iCLK_50    ; 4.129 ; 4.129 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[5]  ; iCLK_50    ; 3.901 ; 3.901 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[6]  ; iCLK_50    ; 4.118 ; 4.118 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[7]  ; iCLK_50    ; 4.345 ; 4.345 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[8]  ; iCLK_50    ; 4.118 ; 4.118 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[9]  ; iCLK_50    ; 4.086 ; 4.086 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[10] ; iCLK_50    ; 3.845 ; 3.845 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[11] ; iCLK_50    ; 3.835 ; 3.835 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[16] ; iCLK_50    ; 5.453 ; 5.453 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[17] ; iCLK_50    ; 4.804 ; 4.804 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_0[*]  ; iCLK_50    ;       ; 2.654 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ;       ; 2.654 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                          ;
++------------+------------+-------+-------+------------+------------------------------------------+
+; GPIO_0[*]  ; iCLK_50    ; 1.386 ; 4.645 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[0] ; iCLK_50    ; 4.645 ; 4.645 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ; 1.386 ;       ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50    ; 3.112 ; 3.112 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50    ; 3.680 ; 3.680 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[1]  ; iCLK_50    ; 3.783 ; 3.783 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[2]  ; iCLK_50    ; 3.163 ; 3.163 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[3]  ; iCLK_50    ; 3.575 ; 3.575 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50    ; 3.112 ; 3.112 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; oLEDR[*]   ; iCLK_50    ; 2.059 ; 2.059 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[0]  ; iCLK_50    ; 2.314 ; 2.314 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[1]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[2]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[3]  ; iCLK_50    ; 2.120 ; 2.120 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[4]  ; iCLK_50    ; 2.227 ; 2.227 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[5]  ; iCLK_50    ; 2.119 ; 2.119 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[6]  ; iCLK_50    ; 2.218 ; 2.218 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[7]  ; iCLK_50    ; 2.321 ; 2.321 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[8]  ; iCLK_50    ; 2.216 ; 2.216 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[9]  ; iCLK_50    ; 2.179 ; 2.179 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[10] ; iCLK_50    ; 2.069 ; 2.069 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[11] ; iCLK_50    ; 2.059 ; 2.059 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[16] ; iCLK_50    ; 2.794 ; 2.794 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDR[17] ; iCLK_50    ; 2.521 ; 2.521 ; Rise       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_0[*]  ; iCLK_50    ;       ; 1.386 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_0[1] ; iCLK_50    ;       ; 1.386 ; Fall       ; CLK_PLL_inst|altpll_component|pll|clk[0] ;
++------------+------------+-------+-------+------------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                 ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; From Clock                               ; To Clock                                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 57       ; 0        ; 0        ; 0        ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                  ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; From Clock                               ; To Clock                                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; CLK_PLL_inst|altpll_component|pll|clk[0] ; CLK_PLL_inst|altpll_component|pll|clk[0] ; 57       ; 0        ; 0        ; 0        ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 21    ; 21   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sun Mar 22 23:25:49 2015
+Info: Command: quartus_sta SPI_Master -c SPI_Master
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'SPI_Master.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 20.000 -waveform {0.000 10.000} -name iCLK_50 iCLK_50
+    Info (332110): create_generated_clock -source {CLK_PLL_inst|altpll_component|pll|inclk[0]} -divide_by 5 -multiply_by 2 -duty_cycle 50.00 -name {CLK_PLL_inst|altpll_component|pll|clk[0]} {CLK_PLL_inst|altpll_component|pll|clk[0]}
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 47.035
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    47.035         0.000 CLK_PLL_inst|altpll_component|pll|clk[0] 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLK_PLL_inst|altpll_component|pll|clk[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 10.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    10.000         0.000 iCLK_50 
+    Info (332119):    24.000         0.000 CLK_PLL_inst|altpll_component|pll|clk[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 48.558
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    48.558         0.000 CLK_PLL_inst|altpll_component|pll|clk[0] 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLK_PLL_inst|altpll_component|pll|clk[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 10.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    10.000         0.000 iCLK_50 
+    Info (332119):    24.000         0.000 CLK_PLL_inst|altpll_component|pll|clk[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 438 megabytes
+    Info: Processing ended: Sun Mar 22 23:25:52 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+

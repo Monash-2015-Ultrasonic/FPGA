@@ -1,0 +1,46 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory="E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/" --output-directory="E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys/" --report-file="bsf:E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys.bsf" --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys.qsys"
+Progress: Loading SPI_Master/test_qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding spi_0 [altera_avalon_spi 13.0.1.99.2]
+Progress: Parameterizing module spi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: test_qsys.spi_0: spi_0.spi_control_port must be connected to an Avalon-MM master
+Warning: test_qsys.spi_0: Interrupt sender spi_0.irq is not connected to an interrupt receiver
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/" --output-directory="E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys/synthesis/" --file-set=QUARTUS_SYNTH --report-file="sopcinfo:E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys.sopcinfo" --report-file="html:E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys.html" --report-file="qip:E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys/synthesis/test_qsys.qip" --report-file="cmp:E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys.cmp" --report-file=svd --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master/test_qsys.qsys" --language=VERILOG
+Progress: Loading SPI_Master/test_qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding spi_0 [altera_avalon_spi 13.0.1.99.2]
+Progress: Parameterizing module spi_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: test_qsys.spi_0: spi_0.spi_control_port must be connected to an Avalon-MM master
+Warning: test_qsys.spi_0: Interrupt sender spi_0.irq is not connected to an interrupt receiver
+Info: test_qsys: Generating test_qsys "test_qsys" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 2 modules, 2 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 2 modules, 2 connections
+Info: reset_adaptation_transform: After transform: 3 modules, 4 connections
+Info: merlin_mm_transform: After transform: 3 modules, 4 connections
+Info: spi_0: Starting RTL generation for module 'test_qsys_spi_0'
+Info: spi_0:   Generation command is [exec F:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I F:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I F:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I F:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I F:/altera/13.0sp1/quartus/sopc_builder/bin -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- F:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=test_qsys_spi_0 --dir=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6516_4268766235548731329.dir/0001_spi_0_gen/ --quartus_dir=F:/altera/13.0sp1/quartus --verilog --config=C:/Users/MRBIGB~1/AppData/Local/Temp/alt6516_4268766235548731329.dir/0001_spi_0_gen//test_qsys_spi_0_component_configuration.pl  --do_build_sim=0  ]
+Info: spi_0: Done RTL generation for module 'test_qsys_spi_0'
+Info: spi_0: "test_qsys" instantiated altera_avalon_spi "spi_0"
+Info: rst_controller: "test_qsys" instantiated altera_reset_controller "rst_controller"
+Info: test_qsys: Done test_qsys" with 3 modules, 5 files, 26628 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

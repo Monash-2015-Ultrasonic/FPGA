@@ -1,0 +1,15 @@
+module SPI_Master(
+	iCLK_50,
+	
+	GPIO
+	);
+	input iCLK_50;
+	
+	inout [31:0] GPIO0;
+	
+	wire CS;
+	assign GPIO0[0] = CS;
+	
+	
+	
+endmodule

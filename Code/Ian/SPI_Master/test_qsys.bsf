@@ -1,0 +1,94 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 320 232)
+	(text "test_qsys" (rect 132 -1 172 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 216 20 228)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_qsys_50_clk" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "clk_qsys_50_clk" (rect 4 61 94 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 128 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 82 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 128 112)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "spi_0_external_MISO" (rect 0 0 87 12)(font "Arial" (font_size 8)))
+		(text "spi_0_external_MISO" (rect 4 141 118 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 128 152)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(output)
+		(text "spi_0_external_MOSI" (rect 0 0 87 12)(font "Arial" (font_size 8)))
+		(text "spi_0_external_MOSI" (rect 4 157 118 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 128 168)(line_width 1))
+	)
+	(port
+		(pt 0 184)
+		(output)
+		(text "spi_0_external_SCLK" (rect 0 0 89 12)(font "Arial" (font_size 8)))
+		(text "spi_0_external_SCLK" (rect 4 173 118 184)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 128 184)(line_width 1))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "spi_0_external_SS_n" (rect 0 0 86 12)(font "Arial" (font_size 8)))
+		(text "spi_0_external_SS_n" (rect 4 189 118 200)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 128 200)(line_width 1))
+	)
+	(drawing
+		(text "clk_qsys_50" (rect 56 43 178 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 133 67 284 144)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 99 83 228 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 133 107 308 224)(font "Arial" (color 0 0 0)))
+		(text "spi_0_external" (rect 43 123 170 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "MISO" (rect 133 147 290 304)(font "Arial" (color 0 0 0)))
+		(text "MOSI" (rect 133 163 290 336)(font "Arial" (color 0 0 0)))
+		(text "SCLK" (rect 133 179 290 368)(font "Arial" (color 0 0 0)))
+		(text "SS_n" (rect 133 195 290 400)(font "Arial" (color 0 0 0)))
+		(text " test_qsys " (rect 274 216 614 442)(font "Arial" ))
+		(line (pt 129 52)(pt 129 76)(line_width 1))
+		(line (pt 130 52)(pt 130 76)(line_width 1))
+		(line (pt 129 92)(pt 129 116)(line_width 1))
+		(line (pt 130 92)(pt 130 116)(line_width 1))
+		(line (pt 129 132)(pt 129 204)(line_width 1))
+		(line (pt 130 132)(pt 130 204)(line_width 1))
+		(line (pt 128 32)(pt 192 32)(line_width 1))
+		(line (pt 192 32)(pt 192 216)(line_width 1))
+		(line (pt 128 216)(pt 192 216)(line_width 1))
+		(line (pt 128 32)(pt 128 216)(line_width 1))
+		(line (pt 0 0)(pt 320 0)(line_width 1))
+		(line (pt 320 0)(pt 320 232)(line_width 1))
+		(line (pt 0 232)(pt 320 232)(line_width 1))
+		(line (pt 0 0)(pt 0 232)(line_width 1))
+	)
+)
