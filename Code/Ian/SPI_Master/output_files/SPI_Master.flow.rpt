@@ -1,5 +1,5 @@
 Flow report for SPI_Master
-Sun Mar 22 23:25:52 2015
+Mon Mar 23 21:44:05 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,22 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 22 23:25:49 2015            ;
+; Flow Status                        ; Flow Failed - Mon Mar 23 21:44:05 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SPI_Master                                       ;
-; Top-level Entity Name              ; SPI_Master                                       ;
+; Top-level Entity Name              ; stimulus                                         ;
 ; Family                             ; Cyclone II                                       ;
-; Device                             ; EP2C70F896C6                                     ;
-; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 29 / 68,416 ( < 1 % )                            ;
-;     Total combinational functions  ; 6 / 68,416 ( < 1 % )                             ;
-;     Dedicated logic registers      ; 29 / 68,416 ( < 1 % )                            ;
-; Total registers                    ; 29                                               ;
-; Total pins                         ; 77 / 622 ( 12 % )                                ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                            ;
-; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                                  ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -64,71 +62,56 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/22/2015 23:25:28 ;
+; Start date & time ; 03/23/2015 21:44:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SPI_Master          ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                       ;
-+-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 24062491136.142702712834588           ; --            ; --          ; --         ;
-; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                                    ; Off           ; --          ; --         ;
-; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --         ;
-; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; CLK_PLL_inst.v                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; CLK_PLL_bb.v                          ; --            ; --          ; --         ;
-; MISC_FILE                           ; CLK_PLL.ppf                           ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --         ;
-; SMART_RECOMPILE                     ; On                                    ; Off           ; --          ; --         ;
-+-------------------------------------+---------------------------------------+---------------+-------------+------------+
++--------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                             ;
++-------------------------------------+-----------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                       ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+-----------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 24062491136.142710744510624 ; --            ; --          ; --         ;
+; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                          ; Off           ; --          ; --         ;
+; IP_TOOL_NAME                        ; ALTPLL                      ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; CLK_PLL_inst.v              ; --            ; --          ; --         ;
+; MISC_FILE                           ; CLK_PLL_bb.v                ; --            ; --          ; --         ;
+; MISC_FILE                           ; CLK_PLL.ppf                 ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                    ; --            ; stimulus    ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING       ; --            ; stimulus    ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                      ; --            ; stimulus    ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                ; --            ; --          ; --         ;
+; SMART_RECOMPILE                     ; On                          ; Off           ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; stimulus                    ; SPI_Master    ; --          ; --         ;
++-------------------------------------+-----------------------------+---------------+-------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 447 MB              ; 00:00:01                           ;
-; I/O Assignment Analysis   ; 00:00:04     ; 1.0                     ; 697 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:09     ; 2.0                     ; 1152 MB             ; 00:00:08                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 445 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 438 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:15                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 441 MB              ; 00:00:01                           ;
+; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:01                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SPI_Master -c SPI_Master
-quartus_fit --read_settings_files=off --write_settings_files=off SPI_Master -c SPI_Master --check_ios
-quartus_fit --read_settings_files=off --write_settings_files=off SPI_Master -c SPI_Master
-quartus_asm --read_settings_files=off --write_settings_files=off SPI_Master -c SPI_Master
-quartus_sta SPI_Master -c SPI_Master
 
 
 

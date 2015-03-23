@@ -1,131 +1,155 @@
-module SPI_Master(
-	iCLK_50,
-	
-	oLEDG,
-	oLEDR,
-	
-	iSW,
-	
-	GPIO_0
-	);
-	input iCLK_50;
-	
-	inout [31:0] GPIO_0;
-	
-	input [17:0] iSW;
-	
-	output reg [7:0] oLEDG;
-	output  [17:0] oLEDR;
-	
-	wire CLK_20;
-	wire clk = CLK_20;
-	CLK_PLL	CLK_PLL_inst (
-		.inclk0 ( iCLK_50 ),
-		.c0 ( CLK_20 )
+//=================================================
+// SPI MASTER MODULE
+//=================================================
+module master(
+	input 		RST,
+	input 		ENA,
+	input 		INTR,
+	input 		MISO,
+	output reg 	MOSI,
+	output reg 	CSbar,
+	output reg 	SCK
 	);
 	
-	assign 	GPIO_0[1] = CLK_20;
-
-	assign 	GPIO_0[0] = CS;
+	reg	[15:0]	data_m;
+	reg	[15:0]	data_init;
 	
-	wire 		MISO;
-	assign 	MISO = GPIO_0[3];
+	initial begin
+		SCK = 1'b0;
+		repeat (250) #10 SCK = ~SCK;
+	end
 	
-	wire 		MOSI;
-	assign 	GPIO_0[5] = MOSI;
-	
-	
-	
-	
-	// sync SCK to the FPGA clock using a 3-bits shift register
-
-	// same thing for SSEL
-	
-	// and for MISO
-	reg [1:0] MISOr;  
-	always @(posedge clk) 
-		MISOr <= {MISOr[0], MISO};
-	
-	wire MISO_data = MISOr[1];		
+	initial begin
+		data_m = 16'hABCD;
+		data_init = data_m;
 		
-		reg CS;
-	always @(posedge clk) begin
-			if (~byte_two_received)
-					CS <= 0;
-			else
-				CS <= 1;
+		$display("Initial Data @ MASTER: %b", data_m);
 	end
-		
-
-	assign oLEDR[11:0] = byte_data_received[11:0];
-	assign oLEDR[17] = CS;
-	assign oLEDR[16] = byte_two_received;
 	
-	
-	
-	// we handle SPI in 16-bits format, so we need a 4 bits counter to count the bits as they come in
-	reg [3:0] bitcnt;
-
-	reg byte_two_received;  // high when a word has been received
-	reg [15:0] byte_data_received;
-	
-	always @(posedge clk)
-	begin
-	if (~CS) begin
-			if (bitcnt == 4'b1111)
-				bitcnt <= 4'b0000;
-			else
-			 bitcnt <= bitcnt + 4'b0001;
-
-			 // implement a shift-left register (since we receive the data MSB first)
-			 byte_data_received <= {byte_data_received[14:0], MISO_data};
-	end
-	end
-
-	always @(posedge clk) begin
-		byte_two_received <= (bitcnt==4'b1111);
-	end
-		
-	always @(posedge clk) begin
-		if(byte_two_received) 
-			oLEDG[7] <= 1;
-		else
-			oLEDG[7] <= 0;
+	always @(posedge SCK) begin
+		if (RST)
+			data_m <= data_init;
+		else if (ENA && ~INTR) begin
+			MOSI <= data_m[15];
 			
-		oLEDG[3:0] <= byte_data_received[15:12];
+			data_m <= {data_m[14:0], MISO};
+			
+			$display("Data at Master: %b", data_m);
+		end
 	end
 	
+	always @(posedge SCK) begin
+		CSbar = 1'b0;
+		
+		if (INTR)
+			$display("Interrupt is Processing");
+	end
 	
-	
-	
-	
-	
+endmodule
+//=================================================
+// END SPI MASTER MODULE
+//=================================================
 
-//	reg SSEL_startmessage = 1;
-//	
-//	reg [15:0] configuration = 16'h2A00;
-//	reg [15:0] byte_data_sent;
-//
-//	always @(posedge clk) begin
-//	if (CS) begin
-//			if(SSEL_startmessage) begin
-//				byte_data_sent <= configuration;  // first byte sent in a message is the message count
-//			 SSEL_startmessage <= 0;
-//			end
-//			else 
-//				byte_data_sent <= {byte_data_sent[14:0], 1'b0};
-//
-//			if (bitcnt == 4'b1111)
-//				SSEL_startmessage <= 1;
-//	end
-//	end
-//
-//	assign MOSI = byte_data_sent[15];  // send MSB first
-//	// we assume that there is only one slave on the SPI bus
-//	// so we don't bother with a tri-state buffer for MISO
-//	// otherwise we would need to tri-state MISO when SSEL is inactive	
+
+
+
+//=================================================
+// SPI SLAVE MODULE
+//=================================================
+module slave(
+	input 		RST,
+	input			ENA,
+	input 		INTR,
+	input			SCK,
+	input			MOSI,
+	input			CSbar,
+	output reg	MISO
+	);
 	
+	reg	[15:0]	data_s;
 	
+	integer count = 0;
 	
+	always @(posedge SCK) begin
+		if (~CSbar) begin
+			if (RST)
+				data_s <= 16'b0;
+			else if (ENA && ~INTR) begin
+				MISO <= data_s[15];
+				
+				data_s <= {data_s[14:0], MOSI};
+				
+				count <= count + 1;
+				
+				if (count == 16)
+					$stop;
+					
+				$display("Data at SLAVE: %b", data_s);
+			end
+		end
+	end
+	
+	always @(posedge SCK) begin
+		if (INTR)
+			$display("Interrupt is Processing");
+	end
+	
+endmodule
+//=================================================
+// END SPI SLAVE MODULE
+//=================================================
+
+
+
+
+
+//=================================================
+// TOP LEVEL MODULE
+//=================================================
+module stimulus();
+
+	reg RST;
+	reg ENA;
+	reg INTR;
+	wire MISO;
+	wire MOSI;
+	wire CSbar;
+	wire SCK;
+	
+	initial begin
+		RST = 1'b1;
+		ENA = 1'b0;
+		INTR = 1'b0;
+		#1 RST = 1'b0;
+		#2 RST = 1'b0;
+		#5 RST = 1'b0;
+		#2 ENA = 1'b1;
+		#12 RST = 1'b1;
+		#6 ENA = 1'b0;
+		#4 RST = 1'b0;
+		#8 ENA = 1'b1;
+		#80 INTR = 1'b1;
+		#6 INTR = 1'b0;
+	end
+	
+	master SPI_MASTER_INSTANT(
+		.RST ( RST ),
+		.ENA ( ENA ),
+		.SCK ( SCK ),
+		.INTR ( INTR ),
+		.MOSI ( MOSI ),
+		.MISO ( MISO ),
+		.CSbar ( CSbar )
+		);
+		
+	slave SPI_SLAVE_INSTANT(
+		.RST ( RST ),
+		.ENA ( ENA ),
+		.SCK ( SCK ),
+		.INTR ( INTR ),
+		.MOSI ( MOSI ),
+		.MISO ( MISO ),
+		.CSbar ( CSbar )
+		);
 		
 endmodule
