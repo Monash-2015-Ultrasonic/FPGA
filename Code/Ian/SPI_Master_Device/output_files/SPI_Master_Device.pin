@@ -169,7 +169,7 @@ GNDA_PLL1                    : AC10      : gnd    :                   :         
 oLEDR[14]                    : AC11      : output : 3.3-V LVTTL       :         : 8         : Y              
 oLEDR[12]                    : AC12      : output : 3.3-V LVTTL       :         : 8         : Y              
 oLEDR[10]                    : AC13      : output : 3.3-V LVTTL       :         : 8         : Y              
-RESERVED_INPUT               : AC14      :        :                   :         : 8         :                
+oLEDG[8]                     : AC14      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND+                         : AC15      :        :                   :         : 7         :                
 RESERVED_INPUT               : AC16      :        :                   :         : 7         :                
 RESERVED_INPUT               : AC17      :        :                   :         : 7         :                

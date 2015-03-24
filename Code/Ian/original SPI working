@@ -1,0 +1,46 @@
+	always @(posedge SCK) begin
+		if (CSbar) begin
+			counter 		<= 1'b0;
+			finished 	<= 1'b0;
+			
+			if (first_invalid)
+				data_in 	<= 16'b0;
+		end
+		
+		else if (~CSbar && ~finished) begin
+			if (first_invalid)
+				data_in 	<= 16'b0;
+			else
+				data_in 	<= {data_in[14:0], MISO};
+				
+			counter 		<= counter + 1;
+			finished 	<= counter[4];
+		end
+		else if (~CSbar && finished) begin
+			finished 	<= 1'b1;
+			first_invalid <= 1'b0;
+		end
+		else
+			finished 	<= 1'b0;
+	end
+
+
+
+
+	always @(posedge SCK) begin
+		if (CSbar) begin
+			finished 		<= 1'b0;
+			counter			<= 5'b0;
+			data_out 		<= DATA;
+			MISO 				<= 1'bz;
+		end
+		else if (~finished) begin
+			MISO 				<= data_out[15];
+			data_out 		<= {data_out[14:0], 1'b0};
+			
+			counter 			<= counter + 1;
+			finished 		<= counter[4];
+		end
+		else			
+			MISO				<= 1'bz;
+	end

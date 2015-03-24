@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SPI_Master_Device
-Tue Mar 24 04:02:10 2015
+Tue Mar 24 13:15:22 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -15,12 +15,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   7. Partition Status Summary
   8. Dependent File Changes for Partition Top
   9. Partition for Top-Level Resource Utilization by Entity
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: CLK_PLL:CLK_PLL_inst|altpll:altpll_component
- 12. Partition Dependent Files
- 13. Port Connectivity Checks: "CLK_PLL:CLK_PLL_inst"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: CLK_PLL:CLK_PLL_inst|altpll:altpll_component
+ 14. Partition Dependent Files
+ 15. Port Connectivity Checks: "CLK_PLL:CLK_PLL_inst"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -46,7 +48,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 24 04:02:10 2015            ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 24 13:15:22 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SPI_Master_Device                                ;
 ; Top-level Entity Name              ; stimulus                                         ;
@@ -203,8 +205,8 @@ applicable agreement for further details.
 +---------------------------+---------------------+-------------------+----------+----------------------------------+----------------------------------+
 ; Hierarchy                 ; File Name           ; Relative Location ; Change   ; Old                              ; New                              ;
 +---------------------------+---------------------+-------------------+----------+----------------------------------+----------------------------------+
-; master:SPI_MASTER_INSTANT ; SPI_Master_Device.v ; Project Directory ; Checksum ; e10b46cfa09eb828e3bdcd110bd40ba4 ; d5e5cd1ec7ade80bb0be74210454e0aa ;
-; |                         ; SPI_Master_Device.v ; Project Directory ; Checksum ; e10b46cfa09eb828e3bdcd110bd40ba4 ; d5e5cd1ec7ade80bb0be74210454e0aa ;
+; master:SPI_MASTER_INSTANT ; SPI_Master_Device.v ; Project Directory ; Checksum ; b395f9a41c845f799163dc67aac1b113 ; 9a7724e4afd026053f24ea5576c93a31 ;
+; |                         ; SPI_Master_Device.v ; Project Directory ; Checksum ; b395f9a41c845f799163dc67aac1b113 ; 9a7724e4afd026053f24ea5576c93a31 ;
 +---------------------------+---------------------+-------------------+----------+----------------------------------+----------------------------------+
 
 
@@ -213,21 +215,51 @@ applicable agreement for further details.
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
-; |stimulus                       ; 31 (21)           ; 60 (20)      ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |stimulus                                              ; work         ;
+; |stimulus                       ; 45 (21)           ; 75 (20)      ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |stimulus                                              ; work         ;
 ;    |CLK_PLL:CLK_PLL_inst|       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stimulus|CLK_PLL:CLK_PLL_inst                         ; work         ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stimulus|CLK_PLL:CLK_PLL_inst|altpll:altpll_component ; work         ;
-;    |master:SPI_MASTER_INSTANT|  ; 10 (10)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stimulus|master:SPI_MASTER_INSTANT                    ; work         ;
+;    |master:SPI_MASTER_INSTANT|  ; 24 (24)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stimulus|master:SPI_MASTER_INSTANT                    ; work         ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |stimulus|master:SPI_MASTER_INSTANT|counter[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++------------------------------------------+------------------------------------------------------+
+; Register name                            ; Reason for Removal                                   ;
++------------------------------------------+------------------------------------------------------+
+; master:SPI_MASTER_INSTANT|data_out[0..5] ; Stuck at GND due to stuck port data_in               ;
+; master:SPI_MASTER_INSTANT|finished[1]    ; Merged with master:SPI_MASTER_INSTANT|finished[0]    ;
+; master:SPI_MASTER_INSTANT|ocounter[4]    ; Merged with master:SPI_MASTER_INSTANT|icounter[4]    ;
+; master:SPI_MASTER_INSTANT|first_start[1] ; Merged with master:SPI_MASTER_INSTANT|first_start[0] ;
+; master:SPI_MASTER_INSTANT|ocounter[0]    ; Merged with master:SPI_MASTER_INSTANT|icounter[0]    ;
+; master:SPI_MASTER_INSTANT|ocounter[3]    ; Merged with master:SPI_MASTER_INSTANT|icounter[3]    ;
+; master:SPI_MASTER_INSTANT|ocounter[2]    ; Merged with master:SPI_MASTER_INSTANT|icounter[2]    ;
+; master:SPI_MASTER_INSTANT|ocounter[1]    ; Merged with master:SPI_MASTER_INSTANT|icounter[1]    ;
+; Total Number of Removed Registers = 13   ;                                                      ;
++------------------------------------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; master:SPI_MASTER_INSTANT|data_out[0] ; Stuck at GND              ; master:SPI_MASTER_INSTANT|data_out[1], master:SPI_MASTER_INSTANT|data_out[2], ;
+;                                       ; due to stuck port data_in ; master:SPI_MASTER_INSTANT|data_out[3], master:SPI_MASTER_INSTANT|data_out[4], ;
+;                                       ;                           ; master:SPI_MASTER_INSTANT|data_out[5]                                         ;
++---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |stimulus|master:SPI_MASTER_INSTANT|data_out[15] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stimulus|master:SPI_MASTER_INSTANT|data_out[10] ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |stimulus|master:SPI_MASTER_INSTANT|data_in[10]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------+
@@ -610,7 +642,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; File                                      ; Location           ; Library ; Checksum                         ;
 +-------------------------------------------+--------------------+---------+----------------------------------+
 ; CLK_PLL.v                                 ; Project Directory  ; work    ; e0b226b0cb0181df3ac723daac1dc08f ;
-; SPI_Master_Device.v                       ; Project Directory  ; work    ; d5e5cd1ec7ade80bb0be74210454e0aa ;
+; SPI_Master_Device.v                       ; Project Directory  ; work    ; 9a7724e4afd026053f24ea5576c93a31 ;
 ; libraries/megafunctions/aglobal130.inc    ; Quartus II Install ; work    ; 6fc5170a475a9c6f00c3fd7627b30d31 ;
 ; libraries/megafunctions/altpll.tdf        ; Quartus II Install ; work    ; f8c6da9aeecfb4ea26e5731664857545 ;
 ; libraries/megafunctions/cycloneii_pll.inc ; Quartus II Install ; work    ; c2ee779f089b03bc181df753ea85b3ef ;
@@ -633,7 +665,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -643,7 +675,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Mar 24 04:02:05 2015
+    Info: Processing started: Tue Mar 24 13:15:19 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_Master_Device -c SPI_Master_Device
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file spi_master_device.v
@@ -652,9 +684,9 @@ Info (12021): Found 2 design units, including 2 entities, in source file spi_mas
 Info (12021): Found 1 design units, including 1 entities, in source file clk_pll.v
     Info (12023): Found entity 1: CLK_PLL
 Info (12127): Elaborating entity "stimulus" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at SPI_Master_Device.v(101): truncated value with size 32 to match size of target (20)
-Warning (10034): Output port "oLEDR[17..16]" at SPI_Master_Device.v(65) has no driver
-Warning (10034): Output port "oLEDG[6..0]" at SPI_Master_Device.v(66) has no driver
+Warning (10230): Verilog HDL assignment warning at SPI_Master_Device.v(167): truncated value with size 32 to match size of target (20)
+Warning (10034): Output port "oLEDR[17..12]" at SPI_Master_Device.v(127) has no driver
+Warning (10034): Output port "oLEDG[6..4]" at SPI_Master_Device.v(128) has no driver
 Info (12128): Elaborating entity "CLK_PLL" for hierarchy "CLK_PLL:CLK_PLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLK_PLL:CLK_PLL_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "CLK_PLL:CLK_PLL_inst|altpll:altpll_component"
@@ -719,8 +751,8 @@ Info (12133): Instantiated megafunction "CLK_PLL:CLK_PLL_inst|altpll:altpll_comp
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
 Info (12128): Elaborating entity "master" for hierarchy "master:SPI_MASTER_INSTANT"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_Device.v(32): truncated value with size 32 to match size of target (5)
-Warning (10034): Output port "MOSI" at SPI_Master_Device.v(8) has no driver
+Warning (10230): Verilog HDL assignment warning at SPI_Master_Device.v(62): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_Device.v(90): truncated value with size 32 to match size of target (5)
 Info (12205): 1 design partition requires Analysis and Synthesis
     Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
 Info (12209): No design partitions will skip synthesis in the current incremental compilation
@@ -758,31 +790,29 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[29]" has no driver
     Warning (13040): Bidir "GPIO_0[30]" has no driver
     Warning (13040): Bidir "GPIO_0[31]" has no driver
-Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "GPIO_0[0]" is fed by GND
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_0[3]~synth"
     Warning (13010): Node "GPIO_0[5]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "oLEDR[12]" is stuck at GND
+    Warning (13410): Pin "oLEDR[13]" is stuck at GND
+    Warning (13410): Pin "oLEDR[14]" is stuck at GND
+    Warning (13410): Pin "oLEDR[15]" is stuck at GND
     Warning (13410): Pin "oLEDR[16]" is stuck at GND
     Warning (13410): Pin "oLEDR[17]" is stuck at GND
-    Warning (13410): Pin "oLEDG[0]" is stuck at GND
-    Warning (13410): Pin "oLEDG[1]" is stuck at GND
-    Warning (13410): Pin "oLEDG[2]" is stuck at GND
-    Warning (13410): Pin "oLEDG[3]" is stuck at GND
     Warning (13410): Pin "oLEDG[4]" is stuck at GND
     Warning (13410): Pin "oLEDG[5]" is stuck at GND
     Warning (13410): Pin "oLEDG[6]" is stuck at GND
-Info (21057): Implemented 178 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 193 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 26 output pins
+    Info (21059): Implemented 27 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 64 logic cells
+    Info (21061): Implemented 78 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 463 megabytes
-    Info: Processing ended: Tue Mar 24 04:02:10 2015
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Tue Mar 24 13:15:22 2015
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 

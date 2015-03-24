@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Mar 24 04:02:29 2015
+Fitter Status : Successful - Tue Mar 24 13:15:38 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : SPI_Master_Device
 Top-level Entity Name : stimulus
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 63 / 68,416 ( < 1 % )
-    Total combinational functions : 30 / 68,416 ( < 1 % )
-    Dedicated logic registers : 60 / 68,416 ( < 1 % )
-Total registers : 60
-Total pins : 81 / 622 ( 13 % )
+Total logic elements : 76 / 68,416 ( < 1 % )
+    Total combinational functions : 44 / 68,416 ( < 1 % )
+    Dedicated logic registers : 75 / 68,416 ( < 1 % )
+Total registers : 75
+Total pins : 82 / 622 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,152,000 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
