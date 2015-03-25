@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C70F896) Path("E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SPI_Master_Device/output_files/") File("SPI_Master_Device.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C70F896) Path("E:/FYP/FPGA-master/Code/Ian/SPI_Master_Device/output_files/") File("SPI_Master_Device.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

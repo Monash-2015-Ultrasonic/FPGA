@@ -1,7 +1,7 @@
 //=================================================
 // SPI MASTER MODULE
 //=================================================
-module master(
+module SPI_MASTER_DEVICE(
 	input			SPI_CLK,
 	input 		ENA,
 	input	[3:0]	MUX_ADDR,
@@ -119,7 +119,7 @@ endmodule
 //=================================================
 // TOP LEVEL MODULE
 //=================================================
-module stimulus(
+module MAIN(
 	input 					iCLK_50,
 	input 		[17:0] 	iSW,
 	input 		[3:0] 	iKEY,
@@ -143,7 +143,7 @@ module stimulus(
 		.c2 ( CLK_10 )
 	);
 	
-	master SPI_MASTER_INSTANT(
+	SPI_MASTER_DEVICE SPI_MASTER_INSTANT(
 		.SPI_CLK 	( CLK_20 	),
 		.ENA 			( cnt[19]	),
 		//.ENA		( ~iKEY[0] 	),
