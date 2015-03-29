@@ -1,0 +1,71 @@
+module ultrasonic_sensor(iCLK_50,enable,direction);
+
+input iCLK_50;
+output enable,direction;
+
+wire clock80;
+
+clock_80kHz(iCLK_50,clock80);
+
+speaker_out(clock80,enable,direction);
+
+endmodule
+
+
+
+module clock_80kHz(clock_in,clock_out);
+
+input clock_in;
+
+output reg clock_out;
+
+reg[9:0] counter;
+
+initial 
+begin
+	counter=10'b0;
+	clock_out=0;
+end
+
+always @(posedge clock_in)
+begin
+	if(counter==10'b1001110001)
+	begin
+		clock_out=1;
+		counter=10'b0;
+	end
+	else if(counter==10'b0100111000)
+	begin
+		clock_out=0;
+	end
+	counter=counter+1'b1;
+end
+
+endmodule
+
+
+
+module speaker_out(clock_80kHz,enable,direction);
+
+input clock_80kHz;
+output reg enable, direction;
+
+reg[9:0] count_600;
+initial count_600=10'b0;
+
+always @(posedge clock_80kHz)
+begin
+	if(count_600==10'b0)
+	begin
+		enable=1;
+		direction=1;
+	end
+	else if(count_600==10'b11100)
+	begin
+		enable=0;
+	end
+	else if(enable)
+	direction=~direction;
+end
+
+endmodule
