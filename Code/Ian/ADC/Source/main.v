@@ -1,3 +1,6 @@
+//=================================================
+// TOPLEVEL MODULE
+//=================================================
 module main(
 	input 				iCLK_50,
 	
@@ -9,12 +12,17 @@ module main(
 	
 	output	[6:0]		oHEX0_D, oHEX1_D, oHEX2_D, oHEX3_D, oHEX4_D, oHEX5_D, oHEX6_D, oHEX7_D,
 	
-	inout		[31:0]	GPIO_0, GPIO_1
+	inout		[31:0]	GPIO_0, GPIO_1,
+	
+	input					iUART_RTS,
+	output				oUART_TXD
 	);
 
-	// Connections from ADC Board:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Connections from ADC Board:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	wire 		[15:0] 	ADC0_data, ADC1_data, ADC2_data, ADC3_data, ADC4_data;
-	wire		[4:0]		ADC_fin 	= 5'b0;
+	wire		[4:0]		ADC_fin;
 	wire		[15:0]	ADC0_cmd = {4'b0001, 1'b1, iSW[3:0], 7'b1000000};
 	wire		[15:0]	ADC1_cmd = {4'b0001, 1'b1, iSW[3:0], 7'b1000000};
 	wire		[15:0]	ADC2_cmd = {4'b0001, 1'b1, iSW[3:0], 7'b1000000};
@@ -22,41 +30,31 @@ module main(
 	wire		[15:0]	ADC4_cmd = {4'b0001, 1'b1, iSW[3:0], 7'b1000000};
 	
 	assign GPIO_1[31:26] = 6'bzzzzzz;				// Impedance Matching on Enable/CSbar
-	
-	// Custom Clock:
-	wire 					CLK_50, CLK_40, CLK_20;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Custom Clock:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	wire 					CLK_50, CLK_40, CLK_25, CLK_20;
 	CLK_PLL	CLK_PLL_inst (
 		.inclk0 	( iCLK_50 	),
 		.c0 		( CLK_40 	),
-		.c1		( CLK_20		),
+		.c1		( CLK_25		),
+		.c2		( CLK_20		)
 	);
-	
-//DEBUG:	
-//================================
-//	reg manual_clk;
-//	always @(posedge CLK_10)
-//		manual_clk <= ~iKEY[0];
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// SPI:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	// Auto-sample at 1MHZ for 1 Channel:
 	reg	[5:0]	auto_sample = 6'b0;
-	always @(posedge CLK_40) begin
-		case (auto_sample[5])
-		1'b0: begin
-			auto_sample <= auto_sample + 1;
-		end	
-		1'b1: begin
-			auto_sample <= 6'b0;
-		end
-		endcase
+	always @(posedge CLK_40) begin		
+		auto_sample <= (auto_sample[5]) ? 6'b0: auto_sample + 1;
 	end
 	
 	// 20MHz Clock: Separate bit for each ADC Module
 	reg	[4:0]	counter = 5'b0;
-	always @(posedge CLK_40) begin
-		if (counter==5'b11111)
-			counter <= 5'b00000;
-		else
-			counter <= 5'b11111;
+	always @(posedge CLK_40) begin			
+			counter <= (counter==5'b11111) ? 5'b00000 : 5'b11111;
 	end
 			
 	SPI_MASTER_DEVICE ADC0_instant(
@@ -119,6 +117,22 @@ module main(
 		.DATA_MISO 	( ADC4_data 		)
 	);
 	
+	TENBASET_TxD ethernet_instant(
+		.clk20 		( CLK_20				),
+		.clkan		( CLK_20				),
+		.Ethernet_TDp	( GPIO_1[0]		), 
+		.Ethernet_TDm	( GPIO_1[1]		),
+		.data0			( ADC0_data 	),
+		.data1			( ADC1_data		),
+		.data2			( ADC2_data		),
+		.data3			( ADC3_data		),
+		.data4			( ADC4_data		)
+	);
+	
+	
+	// Data output to HEX 3:0 [MSB first]
+	reg		[15:0]	ADC_data = 16'b0;
+	
 	always @(posedge CLK_20) begin
 		case (iSW[17:15])
 		4'b0000: begin
@@ -145,11 +159,7 @@ module main(
 			ADC_data <= 16'hFFFF;
 		endcase
 	end
-	
-	
-	
-	// Data output to HEX 3:0 [MSB first]
-	reg		[15:0]	ADC_data = 16'b0;
+
 	
 	// ADC data:
 	hex_encoder(ADC_data[15:12], 	oHEX3_D);
@@ -167,4 +177,16 @@ module main(
 	hex_encoder(5'b11111, 				oHEX7_D);
 	hex_encoder(5'b11111, 				oHEX5_D);
 	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// DEBUG:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+//	reg manual_clk;
+//	always @(posedge CLK_10)
+//		manual_clk <= ~iKEY[0];
+	
+	
 endmodule
+//=================================================
+// END TOPLEVEL MODULE
+//=================================================

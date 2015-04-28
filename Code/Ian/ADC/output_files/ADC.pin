@@ -504,7 +504,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E17       :        :                   :      
 VCCIO4                       : E18       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 4         :                
+oUART_TXD                    : E21       : output : 3.3-V LVCMOS      :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E23       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E24       :        :                   :         : 4         :                
@@ -536,7 +536,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 4         :                
 VCCIO4                       : F21       : power  :                   : 3.3V    : 4         :                
 GND                          : F22       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F23       :        :                   :         : 4         :                
+iUART_RTS                    : F23       : input  : 3.3-V LVCMOS      :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F24       :        :                   :         : 4         :                
 GND                          : F25       : gnd    :                   :         :           :                
 VCCIO5                       : F26       : power  :                   : 3.3V    : 5         :                

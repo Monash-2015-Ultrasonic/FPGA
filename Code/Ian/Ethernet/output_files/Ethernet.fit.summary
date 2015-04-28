@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Apr 27 23:32:25 2015
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : Ethernet
+Top-level Entity Name : main
+Family : Cyclone II
+Device : EP2C70F896C6
+Timing Models : Final
+Total logic elements : 1,247 / 68,416 ( 2 % )
+    Total combinational functions : 929 / 68,416 ( 1 % )
+    Dedicated logic registers : 823 / 68,416 ( 1 % )
+Total registers : 823
+Total pins : 65 / 622 ( 10 % )
+Total virtual pins : 0
+Total memory bits : 918,528 / 1,152,000 ( 80 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

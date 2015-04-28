@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADC
-Sun Apr 26 14:37:59 2015
+Mon Apr 27 23:54:45 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -17,24 +17,28 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: CLK_PLL:CLK_PLL_inst|altpll:altpll_component
- 14. altpll Parameter Settings by Entity Instance
- 15. Port Connectivity Checks: "hex_encoder:comb_200"
- 16. Port Connectivity Checks: "hex_encoder:comb_199"
- 17. Port Connectivity Checks: "hex_encoder:comb_198"
- 18. Port Connectivity Checks: "hex_encoder:comb_197"
- 19. Port Connectivity Checks: "hex_encoder:comb_196"
- 20. Port Connectivity Checks: "hex_encoder:comb_195"
- 21. Port Connectivity Checks: "hex_encoder:comb_194"
- 22. Port Connectivity Checks: "hex_encoder:comb_193"
- 23. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC4_instant"
- 24. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC3_instant"
- 25. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC2_instant"
- 26. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC1_instant"
- 27. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC0_instant"
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: CLK_PLL:CLK_PLL_inst|altpll:altpll_component
+ 15. Parameter Settings for User Entity Instance: TENBASET_TxD:ethernet_instant
+ 16. altpll Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "hex_encoder:comb_194"
+ 18. Port Connectivity Checks: "hex_encoder:comb_193"
+ 19. Port Connectivity Checks: "hex_encoder:comb_192"
+ 20. Port Connectivity Checks: "hex_encoder:comb_191"
+ 21. Port Connectivity Checks: "hex_encoder:comb_190"
+ 22. Port Connectivity Checks: "hex_encoder:comb_189"
+ 23. Port Connectivity Checks: "hex_encoder:comb_188"
+ 24. Port Connectivity Checks: "hex_encoder:comb_187"
+ 25. Port Connectivity Checks: "TENBASET_TxD:ethernet_instant"
+ 26. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC4_instant"
+ 27. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC3_instant"
+ 28. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC2_instant"
+ 29. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC1_instant"
+ 30. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC0_instant"
+ 31. Port Connectivity Checks: "CLK_PLL:CLK_PLL_inst"
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -60,16 +64,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 26 14:37:59 2015            ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 27 23:54:45 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 355                                              ;
-;     Total combinational functions  ; 266                                              ;
-;     Dedicated logic registers      ; 262                                              ;
-; Total registers                    ; 262                                              ;
-; Total pins                         ; 170                                              ;
+; Total logic elements               ; 589                                              ;
+;     Total combinational functions  ; 499                                              ;
+;     Dedicated logic registers      ; 371                                              ;
+; Total registers                    ; 371                                              ;
+; Total pins                         ; 172                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -185,6 +189,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------------------+-------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                  ; Library ;
 +----------------------------------+-----------------+-----------------------------+-------------------------------------------------------------------------------+---------+
+; Source/Ethernet.v                ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/Ethernet.v    ;         ;
 ; Source/main.v                    ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/main.v        ;         ;
 ; Source/SPI_Master.v              ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/SPI_Master.v  ;         ;
 ; Source/Hex Encoder.v             ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/Hex Encoder.v ;         ;
@@ -202,31 +207,31 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 355            ;
+; Estimated Total logic elements              ; 589            ;
 ;                                             ;                ;
-; Total combinational functions               ; 266            ;
+; Total combinational functions               ; 499            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 127            ;
-;     -- 3 input functions                    ; 23             ;
-;     -- <=2 input functions                  ; 116            ;
+;     -- 4 input functions                    ; 253            ;
+;     -- 3 input functions                    ; 60             ;
+;     -- <=2 input functions                  ; 186            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 241            ;
-;     -- arithmetic mode                      ; 25             ;
+;     -- normal mode                          ; 434            ;
+;     -- arithmetic mode                      ; 65             ;
 ;                                             ;                ;
-; Total registers                             ; 262            ;
-;     -- Dedicated logic registers            ; 262            ;
+; Total registers                             ; 371            ;
+;     -- Dedicated logic registers            ; 371            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 170            ;
+; I/O pins                                    ; 172            ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Total PLLs                                  ; 1              ;
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; auto_sample[5] ;
-; Maximum fan-out                             ; 183            ;
-; Total fan-out                               ; 1600           ;
-; Average fan-out                             ; 2.29           ;
+; Maximum fan-out                             ; 177            ;
+; Total fan-out                               ; 2670           ;
+; Average fan-out                             ; 2.56           ;
 +---------------------------------------------+----------------+
 
 
@@ -235,20 +240,21 @@ applicable agreement for further details.
 +-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 ; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
 +-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |main                               ; 266 (56)          ; 262 (27)     ; 0           ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                              ; work         ;
+; |main                               ; 499 (56)          ; 371 (27)     ; 0           ; 0            ; 0       ; 0         ; 172  ; 0            ; |main                                              ; work         ;
 ;    |CLK_PLL:CLK_PLL_inst|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLK_PLL:CLK_PLL_inst                         ; work         ;
 ;       |altpll:altpll_component|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLK_PLL:CLK_PLL_inst|altpll:altpll_component ; work         ;
-;    |SPI_MASTER_DEVICE:ADC0_instant| ; 35 (35)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC0_instant               ; work         ;
-;    |SPI_MASTER_DEVICE:ADC1_instant| ; 34 (34)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC1_instant               ; work         ;
-;    |SPI_MASTER_DEVICE:ADC2_instant| ; 34 (34)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC2_instant               ; work         ;
-;    |SPI_MASTER_DEVICE:ADC3_instant| ; 34 (34)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC3_instant               ; work         ;
-;    |SPI_MASTER_DEVICE:ADC4_instant| ; 34 (34)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC4_instant               ; work         ;
-;    |hex_encoder:comb_193|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_193                         ; work         ;
-;    |hex_encoder:comb_194|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_194                         ; work         ;
-;    |hex_encoder:comb_195|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_195                         ; work         ;
-;    |hex_encoder:comb_196|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_196                         ; work         ;
-;    |hex_encoder:comb_197|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_197                         ; work         ;
-;    |hex_encoder:comb_198|           ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_198                         ; work         ;
+;    |SPI_MASTER_DEVICE:ADC0_instant| ; 33 (33)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC0_instant               ; work         ;
+;    |SPI_MASTER_DEVICE:ADC1_instant| ; 33 (33)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC1_instant               ; work         ;
+;    |SPI_MASTER_DEVICE:ADC2_instant| ; 33 (33)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC2_instant               ; work         ;
+;    |SPI_MASTER_DEVICE:ADC3_instant| ; 33 (33)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC3_instant               ; work         ;
+;    |SPI_MASTER_DEVICE:ADC4_instant| ; 33 (33)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC4_instant               ; work         ;
+;    |TENBASET_TxD:ethernet_instant|  ; 239 (239)         ; 109 (109)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|TENBASET_TxD:ethernet_instant                ; work         ;
+;    |hex_encoder:comb_187|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_187                         ; work         ;
+;    |hex_encoder:comb_188|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_188                         ; work         ;
+;    |hex_encoder:comb_189|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_189                         ; work         ;
+;    |hex_encoder:comb_190|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_190                         ; work         ;
+;    |hex_encoder:comb_191|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_191                         ; work         ;
+;    |hex_encoder:comb_192|           ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:comb_192                         ; work         ;
 +-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -364,14 +370,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 262   ;
-; Number of registers using Synchronous Clear  ; 31    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 371   ;
+; Number of registers using Synchronous Clear  ; 56    ;
+; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 185   ;
+; Number of registers using Clock Enable       ; 232   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; TENBASET_TxD:ethernet_instant|LinkPulse ; 1       ;
+; Total number of inverted registers = 1  ;         ;
++-----------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -379,22 +395,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_out[15] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_out[9]  ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_in[5]   ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC1_instant|data_out[14] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_out[11] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_out[7]  ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|icounter[4]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC1_instant|data_out[12] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC1_instant|data_out[7]  ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC1_instant|data_in[13]  ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC1_instant|data_in[8]   ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC2_instant|data_out[14] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC2_instant|data_out[8]  ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC2_instant|data_in[1]   ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC3_instant|data_out[13] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC3_instant|data_out[10] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC2_instant|data_out[10] ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC2_instant|data_in[10]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC3_instant|data_out[11] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC3_instant|data_out[7]  ;
 ; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC3_instant|data_in[3]   ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC4_instant|data_out[14] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC4_instant|data_out[10] ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC4_instant|data_in[15]  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; Yes        ; |main|ADC_data[9]                                 ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC4_instant|data_out[15] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC4_instant|data_out[8]  ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC4_instant|icounter[2]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main|TENBASET_TxD:ethernet_instant|idlecount[1]  ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; Yes        ; |main|ADC_data[12]                                ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 328 LEs              ; 352 LEs                ; Yes        ; |main|TENBASET_TxD:ethernet_instant|pkt_data[7]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -438,8 +456,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK5_MULTIPLY_BY              ; 1                         ; Untyped                       ;
 ; CLK4_MULTIPLY_BY              ; 1                         ; Untyped                       ;
 ; CLK3_MULTIPLY_BY              ; 1                         ; Untyped                       ;
-; CLK2_MULTIPLY_BY              ; 1                         ; Untyped                       ;
-; CLK1_MULTIPLY_BY              ; 2                         ; Signed Integer                ;
+; CLK2_MULTIPLY_BY              ; 2                         ; Signed Integer                ;
+; CLK1_MULTIPLY_BY              ; 1                         ; Signed Integer                ;
 ; CLK0_MULTIPLY_BY              ; 4                         ; Signed Integer                ;
 ; CLK9_DIVIDE_BY                ; 0                         ; Untyped                       ;
 ; CLK8_DIVIDE_BY                ; 0                         ; Untyped                       ;
@@ -448,8 +466,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK5_DIVIDE_BY                ; 1                         ; Untyped                       ;
 ; CLK4_DIVIDE_BY                ; 1                         ; Untyped                       ;
 ; CLK3_DIVIDE_BY                ; 1                         ; Untyped                       ;
-; CLK2_DIVIDE_BY                ; 1                         ; Untyped                       ;
-; CLK1_DIVIDE_BY                ; 5                         ; Signed Integer                ;
+; CLK2_DIVIDE_BY                ; 5                         ; Signed Integer                ;
+; CLK1_DIVIDE_BY                ; 2                         ; Signed Integer                ;
 ; CLK0_DIVIDE_BY                ; 5                         ; Signed Integer                ;
 ; CLK9_PHASE_SHIFT              ; 0                         ; Untyped                       ;
 ; CLK8_PHASE_SHIFT              ; 0                         ; Untyped                       ;
@@ -474,7 +492,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK5_DUTY_CYCLE               ; 50                        ; Untyped                       ;
 ; CLK4_DUTY_CYCLE               ; 50                        ; Untyped                       ;
 ; CLK3_DUTY_CYCLE               ; 50                        ; Untyped                       ;
-; CLK2_DUTY_CYCLE               ; 50                        ; Untyped                       ;
+; CLK2_DUTY_CYCLE               ; 50                        ; Signed Integer                ;
 ; CLK1_DUTY_CYCLE               ; 50                        ; Signed Integer                ;
 ; CLK0_DUTY_CYCLE               ; 50                        ; Signed Integer                ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                       ;
@@ -706,7 +724,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; PORT_CLKBAD1                  ; PORT_UNUSED               ; Untyped                       ;
 ; PORT_CLK0                     ; PORT_USED                 ; Untyped                       ;
 ; PORT_CLK1                     ; PORT_USED                 ; Untyped                       ;
-; PORT_CLK2                     ; PORT_UNUSED               ; Untyped                       ;
+; PORT_CLK2                     ; PORT_USED                 ; Untyped                       ;
 ; PORT_CLK3                     ; PORT_UNUSED               ; Untyped                       ;
 ; PORT_CLK4                     ; PORT_UNUSED               ; Untyped                       ;
 ; PORT_CLK5                     ; PORT_UNUSED               ; Untyped                       ;
@@ -772,6 +790,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TENBASET_TxD:ethernet_instant ;
++-------------------+----------------------------------+---------------------+
+; Parameter Name    ; Value                            ; Type                ;
++-------------------+----------------------------------+---------------------+
+; IPsource_1        ; 192                              ; Signed Integer      ;
+; IPsource_2        ; 168                              ; Signed Integer      ;
+; IPsource_3        ; 9                                ; Signed Integer      ;
+; IPsource_4        ; 99                               ; Signed Integer      ;
+; IPdestination_1   ; 192                              ; Signed Integer      ;
+; IPdestination_2   ; 168                              ; Signed Integer      ;
+; IPdestination_3   ; 9                                ; Signed Integer      ;
+; IPdestination_4   ; 98                               ; Signed Integer      ;
+; PhysicalAddress_1 ; 11110100                         ; Unsigned Binary     ;
+; PhysicalAddress_2 ; 01101101                         ; Unsigned Binary     ;
+; PhysicalAddress_3 ; 00000100                         ; Unsigned Binary     ;
+; PhysicalAddress_4 ; 01100001                         ; Unsigned Binary     ;
+; PhysicalAddress_5 ; 10101111                         ; Unsigned Binary     ;
+; PhysicalAddress_6 ; 00100111                         ; Unsigned Binary     ;
+; IPchecksum1       ; 00000000000000100101100101010100 ; Unsigned Binary     ;
+; IPchecksum2       ; 00000000000000000101100101010110 ; Unsigned Binary     ;
+; IPchecksum3       ; 11111111111111111010011010101001 ; Unsigned Binary     ;
++-------------------+----------------------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                                 ;
 +-------------------------------+----------------------------------------------+
@@ -790,7 +834,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_200" ;
+; Port Connectivity Checks: "hex_encoder:comb_194" ;
 +--------+-------+----------+----------------------+
 ; Port   ; Type  ; Severity ; Details              ;
 +--------+-------+----------+----------------------+
@@ -799,7 +843,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_199" ;
+; Port Connectivity Checks: "hex_encoder:comb_193" ;
 +--------+-------+----------+----------------------+
 ; Port   ; Type  ; Severity ; Details              ;
 +--------+-------+----------+----------------------+
@@ -808,7 +852,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_198"                                                                                                                           ;
+; Port Connectivity Checks: "hex_encoder:comb_192"                                                                                                                           ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -817,7 +861,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_197"                                                                                                                           ;
+; Port Connectivity Checks: "hex_encoder:comb_191"                                                                                                                           ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -826,7 +870,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_196"                                                                                                                           ;
+; Port Connectivity Checks: "hex_encoder:comb_190"                                                                                                                           ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -835,7 +879,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_195"                                                                                                                           ;
+; Port Connectivity Checks: "hex_encoder:comb_189"                                                                                                                           ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -844,7 +888,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_194"                                                                                                                           ;
+; Port Connectivity Checks: "hex_encoder:comb_188"                                                                                                                           ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -853,12 +897,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_encoder:comb_193"                                                                                                                           ;
+; Port Connectivity Checks: "hex_encoder:comb_187"                                                                                                                           ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; number ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "number[4..4]" will be connected to GND. ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TENBASET_TxD:ethernet_instant"                                                                                                               ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; data5 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -926,12 +979,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CLK_PLL:CLK_PLL_inst"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; c1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -941,10 +1003,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sun Apr 26 14:37:56 2015
+    Info: Processing started: Mon Apr 27 23:54:41 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADC -c ADC
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (10275): Verilog HDL Module Instantiation warning at main.v(32): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file source/ethernet.v
+    Info (12023): Found entity 1: TENBASET_TxD
+Info (12021): Found 4 design units, including 4 entities, in source file source/uart.v
+    Info (12023): Found entity 1: async_transmitter
+    Info (12023): Found entity 2: async_receiver
+    Info (12023): Found entity 3: ASSERTION_ERROR
+    Info (12023): Found entity 4: BaudTickGen
 Info (12021): Found 1 design units, including 1 entities, in source file source/main.v
     Info (12023): Found entity 1: main
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master.v
@@ -953,20 +1021,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
     Info (12023): Found entity 1: hex_encoder
 Info (12021): Found 1 design units, including 1 entities, in source file clk_pll.v
     Info (12023): Found entity 1: CLK_PLL
-Info (12021): Found 1 design units, including 1 entities, in source file clk_pll_2.v
-    Info (12023): Found entity 1: CLK_PLL_2
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(155): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(156): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(157): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(158): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(161): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(164): instance has no name
+Info (12021): Found 1 design units, including 1 entities, in source file source/ascii encoder.v
+    Info (12023): Found entity 1: ASCII_encoder
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(165): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(166): instance has no name
 Critical Warning (10846): Verilog HDL Instantiation warning at main.v(167): instance has no name
 Critical Warning (10846): Verilog HDL Instantiation warning at main.v(168): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(171): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(174): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(177): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(178): instance has no name
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(45): truncated value with size 32 to match size of target (6)
-Warning (10034): Output port "oLEDR" at main.v(7) has no driver
-Warning (10034): Output port "oLEDG" at main.v(8) has no driver
+Warning (10230): Verilog HDL assignment warning at main.v(51): truncated value with size 32 to match size of target (6)
+Warning (10034): Output port "oLEDR" at main.v(10) has no driver
+Warning (10034): Output port "oLEDG" at main.v(11) has no driver
+Warning (10034): Output port "oUART_TXD" at main.v(19) has no driver
 Info (12128): Elaborating entity "CLK_PLL" for hierarchy "CLK_PLL:CLK_PLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLK_PLL:CLK_PLL_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "CLK_PLL:CLK_PLL_inst|altpll:altpll_component"
@@ -975,10 +1044,14 @@ Info (12133): Instantiated megafunction "CLK_PLL:CLK_PLL_inst|altpll:altpll_comp
     Info (12134): Parameter "clk0_duty_cycle" = "50"
     Info (12134): Parameter "clk0_multiply_by" = "4"
     Info (12134): Parameter "clk0_phase_shift" = "0"
-    Info (12134): Parameter "clk1_divide_by" = "5"
+    Info (12134): Parameter "clk1_divide_by" = "2"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
-    Info (12134): Parameter "clk1_multiply_by" = "2"
+    Info (12134): Parameter "clk1_multiply_by" = "1"
     Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk2_divide_by" = "5"
+    Info (12134): Parameter "clk2_duty_cycle" = "50"
+    Info (12134): Parameter "clk2_multiply_by" = "2"
+    Info (12134): Parameter "clk2_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
@@ -1012,7 +1085,7 @@ Info (12133): Instantiated megafunction "CLK_PLL:CLK_PLL_inst|altpll:altpll_comp
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
     Info (12134): Parameter "port_clk1" = "PORT_USED"
-    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_USED"
     Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
@@ -1029,8 +1102,24 @@ Info (12133): Instantiated megafunction "CLK_PLL:CLK_PLL_inst|altpll:altpll_comp
 Info (12128): Elaborating entity "SPI_MASTER_DEVICE" for hierarchy "SPI_MASTER_DEVICE:ADC0_instant"
 Warning (10230): Verilog HDL assignment warning at SPI_Master.v(45): truncated value with size 32 to match size of target (5)
 Warning (10230): Verilog HDL assignment warning at SPI_Master.v(71): truncated value with size 32 to match size of target (5)
-Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:comb_193"
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "TENBASET_TxD" for hierarchy "TENBASET_TxD:ethernet_instant"
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(36): truncated value with size 32 to match size of target (19)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(93): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(94): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(95): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(96): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(97): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(98): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(99): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(100): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(144): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(149): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(171): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(180): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(209): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at Ethernet.v(215): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:comb_187"
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver.
@@ -1047,6 +1136,8 @@ Warning (13034): The following nodes have both tri-state and non-tri-state drive
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[29]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[30]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[31]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[0]" has no driver
     Warning (13040): Bidir "GPIO_0[9]" has no driver
@@ -1065,8 +1156,6 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[20]" has no driver
     Warning (13040): Bidir "GPIO_0[22]" has no driver
     Warning (13040): Bidir "GPIO_0[23]" has no driver
-    Warning (13040): Bidir "GPIO_1[0]" has no driver
-    Warning (13040): Bidir "GPIO_1[1]" has no driver
     Warning (13040): Bidir "GPIO_1[2]" has no driver
     Warning (13040): Bidir "GPIO_1[3]" has no driver
     Warning (13040): Bidir "GPIO_1[4]" has no driver
@@ -1107,6 +1196,8 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_0[29]~synth"
     Warning (13010): Node "GPIO_0[30]~synth"
     Warning (13010): Node "GPIO_0[31]~synth"
+    Warning (13010): Node "GPIO_1[0]~synth"
+    Warning (13010): Node "GPIO_1[1]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oLEDR[0]" is stuck at GND
     Warning (13410): Pin "oLEDR[1]" is stuck at GND
@@ -1150,9 +1241,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oHEX7_D[4]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[5]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[6]" is stuck at VCC
+    Warning (13410): Pin "oUART_TXD" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[4]"
     Warning (15610): No output dependent on input pin "iSW[5]"
     Warning (15610): No output dependent on input pin "iSW[6]"
@@ -1168,16 +1260,17 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iKEY[1]"
     Warning (15610): No output dependent on input pin "iKEY[2]"
     Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 527 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 83 output pins
+    Warning (15610): No output dependent on input pin "iUART_RTS"
+Info (21057): Implemented 763 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 84 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 356 logic cells
+    Info (21061): Implemented 590 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 150 warnings
-    Info: Peak virtual memory: 473 megabytes
-    Info: Processing ended: Sun Apr 26 14:37:59 2015
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 169 warnings
+    Info: Peak virtual memory: 462 megabytes
+    Info: Processing ended: Mon Apr 27 23:54:45 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
 
 
