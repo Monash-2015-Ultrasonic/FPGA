@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'counter'
+Slack : -3.124
+TNS   : -219.952
+
+Type  : Slow Model Setup 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+Slack : -0.049
+TNS   : -0.049
+
+Type  : Slow Model Hold 'counter'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'counter'
+Slack : -0.449
+TNS   : -3.686
+
+Type  : Slow Model Removal 'counter'
+Slack : 1.040
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'counter'
+Slack : -1.627
+TNS   : -254.414
+
+Type  : Slow Model Minimum Pulse Width 'iCLK_50'
+Slack : 10.000
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+Slack : 11.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'counter'
+Slack : -1.468
+TNS   : -66.103
+
+Type  : Fast Model Setup 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+Slack : -0.030
+TNS   : -0.030
+
+Type  : Fast Model Hold 'counter'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'counter'
+Slack : 0.214
+TNS   : 0.000
+
+Type  : Fast Model Removal 'counter'
+Slack : 0.587
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'counter'
+Slack : -1.627
+TNS   : -254.414
+
+Type  : Fast Model Minimum Pulse Width 'iCLK_50'
+Slack : 10.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLK_PLL_inst|altpll_component|pll|clk[0]'
+Slack : 11.500
+TNS   : 0.000
+
+------------------------------------------------------------
