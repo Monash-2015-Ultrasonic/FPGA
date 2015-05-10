@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Ethernet100BASET
-Thu Apr 30 03:36:44 2015
+Mon May 11 00:04:36 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -233,8 +233,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Unconstrained Clocks            ; 2     ; 2    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 1     ; 1    ;
-; Unconstrained Output Port Paths ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 2     ; 2    ;
 +---------------------------------+-------+------+
 
 
@@ -244,7 +244,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Apr 30 03:36:42 2015
+    Info: Processing started: Mon May 11 00:04:34 2015
 Info: Command: quartus_sta Ethernet100BASET -c Ethernet100BASET
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -256,7 +256,7 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Ethernet100BASET.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Warning (332060): Node: iCLK_50 was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: Ethernet100BASET:ethernet_instant|FLP_clk[10] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: Ethernet100BASET:ethernet_instant|pwmcount[9] was determined to be a clock but was found without an associated clock assignment.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: CLK_PLL_inst|altpll_component|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
@@ -273,7 +273,7 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Warning (332060): Node: iCLK_50 was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: Ethernet100BASET:ethernet_instant|FLP_clk[10] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: Ethernet100BASET:ethernet_instant|pwmcount[9] was determined to be a clock but was found without an associated clock assignment.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: CLK_PLL_inst|altpll_component|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Info (332140): No Setup paths to report
@@ -288,8 +288,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 465 megabytes
-    Info: Processing ended: Thu Apr 30 03:36:44 2015
+    Info: Peak virtual memory: 456 megabytes
+    Info: Processing ended: Mon May 11 00:04:36 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

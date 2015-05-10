@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Apr 30 03:36:18 2015
+Fitter Status : Successful - Mon May 11 00:04:27 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : Ethernet100BASET
 Top-level Entity Name : main
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 766 / 68,416 ( 1 % )
-    Total combinational functions : 581 / 68,416 ( < 1 % )
-    Dedicated logic registers : 523 / 68,416 ( < 1 % )
-Total registers : 523
+Total logic elements : 776 / 68,416 ( 1 % )
+    Total combinational functions : 579 / 68,416 ( < 1 % )
+    Dedicated logic registers : 524 / 68,416 ( < 1 % )
+Total registers : 524
 Total pins : 65 / 622 ( 10 % )
 Total virtual pins : 0
 Total memory bits : 131,072 / 1,152,000 ( 11 % )

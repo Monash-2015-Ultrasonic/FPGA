@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="Ethernet">
-		<CBX_INST_ENTRY INSTANCE_NAME="|main|TENBASET_TxD:comb_3|altsyncram:WideOr7_rtl_0" CBX_FILE_NAME="altsyncram_68v.tdf"/>
-	</PROJECT>
-</LOG_ROOT>

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Ethernet100BASET
-Thu Apr 30 03:36:00 2015
+Mon May 11 00:03:15 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -15,13 +15,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   7. Partition Status Summary
   8. Dependent File Changes for Partition Top
   9. Partition for Top-Level Resource Utilization by Entity
- 10. Registers Removed During Synthesis
- 11. Parameter Settings for User Entity Instance: CLK_PLL:CLK_PLL_inst|altpll:altpll_component
- 12. Partition Dependent Files
- 13. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 14. SignalTap II Logic Analyzer Settings
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: CLK_PLL:CLK_PLL_inst|altpll:altpll_component
+ 11. Partition Dependent Files
+ 12. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 13. SignalTap II Logic Analyzer Settings
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,7 +47,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 30 03:36:00 2015            ;
+; Analysis & Synthesis Status        ; Successful - Mon May 11 00:03:15 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Ethernet100BASET                                 ;
 ; Top-level Entity Name              ; main                                             ;
@@ -256,7 +256,7 @@ applicable agreement for further details.
 +-----------------------------------+---------------------------+-------------------+----------+----------------------------------+----------------------------------+
 ; Hierarchy                         ; File Name                 ; Relative Location ; Change   ; Old                              ; New                              ;
 +-----------------------------------+---------------------------+-------------------+----------+----------------------------------+----------------------------------+
-; Ethernet100BASET:ethernet_instant ; Source/Ethernet100BASET.v ; Project Directory ; Checksum ; 84e64d9b16bec03070b18669097251b3 ; f40b0e07875b979ebfaccf507885031e ;
+; Ethernet100BASET:ethernet_instant ; Source/Ethernet100BASET.v ; Project Directory ; Checksum ; a3ba34a08fcdb6d63ad9355421e8b803 ; 877f5ed2ac5f3f1f219f9ee7c382f803 ;
 +-----------------------------------+---------------------------+-------------------+----------+----------------------------------+----------------------------------+
 
 
@@ -265,32 +265,12 @@ applicable agreement for further details.
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 ; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |main                                  ; 33 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                              ; work         ;
+; |main                                  ; 29 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                              ; work         ;
 ;    |CLK_PLL:CLK_PLL_inst|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLK_PLL:CLK_PLL_inst                         ; work         ;
 ;       |altpll:altpll_component|        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLK_PLL:CLK_PLL_inst|altpll:altpll_component ; work         ;
-;    |Ethernet100BASET:ethernet_instant| ; 33 (33)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|Ethernet100BASET:ethernet_instant            ; work         ;
+;    |Ethernet100BASET:ethernet_instant| ; 29 (29)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|Ethernet100BASET:ethernet_instant            ; work         ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                             ;
-+-----------------------------------------------------+----------------------------------------------------------+
-; Register name                                       ; Reason for Removal                                       ;
-+-----------------------------------------------------+----------------------------------------------------------+
-; Ethernet100BASET:ethernet_instant|TXm               ; Stuck at GND due to stuck port data_in                   ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[0] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[0] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[1] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[1] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[2] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[2] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[3] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[3] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[4] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[4] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[5] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[5] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[6] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[6] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[7] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[7] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[8] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[8] ;
-; Ethernet100BASET:ethernet_instant|LinkPulseCount[9] ; Merged with Ethernet100BASET:ethernet_instant|FLP_clk[9] ;
-; Total Number of Removed Registers = 11              ;                                                          ;
-+-----------------------------------------------------+----------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------+
@@ -673,7 +653,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; File                                      ; Location           ; Library ; Checksum                         ;
 +-------------------------------------------+--------------------+---------+----------------------------------+
 ; CLK_PLL.v                                 ; Project Directory  ; work    ; 28572d753130f167cad21b3cd05310d6 ;
-; Source/Ethernet100BASET.v                 ; Project Directory  ; work    ; f40b0e07875b979ebfaccf507885031e ;
+; Source/Ethernet100BASET.v                 ; Project Directory  ; work    ; 877f5ed2ac5f3f1f219f9ee7c382f803 ;
 ; Source/main.v                             ; Project Directory  ; work    ; e9d536e8af2fb88c49a2d4d98db648a1 ;
 ; libraries/megafunctions/aglobal130.inc    ; Quartus II Install ; work    ; 6fc5170a475a9c6f00c3fd7627b30d31 ;
 ; libraries/megafunctions/altpll.tdf        ; Quartus II Install ; work    ; f8c6da9aeecfb4ea26e5731664857545 ;
@@ -757,8 +737,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------------+
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
-; sld_hub:auto_hub ; 00:00:02     ;
-; Top              ; 00:00:02     ;
+; sld_hub:auto_hub ; 00:00:03     ;
+; Top              ; 00:00:03     ;
 +------------------+--------------+
 
 
@@ -768,12 +748,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Apr 30 03:35:53 2015
+    Info: Processing started: Mon May 11 00:03:07 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Ethernet100BASET -c Ethernet100BASET
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/main.v
     Info (12023): Found entity 1: main
-Warning (10229): Verilog HDL Expression warning at Ethernet100BASET.v(7): truncated literal to match 4 bits
 Info (12021): Found 1 design units, including 1 entities, in source file source/ethernet100baset.v
     Info (12023): Found entity 1: Ethernet100BASET
 Info (12021): Found 1 design units, including 1 entities, in source file clk_pll.v
@@ -839,11 +818,10 @@ Info (12133): Instantiated megafunction "CLK_PLL:CLK_PLL_inst|altpll:altpll_comp
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
 Info (12128): Elaborating entity "Ethernet100BASET" for hierarchy "Ethernet100BASET:ethernet_instant"
-Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(6): truncated value with size 16 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(12): truncated value with size 32 to match size of target (11)
-Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(16): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(25): truncated value with size 32 to match size of target (18)
-Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(30): truncated value with size 8 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(17): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(20): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(31): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at Ethernet100BASET.v(35): truncated value with size 32 to match size of target (10)
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jp14.tdf
     Info (12023): Found entity 1: altsyncram_jp14
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_rdq1.tdf
@@ -876,11 +854,12 @@ Info (281037): Using 4 processors to synthesize 2 partitions in parallel
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Apr 30 03:35:57 2015
+    Info: Processing started: Mon May 11 00:03:12 2015
 Info: Command: quartus_map --parallel=1 --helper=0 --partition=Top Ethernet100BASET -c Ethernet100BASET
 Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[0]" has no driver
     Warning (13040): Bidir "GPIO_0[1]" has no driver
@@ -944,45 +923,51 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_1[29]" has no driver
     Warning (13040): Bidir "GPIO_1[30]" has no driver
     Warning (13040): Bidir "GPIO_1[31]" has no driver
-Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "GPIO_1[1]" is fed by GND
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_1[0]~synth"
-Info (21057): Implemented 163 device resources after synthesis - the final resource count might be different
+    Warning (13010): Node "GPIO_1[1]~synth"
+Info (21057): Implemented 159 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
     Info (21060): Implemented 128 bidirectional pins
-    Info (21061): Implemented 33 logic cells
+    Info (21061): Implemented 29 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
     Info: Peak virtual memory: 437 megabytes
-    Info: Processing ended: Thu Apr 30 03:35:59 2015
+    Info: Processing ended: Mon May 11 00:03:14 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Apr 30 03:35:57 2015
+    Info: Processing started: Mon May 11 00:03:12 2015
 Info: Command: quartus_map --parallel=1 --helper=2 --partition=sld_hub:auto_hub Ethernet100BASET -c Ethernet100BASET
 Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_hub:auto_hub
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
-Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 202 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 37 output pins
-    Info (21061): Implemented 145 logic cells
+    Info (21061): Implemented 146 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 437 megabytes
-    Info: Processing ended: Thu Apr 30 03:36:00 2015
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Mon May 11 00:03:14 2015
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 Info (281038): Finished parallel synthesis of all partitions
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 77 warnings
+Info (144001): Generated suppressed messages file E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/Ethernet100BASET-FLP/output_files/Ethernet100BASET.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 75 warnings
     Info: Peak virtual memory: 531 megabytes
-    Info: Processing ended: Thu Apr 30 03:36:00 2015
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Processing ended: Mon May 11 00:03:15 2015
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/Ethernet100BASET-FLP/output_files/Ethernet100BASET.map.smsg.
 
 

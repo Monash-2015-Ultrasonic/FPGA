@@ -2,39 +2,43 @@ module Ethernet100BASET(
 	input			CLK100, CLK16,
 	output reg	TXp, TXm
 	);
-	
-	reg [3:0]	LCW = 16'h8100;
-	reg [3:0]	i = 4'hFF;
-	reg			type1, type2;
-	
-	reg [10:0]	FLP_clk;
-	always @(posedge CLK16)
-		FLP_clk <= FLP_clk + 1;
 
-	always @(posedge FLP_clk[10]) begin
-		type1 <= ~type1;							// clk 0=off 1=on
-		i <= i-1;
+	reg [9:0] pwmcount;
+	reg dutycycle = 1;
+	reg pwm;
+	
+	reg [15:0]	LCW = 16'h8100;
+	reg [5:0] 	position;
+	reg [3:0] 	LCWposition;
+	reg TXout;
+
+	always @(negedge pwmcount[9]) begin
+		if (position < 33) begin
+			position <= position + 1;
+			case (position[0])
+			1'b0: begin TXout <= 1; end
+			1'b1: begin TXout <= LCW[LCWposition]; LCWposition <= LCWposition + 1; end
+			endcase
+		end
+		else begin
+			position <= 0;
+			TXout <= 0;
+		end
 	end
 	
-	always @(negedge FLP_clk[10]) begin
-		type2 <= ~type2;							// LCW 0=off 1=on
-	end	
-		
-	reg [17:0] LinkPulseCount; 
-	always @(posedge CLK16) 
-		LinkPulseCount <= LinkPulseCount + 1;
-	
+	reg [17:0]	counter;
 	always @(posedge CLK16) begin
-		case (LinkPulseCount[17:15])
-		1'b1:
-			TXp <= ((type1 ^ type2) ? 1'b1   : LCW[i]) & FLP_clk[10] & ~FLP_clk[9:2] & FLP_clk[1] & ~FLP_clk[0];
-		default: 
-			TXp <= 1'b0;
-		endcase
+		counter <= counter + 1;
+	end
+	
+	always @ (posedge CLK16) begin
+		pwmcount <= pwmcount + 1;
+			
+		TXp = (dutycycle >= pwmcount) & TXout;// & counter[17];
 	end
 	
 	always @(posedge CLK16) begin
-			TXm <= 1'b0;
+		TXm <= ~TXp;
 	end
 	
 endmodule
