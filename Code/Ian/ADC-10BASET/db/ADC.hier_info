@@ -9,7 +9,7 @@ iSW[5] => ~NO_FANOUT~
 iSW[6] => ~NO_FANOUT~
 iSW[7] => ~NO_FANOUT~
 iSW[8] => ~NO_FANOUT~
-iSW[9] => ~NO_FANOUT~
+iSW[9] => on.DATAIN
 iSW[10] => ~NO_FANOUT~
 iSW[11] => ~NO_FANOUT~
 iSW[12] => ~NO_FANOUT~
@@ -49,62 +49,62 @@ oLEDG[5] <= <GND>
 oLEDG[6] <= <GND>
 oLEDG[7] <= <GND>
 oLEDG[8] <= <GND>
-oHEX0_D[0] <= hex_encoder:comb_113.port1
-oHEX0_D[1] <= hex_encoder:comb_113.port1
-oHEX0_D[2] <= hex_encoder:comb_113.port1
-oHEX0_D[3] <= hex_encoder:comb_113.port1
-oHEX0_D[4] <= hex_encoder:comb_113.port1
-oHEX0_D[5] <= hex_encoder:comb_113.port1
-oHEX0_D[6] <= hex_encoder:comb_113.port1
-oHEX1_D[0] <= hex_encoder:comb_112.port1
-oHEX1_D[1] <= hex_encoder:comb_112.port1
-oHEX1_D[2] <= hex_encoder:comb_112.port1
-oHEX1_D[3] <= hex_encoder:comb_112.port1
-oHEX1_D[4] <= hex_encoder:comb_112.port1
-oHEX1_D[5] <= hex_encoder:comb_112.port1
-oHEX1_D[6] <= hex_encoder:comb_112.port1
-oHEX2_D[0] <= hex_encoder:comb_111.port1
-oHEX2_D[1] <= hex_encoder:comb_111.port1
-oHEX2_D[2] <= hex_encoder:comb_111.port1
-oHEX2_D[3] <= hex_encoder:comb_111.port1
-oHEX2_D[4] <= hex_encoder:comb_111.port1
-oHEX2_D[5] <= hex_encoder:comb_111.port1
-oHEX2_D[6] <= hex_encoder:comb_111.port1
-oHEX3_D[0] <= hex_encoder:comb_110.port1
-oHEX3_D[1] <= hex_encoder:comb_110.port1
-oHEX3_D[2] <= hex_encoder:comb_110.port1
-oHEX3_D[3] <= hex_encoder:comb_110.port1
-oHEX3_D[4] <= hex_encoder:comb_110.port1
-oHEX3_D[5] <= hex_encoder:comb_110.port1
-oHEX3_D[6] <= hex_encoder:comb_110.port1
-oHEX4_D[0] <= hex_encoder:comb_115.port1
-oHEX4_D[1] <= hex_encoder:comb_115.port1
-oHEX4_D[2] <= hex_encoder:comb_115.port1
-oHEX4_D[3] <= hex_encoder:comb_115.port1
-oHEX4_D[4] <= hex_encoder:comb_115.port1
-oHEX4_D[5] <= hex_encoder:comb_115.port1
-oHEX4_D[6] <= hex_encoder:comb_115.port1
-oHEX5_D[0] <= hex_encoder:comb_117.port1
-oHEX5_D[1] <= hex_encoder:comb_117.port1
-oHEX5_D[2] <= hex_encoder:comb_117.port1
-oHEX5_D[3] <= hex_encoder:comb_117.port1
-oHEX5_D[4] <= hex_encoder:comb_117.port1
-oHEX5_D[5] <= hex_encoder:comb_117.port1
-oHEX5_D[6] <= hex_encoder:comb_117.port1
-oHEX6_D[0] <= hex_encoder:comb_114.port1
-oHEX6_D[1] <= hex_encoder:comb_114.port1
-oHEX6_D[2] <= hex_encoder:comb_114.port1
-oHEX6_D[3] <= hex_encoder:comb_114.port1
-oHEX6_D[4] <= hex_encoder:comb_114.port1
-oHEX6_D[5] <= hex_encoder:comb_114.port1
-oHEX6_D[6] <= hex_encoder:comb_114.port1
-oHEX7_D[0] <= hex_encoder:comb_116.port1
-oHEX7_D[1] <= hex_encoder:comb_116.port1
-oHEX7_D[2] <= hex_encoder:comb_116.port1
-oHEX7_D[3] <= hex_encoder:comb_116.port1
-oHEX7_D[4] <= hex_encoder:comb_116.port1
-oHEX7_D[5] <= hex_encoder:comb_116.port1
-oHEX7_D[6] <= hex_encoder:comb_116.port1
+oHEX0_D[0] <= hex_encoder:comb_161.port1
+oHEX0_D[1] <= hex_encoder:comb_161.port1
+oHEX0_D[2] <= hex_encoder:comb_161.port1
+oHEX0_D[3] <= hex_encoder:comb_161.port1
+oHEX0_D[4] <= hex_encoder:comb_161.port1
+oHEX0_D[5] <= hex_encoder:comb_161.port1
+oHEX0_D[6] <= hex_encoder:comb_161.port1
+oHEX1_D[0] <= hex_encoder:comb_160.port1
+oHEX1_D[1] <= hex_encoder:comb_160.port1
+oHEX1_D[2] <= hex_encoder:comb_160.port1
+oHEX1_D[3] <= hex_encoder:comb_160.port1
+oHEX1_D[4] <= hex_encoder:comb_160.port1
+oHEX1_D[5] <= hex_encoder:comb_160.port1
+oHEX1_D[6] <= hex_encoder:comb_160.port1
+oHEX2_D[0] <= hex_encoder:comb_159.port1
+oHEX2_D[1] <= hex_encoder:comb_159.port1
+oHEX2_D[2] <= hex_encoder:comb_159.port1
+oHEX2_D[3] <= hex_encoder:comb_159.port1
+oHEX2_D[4] <= hex_encoder:comb_159.port1
+oHEX2_D[5] <= hex_encoder:comb_159.port1
+oHEX2_D[6] <= hex_encoder:comb_159.port1
+oHEX3_D[0] <= hex_encoder:comb_158.port1
+oHEX3_D[1] <= hex_encoder:comb_158.port1
+oHEX3_D[2] <= hex_encoder:comb_158.port1
+oHEX3_D[3] <= hex_encoder:comb_158.port1
+oHEX3_D[4] <= hex_encoder:comb_158.port1
+oHEX3_D[5] <= hex_encoder:comb_158.port1
+oHEX3_D[6] <= hex_encoder:comb_158.port1
+oHEX4_D[0] <= hex_encoder:comb_163.port1
+oHEX4_D[1] <= hex_encoder:comb_163.port1
+oHEX4_D[2] <= hex_encoder:comb_163.port1
+oHEX4_D[3] <= hex_encoder:comb_163.port1
+oHEX4_D[4] <= hex_encoder:comb_163.port1
+oHEX4_D[5] <= hex_encoder:comb_163.port1
+oHEX4_D[6] <= hex_encoder:comb_163.port1
+oHEX5_D[0] <= hex_encoder:comb_165.port1
+oHEX5_D[1] <= hex_encoder:comb_165.port1
+oHEX5_D[2] <= hex_encoder:comb_165.port1
+oHEX5_D[3] <= hex_encoder:comb_165.port1
+oHEX5_D[4] <= hex_encoder:comb_165.port1
+oHEX5_D[5] <= hex_encoder:comb_165.port1
+oHEX5_D[6] <= hex_encoder:comb_165.port1
+oHEX6_D[0] <= hex_encoder:comb_162.port1
+oHEX6_D[1] <= hex_encoder:comb_162.port1
+oHEX6_D[2] <= hex_encoder:comb_162.port1
+oHEX6_D[3] <= hex_encoder:comb_162.port1
+oHEX6_D[4] <= hex_encoder:comb_162.port1
+oHEX6_D[5] <= hex_encoder:comb_162.port1
+oHEX6_D[6] <= hex_encoder:comb_162.port1
+oHEX7_D[0] <= hex_encoder:comb_164.port1
+oHEX7_D[1] <= hex_encoder:comb_164.port1
+oHEX7_D[2] <= hex_encoder:comb_164.port1
+oHEX7_D[3] <= hex_encoder:comb_164.port1
+oHEX7_D[4] <= hex_encoder:comb_164.port1
+oHEX7_D[5] <= hex_encoder:comb_164.port1
+oHEX7_D[6] <= hex_encoder:comb_164.port1
 GPIO_0[0] <> SPI_MASTER_DEVICE:ADC0_instant.MISO
 GPIO_0[1] <> SPI_MASTER_DEVICE:ADC0_instant.MOSI
 GPIO_0[2] <> <UNC>
@@ -137,12 +137,12 @@ GPIO_0[28] <> <UNC>
 GPIO_0[29] <> <UNC>
 GPIO_0[30] <> <UNC>
 GPIO_0[31] <> <UNC>
-GPIO_1[0] <> <UNC>
-GPIO_1[1] <> <UNC>
+GPIO_1[0] <> SPI_MASTER_DEVICE:mbed_instant.MISO
+GPIO_1[1] <> SPI_MASTER_DEVICE:mbed_instant.MOSI
 GPIO_1[2] <> <UNC>
-GPIO_1[3] <> <UNC>
+GPIO_1[3] <> SPI_MASTER_DEVICE:mbed_instant.SCK
 GPIO_1[4] <> <UNC>
-GPIO_1[5] <> <UNC>
+GPIO_1[5] <> SPI_MASTER_DEVICE:mbed_instant.CSbar
 GPIO_1[6] <> <UNC>
 GPIO_1[7] <> <UNC>
 GPIO_1[8] <> <UNC>
@@ -161,7 +161,7 @@ GPIO_1[20] <> <UNC>
 GPIO_1[21] <> <UNC>
 GPIO_1[22] <> <UNC>
 GPIO_1[23] <> <UNC>
-GPIO_1[24] <> <UNC>
+GPIO_1[24] <> GPIO_1[24]
 GPIO_1[25] <> <UNC>
 GPIO_1[26] <> GPIO_1[26]
 GPIO_1[27] <> GPIO_1[27]
@@ -240,64 +240,7 @@ icdrclk <= <GND>
 
 
 |main|SPI_MASTER_DEVICE:ADC0_instant
-SPI_CLK => data_out[0].CLK
-SPI_CLK => data_out[1].CLK
-SPI_CLK => data_out[2].CLK
-SPI_CLK => data_out[3].CLK
-SPI_CLK => data_out[4].CLK
-SPI_CLK => data_out[5].CLK
-SPI_CLK => data_out[6].CLK
-SPI_CLK => data_out[7].CLK
-SPI_CLK => data_out[8].CLK
-SPI_CLK => data_out[9].CLK
-SPI_CLK => data_out[10].CLK
-SPI_CLK => data_out[11].CLK
-SPI_CLK => data_out[12].CLK
-SPI_CLK => data_out[13].CLK
-SPI_CLK => data_out[14].CLK
-SPI_CLK => data_out[15].CLK
-SPI_CLK => ocounter[0].CLK
-SPI_CLK => ocounter[1].CLK
-SPI_CLK => ocounter[2].CLK
-SPI_CLK => ocounter[3].CLK
-SPI_CLK => ocounter[4].CLK
-SPI_CLK => data_in_final[0].CLK
-SPI_CLK => data_in_final[1].CLK
-SPI_CLK => data_in_final[2].CLK
-SPI_CLK => data_in_final[3].CLK
-SPI_CLK => data_in_final[4].CLK
-SPI_CLK => data_in_final[5].CLK
-SPI_CLK => data_in_final[6].CLK
-SPI_CLK => data_in_final[7].CLK
-SPI_CLK => data_in_final[8].CLK
-SPI_CLK => data_in_final[9].CLK
-SPI_CLK => data_in_final[10].CLK
-SPI_CLK => data_in_final[11].CLK
-SPI_CLK => data_in_final[12].CLK
-SPI_CLK => data_in_final[13].CLK
-SPI_CLK => data_in_final[14].CLK
-SPI_CLK => data_in_final[15].CLK
-SPI_CLK => data_in[0].CLK
-SPI_CLK => data_in[1].CLK
-SPI_CLK => data_in[2].CLK
-SPI_CLK => data_in[3].CLK
-SPI_CLK => data_in[4].CLK
-SPI_CLK => data_in[5].CLK
-SPI_CLK => data_in[6].CLK
-SPI_CLK => data_in[7].CLK
-SPI_CLK => data_in[8].CLK
-SPI_CLK => data_in[9].CLK
-SPI_CLK => data_in[10].CLK
-SPI_CLK => data_in[11].CLK
-SPI_CLK => data_in[12].CLK
-SPI_CLK => data_in[13].CLK
-SPI_CLK => data_in[14].CLK
-SPI_CLK => icounter[0].CLK
-SPI_CLK => icounter[1].CLK
-SPI_CLK => icounter[2].CLK
-SPI_CLK => icounter[3].CLK
-SPI_CLK => icounter[4].CLK
-SPI_CLK => SCK.DATAIN
+SYS_CLK => SPI_CLK.CLK
 ENA => Decoder2.IN0
 ENA => CSbar.DATAIN
 DATA_MOSI[0] => data_out.DATAB
@@ -342,6 +285,14 @@ DATA_MISO[15] <= data_in_final[15].DB_MAX_OUTPUT_PORT_TYPE
 
 |main|FIFO:FIFO_ADC0
 clock => regarray.we_a.CLK
+clock => regarray.waddr_a[11].CLK
+clock => regarray.waddr_a[10].CLK
+clock => regarray.waddr_a[9].CLK
+clock => regarray.waddr_a[8].CLK
+clock => regarray.waddr_a[7].CLK
+clock => regarray.waddr_a[6].CLK
+clock => regarray.waddr_a[5].CLK
+clock => regarray.waddr_a[4].CLK
 clock => regarray.waddr_a[3].CLK
 clock => regarray.waddr_a[2].CLK
 clock => regarray.waddr_a[1].CLK
@@ -368,10 +319,26 @@ clock => rd_reg[0].CLK
 clock => rd_reg[1].CLK
 clock => rd_reg[2].CLK
 clock => rd_reg[3].CLK
+clock => rd_reg[4].CLK
+clock => rd_reg[5].CLK
+clock => rd_reg[6].CLK
+clock => rd_reg[7].CLK
+clock => rd_reg[8].CLK
+clock => rd_reg[9].CLK
+clock => rd_reg[10].CLK
+clock => rd_reg[11].CLK
 clock => wr_reg[0].CLK
 clock => wr_reg[1].CLK
 clock => wr_reg[2].CLK
 clock => wr_reg[3].CLK
+clock => wr_reg[4].CLK
+clock => wr_reg[5].CLK
+clock => wr_reg[6].CLK
+clock => wr_reg[7].CLK
+clock => wr_reg[8].CLK
+clock => wr_reg[9].CLK
+clock => wr_reg[10].CLK
+clock => wr_reg[11].CLK
 clock => out[0].CLK
 clock => out[1].CLK
 clock => out[2].CLK
@@ -399,10 +366,26 @@ reset => rd_reg[0].ACLR
 reset => rd_reg[1].ACLR
 reset => rd_reg[2].ACLR
 reset => rd_reg[3].ACLR
+reset => rd_reg[4].ACLR
+reset => rd_reg[5].ACLR
+reset => rd_reg[6].ACLR
+reset => rd_reg[7].ACLR
+reset => rd_reg[8].ACLR
+reset => rd_reg[9].ACLR
+reset => rd_reg[10].ACLR
+reset => rd_reg[11].ACLR
 reset => wr_reg[0].ACLR
 reset => wr_reg[1].ACLR
 reset => wr_reg[2].ACLR
 reset => wr_reg[3].ACLR
+reset => wr_reg[4].ACLR
+reset => wr_reg[5].ACLR
+reset => wr_reg[6].ACLR
+reset => wr_reg[7].ACLR
+reset => wr_reg[8].ACLR
+reset => wr_reg[9].ACLR
+reset => wr_reg[10].ACLR
+reset => wr_reg[11].ACLR
 wr => dffw1.DATAIN
 rd => dffr1.DATAIN
 din[0] => regarray.data_a[0].DATAIN
@@ -457,7 +440,51 @@ dout[14] <= out[14].DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= out[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_110
+|main|SPI_MASTER_DEVICE:mbed_instant
+SYS_CLK => SPI_CLK.CLK
+ENA => Decoder2.IN0
+ENA => CSbar.DATAIN
+DATA_MOSI[0] => data_out.DATAB
+DATA_MOSI[1] => data_out.DATAB
+DATA_MOSI[2] => data_out.DATAB
+DATA_MOSI[3] => data_out.DATAB
+DATA_MOSI[4] => data_out.DATAB
+DATA_MOSI[5] => data_out.DATAB
+DATA_MOSI[6] => data_out.DATAB
+DATA_MOSI[7] => data_out.DATAB
+DATA_MOSI[8] => data_out.DATAB
+DATA_MOSI[9] => data_out.DATAB
+DATA_MOSI[10] => data_out.DATAB
+DATA_MOSI[11] => data_out.DATAB
+DATA_MOSI[12] => data_out.DATAB
+DATA_MOSI[13] => data_out.DATAB
+DATA_MOSI[14] => data_out.DATAB
+DATA_MOSI[15] => data_out.DATAB
+MISO => data_in_final.DATAB
+MISO => data_in.DATAA
+MOSI <= data_out[15].DB_MAX_OUTPUT_PORT_TYPE
+CSbar <= ENA.DB_MAX_OUTPUT_PORT_TYPE
+SCK <= SPI_CLK.DB_MAX_OUTPUT_PORT_TYPE
+FIN <= FIN.DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[0] <= data_in_final[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[1] <= data_in_final[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[2] <= data_in_final[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[3] <= data_in_final[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[4] <= data_in_final[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[5] <= data_in_final[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[6] <= data_in_final[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[7] <= data_in_final[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[8] <= data_in_final[8].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[9] <= data_in_final[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[10] <= data_in_final[10].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[11] <= data_in_final[11].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[12] <= data_in_final[12].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[13] <= data_in_final[13].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[14] <= data_in_final[14].DB_MAX_OUTPUT_PORT_TYPE
+DATA_MISO[15] <= data_in_final[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|hex_encoder:comb_158
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -472,7 +499,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_111
+|main|hex_encoder:comb_159
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -487,7 +514,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_112
+|main|hex_encoder:comb_160
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -502,7 +529,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_113
+|main|hex_encoder:comb_161
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -517,7 +544,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_114
+|main|hex_encoder:comb_162
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -532,7 +559,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_115
+|main|hex_encoder:comb_163
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -547,7 +574,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_116
+|main|hex_encoder:comb_164
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -562,7 +589,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:comb_117
+|main|hex_encoder:comb_165
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2

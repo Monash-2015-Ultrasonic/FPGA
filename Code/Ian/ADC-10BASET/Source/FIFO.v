@@ -27,7 +27,6 @@ module FIFO # (parameter abits = 4, dbits = 3)(
 	 
 	assign db_rd = ~dffr1 & dffr2; //monostable multivibrator to detect only one pulse of the button
 	 
-	 
 	reg [dbits-1:0] regarray[2**abits-1:0]; //number of words in fifo = 2^(number of address bits)
 	reg [abits-1:0] wr_reg, wr_next, wr_succ; //points to the register that needs to be written to
 	reg [abits-1:0] rd_reg, rd_next, rd_succ; //points to the register that needs to be read from

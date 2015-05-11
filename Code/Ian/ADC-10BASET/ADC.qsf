@@ -600,6 +600,7 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE Source/stp1.stp
 set_global_assignment -name SLD_FILE "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC-10BASET/Source/stp1_auto_stripped.stp"
+set_global_assignment -name VERILOG_FILE "Source/ASCII Encoder.v"
 set_global_assignment -name VERILOG_FILE Source/FIFO.v
 set_global_assignment -name VERILOG_FILE Source/main.v
 set_global_assignment -name VERILOG_FILE Source/SPI_Master.v

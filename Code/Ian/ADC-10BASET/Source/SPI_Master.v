@@ -2,7 +2,7 @@
 // SPI MASTER MODULE
 //=================================================
 module SPI_MASTER_DEVICE(
-	input					SPI_CLK,
+	input					SYS_CLK,
 	input 				ENA,
 	input		[15:0]	DATA_MOSI,
 	input 				MISO,
@@ -22,6 +22,10 @@ module SPI_MASTER_DEVICE(
 	reg	[4:0]		icounter 		= 5'b0;			// counter for MISO data
 	reg	[4:0]		ocounter 		= 5'b0;			// counter for MOSI data
 	
+	reg					SPI_CLK;
+	always @(posedge SYS_CLK)
+		SPI_CLK <= ~SPI_CLK;
+	
 	assign SCK 				= SPI_CLK;
 	assign CSbar 			= ~ENA;
 	assign DATA_MISO 		= data_in_final;
@@ -38,7 +42,7 @@ module SPI_MASTER_DEVICE(
 		end
 
 		1'b0: begin			
-			case (icounter==16)
+			case (icounter>15)
 			1'b0: begin
 				data_in 		<= {data_in[14:0], MISO};
 				
@@ -63,7 +67,7 @@ module SPI_MASTER_DEVICE(
 			data_out 			<= DATA_MOSI;	
 		end
 		1'b0: begin
-			case (ocounter==16)
+			case (ocounter>15)
 			1'b0: begin
 				data_out 		<= {data_out[14:0], 1'b0};
 				

@@ -63,7 +63,7 @@ module main(
 	
 	
 	SPI_MASTER_DEVICE ADC0_instant(
-		.SPI_CLK 	( counter			),
+		.SYS_CLK 	( CLK_40			),
 		.ENA 			( sample		),  	
 		.DATA_MOSI 	( ADC0_cmd 			),
 		.MISO 		( GPIO_0[0] 		),		// MISO = SDO 		= 3
@@ -74,7 +74,7 @@ module main(
 		.DATA_MISO 	( ADC0_data 		)
 	);
 
-	FIFO # (.abits (4), .dbits (16)) FIFO_ADC0(
+	FIFO # (.abits (12), .dbits (16)) FIFO_ADC0(
 		.clock (counter),
 		.reset (rst),
 		.wr (ADC_fin[0]),
@@ -87,6 +87,31 @@ module main(
 
 	// Data output to HEX 3:0 [MSB first]
 	wire		[15:0]	ADC_data;
+	
+	reg counter_slave;
+	always @(posedge CLK_40)
+		counter_slave <= counter_slave + 1;
+	
+	reg [8:0] counter_slave_en;
+	always @(posedge CLK_40)
+		counter_slave_en <= counter_slave_en + 1;
+		
+	SPI_MASTER_DEVICE mbed_instant(
+		.SYS_CLK 	( CLK_40			),
+		.ENA 			( counter_slave_en[8] & on		),  	
+		.DATA_MOSI 	( ADC_data>>1			),
+		.MISO 		( GPIO_1[0] 		),		// MISO = SDO 		= 3
+		.MOSI 		( GPIO_1[1] 		),		// MOSI = SDI 		= 4
+		.SCK 			( GPIO_1[3]			),		// SCK = SCLK 		= 5
+		.CSbar 		( GPIO_1[5] 		),		// CSbar = CSbar 	= 6
+	);
+	
+	reg [9:0] usonic;
+	always @(posedge CLK_40)
+		usonic <= usonic + 1;
+		
+	assign GPIO_1[24] = usonic[9];
+	//assign GPIO_1[24] = ~iKEY[3];
 	
 //	always @(posedge CLK_20) begin
 //		case (iSW[17:15])
@@ -139,17 +164,21 @@ module main(
 //	always @(posedge CLK_40)
 //		manual_clk <= ~iKEY[0];
 //		
-	reg manual_en;
-	always @(posedge counter)
-		manual_en <= ~iKEY[0];
-	
-	reg rd;
-	always @(posedge counter)
-		rd <= ~iKEY[3];
-	
+//	reg manual_en;
+//	always @(posedge counter)
+//		manual_en <= ~iKEY[0];
+//	
+//	reg rd;
+//	always @(posedge counter)
+//		rd <= ~iKEY[3];
+//	
 	reg rst;
 	always @(posedge counter)
 		rst <= ~iKEY[1];
+
+	reg on;
+	always @(posedge CLK_40)
+		on <= iSW[9];
 	
 	
 	//assign oLEDR[3:0] = i;
