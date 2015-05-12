@@ -1,5 +1,0 @@
-
-State Machine - |main|counter
-Name counter.11111 
-counter.00000 0 
-counter.11111 1 
