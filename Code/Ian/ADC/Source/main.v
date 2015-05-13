@@ -69,9 +69,23 @@ module main(
 		
 	assign GPIO_1[24] = usonic[9];
 	
+	reg MBED_RDY;
+	always @(posedge CLK_40)
+		MBED_RDY <= GPIO_1[7];
+	
+	reg rst;
+	always @(posedge CLK_40)
+		rst <= ~iKEY[0];
+
+	reg on;
+	always @(posedge CLK_40)
+		on <= iSW[9];
+	
+	assign oLEDG[8] = ~sample & ~oLEDR[17] & ~rst & on;
+	
 	SPI_MASTER_DEVICE ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
-		.ENA 			( ~sample & ~oLEDR[17]	),  	
+		.ENA 			( oLEDG[8]					),  	
 		.DATA_MOSI 	( ADC0_cmd 					),
 		.MISO 		( GPIO_0[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_0[1] 				),		// MOSI = SDI 		= 4
@@ -81,13 +95,10 @@ module main(
 		.DATA_MISO 	( ADC0_data 				)
 	);
 	
-	assign oLEDG[8] = ~sample & ~oLEDR[17];
-	
 	wire 			MBED_FIN;
-	wire 			MBED_FIN_IN;
 	SPI_MASTER_DEVICE mbed_instant(
 		.SYS_CLK 	( CLK_40						),
-		.ENA 			( (~MBED_FIN | rd) & on	),  	
+		.ENA 			( SPI_ON & on	& ~rst 	),  	
 		.DATA_MOSI 	( ADC_data>>1				),
 		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
@@ -96,21 +107,37 @@ module main(
 		.FIN			( MBED_FIN					),
 		.DATA_MISO	( oLEDR[15:0]			)
 	);
+
+	reg SPI_ON, temp_mbed_1, temp_mbed_2;
+		
+	always @(posedge CLK_40) begin
+		temp_mbed_1 <= MBED_FIN;
+		temp_mbed_2 <= temp_mbed_1;
+	end
 	
-	FIFO # (.abits (12), .dbits (16)) FIFO_ADC0(
+	always @(posedge CLK_40) begin		
+		SPI_ON <= MBED_RDY ? 1 : SPI_ON;
+		
+		case ({temp_mbed_1, temp_mbed_2})
+		2'b10:	begin SPI_ON <= 0; end
+		default: ;
+		endcase
+	end
+	
+	// Data output to HEX 3:0 [MSB first]
+	wire		[15:0]	ADC_data;	
+	
+	FIFO # (.abits (13), .dbits (16)) FIFO_ADC0(
 		.SYS_CLK 	( CLK_40						),
 		.reset 		( rst							),
 		.wr 			( ADC_fin[0] 				),
-		.rd 			( rd & on					),
+		.rd 			( MBED_RDY & on			),
 		.din			( ADC0_data					),
 		.empty		( oLEDR[16]					),
 		.full			( oLEDR[17]					),
 		.dout			( ADC_data					)
     ); 
 	 
-	// Data output to HEX 3:0 [MSB first]
-	wire		[15:0]	ADC_data;
-	
 //	always @(posedge CLK_20) begin
 //		case (iSW[17:15])
 //		4'b0000: begin
@@ -161,30 +188,13 @@ module main(
 //	reg manual_clk;
 //	always @(posedge CLK_40)
 //		manual_clk <= ~iKEY[0];
-//		
+
 //	reg manual_en;
 //	always @(posedge counter)
 //		manual_en <= ~iKEY[0];
-//	
-	reg rd;
-	always @(posedge CLK_40)
-		rd <= ~GPIO_1[2];
+//
 	
-	reg rst;
-	always @(posedge CLK_40)
-		rst <= ~iKEY[1];
-
-	reg on;
-	always @(posedge CLK_40)
-		on <= iSW[9];
-	
-	
-	//assign oLEDR[3:0] = i;
-	
-	assign oLEDG[4:0] = ADC_fin;
-//	
-//	assign oLEDG[7] = auto_sample[24];
-//	assign oLEDG[6] = &auto_sample[24:6];
+	assign oLEDG[4:0] = ADC_fin;	
 	
 endmodule
 //=================================================

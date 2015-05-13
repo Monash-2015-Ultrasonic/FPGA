@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="ADC">
-		<CBX_INST_ENTRY INSTANCE_NAME="|main|FIFO:FIFO_ADC0|altsyncram:regarray_rtl_0" CBX_FILE_NAME="altsyncram_m1h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|FIFO:FIFO_ADC0|altsyncram:regarray_rtl_0" CBX_FILE_NAME="altsyncram_q1h1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

@@ -18,8 +18,8 @@ iSW[14] => ~NO_FANOUT~
 iSW[15] => iSW[15].IN1
 iSW[16] => iSW[16].IN1
 iSW[17] => iSW[17].IN1
-iKEY[0] => ~NO_FANOUT~
-iKEY[1] => rst.DATAIN
+iKEY[0] => rst.DATAIN
+iKEY[1] => ~NO_FANOUT~
 iKEY[2] => ~NO_FANOUT~
 iKEY[3] => ~NO_FANOUT~
 oLEDR[0] <= SPI_MASTER_DEVICE:mbed_instant.DATA_MISO
@@ -48,7 +48,7 @@ oLEDG[4] <= <GND>
 oLEDG[5] <= <GND>
 oLEDG[6] <= <GND>
 oLEDG[7] <= <GND>
-oLEDG[8] <= oLEDG.DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[8] <= oLEDG[8].DB_MAX_OUTPUT_PORT_TYPE
 oHEX0_D[0] <= hex_encoder:hex0.port1
 oHEX0_D[1] <= hex_encoder:hex0.port1
 oHEX0_D[2] <= hex_encoder:hex0.port1
@@ -139,11 +139,11 @@ GPIO_0[30] <> <UNC>
 GPIO_0[31] <> <UNC>
 GPIO_1[0] <> SPI_MASTER_DEVICE:mbed_instant.MISO
 GPIO_1[1] <> SPI_MASTER_DEVICE:mbed_instant.MOSI
+GPIO_1[2] <> <UNC>
 GPIO_1[3] <> SPI_MASTER_DEVICE:mbed_instant.SCK
 GPIO_1[4] <> <UNC>
 GPIO_1[5] <> SPI_MASTER_DEVICE:mbed_instant.CSbar
 GPIO_1[6] <> <UNC>
-GPIO_1[7] <> <UNC>
 GPIO_1[8] <> <UNC>
 GPIO_1[9] <> <UNC>
 GPIO_1[10] <> <UNC>
@@ -324,6 +324,22 @@ DATA_MISO[15] <= data_in_final[14].DB_MAX_OUTPUT_PORT_TYPE
 
 |main|FIFO:FIFO_ADC0
 SYS_CLK => clock.CLK
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
+reset => out.OUTPUTSELECT
 reset => empty_reg.PRESET
 reset => full_reg.ACLR
 reset => rd_reg[0].ACLR
@@ -338,6 +354,7 @@ reset => rd_reg[8].ACLR
 reset => rd_reg[9].ACLR
 reset => rd_reg[10].ACLR
 reset => rd_reg[11].ACLR
+reset => rd_reg[12].ACLR
 reset => wr_reg[0].ACLR
 reset => wr_reg[1].ACLR
 reset => wr_reg[2].ACLR
@@ -350,6 +367,7 @@ reset => wr_reg[8].ACLR
 reset => wr_reg[9].ACLR
 reset => wr_reg[10].ACLR
 reset => wr_reg[11].ACLR
+reset => wr_reg[12].ACLR
 wr => dffw1.DATAIN
 rd => dffr1.DATAIN
 din[0] => regarray.data_a[0].DATAIN

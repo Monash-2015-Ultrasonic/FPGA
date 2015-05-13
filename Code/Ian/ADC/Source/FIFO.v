@@ -46,9 +46,13 @@ module FIFO # (parameter abits = 4, dbits = 3)(
 	  
 	//always block for read operation
 	always @ (posedge clock) begin
-	  if(db_rd) begin
-		out <= regarray[rd_reg];
+		if (reset) begin
+			out <= 0;
 		end
+		else if(db_rd) begin
+			out <= regarray[rd_reg];
+		end
+		else ;
 	end
 	  
 	always @ (posedge clock or posedge reset) begin
