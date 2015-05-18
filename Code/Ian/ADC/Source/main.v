@@ -15,6 +15,38 @@ module main(
 	inout		[31:0]	GPIO_0, GPIO_1
 	);
 
+	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Custom Clock:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	wire 					CLK_40;
+	CLKPLL	CLKPLL_inst (
+		.inclk0 	( iCLK_50 	),
+		.c0 		( CLK_40 	),
+	);
+
+	// 20MHz Clock:
+	reg counter;
+	always @(posedge CLK_40) begin			
+			counter <= ~counter;
+	end
+	
+	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Connections from GPIO:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	reg rst;
+	always @(posedge CLK_40)
+		rst <= ~iKEY[0];
+
+	reg on;
+	always @(posedge CLK_40)
+		on <= iSW[9];
+	
+	
+	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Connections from ADC Board:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
@@ -28,64 +60,49 @@ module main(
 	
 	assign GPIO_1[31:26] = 6'bzzzzzz;				// Impedance Matching on Enable/CSbar
 
+	
+	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// Custom Clock:
+// Ultrasonic Transmitter:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// Generate 39.0625kHz pulse for the Ultrasonic Transmitter:
+	reg [9:0] usonic;
+	always @(posedge CLK_40)
+		usonic <= usonic + 1;
+	
+	reg [19:0] counter_burst;	
+	always @(posedge CLK_40)
+		counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
+	
+	assign GPIO_1[24] = usonic[9] & ~rst & on & (counter_burst < 32);
+	
+	
+	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	wire 					CLK_40;
-	CLKPLL	CLKPLL_inst (
-		.inclk0 	( iCLK_50 	),
-		.c0 		( CLK_40 	),
-	);
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// SPI:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	// Auto-sample at 156kHZ:
-	reg	[4:0]	auto_sample;
-	reg 	[5:0]		enable;
-	reg 				sample;
-		
-	// 20MHz Clock: Separate bit for each ADC Module
-	reg counter;
-	always @(posedge CLK_40) begin			
-			counter <= ~counter;
-	end
+// ADC Modules:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
+	wire ADC0_en;
+	assign ADC0_en = ~sample & ~oLEDR[17] & ~rst & on;
+	assign oLEDG[8] = ADC0_en;
 	
 	always @(posedge counter) begin		
-		auto_sample <= auto_sample + 1;
+		auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
 	end
 	
+	// Auto-sample at 625kHZ:
+	reg	[4:0]		auto_sample;
+	reg 				sample;	
 	always @(posedge counter) begin
 		sample <= &auto_sample[4:3];
 	end
 	
-	reg [8:0] counter_mbed;
-	always @(posedge CLK_40)
-		counter_mbed <= counter_mbed + 1;
+	//reg [15:0] counter_sample = 0;
+	//always @(posedge oLEDG[8])
+		//counter_sample <= (counter_burst < 588799) & ~rst & on ? counter_sample + 1 : 0;
 	
-	reg [9:0] usonic;
-	always @(posedge CLK_40)
-		usonic <= usonic + 1;
-		
-	assign GPIO_1[24] = usonic[9];
-	
-	reg MBED_RDY;
-	always @(posedge CLK_40)
-		MBED_RDY <= GPIO_1[7];
-	
-	reg rst;
-	always @(posedge CLK_40)
-		rst <= ~iKEY[0];
-
-	reg on;
-	always @(posedge CLK_40)
-		on <= iSW[9];
-	
-	assign oLEDG[8] = ~sample & ~oLEDR[17] & ~rst & on;
-	
-	SPI_MASTER_DEVICE ADC0_instant(
+	SPI_MASTER_DEVICE # (.outBits (16)) ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
-		.ENA 			( oLEDG[8]					),  	
+		.ENA 			( ADC0_en					),  	
 		.DATA_MOSI 	( ADC0_cmd 					),
 		.MISO 		( GPIO_0[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_0[1] 				),		// MOSI = SDI 		= 4
@@ -94,49 +111,73 @@ module main(
 		.FIN 			( ADC_fin[0] 				),
 		.DATA_MISO 	( ADC0_data 				)
 	);
-	
-	wire 			MBED_FIN;
-	SPI_MASTER_DEVICE mbed_instant(
-		.SYS_CLK 	( CLK_40						),
-		.ENA 			( SPI_ON & on	& ~rst 	),  	
-		.DATA_MOSI 	( ADC_data>>1				),
-		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
-		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
-		.SCK 			( GPIO_1[3]					),		// SCK = SCLK 		= 5
-		.CSbar 		( GPIO_1[5] 				),		// CSbar = CSbar 	= 6
-		.FIN			( MBED_FIN					),
-		.DATA_MISO	( oLEDR[15:0]			)
-	);
 
-	reg SPI_ON, temp_mbed_1, temp_mbed_2;
-		
-	always @(posedge CLK_40) begin
-		temp_mbed_1 <= MBED_FIN;
-		temp_mbed_2 <= temp_mbed_1;
-	end
 	
-	always @(posedge CLK_40) begin		
-		SPI_ON <= MBED_RDY ? 1 : SPI_ON;
-		
-		case ({temp_mbed_1, temp_mbed_2})
-		2'b10:	begin SPI_ON <= 0; end
-		default: ;
-		endcase
-	end
 	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// FIFO: 16bits depth, 8K Words depth
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	// Data output to HEX 3:0 [MSB first]
 	wire		[15:0]	ADC_data;	
+	wire 					FIFO_ADC0_FULL;
+	assign				oLEDR[17] = FIFO_ADC0_FULL;
 	
-	FIFO # (.abits (13), .dbits (16)) FIFO_ADC0(
+	FIFO # (.abits (14), .dbits (16)) FIFO_ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
-		.reset 		( rst							),
+		.reset 		( rst	| ~on					),
 		.wr 			( ADC_fin[0] 				),
 		.rd 			( MBED_RDY & on			),
 		.din			( ADC0_data					),
 		.empty		( oLEDR[16]					),
-		.full			( oLEDR[17]					),
+		.full			( FIFO_ADC0_FULL			),
 		.dout			( ADC_data					)
     ); 
+	
+	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// MBED Microcontroller:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	reg MBED_RDY;
+	always @(posedge CLK_40)
+		MBED_RDY <= GPIO_1[7];
+		
+	//assign oLEDG[7] = SPI_ON;
+
+	// Monostable multivibrator to detect positive edge:
+	reg SPI_ON, temp_mbed_1, temp_mbed_2;
+		
+	always @(posedge CLK_40) begin
+		temp_mbed_1 <= ~rst ? MBED_FIN 		: 0;
+		temp_mbed_2 <= ~rst ? temp_mbed_1 	: 0;
+	end
+	
+	// SPI on when MBED is ready or in middle of transmission:
+	always @(posedge CLK_40) begin		
+		SPI_ON <= MBED_RDY ? 1 : SPI_ON;
+		
+		// posedge MBED_FIN = SPI Finished
+		case ({temp_mbed_1, temp_mbed_2})
+		2'b10:	begin SPI_ON <= 0; end
+		default: ;
+		endcase
+	end	
+	
+	// MBED SPI Master Module:
+	wire 			MBED_FIN;
+	SPI_MASTER_DEVICE # (.outBits (16)) mbed_instant(
+		.SYS_CLK 	( CLK_40						),
+		.ENA 			( SPI_ON & on & ~rst 	),  	
+		.DATA_MOSI 	( ADC_data >> 1			),
+		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
+		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
+		.SCK 			( GPIO_1[3]					),		// SCK = SCLK 		= 5
+		.CSbar 		( GPIO_1[5] 				),		// CSbar = CSbar 	= 6
+		.FIN			( MBED_FIN					)
+	);
+
+
+	
 	 
 //	always @(posedge CLK_20) begin
 //		case (iSW[17:15])
@@ -193,7 +234,6 @@ module main(
 //	always @(posedge counter)
 //		manual_en <= ~iKEY[0];
 //
-	
 	assign oLEDG[4:0] = ADC_fin;	
 	
 endmodule

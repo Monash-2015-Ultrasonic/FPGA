@@ -1,5 +1,5 @@
 Flow report for ADC
-Wed May 13 20:33:15 2015
+Tue May 19 01:23:02 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Wed May 13 20:33:12 2015            ;
+; Flow Status                        ; Successful - Tue May 19 01:22:58 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C70F896C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 311 / 68,416 ( < 1 % )                           ;
-;     Total combinational functions  ; 261 / 68,416 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 215 / 68,416 ( < 1 % )                           ;
-; Total registers                    ; 215                                              ;
+; Total logic elements               ; 356 / 68,416 ( < 1 % )                           ;
+;     Total combinational functions  ; 295 / 68,416 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 211 / 68,416 ( < 1 % )                           ;
+; Total registers                    ; 211                                              ;
 ; Total pins                         ; 170 / 622 ( 27 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 122,880 / 1,152,000 ( 11 % )                     ;
+; Total memory bits                  ; 245,760 / 1,152,000 ( 21 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                                  ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
 +------------------------------------+--------------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/13/2015 20:32:43 ;
+; Start date & time ; 05/19/2015 01:22:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ADC                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 24062491136.143151316315612           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 24062491136.143196255120100           ; --            ; --          ; --         ;
 ; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                                    ; Off           ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --         ;
@@ -101,12 +101,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 462 MB              ; 00:00:02                           ;
-; I/O Assignment Analysis   ; 00:00:05     ; 1.0                     ; 703 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:12     ; 1.6                     ; 1157 MB             ; 00:00:15                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 439 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 451 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:23                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 468 MB              ; 00:00:02                           ;
+; I/O Assignment Analysis   ; 00:00:04     ; 1.0                     ; 703 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:14     ; 2.3                     ; 1159 MB             ; 00:00:18                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 448 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 456 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:28                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

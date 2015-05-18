@@ -1,0 +1,1392 @@
+TimeQuest Timing Analyzer report for SPI_MBED
+Sun May 17 22:52:26 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'
+ 12. Slow Model Setup: 'manual_clk'
+ 13. Slow Model Hold: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'
+ 14. Slow Model Hold: 'manual_clk'
+ 15. Slow Model Minimum Pulse Width: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'
+ 16. Slow Model Minimum Pulse Width: 'manual_clk'
+ 17. Slow Model Minimum Pulse Width: 'iCLK_50'
+ 18. Slow Model Minimum Pulse Width: 'CLKPLL_inst|altpll_component|pll|clk[0]'
+ 19. Setup Times
+ 20. Hold Times
+ 21. Clock to Output Times
+ 22. Minimum Clock to Output Times
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'
+ 29. Fast Model Setup: 'manual_clk'
+ 30. Fast Model Hold: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'
+ 31. Fast Model Hold: 'manual_clk'
+ 32. Fast Model Minimum Pulse Width: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'
+ 33. Fast Model Minimum Pulse Width: 'manual_clk'
+ 34. Fast Model Minimum Pulse Width: 'iCLK_50'
+ 35. Fast Model Minimum Pulse Width: 'CLKPLL_inst|altpll_component|pll|clk[0]'
+ 36. Setup Times
+ 37. Hold Times
+ 38. Clock to Output Times
+ 39. Minimum Clock to Output Times
+ 40. Multicorner Timing Analysis Summary
+ 41. Setup Times
+ 42. Hold Times
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Report TCCS
+ 48. Report RSKM
+ 49. Unconstrained Paths
+ 50. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; SPI_MBED                                                           ;
+; Device Family      ; Cyclone II                                                         ;
+; Device Name        ; EP2C70F896C6                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Combined                                                           ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+-------------------------------------------+---------------------------------------------+
+; Clock Name                              ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master  ; Source                                    ; Targets                                     ;
++-----------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+-------------------------------------------+---------------------------------------------+
+; CLKPLL_inst|altpll_component|pll|clk[0] ; Generated ; 25.000 ; 40.0 MHz   ; 0.000 ; 12.500 ; 50.00      ; 5         ; 4           ;       ;        ;           ;            ; false    ; iCLK_50 ; CLKPLL_inst|altpll_component|pll|inclk[0] ; { CLKPLL_inst|altpll_component|pll|clk[0] } ;
+; iCLK_50                                 ; Base      ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;         ;                                           ; { iCLK_50 }                                 ;
+; manual_clk                              ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;         ;                                           ; { manual_clk }                              ;
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;         ;                                           ; { SPI_MASTER_DEVICE:mbed_instant|SPI_CLK }  ;
++-----------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+-------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                      ;
++------------+-----------------+----------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
++------------+-----------------+----------------------------------------+------+
+; 463.61 MHz ; 463.61 MHz      ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;      ;
++------------+-----------------+----------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------------+
+; Slow Model Setup Summary                                        ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; -1.157 ; -11.865       ;
+; manual_clk                             ; 0.958  ; 0.000         ;
++----------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------+
+; Slow Model Hold Summary                                         ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; -1.436 ; -41.850       ;
+; manual_clk                             ; -0.688 ; -0.688        ;
++----------------------------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                           ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; -0.500 ; -38.000       ;
+; manual_clk                              ; -0.500 ; -1.000        ;
+; iCLK_50                                 ; 10.000 ; 0.000         ;
+; CLKPLL_inst|altpll_component|pll|clk[0] ; 11.500 ; 0.000         ;
++-----------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'                                                                                                                                                                     ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock                            ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -1.157 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.193      ;
+; -1.107 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.143      ;
+; -1.086 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.122      ;
+; -1.036 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.072      ;
+; -1.025 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.061      ;
+; -1.013 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.049      ;
+; -0.975 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 2.011      ;
+; -0.956 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.992      ;
+; -0.944 ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.980      ;
+; -0.942 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.978      ;
+; -0.894 ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.930      ;
+; -0.885 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.921      ;
+; -0.824 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.860      ;
+; -0.823 ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.859      ;
+; -0.814 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.850      ;
+; -0.592 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.628      ;
+; -0.592 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.628      ;
+; -0.592 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.628      ;
+; -0.592 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.628      ;
+; -0.592 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.628      ;
+; -0.569 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.605      ;
+; -0.561 ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.597      ;
+; -0.560 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.596      ;
+; -0.431 ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.467      ;
+; -0.431 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.467      ;
+; -0.373 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.409      ;
+; -0.372 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.408      ;
+; -0.370 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.406      ;
+; -0.370 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.406      ;
+; -0.367 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.403      ;
+; -0.367 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.403      ;
+; -0.367 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.403      ;
+; -0.363 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.399      ;
+; -0.361 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.397      ;
+; -0.328 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.364      ;
+; -0.323 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.359      ;
+; -0.321 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.357      ;
+; -0.319 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.355      ;
+; -0.197 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.233      ;
+; -0.098 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.134      ;
+; -0.098 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.134      ;
+; -0.097 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.133      ;
+; -0.097 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.133      ;
+; -0.096 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.132      ;
+; -0.095 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.131      ;
+; -0.094 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.130      ;
+; -0.093 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.129      ;
+; -0.092 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.128      ;
+; -0.092 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.128      ;
+; -0.091 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.127      ;
+; -0.090 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.126      ;
+; -0.090 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.126      ;
+; -0.089 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.125      ;
+; -0.088 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.124      ;
+; -0.088 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.124      ;
+; -0.069 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.105      ;
+; -0.068 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.104      ;
+; -0.064 ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.100      ;
+; -0.062 ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.098      ;
+; -0.061 ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.097      ;
+; -0.061 ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.097      ;
+; -0.061 ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.097      ;
+; -0.061 ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.097      ;
+; -0.059 ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.095      ;
+; -0.059 ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.095      ;
+; -0.058 ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.094      ;
+; -0.031 ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.067      ;
+; -0.030 ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.066      ;
+; -0.030 ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.066      ;
+; -0.029 ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.065      ;
+; -0.028 ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.064      ;
+; -0.028 ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.064      ;
+; -0.022 ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.058      ;
+; 0.110  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.926      ;
+; 0.110  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.926      ;
+; 0.112  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.924      ;
+; 0.113  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.923      ;
+; 0.114  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.922      ;
+; 0.116  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.920      ;
+; 0.116  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.920      ;
+; 0.117  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.919      ;
+; 0.117  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.919      ;
+; 0.193  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.843      ;
+; 0.243  ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.793      ;
+; 0.247  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.789      ;
+; 0.247  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.789      ;
+; 0.249  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.787      ;
+; 0.251  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.785      ;
+; 1.130  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 2.106      ;
+; 1.130  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 2.106      ;
+; 1.130  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 2.106      ;
+; 1.130  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 2.106      ;
+; 1.130  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 2.106      ;
+; 1.563  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.673      ;
+; 1.565  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.671      ;
+; 1.565  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.671      ;
+; 1.565  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.671      ;
+; 1.566  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.670      ;
+; 1.567  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.669      ;
+; 1.738  ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 2.200      ; 1.498      ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'manual_clk'                                                                                                                                                          ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; 0.958 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; 0.500        ; 0.829      ; 0.657      ;
+; 1.458 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; 1.000        ; 0.829      ; 0.657      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'                                                                                                                                                                      ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock                            ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -1.436 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.030      ;
+; -1.433 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.033      ;
+; -1.432 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.034      ;
+; -1.430 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.036      ;
+; -1.430 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.036      ;
+; -1.244 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.222      ;
+; -1.244 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.222      ;
+; -1.242 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.224      ;
+; -1.242 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.224      ;
+; -1.242 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.224      ;
+; -1.241 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.225      ;
+; -1.241 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.225      ;
+; -1.240 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.226      ;
+; -1.240 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.226      ;
+; -1.239 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.227      ;
+; -1.186 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.280      ;
+; -1.185 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.281      ;
+; -1.163 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.303      ;
+; -1.069 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.397      ;
+; -1.069 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.397      ;
+; -1.066 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.400      ;
+; -1.064 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.402      ;
+; -0.974 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.492      ;
+; -0.972 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.494      ;
+; -0.972 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.494      ;
+; -0.971 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.495      ;
+; -0.970 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.496      ;
+; -0.969 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.497      ;
+; -0.969 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.497      ;
+; -0.968 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.498      ;
+; -0.968 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.498      ;
+; -0.968 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.498      ;
+; -0.797 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.669      ;
+; -0.796 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.670      ;
+; -0.795 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.671      ;
+; -0.795 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.671      ;
+; -0.795 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.671      ;
+; -0.793 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 2.200      ; 1.673      ;
+; 0.391  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.657      ;
+; 0.519  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.785      ;
+; 0.521  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.787      ;
+; 0.523  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.789      ;
+; 0.527  ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.793      ;
+; 0.577  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.843      ;
+; 0.653  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.919      ;
+; 0.653  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.919      ;
+; 0.654  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.920      ;
+; 0.654  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.920      ;
+; 0.656  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.922      ;
+; 0.657  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.923      ;
+; 0.658  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.924      ;
+; 0.660  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.926      ;
+; 0.660  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.926      ;
+; 0.792  ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.058      ;
+; 0.798  ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.064      ;
+; 0.798  ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.064      ;
+; 0.799  ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.065      ;
+; 0.800  ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.066      ;
+; 0.800  ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.066      ;
+; 0.801  ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.067      ;
+; 0.828  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.094      ;
+; 0.829  ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.095      ;
+; 0.829  ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.095      ;
+; 0.831  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831  ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831  ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831  ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.097      ;
+; 0.832  ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.098      ;
+; 0.834  ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.100      ;
+; 0.838  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.105      ;
+; 0.858  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.124      ;
+; 0.858  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.124      ;
+; 0.859  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.125      ;
+; 0.860  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.126      ;
+; 0.860  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.126      ;
+; 0.861  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.127      ;
+; 0.862  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.128      ;
+; 0.862  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.128      ;
+; 0.863  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.129      ;
+; 0.864  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.130      ;
+; 0.865  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.131      ;
+; 0.866  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.132      ;
+; 0.867  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.133      ;
+; 0.867  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.133      ;
+; 0.868  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.134      ;
+; 0.868  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.134      ;
+; 1.089  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.355      ;
+; 1.091  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.357      ;
+; 1.093  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.359      ;
+; 1.098  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.364      ;
+; 1.131  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.397      ;
+; 1.133  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.399      ;
+; 1.137  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.403      ;
+; 1.137  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.403      ;
+; 1.137  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.403      ;
+; 1.140  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.406      ;
+; 1.140  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.406      ;
+; 1.142  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 1.408      ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'manual_clk'                                                                                                                                                            ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; -0.688 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; 0.000        ; 0.829      ; 0.657      ;
+; -0.188 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; -0.500       ; 0.829      ; 0.657      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'                                                                                      ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                  ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+---------------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK|regout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK|regout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|inclk[0]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|inclk[0]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|outclk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|outclk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[10]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[10]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[11]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[11]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[12]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[12]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[13]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[13]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[14]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[14]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[15]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[15]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[16]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[16]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[17]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[17]|clk               ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'manual_clk'                                                                                 ;
++--------+--------------+----------------+------------------+------------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+------------+------------+----------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; manual_clk ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; manual_clk ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; manual_clk ; Rise       ; manual_clk|regout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; manual_clk ; Rise       ; manual_clk|regout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; manual_clk ; Rise       ; mbed_instant|SPI_CLK|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; manual_clk ; Rise       ; mbed_instant|SPI_CLK|clk               ;
++--------+--------------+----------------+------------------+------------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'iCLK_50'                                                                                    ;
++--------+--------------+----------------+------------------+---------+------------+-------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                    ;
++--------+--------------+----------------+------------------+---------+------------+-------------------------------------------+
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; iCLK_50|combout                           ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; iCLK_50|combout                           ;
+; 17.620 ; 20.000       ; 2.380          ; Port Rate        ; iCLK_50 ; Rise       ; iCLK_50                                   ;
++--------+--------------+----------------+------------------+---------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLKPLL_inst|altpll_component|pll|clk[0]'                                                                                              ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+-----------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                   ; Clock Edge ; Target                                              ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+-----------------------------------------------------+
+; 11.500 ; 12.500       ; 1.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk                                          ;
+; 11.500 ; 12.500       ; 1.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk                                          ;
+; 11.500 ; 12.500       ; 1.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en                                           ;
+; 11.500 ; 12.500       ; 1.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en                                           ;
+; 11.500 ; 12.500       ; 1.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin                                          ;
+; 11.500 ; 12.500       ; 1.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin                                          ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk|clk                                      ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk|clk                                      ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en|clk                                       ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en|clk                                       ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin|clk                                      ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin|clk                                      ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+-----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                   ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+; iKEY[*]   ; iCLK_50    ; 5.624 ; 5.624 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iKEY[0]  ; iCLK_50    ; 5.624 ; 5.624 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; iSW[*]    ; iCLK_50    ; 5.548 ; 5.548 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[0]   ; iCLK_50    ; 5.432 ; 5.432 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[9]   ; iCLK_50    ; 5.548 ; 5.548 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                      ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                         ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+; iKEY[*]   ; iCLK_50    ; -5.394 ; -5.394 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iKEY[0]  ; iCLK_50    ; -5.394 ; -5.394 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; iSW[*]    ; iCLK_50    ; -5.202 ; -5.202 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[0]   ; iCLK_50    ; -5.202 ; -5.202 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[9]   ; iCLK_50    ; -5.318 ; -5.318 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                      ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                             ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; GPIO_1[*]  ; iCLK_50                                ; 6.406 ; 6.406 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_1[5] ; iCLK_50                                ; 6.406 ; 6.406 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50                                ; 4.778 ; 4.778 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50                                ; 4.778 ; 4.778 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50                                ; 3.536 ; 3.536 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 8.984 ; 8.984 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[1] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 8.984 ; 8.984 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.338 ;       ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 7.456 ; 7.456 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDG[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 7.456 ; 7.456 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDR[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 9.600 ; 9.600 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDR[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 9.600 ; 9.600 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 4.338 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 4.338 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; manual_clk                             ; 4.339 ;       ; Rise       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ; 4.339 ;       ; Rise       ; manual_clk                              ;
+; oLEDG[*]   ; manual_clk                             ;       ; 4.339 ; Fall       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ;       ; 4.339 ; Fall       ; manual_clk                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                             ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; GPIO_1[*]  ; iCLK_50                                ; 6.406 ; 6.406 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_1[5] ; iCLK_50                                ; 6.406 ; 6.406 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50                                ; 3.536 ; 3.536 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50                                ; 4.778 ; 4.778 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50                                ; 3.536 ; 3.536 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.338 ; 8.984 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[1] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 8.984 ; 8.984 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.338 ;       ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 7.456 ; 7.456 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDG[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 7.456 ; 7.456 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDR[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 9.600 ; 9.600 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDR[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 9.600 ; 9.600 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 4.338 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 4.338 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; manual_clk                             ; 4.339 ;       ; Rise       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ; 4.339 ;       ; Rise       ; manual_clk                              ;
+; oLEDG[*]   ; manual_clk                             ;       ; 4.339 ; Fall       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ;       ; 4.339 ; Fall       ; manual_clk                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------+
+; Fast Model Setup Summary                                       ;
++----------------------------------------+-------+---------------+
+; Clock                                  ; Slack ; End Point TNS ;
++----------------------------------------+-------+---------------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.032 ; 0.000         ;
+; manual_clk                             ; 0.776 ; 0.000         ;
++----------------------------------------+-------+---------------+
+
+
++-----------------------------------------------------------------+
+; Fast Model Hold Summary                                         ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; -1.041 ; -33.332       ;
+; manual_clk                             ; -0.396 ; -0.396        ;
++----------------------------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                           ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; -0.500 ; -38.000       ;
+; manual_clk                              ; -0.500 ; -1.000        ;
+; iCLK_50                                 ; 10.000 ; 0.000         ;
+; CLKPLL_inst|altpll_component|pll|clk[0] ; 11.500 ; 0.000         ;
++-----------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'                                                                                                                                                                    ;
++-------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock                            ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.032 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 1.000      ;
+; 0.066 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.966      ;
+; 0.069 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.963      ;
+; 0.096 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.936      ;
+; 0.103 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.929      ;
+; 0.104 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.928      ;
+; 0.133 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.899      ;
+; 0.136 ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.896      ;
+; 0.138 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.894      ;
+; 0.143 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.889      ;
+; 0.169 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.863      ;
+; 0.169 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.863      ;
+; 0.169 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.863      ;
+; 0.169 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.863      ;
+; 0.169 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.863      ;
+; 0.173 ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.859      ;
+; 0.177 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.855      ;
+; 0.207 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.825      ;
+; 0.208 ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.824      ;
+; 0.213 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.819      ;
+; 0.271 ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.761      ;
+; 0.274 ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.758      ;
+; 0.274 ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.758      ;
+; 0.350 ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.682      ;
+; 0.350 ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.682      ;
+; 0.352 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.680      ;
+; 0.352 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.680      ;
+; 0.352 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.680      ;
+; 0.353 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.679      ;
+; 0.353 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.679      ;
+; 0.355 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.677      ;
+; 0.355 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.677      ;
+; 0.357 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.675      ;
+; 0.357 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.675      ;
+; 0.357 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.675      ;
+; 0.357 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.675      ;
+; 0.358 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.674      ;
+; 0.360 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.672      ;
+; 0.450 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.582      ;
+; 0.459 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.573      ;
+; 0.459 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.573      ;
+; 0.460 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.572      ;
+; 0.460 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.572      ;
+; 0.461 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.571      ;
+; 0.461 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.571      ;
+; 0.462 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.570      ;
+; 0.462 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.570      ;
+; 0.465 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.567      ;
+; 0.466 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.566      ;
+; 0.466 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.566      ;
+; 0.466 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.566      ;
+; 0.467 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.565      ;
+; 0.467 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.565      ;
+; 0.468 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.564      ;
+; 0.468 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.564      ;
+; 0.483 ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.549      ;
+; 0.500 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.532      ;
+; 0.501 ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.531      ;
+; 0.508 ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.524      ;
+; 0.509 ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.523      ;
+; 0.510 ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.522      ;
+; 0.510 ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.522      ;
+; 0.511 ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.521      ;
+; 0.511 ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.521      ;
+; 0.512 ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.520      ;
+; 0.513 ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.519      ;
+; 0.516 ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.516      ;
+; 0.519 ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.513      ;
+; 0.519 ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.513      ;
+; 0.520 ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.512      ;
+; 0.521 ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.511      ;
+; 0.521 ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.511      ;
+; 0.522 ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.510      ;
+; 0.560 ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.472      ;
+; 0.561 ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.471      ;
+; 0.563 ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.469      ;
+; 0.564 ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.468      ;
+; 0.584 ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.448      ;
+; 0.587 ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.445      ;
+; 0.591 ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.441      ;
+; 0.591 ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.441      ;
+; 0.591 ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.441      ;
+; 0.609 ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.423      ;
+; 0.635 ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.397      ;
+; 0.639 ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.393      ;
+; 0.639 ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.393      ;
+; 0.640 ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.392      ;
+; 0.641 ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 0.000      ; 0.391      ;
+; 1.371 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 1.068      ;
+; 1.371 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 1.068      ;
+; 1.371 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 1.068      ;
+; 1.371 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 1.068      ;
+; 1.371 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 1.068      ;
+; 1.612 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.827      ;
+; 1.612 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.827      ;
+; 1.617 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.822      ;
+; 1.619 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.820      ;
+; 1.619 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.820      ;
+; 1.620 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.819      ;
+; 1.673 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 1.000        ; 1.407      ; 0.766      ;
++-------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'manual_clk'                                                                                                                                                          ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; 0.776 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; 0.500        ; 0.470      ; 0.367      ;
+; 1.276 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; 1.000        ; 0.470      ; 0.367      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'                                                                                                                                                                      ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock                            ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -1.041 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.518      ;
+; -1.038 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.521      ;
+; -1.036 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.523      ;
+; -1.017 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.542      ;
+; -1.016 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.543      ;
+; -0.948 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.611      ;
+; -0.948 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.611      ;
+; -0.946 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.613      ;
+; -0.946 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.613      ;
+; -0.945 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.614      ;
+; -0.945 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.614      ;
+; -0.945 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.614      ;
+; -0.945 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.614      ;
+; -0.944 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.615      ;
+; -0.920 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.639      ;
+; -0.918 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.641      ;
+; -0.915 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.644      ;
+; -0.914 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.645      ;
+; -0.864 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.695      ;
+; -0.860 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.699      ;
+; -0.860 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.699      ;
+; -0.859 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.700      ;
+; -0.821 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.738      ;
+; -0.820 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.739      ;
+; -0.820 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.739      ;
+; -0.819 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.740      ;
+; -0.819 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.740      ;
+; -0.818 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.741      ;
+; -0.818 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.741      ;
+; -0.818 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.741      ;
+; -0.797 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.762      ;
+; -0.793 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.766      ;
+; -0.740 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.819      ;
+; -0.739 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.820      ;
+; -0.739 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.820      ;
+; -0.737 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.822      ;
+; -0.732 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.827      ;
+; -0.732 ; manual_en                                   ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 1.407      ; 0.827      ;
+; 0.215  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.367      ;
+; 0.239  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.393      ;
+; 0.245  ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.397      ;
+; 0.271  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.423      ;
+; 0.289  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.441      ;
+; 0.289  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.441      ;
+; 0.289  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.441      ;
+; 0.293  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.445      ;
+; 0.296  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.448      ;
+; 0.316  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.468      ;
+; 0.317  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.469      ;
+; 0.319  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.471      ;
+; 0.320  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.472      ;
+; 0.358  ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359  ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360  ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361  ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.513      ;
+; 0.364  ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.516      ;
+; 0.367  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368  ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370  ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370  ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371  ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372  ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.524      ;
+; 0.379  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.532      ;
+; 0.397  ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.549      ;
+; 0.412  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.564      ;
+; 0.412  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.564      ;
+; 0.413  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.565      ;
+; 0.413  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.565      ;
+; 0.414  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.566      ;
+; 0.414  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.566      ;
+; 0.414  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.566      ;
+; 0.415  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.567      ;
+; 0.418  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.570      ;
+; 0.418  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.570      ;
+; 0.419  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.571      ;
+; 0.419  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.571      ;
+; 0.420  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.572      ;
+; 0.420  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.572      ;
+; 0.421  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.573      ;
+; 0.421  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.573      ;
+; 0.520  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.672      ;
+; 0.522  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.674      ;
+; 0.523  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.675      ;
+; 0.525  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.677      ;
+; 0.525  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.677      ;
+; 0.527  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.679      ;
+; 0.527  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.679      ;
+; 0.528  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.680      ;
+; 0.528  ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 0.000        ; 0.000      ; 0.680      ;
++--------+---------------------------------------------+---------------------------------------------+-----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'manual_clk'                                                                                                                                                            ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; -0.396 ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; 0.000        ; 0.470      ; 0.367      ;
+; 0.104  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; manual_clk  ; -0.500       ; 0.470      ; 0.367      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'SPI_MASTER_DEVICE:mbed_instant|SPI_CLK'                                                                                      ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                  ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+---------------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[26] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[27] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[28] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[29] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[30] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[31] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|data_out[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|icounter[5]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK|regout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK|regout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|inclk[0]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|inclk[0]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|outclk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|SPI_CLK~clkctrl|outclk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[10]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[10]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[11]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[11]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[12]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[12]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[13]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[13]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[14]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[14]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[15]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[15]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[16]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[16]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[17]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; Rise       ; mbed_instant|data_out[17]|clk               ;
++--------+--------------+----------------+------------------+----------------------------------------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'manual_clk'                                                                                 ;
++--------+--------------+----------------+------------------+------------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+------------+------------+----------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; manual_clk ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; manual_clk ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; manual_clk ; Rise       ; manual_clk|regout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; manual_clk ; Rise       ; manual_clk|regout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; manual_clk ; Rise       ; mbed_instant|SPI_CLK|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; manual_clk ; Rise       ; mbed_instant|SPI_CLK|clk               ;
++--------+--------------+----------------+------------------+------------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'iCLK_50'                                                                                    ;
++--------+--------------+----------------+------------------+---------+------------+-------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                    ;
++--------+--------------+----------------+------------------+---------+------------+-------------------------------------------+
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; CLKPLL_inst|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; iCLK_50 ; Rise       ; iCLK_50|combout                           ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; iCLK_50 ; Rise       ; iCLK_50|combout                           ;
+; 17.620 ; 20.000       ; 2.380          ; Port Rate        ; iCLK_50 ; Rise       ; iCLK_50                                   ;
++--------+--------------+----------------+------------------+---------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLKPLL_inst|altpll_component|pll|clk[0]'                                                                                              ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+-----------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                   ; Clock Edge ; Target                                              ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+-----------------------------------------------------+
+; 11.500 ; 12.500       ; 1.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk                                          ;
+; 11.500 ; 12.500       ; 1.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk                                          ;
+; 11.500 ; 12.500       ; 1.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en                                           ;
+; 11.500 ; 12.500       ; 1.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en                                           ;
+; 11.500 ; 12.500       ; 1.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin                                          ;
+; 11.500 ; 12.500       ; 1.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin                                          ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|inclk[0] ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; CLKPLL_inst|altpll_component|_clk0~clkctrl|outclk   ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk|clk                                      ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_clk|clk                                      ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en|clk                                       ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_en|clk                                       ;
+; 12.500 ; 12.500       ; 0.000          ; High Pulse Width ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin|clk                                      ;
+; 12.500 ; 12.500       ; 0.000          ; Low Pulse Width  ; CLKPLL_inst|altpll_component|pll|clk[0] ; Rise       ; manual_fin|clk                                      ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+-----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                   ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+; iKEY[*]   ; iCLK_50    ; 3.297 ; 3.297 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iKEY[0]  ; iCLK_50    ; 3.297 ; 3.297 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; iSW[*]    ; iCLK_50    ; 3.240 ; 3.240 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[0]   ; iCLK_50    ; 3.194 ; 3.194 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[9]   ; iCLK_50    ; 3.240 ; 3.240 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                      ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                         ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+; iKEY[*]   ; iCLK_50    ; -3.177 ; -3.177 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iKEY[0]  ; iCLK_50    ; -3.177 ; -3.177 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; iSW[*]    ; iCLK_50    ; -3.074 ; -3.074 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[0]   ; iCLK_50    ; -3.074 ; -3.074 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[9]   ; iCLK_50    ; -3.120 ; -3.120 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                      ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                             ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; GPIO_1[*]  ; iCLK_50                                ; 3.235 ; 3.235 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_1[5] ; iCLK_50                                ; 3.235 ; 3.235 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50                                ; 2.494 ; 2.494 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50                                ; 2.494 ; 2.494 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50                                ; 1.877 ; 1.877 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.846 ; 4.846 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[1] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.846 ; 4.846 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 2.223 ;       ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.097 ; 4.097 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDG[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.097 ; 4.097 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDR[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 5.232 ; 5.232 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDR[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 5.232 ; 5.232 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 2.223 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 2.223 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; manual_clk                             ; 2.228 ;       ; Rise       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ; 2.228 ;       ; Rise       ; manual_clk                              ;
+; oLEDG[*]   ; manual_clk                             ;       ; 2.228 ; Fall       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ;       ; 2.228 ; Fall       ; manual_clk                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                             ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; GPIO_1[*]  ; iCLK_50                                ; 3.235 ; 3.235 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_1[5] ; iCLK_50                                ; 3.235 ; 3.235 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50                                ; 1.877 ; 1.877 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50                                ; 2.494 ; 2.494 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50                                ; 1.877 ; 1.877 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 2.223 ; 4.846 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[1] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.846 ; 4.846 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 2.223 ;       ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.097 ; 4.097 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDG[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.097 ; 4.097 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDR[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 5.232 ; 5.232 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDR[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 5.232 ; 5.232 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 2.223 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 2.223 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; manual_clk                             ; 2.228 ;       ; Rise       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ; 2.228 ;       ; Rise       ; manual_clk                              ;
+; oLEDG[*]   ; manual_clk                             ;       ; 2.228 ; Fall       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ;       ; 2.228 ; Fall       ; manual_clk                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                     ;
++------------------------------------------+---------+---------+----------+---------+---------------------+
+; Clock                                    ; Setup   ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------------------------+---------+---------+----------+---------+---------------------+
+; Worst-case Slack                         ; -1.157  ; -1.436  ; N/A      ; N/A     ; -0.500              ;
+;  CLKPLL_inst|altpll_component|pll|clk[0] ; N/A     ; N/A     ; N/A      ; N/A     ; 11.500              ;
+;  SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; -1.157  ; -1.436  ; N/A      ; N/A     ; -0.500              ;
+;  iCLK_50                                 ; N/A     ; N/A     ; N/A      ; N/A     ; 10.000              ;
+;  manual_clk                              ; 0.776   ; -0.688  ; N/A      ; N/A     ; -0.500              ;
+; Design-wide TNS                          ; -11.865 ; -42.538 ; 0.0      ; 0.0     ; -39.0               ;
+;  CLKPLL_inst|altpll_component|pll|clk[0] ; N/A     ; N/A     ; N/A      ; N/A     ; 0.000               ;
+;  SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; -11.865 ; -41.850 ; N/A      ; N/A     ; -38.000             ;
+;  iCLK_50                                 ; N/A     ; N/A     ; N/A      ; N/A     ; 0.000               ;
+;  manual_clk                              ; 0.000   ; -0.688  ; N/A      ; N/A     ; -1.000              ;
++------------------------------------------+---------+---------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Setup Times                                                                                   ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+; iKEY[*]   ; iCLK_50    ; 5.624 ; 5.624 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iKEY[0]  ; iCLK_50    ; 5.624 ; 5.624 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; iSW[*]    ; iCLK_50    ; 5.548 ; 5.548 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[0]   ; iCLK_50    ; 5.432 ; 5.432 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[9]   ; iCLK_50    ; 5.548 ; 5.548 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                      ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                         ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+; iKEY[*]   ; iCLK_50    ; -3.177 ; -3.177 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iKEY[0]  ; iCLK_50    ; -3.177 ; -3.177 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; iSW[*]    ; iCLK_50    ; -3.074 ; -3.074 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[0]   ; iCLK_50    ; -3.074 ; -3.074 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  iSW[9]   ; iCLK_50    ; -3.120 ; -3.120 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
++-----------+------------+--------+--------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                      ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                             ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; GPIO_1[*]  ; iCLK_50                                ; 6.406 ; 6.406 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_1[5] ; iCLK_50                                ; 6.406 ; 6.406 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50                                ; 4.778 ; 4.778 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50                                ; 4.778 ; 4.778 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50                                ; 3.536 ; 3.536 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 8.984 ; 8.984 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[1] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 8.984 ; 8.984 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.338 ;       ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 7.456 ; 7.456 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDG[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 7.456 ; 7.456 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDR[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 9.600 ; 9.600 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDR[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 9.600 ; 9.600 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 4.338 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 4.338 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; manual_clk                             ; 4.339 ;       ; Rise       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ; 4.339 ;       ; Rise       ; manual_clk                              ;
+; oLEDG[*]   ; manual_clk                             ;       ; 4.339 ; Fall       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ;       ; 4.339 ; Fall       ; manual_clk                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                             ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+; GPIO_1[*]  ; iCLK_50                                ; 3.235 ; 3.235 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  GPIO_1[5] ; iCLK_50                                ; 3.235 ; 3.235 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; oLEDG[*]   ; iCLK_50                                ; 1.877 ; 1.877 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[0]  ; iCLK_50                                ; 2.494 ; 2.494 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+;  oLEDG[7]  ; iCLK_50                                ; 1.877 ; 1.877 ; Rise       ; CLKPLL_inst|altpll_component|pll|clk[0] ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 2.223 ; 4.846 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[1] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.846 ; 4.846 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 2.223 ;       ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.097 ; 4.097 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDG[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 4.097 ; 4.097 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDR[*]   ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 5.232 ; 5.232 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  oLEDR[0]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 5.232 ; 5.232 ; Rise       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; GPIO_1[*]  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 2.223 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+;  GPIO_1[3] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ;       ; 2.223 ; Fall       ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ;
+; oLEDG[*]   ; manual_clk                             ; 2.228 ;       ; Rise       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ; 2.228 ;       ; Rise       ; manual_clk                              ;
+; oLEDG[*]   ; manual_clk                             ;       ; 2.228 ; Fall       ; manual_clk                              ;
+;  oLEDG[6]  ; manual_clk                             ;       ; 2.228 ; Fall       ; manual_clk                              ;
++------------+----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                              ;
++-----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; manual_clk                             ; 1        ; 1        ; 0        ; 0        ;
+; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 43       ; 0        ; 0        ; 0        ;
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 89       ; 0        ; 0        ; 0        ;
++-----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                               ;
++-----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; manual_clk                             ; 1        ; 1        ; 0        ; 0        ;
+; CLKPLL_inst|altpll_component|pll|clk[0] ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 43       ; 0        ; 0        ; 0        ;
+; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK  ; SPI_MASTER_DEVICE:mbed_instant|SPI_CLK ; 89       ; 0        ; 0        ; 0        ;
++-----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sun May 17 22:52:24 2015
+Info: Command: quartus_sta SPI_MBED -c SPI_MBED
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'SPI_MBED.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 20.000 -waveform {0.000 10.000} -name iCLK_50 iCLK_50
+    Info (332110): create_generated_clock -source {CLKPLL_inst|altpll_component|pll|inclk[0]} -divide_by 5 -multiply_by 4 -duty_cycle 50.00 -name {CLKPLL_inst|altpll_component|pll|clk[0]} {CLKPLL_inst|altpll_component|pll|clk[0]}
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SPI_MASTER_DEVICE:mbed_instant|SPI_CLK SPI_MASTER_DEVICE:mbed_instant|SPI_CLK
+    Info (332105): create_clock -period 1.000 -name manual_clk manual_clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.157
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.157       -11.865 SPI_MASTER_DEVICE:mbed_instant|SPI_CLK 
+    Info (332119):     0.958         0.000 manual_clk 
+Info (332146): Worst-case hold slack is -1.436
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.436       -41.850 SPI_MASTER_DEVICE:mbed_instant|SPI_CLK 
+    Info (332119):    -0.688        -0.688 manual_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -0.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.500       -38.000 SPI_MASTER_DEVICE:mbed_instant|SPI_CLK 
+    Info (332119):    -0.500        -1.000 manual_clk 
+    Info (332119):    10.000         0.000 iCLK_50 
+    Info (332119):    11.500         0.000 CLKPLL_inst|altpll_component|pll|clk[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.032
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.032         0.000 SPI_MASTER_DEVICE:mbed_instant|SPI_CLK 
+    Info (332119):     0.776         0.000 manual_clk 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -1.041
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.041       -33.332 SPI_MASTER_DEVICE:mbed_instant|SPI_CLK 
+    Info (332119):    -0.396        -0.396 manual_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -0.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.500       -38.000 SPI_MASTER_DEVICE:mbed_instant|SPI_CLK 
+    Info (332119):    -0.500        -1.000 manual_clk 
+    Info (332119):    10.000         0.000 iCLK_50 
+    Info (332119):    11.500         0.000 CLKPLL_inst|altpll_component|pll|clk[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 445 megabytes
+    Info: Processing ended: Sun May 17 22:52:26 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
