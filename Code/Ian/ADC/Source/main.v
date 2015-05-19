@@ -69,7 +69,7 @@ module main(
 	reg [9:0] usonic;
 	always @(posedge CLK_40)
 		usonic <= usonic + 1;
-	
+
 	reg [19:0] counter_burst;	
 	always @(posedge CLK_40) begin
 		//counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
@@ -79,7 +79,7 @@ module main(
 			counter_burst <= (counter_burst < 588799) & on ? counter_burst + 1 : counter_burst;
 	end
 	
-	assign GPIO_1[24] = usonic[9] & ~rst & on & (counter_burst < 32);
+	assign GPIO_1[24] = usonic[9] & ~rst & on;// & (counter_burst < 32);
 	
 	
 	
@@ -98,10 +98,6 @@ module main(
 	wire ADC0_en;
 	assign ADC0_en = ~&auto_sample[TOPBIT] & ~FIFO_ADC0_FULL & ~rst & on;
 	assign oLEDG[8] = ADC0_en;
-	
-	//reg [15:0] counter_sample = 0;
-	//always @(posedge oLEDG[8])
-		//counter_sample <= (counter_burst < 588799) & ~rst & on ? counter_sample + 1 : 0;
 	
 	SPI_MASTER_DEVICE # (.outBits (16)) ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
