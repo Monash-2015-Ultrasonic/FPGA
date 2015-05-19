@@ -91,7 +91,8 @@ module main(
 	parameter TOPBIT = BITS-1;
 	reg	[TOPBIT:0]		auto_sample;
 	always @(posedge counter) begin		
-		auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
+		//auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
+		auto_sample <= ~rst & on ? auto_sample + 1 : 0;
 	end
 	
 	wire ADC0_en;
@@ -130,9 +131,9 @@ module main(
 	
 	FIFO # (.abits (14), .dbits (16)) FIFO_ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
-		.reset 		( rst	| ~on					),
+		.reset 		( rst							),
 		.wr 			( ADC_fin[0] 				),
-		.rd 			( MBED_RDY & on			),
+		.rd 			( MBED_RDY  				),
 		.din			( ADC0_data					),
 		.empty		( FIFO_ADC0_EMPTY			),
 		.full			( FIFO_ADC0_FULL			),
@@ -173,7 +174,7 @@ module main(
 	wire 			MBED_FIN;
 	SPI_MASTER_DEVICE # (.outBits (16)) mbed_instant(
 		.SYS_CLK 	( CLK_40						),
-		.ENA 			( SPI_ON & on & ~rst 	),  	
+		.ENA 			( SPI_ON  & ~rst 	),  	
 		.DATA_MOSI 	( ADC_data >> 1			),
 		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
