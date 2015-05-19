@@ -71,8 +71,13 @@ module main(
 		usonic <= usonic + 1;
 	
 	reg [19:0] counter_burst;	
-	always @(posedge CLK_40)
-		counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
+	always @(posedge CLK_40) begin
+		//counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
+		if (rst)
+			counter_burst <= 0;
+		else
+			counter_burst <= (counter_burst < 588799) & on ? counter_burst + 1 : counter_burst;
+	end
 	
 	assign GPIO_1[24] = usonic[9] & ~rst & on & (counter_burst < 32);
 	
@@ -82,13 +87,15 @@ module main(
 // ADC Modules:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	// Auto-sample at 312.5kHZ:
-	reg	[8:0]		auto_sample;
+	parameter BITS = 6;
+	parameter TOPBIT = BITS-1;
+	reg	[TOPBIT:0]		auto_sample;
 	always @(posedge counter) begin		
 		auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
 	end
 	
 	wire ADC0_en;
-	assign ADC0_en = ~&auto_sample[8] & ~FIFO_ADC0_FULL & ~rst & on;
+	assign ADC0_en = ~&auto_sample[TOPBIT] & ~FIFO_ADC0_FULL & ~rst & on;
 	assign oLEDG[8] = ADC0_en;
 	
 	//reg [15:0] counter_sample = 0;
@@ -114,6 +121,10 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	// Data output to HEX 3:0 [MSB first]
 	wire		[15:0]	ADC_data;	
+	
+	wire 					FIFO_ADC0_EMPTY;
+	assign				oLEDR[16] = FIFO_ADC0_EMPTY;
+	
 	wire 					FIFO_ADC0_FULL;
 	assign				oLEDR[17] = FIFO_ADC0_FULL;
 	
@@ -123,7 +134,7 @@ module main(
 		.wr 			( ADC_fin[0] 				),
 		.rd 			( MBED_RDY & on			),
 		.din			( ADC0_data					),
-		.empty		( oLEDR[16]					),
+		.empty		( FIFO_ADC0_EMPTY			),
 		.full			( FIFO_ADC0_FULL			),
 		.dout			( ADC_data					)
     ); 
@@ -149,7 +160,7 @@ module main(
 	
 	// SPI on when MBED is ready or in middle of transmission:
 	always @(posedge CLK_40) begin		
-		SPI_ON <= MBED_RDY ? 1 : SPI_ON;
+		SPI_ON <= MBED_RDY &~FIFO_ADC0_EMPTY ? 1 : SPI_ON;
 		
 		// posedge MBED_FIN = SPI Finished
 		case ({temp_mbed_1, temp_mbed_2})
