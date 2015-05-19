@@ -81,20 +81,15 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // ADC Modules:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	wire ADC0_en;
-	assign ADC0_en = ~sample & ~oLEDR[17] & ~rst & on;
-	assign oLEDG[8] = ADC0_en;
-	
+	// Auto-sample at 312.5kHZ:
+	reg	[8:0]		auto_sample;
 	always @(posedge counter) begin		
 		auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
 	end
 	
-	// Auto-sample at 625kHZ:
-	reg	[4:0]		auto_sample;
-	reg 				sample;	
-	always @(posedge counter) begin
-		sample <= &auto_sample[4:3];
-	end
+	wire ADC0_en;
+	assign ADC0_en = ~&auto_sample[8] & ~FIFO_ADC0_FULL & ~rst & on;
+	assign oLEDG[8] = ADC0_en;
 	
 	//reg [15:0] counter_sample = 0;
 	//always @(posedge oLEDG[8])
@@ -115,7 +110,7 @@ module main(
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// FIFO: 16bits depth, 8K Words depth
+// FIFO: 16bits width, 16384 Words depth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	// Data output to HEX 3:0 [MSB first]
 	wire		[15:0]	ADC_data;	
