@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADC
-Tue May 19 20:14:24 2015
+Tue May 19 23:15:33 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 19 20:14:23 2015            ;
+; Analysis & Synthesis Status        ; Successful - Tue May 19 23:15:33 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
@@ -175,7 +175,7 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -183,37 +183,37 @@ applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                      ;
-+----------------------------------------------------------------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                                       ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------------------------------------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------------+---------+
-; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/SPI_Master.v  ; yes             ; User Verilog HDL File       ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/SPI_Master.v    ;         ;
-; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/main.v        ; yes             ; User Verilog HDL File       ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/main.v          ;         ;
-; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/Hex Encoder.v ; yes             ; User Verilog HDL File       ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/Hex Encoder.v   ;         ;
-; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/FIFO.v        ; yes             ; User Verilog HDL File       ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/Source/FIFO.v          ;         ;
-; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/CLKPLL.v             ; yes             ; User Wizard-Generated File  ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/CLKPLL.v               ;         ;
-; altpll.tdf                                                                             ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                             ;         ;
-; aglobal130.inc                                                                         ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                         ;         ;
-; stratix_pll.inc                                                                        ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                        ;         ;
-; stratixii_pll.inc                                                                      ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                      ;         ;
-; cycloneii_pll.inc                                                                      ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                      ;         ;
-; altsyncram.tdf                                                                         ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                         ;         ;
-; stratix_ram_block.inc                                                                  ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                  ;         ;
-; lpm_mux.inc                                                                            ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                            ;         ;
-; lpm_decode.inc                                                                         ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                         ;         ;
-; a_rdenreg.inc                                                                          ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                          ;         ;
-; altrom.inc                                                                             ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                             ;         ;
-; altram.inc                                                                             ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                             ;         ;
-; altdpram.inc                                                                           ; yes             ; Megafunction                ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                           ;         ;
-; altsyncram_05h1.tdf                                                                    ; yes             ; Auto-Found AHDL File        ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/db/altsyncram_05h1.tdf ;         ;
-; decode_4oa.tdf                                                                         ; yes             ; Auto-Found AHDL File        ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/db/decode_4oa.tdf      ;         ;
-; mux_2kb.tdf                                                                            ; yes             ; Auto-Found AHDL File        ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/db/mux_2kb.tdf         ;         ;
-+----------------------------------------------------------------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; Source/SPI_Master.v              ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/SPI_Master.v    ;         ;
+; Source/main.v                    ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/main.v          ;         ;
+; Source/Hex Encoder.v             ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/Hex Encoder.v   ;         ;
+; Source/FIFO.v                    ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/FIFO.v          ;         ;
+; CLKPLL.v                         ; yes             ; User Wizard-Generated File   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/CLKPLL.v               ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                    ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc               ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc             ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                    ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                    ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
+; db/altsyncram_05h1.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/db/altsyncram_05h1.tdf ;         ;
+; db/decode_4oa.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/db/decode_4oa.tdf      ;         ;
+; db/mux_2kb.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/db/mux_2kb.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------+
@@ -283,13 +283,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                 ;
-+--------+--------------+---------+--------------+--------------+--------------------------+----------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance          ; IP Include File                                                            ;
-+--------+--------------+---------+--------------+--------------+--------------------------+----------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |main|CLKPLL:CLKPLL_inst ; //ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/CLKPLL.v ;
-+--------+--------------+---------+--------------+--------------+--------------------------+----------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                        ;
++--------+--------------+---------+--------------+--------------+--------------------------+-------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance          ; IP Include File                                                   ;
++--------+--------------+---------+--------------+--------------+--------------------------+-------------------------------------------------------------------+
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |main|CLKPLL:CLKPLL_inst ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/CLKPLL.v ;
++--------+--------------+---------+--------------+--------------+--------------------------+-------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -1058,7 +1058,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1068,9 +1068,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue May 19 20:14:17 2015
+    Info: Processing started: Tue May 19 23:15:24 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADC -c ADC
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master.v
     Info (12023): Found entity 1: SPI_MASTER_DEVICE
 Warning (10275): Verilog HDL Module Instantiation warning at main.v(27): ignored dangling comma in List of Port Connections
@@ -1335,9 +1335,9 @@ Info (21057): Implemented 607 device resources after synthesis - the final resou
     Info (21064): Implemented 60 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 143 warnings
-    Info: Peak virtual memory: 494 megabytes
-    Info: Processing ended: Tue May 19 20:14:24 2015
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 482 megabytes
+    Info: Processing ended: Tue May 19 23:15:33 2015
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:02
 
 

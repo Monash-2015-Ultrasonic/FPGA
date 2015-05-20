@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C70F896) Path("//ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/output_files/") File("ADC.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C70F896) Path("E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/output_files/") File("ADC.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

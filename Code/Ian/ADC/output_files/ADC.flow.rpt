@@ -1,5 +1,5 @@
 Flow report for ADC
-Tue May 19 20:15:00 2015
+Tue May 19 23:16:09 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Tue May 19 20:14:52 2015            ;
+; Flow Status                        ; Successful - Tue May 19 23:16:05 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/19/2015 20:14:19 ;
+; Start date & time ; 05/19/2015 23:15:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ADC                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 57277343980849.143203045809456        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 24062491136.143204132616064           ; --            ; --          ; --         ;
 ; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                                    ; Off           ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --         ;
@@ -101,12 +101,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 483 MB              ; 00:00:02                           ;
-; I/O Assignment Analysis   ; 00:00:03     ; 1.0                     ; 735 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:11     ; 2.2                     ; 1196 MB             ; 00:00:16                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 450 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 474 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 482 MB              ; 00:00:02                           ;
+; I/O Assignment Analysis   ; 00:00:08     ; 1.0                     ; 702 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:14     ; 1.5                     ; 1150 MB             ; 00:00:16                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 440 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 465 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:38     ; --                      ; --                  ; 00:00:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,11 +115,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; 035-103-017WL    ; Windows 7 ; 6.1        ; x86_64         ;
-; I/O Assignment Analysis   ; 035-103-017WL    ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; 035-103-017WL    ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; 035-103-017WL    ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; 035-103-017WL    ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

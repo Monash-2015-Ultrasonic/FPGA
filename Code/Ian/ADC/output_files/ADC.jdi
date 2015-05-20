@@ -3,6 +3,6 @@
     <hash md5_digest_80b="b6b20f0d7af478ffec20"/>
   </project>
   <file_info>
-    <file device="EP2C70F896C6" path="//ad.monash.edu/home/User047/tthua2/Desktop/FYP/FPGA/Code/Ian/ADC/output_files/ADC.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP2C70F896C6" path="ADC.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>
