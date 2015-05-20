@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADC
-Tue May 19 23:15:33 2015
+Thu May 21 02:32:15 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,35 +13,25 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Added for RAM Pass-Through Logic
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated
- 17. Parameter Settings for User Entity Instance: Top-level Entity: |main
- 18. Parameter Settings for User Entity Instance: CLKPLL:CLKPLL_inst|altpll:altpll_component
- 19. Parameter Settings for User Entity Instance: SPI_MASTER_DEVICE:ADC0_instant
- 20. Parameter Settings for User Entity Instance: FIFO:FIFO_ADC0_instant
- 21. Parameter Settings for User Entity Instance: SPI_MASTER_DEVICE:mbed_instant
- 22. Parameter Settings for Inferred Entity Instance: FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0
- 23. altpll Parameter Settings by Entity Instance
- 24. altsyncram Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "hex_encoder:hex5"
- 26. Port Connectivity Checks: "hex_encoder:hex7"
- 27. Port Connectivity Checks: "hex_encoder:hex4"
- 28. Port Connectivity Checks: "hex_encoder:hex6"
- 29. Port Connectivity Checks: "hex_encoder:hex0"
- 30. Port Connectivity Checks: "hex_encoder:hex1"
- 31. Port Connectivity Checks: "hex_encoder:hex2"
- 32. Port Connectivity Checks: "hex_encoder:hex3"
- 33. Port Connectivity Checks: "SPI_MASTER_DEVICE:mbed_instant"
- 34. Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC0_instant"
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |main
+ 13. Parameter Settings for User Entity Instance: CLKPLL:CLKPLL_inst|altpll:altpll_component
+ 14. Parameter Settings for User Entity Instance: SPI_MASTER_ADC:ADC0_instant
+ 15. altpll Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "hex_encoder:hex5"
+ 17. Port Connectivity Checks: "hex_encoder:hex7"
+ 18. Port Connectivity Checks: "hex_encoder:hex4"
+ 19. Port Connectivity Checks: "hex_encoder:hex6"
+ 20. Port Connectivity Checks: "hex_encoder:hex0"
+ 21. Port Connectivity Checks: "hex_encoder:hex1"
+ 22. Port Connectivity Checks: "hex_encoder:hex2"
+ 23. Port Connectivity Checks: "hex_encoder:hex3"
+ 24. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -67,18 +57,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 19 23:15:33 2015            ;
+; Analysis & Synthesis Status        ; Successful - Thu May 21 02:32:15 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 345                                              ;
-;     Total combinational functions  ; 278                                              ;
-;     Dedicated logic registers      ; 191                                              ;
-; Total registers                    ; 191                                              ;
+; Total logic elements               ; 125                                              ;
+;     Total combinational functions  ; 109                                              ;
+;     Dedicated logic registers      ; 80                                               ;
+; Total registers                    ; 80                                               ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 245,760                                          ;
+; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
 ; Total PLLs                         ; 1                                                ;
 +------------------------------------+--------------------------------------------------+
@@ -189,98 +179,71 @@ applicable agreement for further details.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Source Files Read                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
-; Source/SPI_Master.v              ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/SPI_Master.v    ;         ;
-; Source/main.v                    ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/main.v          ;         ;
-; Source/Hex Encoder.v             ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/Hex Encoder.v   ;         ;
-; Source/FIFO.v                    ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/FIFO.v          ;         ;
-; CLKPLL.v                         ; yes             ; User Wizard-Generated File   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/CLKPLL.v               ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                    ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc               ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc             ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                    ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                    ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
-; db/altsyncram_05h1.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/db/altsyncram_05h1.tdf ;         ;
-; db/decode_4oa.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/db/decode_4oa.tdf      ;         ;
-; db/mux_2kb.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/db/mux_2kb.tdf         ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
++----------------------------------+-----------------+-----------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+-----------------------------+----------------------------------------------------------------------------------+---------+
+; Source/SPI_Master_ADC.v          ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/SPI_Master_ADC.v ;         ;
+; Source/main.v                    ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/main.v           ;         ;
+; Source/Hex Encoder.v             ; yes             ; User Verilog HDL File       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/Source/Hex Encoder.v    ;         ;
+; CLKPLL.v                         ; yes             ; User Wizard-Generated File  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/ADC/CLKPLL.v                ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                     ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                ; f:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                 ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc              ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                ; f:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc              ;         ;
++----------------------------------+-----------------+-----------------------------+----------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                ;
-+---------------------------------------------+------------------------------+
-; Resource                                    ; Usage                        ;
-+---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 345                          ;
-;                                             ;                              ;
-; Total combinational functions               ; 278                          ;
-; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 127                          ;
-;     -- 3 input functions                    ; 60                           ;
-;     -- <=2 input functions                  ; 91                           ;
-;                                             ;                              ;
-; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 229                          ;
-;     -- arithmetic mode                      ; 49                           ;
-;                                             ;                              ;
-; Total registers                             ; 191                          ;
-;     -- Dedicated logic registers            ; 191                          ;
-;     -- I/O registers                        ; 0                            ;
-;                                             ;                              ;
-; I/O pins                                    ; 170                          ;
-; Total memory bits                           ; 245760                       ;
-; Embedded Multiplier 9-bit elements          ; 0                            ;
-; Total PLLs                                  ; 1                            ;
-;     -- PLLs                                 ; 1                            ;
-;                                             ;                              ;
-; Maximum fan-out node                        ; FIFO:FIFO_ADC0_instant|clock ;
-; Maximum fan-out                             ; 158                          ;
-; Total fan-out                               ; 3048                         ;
-; Average fan-out                             ; 4.35                         ;
-+---------------------------------------------+------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                       ;
++---------------------------------------------+-------------------------------------+
+; Resource                                    ; Usage                               ;
++---------------------------------------------+-------------------------------------+
+; Estimated Total logic elements              ; 125                                 ;
+;                                             ;                                     ;
+; Total combinational functions               ; 109                                 ;
+; Logic element usage by number of LUT inputs ;                                     ;
+;     -- 4 input functions                    ; 34                                  ;
+;     -- 3 input functions                    ; 19                                  ;
+;     -- <=2 input functions                  ; 56                                  ;
+;                                             ;                                     ;
+; Logic elements by mode                      ;                                     ;
+;     -- normal mode                          ; 84                                  ;
+;     -- arithmetic mode                      ; 25                                  ;
+;                                             ;                                     ;
+; Total registers                             ; 80                                  ;
+;     -- Dedicated logic registers            ; 80                                  ;
+;     -- I/O registers                        ; 0                                   ;
+;                                             ;                                     ;
+; I/O pins                                    ; 170                                 ;
+; Embedded Multiplier 9-bit elements          ; 0                                   ;
+; Total PLLs                                  ; 1                                   ;
+;     -- PLLs                                 ; 1                                   ;
+;                                             ;                                     ;
+; Maximum fan-out node                        ; SPI_MASTER_ADC:ADC0_instant|SPI_CLK ;
+; Maximum fan-out                             ; 56                                  ;
+; Total fan-out                               ; 584                                 ;
+; Average fan-out                             ; 1.62                                ;
++---------------------------------------------+-------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
-; |main                                     ; 278 (26)          ; 191 (23)     ; 245760      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                    ; work         ;
-;    |CLKPLL:CLKPLL_inst|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                 ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                         ; work         ;
-;    |FIFO:FIFO_ADC0_instant|               ; 146 (143)         ; 98 (96)      ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant                                                                             ; work         ;
-;       |altsyncram:regarray_rtl_0|         ; 3 (0)             ; 2 (0)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0                                                   ; work         ;
-;          |altsyncram_05h1:auto_generated| ; 3 (0)             ; 2 (2)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated                    ; work         ;
-;             |decode_4oa:decode2|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated|decode_4oa:decode2 ; work         ;
-;    |SPI_MASTER_DEVICE:ADC0_instant|       ; 39 (39)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:ADC0_instant                                                                     ; work         ;
-;    |SPI_MASTER_DEVICE:mbed_instant|       ; 30 (30)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_DEVICE:mbed_instant                                                                     ; work         ;
-;    |hex_encoder:hex0|                     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                                                                                   ; work         ;
-;    |hex_encoder:hex1|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                                                                                   ; work         ;
-;    |hex_encoder:hex2|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                                                                                   ; work         ;
-;    |hex_encoder:hex3|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex3                                                                                   ; work         ;
-;    |hex_encoder:hex4|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex4                                                                                   ; work         ;
-;    |hex_encoder:hex6|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex6                                                                                   ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; |main                            ; 109 (26)          ; 80 (25)      ; 0           ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                            ; work         ;
+;    |CLKPLL:CLKPLL_inst|          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                         ; work         ;
+;       |altpll:altpll_component|  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component ; work         ;
+;    |SPI_MASTER_ADC:ADC0_instant| ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                ; work         ;
+;    |hex_encoder:hex0|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                           ; work         ;
+;    |hex_encoder:hex1|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                           ; work         ;
+;    |hex_encoder:hex2|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                           ; work         ;
+;    |hex_encoder:hex3|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex3                           ; work         ;
+;    |hex_encoder:hex4|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex4                           ; work         ;
+;    |hex_encoder:hex6|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex6                           ; work         ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16384        ; 15           ; 16384        ; 15           ; 245760 ; None ;
-+--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -292,54 +255,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------+-------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                        ;
-+--------------------------------------------------+--------------------------------------------------------+
-; Register name                                    ; Reason for Removal                                     ;
-+--------------------------------------------------+--------------------------------------------------------+
-; SPI_MASTER_DEVICE:ADC0_instant|data_out[0..5]    ; Stuck at GND due to stuck port data_in                 ;
-; SPI_MASTER_DEVICE:mbed_instant|ocounter[0]       ; Merged with SPI_MASTER_DEVICE:mbed_instant|icounter[0] ;
-; SPI_MASTER_DEVICE:mbed_instant|ocounter[1]       ; Merged with SPI_MASTER_DEVICE:mbed_instant|icounter[1] ;
-; SPI_MASTER_DEVICE:mbed_instant|ocounter[2]       ; Merged with SPI_MASTER_DEVICE:mbed_instant|icounter[2] ;
-; SPI_MASTER_DEVICE:mbed_instant|ocounter[3]       ; Merged with SPI_MASTER_DEVICE:mbed_instant|icounter[3] ;
-; SPI_MASTER_DEVICE:mbed_instant|ocounter[4]       ; Merged with SPI_MASTER_DEVICE:mbed_instant|icounter[4] ;
-; SPI_MASTER_DEVICE:mbed_instant|ocounter[5]       ; Merged with SPI_MASTER_DEVICE:mbed_instant|icounter[5] ;
-; SPI_MASTER_DEVICE:ADC0_instant|ocounter[0]       ; Merged with SPI_MASTER_DEVICE:ADC0_instant|icounter[0] ;
-; SPI_MASTER_DEVICE:ADC0_instant|ocounter[1]       ; Merged with SPI_MASTER_DEVICE:ADC0_instant|icounter[1] ;
-; SPI_MASTER_DEVICE:ADC0_instant|ocounter[2]       ; Merged with SPI_MASTER_DEVICE:ADC0_instant|icounter[2] ;
-; SPI_MASTER_DEVICE:ADC0_instant|ocounter[3]       ; Merged with SPI_MASTER_DEVICE:ADC0_instant|icounter[3] ;
-; SPI_MASTER_DEVICE:ADC0_instant|ocounter[4]       ; Merged with SPI_MASTER_DEVICE:ADC0_instant|icounter[4] ;
-; SPI_MASTER_DEVICE:ADC0_instant|ocounter[5]       ; Merged with SPI_MASTER_DEVICE:ADC0_instant|icounter[5] ;
-; FIFO:FIFO_ADC0_instant|out[0]                    ; Stuck at GND due to stuck port data_in                 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[28] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[13]          ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[26] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[12]          ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[24] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[11]          ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[22] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[10]          ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[20] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[9]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[18] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[8]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[16] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[7]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[14] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[6]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[12] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[5]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[10] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[4]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[8]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[3]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[6]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[2]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[4]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[1]           ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[2]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[0]           ;
-; Total Number of Removed Registers = 33           ;                                                        ;
-+--------------------------------------------------+--------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                          ;
-+--------------------------------------------+---------------------------+---------------------------------------------+
-; Register name                              ; Reason for Removal        ; Registers Removed due to This Register      ;
-+--------------------------------------------+---------------------------+---------------------------------------------+
-; SPI_MASTER_DEVICE:ADC0_instant|data_out[0] ; Stuck at GND              ; SPI_MASTER_DEVICE:ADC0_instant|data_out[1], ;
-;                                            ; due to stuck port data_in ; SPI_MASTER_DEVICE:ADC0_instant|data_out[2], ;
-;                                            ;                           ; SPI_MASTER_DEVICE:ADC0_instant|data_out[3], ;
-;                                            ;                           ; SPI_MASTER_DEVICE:ADC0_instant|data_out[4], ;
-;                                            ;                           ; SPI_MASTER_DEVICE:ADC0_instant|data_out[5]  ;
-+--------------------------------------------+---------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-----------------------------------------+-----------------------------------------------------+
+; Register name                           ; Reason for Removal                                  ;
++-----------------------------------------+-----------------------------------------------------+
+; SPI_MASTER_ADC:ADC0_instant|ocounter[0] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[1] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[2] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[3] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[4] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[5] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
+; Total Number of Removed Registers = 6   ;                                                     ;
++-----------------------------------------+-----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -347,101 +275,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 191   ;
-; Number of registers using Synchronous Clear  ; 21    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 31    ;
+; Total registers                              ; 80    ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Clock Enable       ; 34    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; FIFO:FIFO_ADC0_instant|empty_reg       ; 5       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------+
-; Registers Added for RAM Pass-Through Logic                                               ;
-+--------------------------------------------------+---------------------------------------+
-; Register Name                                    ; RAM Name                              ;
-+--------------------------------------------------+---------------------------------------+
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[0]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[1]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[2]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[3]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[4]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[5]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[6]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[7]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[8]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[9]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[10] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[11] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[12] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[13] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[14] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[15] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[16] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[17] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[18] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[19] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[20] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[21] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[22] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[23] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[24] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[25] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[26] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[27] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[28] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[29] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[30] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[31] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[32] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[33] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[34] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[35] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[36] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[37] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[38] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[39] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[40] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[41] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[42] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[43] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-+--------------------------------------------------+---------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_out[14] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|data_out[7]  ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_DEVICE:ADC0_instant|icounter[3]  ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:mbed_instant|data_out[1]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_DEVICE:mbed_instant|icounter[1]  ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|wr_reg[9]            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|out[2]               ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |main|FIFO:FIFO_ADC0_instant|Mux25                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Source assignments for FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                       ;
-+---------------------------------+--------------------+------+------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
-+---------------------------------+--------------------+------+------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[14] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[8]  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|icounter[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
 +----------------------------------------------------------------------+
@@ -829,95 +681,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_MASTER_DEVICE:ADC0_instant ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; outBits        ; 16    ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: FIFO:FIFO_ADC0_instant ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; abits          ; 14    ; Signed Integer                             ;
-; dbits          ; 16    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_MASTER_DEVICE:mbed_instant ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; outBits        ; 16    ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0 ;
-+------------------------------------+----------------------+---------------------------------------+
-; Parameter Name                     ; Value                ; Type                                  ;
-+------------------------------------+----------------------+---------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                               ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                            ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                          ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                          ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                        ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                               ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                               ;
-; WIDTH_A                            ; 15                   ; Untyped                               ;
-; WIDTHAD_A                          ; 14                   ; Untyped                               ;
-; NUMWORDS_A                         ; 16384                ; Untyped                               ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                               ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                               ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                               ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                               ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                               ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                               ;
-; WIDTH_B                            ; 15                   ; Untyped                               ;
-; WIDTHAD_B                          ; 14                   ; Untyped                               ;
-; NUMWORDS_B                         ; 16384                ; Untyped                               ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                               ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                               ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                               ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                               ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                               ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                               ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                               ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                               ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                               ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                               ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                               ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                               ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                               ;
-; BYTE_SIZE                          ; 8                    ; Untyped                               ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
-; INIT_FILE                          ; UNUSED               ; Untyped                               ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                               ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                               ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                               ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                               ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                               ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                               ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                               ;
-; CBXI_PARAMETER                     ; altsyncram_05h1      ; Untyped                               ;
-+------------------------------------+----------------------+---------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_MASTER_ADC:ADC0_instant ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; outBits        ; 16    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -936,26 +706,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- VCO_MULTIPLY_BY        ; 0                                          ;
 ;     -- VCO_DIVIDE_BY          ; 0                                          ;
 +-------------------------------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                             ;
-+-------------------------------------------+--------------------------------------------------+
-; Name                                      ; Value                                            ;
-+-------------------------------------------+--------------------------------------------------+
-; Number of entity instances                ; 1                                                ;
-; Entity Instance                           ; FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                        ;
-;     -- WIDTH_A                            ; 15                                               ;
-;     -- NUMWORDS_A                         ; 16384                                            ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                     ;
-;     -- WIDTH_B                            ; 15                                               ;
-;     -- NUMWORDS_B                         ; 16384                                            ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                         ;
-+-------------------------------------------+--------------------------------------------------+
 
 
 +----------------------------------------------+
@@ -1030,27 +780,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "SPI_MASTER_DEVICE:mbed_instant"                                                                                   ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                                                  ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; DATA_MOSI[15] ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; DATA_MISO     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------+
-; Port Connectivity Checks: "SPI_MASTER_DEVICE:ADC0_instant" ;
-+-------------------+-------+----------+---------------------+
-; Port              ; Type  ; Severity ; Details             ;
-+-------------------+-------+----------+---------------------+
-; DATA_MOSI[12..11] ; Input ; Info     ; Stuck at VCC        ;
-; DATA_MOSI[15..13] ; Input ; Info     ; Stuck at GND        ;
-; DATA_MOSI[10..9]  ; Input ; Info     ; Stuck at GND        ;
-; DATA_MOSI[5..0]   ; Input ; Info     ; Stuck at GND        ;
-; DATA_MOSI[6]      ; Input ; Info     ; Stuck at VCC        ;
-+-------------------+-------+----------+---------------------+
++---------------------------------------------------------+
+; Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant" ;
++-------------------+-------+----------+------------------+
+; Port              ; Type  ; Severity ; Details          ;
++-------------------+-------+----------+------------------+
+; DATA_MOSI[12..11] ; Input ; Info     ; Stuck at VCC     ;
+; DATA_MOSI[15..13] ; Input ; Info     ; Stuck at GND     ;
+; DATA_MOSI[10..9]  ; Input ; Info     ; Stuck at GND     ;
+; DATA_MOSI[5..0]   ; Input ; Info     ; Stuck at GND     ;
+; DATA_MOSI[6]      ; Input ; Info     ; Stuck at VCC     ;
++-------------------+-------+----------+------------------+
 
 
 +-------------------------------+
@@ -1058,7 +798,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1068,11 +808,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue May 19 23:15:24 2015
+    Info: Processing started: Thu May 21 02:32:12 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADC -c ADC
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master.v
-    Info (12023): Found entity 1: SPI_MASTER_DEVICE
+Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_adc.v
+    Info (12023): Found entity 1: SPI_MASTER_ADC
 Warning (10275): Verilog HDL Module Instantiation warning at main.v(27): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file source/main.v
     Info (12023): Found entity 1: main
@@ -1082,20 +822,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
     Info (12023): Found entity 1: FIFO
 Info (12021): Found 1 design units, including 1 entities, in source file clkpll.v
     Info (12023): Found entity 1: CLKPLL
+Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
+    Info (12023): Found entity 1: SPI_MASTER_UC
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.v(56): object "ADC1_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(57): object "ADC2_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(58): object "ADC3_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(59): object "ADC4_cmd" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at main.v(71): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at main.v(79): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at main.v(95): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(154): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(155): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(160): truncated value with size 32 to match size of target (1)
-Warning (10030): Net "ADC_fin[4..1]" at main.v(54) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "oLEDR[15..0]" at main.v(10) has no driver
-Warning (10034): Output port "oLEDG[7..5]" at main.v(11) has no driver
+Warning (10036): Verilog HDL or VHDL warning at main.v(60): object "ADC1_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(61): object "ADC2_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(62): object "ADC3_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(63): object "ADC4_cmd" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at main.v(82): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at main.v(91): truncated value with size 32 to match size of target (16)
+Warning (10030): Net "ADC_fin[4..1]" at main.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "oLEDR[17..16]" at main.v(10) has no driver
+Warning (10034): Output port "oLEDG[6..5]" at main.v(11) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLKPLL:CLKPLL_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "CLKPLL:CLKPLL_inst|altpll:altpll_component"
@@ -1151,67 +889,17 @@ Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_compon
     Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
-Info (12128): Elaborating entity "SPI_MASTER_DEVICE" for hierarchy "SPI_MASTER_DEVICE:ADC0_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master.v(49): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master.v(74): truncated value with size 32 to match size of target (6)
-Info (12128): Elaborating entity "FIFO" for hierarchy "FIFO:FIFO_ADC0_instant"
-Warning (10230): Verilog HDL assignment warning at FIFO.v(75): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at FIFO.v(76): truncated value with size 32 to match size of target (14)
+Info (12128): Elaborating entity "SPI_MASTER_ADC" for hierarchy "SPI_MASTER_ADC:ADC0_instant"
+Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(54): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(79): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:hex3"
-Warning (276020): Inferred RAM node "FIFO:FIFO_ADC0_instant|regarray_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "FIFO:FIFO_ADC0_instant|regarray_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 15
-        Info (286033): Parameter WIDTHAD_A set to 14
-        Info (286033): Parameter NUMWORDS_A set to 16384
-        Info (286033): Parameter WIDTH_B set to 15
-        Info (286033): Parameter WIDTHAD_B set to 14
-        Info (286033): Parameter NUMWORDS_B set to 16384
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
-Info (12130): Elaborated megafunction instantiation "FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0"
-Info (12133): Instantiated megafunction "FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "15"
-    Info (12134): Parameter "WIDTHAD_A" = "14"
-    Info (12134): Parameter "NUMWORDS_A" = "16384"
-    Info (12134): Parameter "WIDTH_B" = "15"
-    Info (12134): Parameter "WIDTHAD_B" = "14"
-    Info (12134): Parameter "NUMWORDS_B" = "16384"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_05h1.tdf
-    Info (12023): Found entity 1: altsyncram_05h1
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4oa.tdf
-    Info (12023): Found entity 1: decode_4oa
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_2kb.tdf
-    Info (12023): Found entity 1: mux_2kb
-Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[5]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[3]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[5]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver.
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[0]" has no driver
-    Warning (13040): Bidir "GPIO_1[0]" has no driver
-    Warning (13040): Bidir "GPIO_1[7]" has no driver
     Warning (13040): Bidir "GPIO_0[2]" has no driver
     Warning (13040): Bidir "GPIO_0[4]" has no driver
     Warning (13040): Bidir "GPIO_0[6]" has no driver
@@ -1240,9 +928,14 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[29]" has no driver
     Warning (13040): Bidir "GPIO_0[30]" has no driver
     Warning (13040): Bidir "GPIO_0[31]" has no driver
+    Warning (13040): Bidir "GPIO_1[0]" has no driver
+    Warning (13040): Bidir "GPIO_1[1]" has no driver
     Warning (13040): Bidir "GPIO_1[2]" has no driver
+    Warning (13040): Bidir "GPIO_1[3]" has no driver
     Warning (13040): Bidir "GPIO_1[4]" has no driver
+    Warning (13040): Bidir "GPIO_1[5]" has no driver
     Warning (13040): Bidir "GPIO_1[6]" has no driver
+    Warning (13040): Bidir "GPIO_1[7]" has no driver
     Warning (13040): Bidir "GPIO_1[8]" has no driver
     Warning (13040): Bidir "GPIO_1[9]" has no driver
     Warning (13040): Bidir "GPIO_1[10]" has no driver
@@ -1259,41 +952,21 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_1[21]" has no driver
     Warning (13040): Bidir "GPIO_1[22]" has no driver
     Warning (13040): Bidir "GPIO_1[23]" has no driver
+    Warning (13040): Bidir "GPIO_1[24]" has no driver
     Warning (13040): Bidir "GPIO_1[25]" has no driver
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_0[1]~synth"
     Warning (13010): Node "GPIO_0[3]~synth"
     Warning (13010): Node "GPIO_0[5]~synth"
-    Warning (13010): Node "GPIO_1[1]~synth"
-    Warning (13010): Node "GPIO_1[3]~synth"
-    Warning (13010): Node "GPIO_1[5]~synth"
-    Warning (13010): Node "GPIO_1[24]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "oLEDR[0]" is stuck at GND
-    Warning (13410): Pin "oLEDR[1]" is stuck at GND
-    Warning (13410): Pin "oLEDR[2]" is stuck at GND
-    Warning (13410): Pin "oLEDR[3]" is stuck at GND
-    Warning (13410): Pin "oLEDR[4]" is stuck at GND
-    Warning (13410): Pin "oLEDR[5]" is stuck at GND
-    Warning (13410): Pin "oLEDR[6]" is stuck at GND
-    Warning (13410): Pin "oLEDR[7]" is stuck at GND
-    Warning (13410): Pin "oLEDR[8]" is stuck at GND
-    Warning (13410): Pin "oLEDR[9]" is stuck at GND
-    Warning (13410): Pin "oLEDR[10]" is stuck at GND
-    Warning (13410): Pin "oLEDR[11]" is stuck at GND
-    Warning (13410): Pin "oLEDR[12]" is stuck at GND
-    Warning (13410): Pin "oLEDR[13]" is stuck at GND
-    Warning (13410): Pin "oLEDR[14]" is stuck at GND
-    Warning (13410): Pin "oLEDR[15]" is stuck at GND
+    Warning (13410): Pin "oLEDR[16]" is stuck at GND
+    Warning (13410): Pin "oLEDR[17]" is stuck at GND
     Warning (13410): Pin "oLEDG[1]" is stuck at GND
     Warning (13410): Pin "oLEDG[2]" is stuck at GND
     Warning (13410): Pin "oLEDG[3]" is stuck at GND
     Warning (13410): Pin "oLEDG[4]" is stuck at GND
     Warning (13410): Pin "oLEDG[5]" is stuck at GND
     Warning (13410): Pin "oLEDG[6]" is stuck at GND
-    Warning (13410): Pin "oLEDG[7]" is stuck at GND
     Warning (13410): Pin "oHEX4_D[1]" is stuck at GND
     Warning (13410): Pin "oHEX5_D[0]" is stuck at VCC
     Warning (13410): Pin "oHEX5_D[1]" is stuck at VCC
@@ -1327,17 +1000,16 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iKEY[1]"
     Warning (15610): No output dependent on input pin "iKEY[2]"
     Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 607 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 297 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 376 logic cells
-    Info (21064): Implemented 60 RAM segments
+    Info (21061): Implemented 126 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 143 warnings
-    Info: Peak virtual memory: 482 megabytes
-    Info: Processing ended: Tue May 19 23:15:33 2015
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 117 warnings
+    Info: Peak virtual memory: 473 megabytes
+    Info: Processing ended: Thu May 21 02:32:15 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -1,15 +1,15 @@
 //=================================================
-// SPI MASTER MODULE
+// SPI MASTER MODULE - ADC
 //=================================================
-module SPI_MASTER_DEVICE # (parameter outBits = 16)(
+module SPI_MASTER_ADC # (parameter outBits = 16)(
 	input					SYS_CLK,
 	input 				ENA,
 	input		[15:0]	DATA_MOSI,
 	input 				MISO,
 	output  				MOSI,
-	output  				CSbar,
+	output  	reg			CSbar,
 	output 				SCK,
-	output  				FIN,
+	output  	reg			FIN,
 	output  	[15:0]	DATA_MISO
 	);	
 
@@ -27,9 +27,14 @@ module SPI_MASTER_DEVICE # (parameter outBits = 16)(
 		SPI_CLK <= ~SPI_CLK;
 	
 	assign SCK 				= SPI_CLK;
-	assign CSbar 			= ~ENA;
+	
 	assign DATA_MISO 		= data_in_final << 1;
-	assign FIN 				= (ocounter > (outBits-1)) & (icounter > (outBits-1));
+	
+	always @(posedge SPI_CLK)
+		CSbar					<= ~ENA;
+	
+	always @(posedge SPI_CLK)
+		FIN 					<= (ocounter > (outBits-1)) & (icounter > (outBits-1));
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MISO Component (Master Input/Slave Output):
@@ -74,7 +79,7 @@ module SPI_MASTER_DEVICE # (parameter outBits = 16)(
 				ocounter 		<= ocounter + 1;
 			end
 			1'b1:	begin
-				data_out			<= 0;
+				data_out			<= 1;
 			end
 			endcase
 		end

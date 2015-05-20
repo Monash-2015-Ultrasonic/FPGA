@@ -25,11 +25,15 @@ module main(
 		.inclk0 	( iCLK_50 	),
 		.c0 		( CLK_40 	),
 	);
+	
+//	reg CLK_40;
+//	always @(posedge aCLK_40)
+//		CLK_40 <= ~iKEY[3];
 
 	// 20MHz Clock:
-	reg counter;
+	reg CLK20;
 	always @(posedge CLK_40) begin			
-			counter <= ~counter;
+			CLK20 <= ~CLK20;
 	end
 	
 	
@@ -62,24 +66,7 @@ module main(
 
 	
 	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// Ultrasonic Transmitter:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	// Generate 39.0625kHz pulse for the Ultrasonic Transmitter:
-	reg [9:0] usonic;
-	always @(posedge CLK_40)
-		usonic <= usonic + 1;
 
-	reg [19:0] counter_burst;	
-	always @(posedge CLK_40) begin
-		//counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
-		if (rst)
-			counter_burst <= 0;
-		else
-			counter_burst <= (counter_burst < 588799) & on ? counter_burst + 1 : counter_burst;
-	end
-	
-	assign GPIO_1[24] = usonic[9] & ~rst & on;// & (counter_burst < 32);
 	
 	
 	
@@ -90,16 +77,21 @@ module main(
 	parameter BITS = 6;
 	parameter TOPBIT = BITS-1;
 	reg	[TOPBIT:0]		auto_sample;
-	always @(posedge counter) begin		
+	always @(posedge CLK20) begin		
 		//auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
 		auto_sample <= ~rst & on ? auto_sample + 1 : 0;
 	end
 	
 	wire ADC0_en;
-	assign ADC0_en = ~&auto_sample[TOPBIT] & ~FIFO_ADC0_FULL & ~rst & on;
+	assign ADC0_en = ~&auto_sample[TOPBIT] & ~rst & on; //& ~FIFO_ADC0_FULL; 
 	assign oLEDG[8] = ADC0_en;
 	
-	SPI_MASTER_DEVICE # (.outBits (16)) ADC0_instant(
+	reg [15:0] sample_count;				//
+	always @(posedge ADC0_en) begin			//
+		sample_count <= ~rst & on ? sample_count + 1 : 0; //
+	end		//
+	
+	SPI_MASTER_ADC # (.outBits (16)) ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
 		.ENA 			( ADC0_en					),  	
 		.DATA_MOSI 	( ADC0_cmd 					),
@@ -111,74 +103,9 @@ module main(
 		.DATA_MISO 	( ADC0_data 				)
 	);
 
-	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// FIFO: 16bits width, 16384 Words depth
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	// Data output to HEX 3:0 [MSB first]
-	wire		[15:0]	ADC_data;	
-	
-	wire 					FIFO_ADC0_EMPTY;
-	assign				oLEDR[16] = FIFO_ADC0_EMPTY;
-	
-	wire 					FIFO_ADC0_FULL;
-	assign				oLEDR[17] = FIFO_ADC0_FULL;
-	
-	FIFO # (.abits (14), .dbits (16)) FIFO_ADC0_instant(
-		.SYS_CLK 	( CLK_40						),
-		.reset 		( rst							),
-		.wr 			( ADC_fin[0] 				),
-		.rd 			( MBED_RDY  				),
-		.din			( ADC0_data					),
-		.empty		( FIFO_ADC0_EMPTY			),
-		.full			( FIFO_ADC0_FULL			),
-		.dout			( ADC_data					)
-    ); 
-	
-	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// MBED Microcontroller:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	reg MBED_RDY;
-	always @(posedge CLK_40)
-		MBED_RDY <= GPIO_1[7];
-		
-	//assign oLEDG[7] = SPI_ON;
 
-	// Monostable multivibrator to detect positive edge:
-	reg SPI_ON, temp_mbed_1, temp_mbed_2;
-		
-	always @(posedge CLK_40) begin
-		temp_mbed_1 <= ~rst ? MBED_FIN 		: 0;
-		temp_mbed_2 <= ~rst ? temp_mbed_1 	: 0;
-	end
-	
-	// SPI on when MBED is ready or in middle of transmission:
-	always @(posedge CLK_40) begin		
-		SPI_ON <= MBED_RDY &~FIFO_ADC0_EMPTY ? 1 : SPI_ON;
-		
-		// posedge MBED_FIN = SPI Finished
-		case ({temp_mbed_1, temp_mbed_2})
-		2'b10:	begin SPI_ON <= 0; end
-		default: ;
-		endcase
-	end	
-	
-	// MBED SPI Master Module:
-	wire 			MBED_FIN;
-	SPI_MASTER_DEVICE # (.outBits (16)) mbed_instant(
-		.SYS_CLK 	( CLK_40						),
-		.ENA 			( SPI_ON  & ~rst 	),  	
-		.DATA_MOSI 	( ADC_data >> 1			),
-		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
-		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
-		.SCK 			( GPIO_1[3]					),		// SCK = SCLK 		= 5
-		.CSbar 		( GPIO_1[5] 				),		// CSbar = CSbar 	= 6
-		.FIN			( MBED_FIN					)
-	);
-
+	assign oLEDR[15:0] = sample_count;
+	assign oLEDG[7] = on;
 
 	
 	 
@@ -210,10 +137,10 @@ module main(
 //	end
 	
 	// ADC data:
-	hex_encoder hex3(ADC_data[15:12], 	oHEX3_D);
-	hex_encoder hex2(ADC_data[11:8], 	oHEX2_D);
-	hex_encoder hex1(ADC_data[7:4], 	oHEX1_D);
-	hex_encoder hex0(ADC_data[3:0], 	oHEX0_D);
+	hex_encoder hex3(ADC0_data[15:12], 	oHEX3_D);
+	hex_encoder hex2(ADC0_data[11:8], 	oHEX2_D);
+	hex_encoder hex1(ADC0_data[7:4], 	oHEX1_D);
+	hex_encoder hex0(ADC0_data[3:0], 	oHEX0_D);
 	
 	// ADC #:
 	hex_encoder hex6(iSW[17:15], 		oHEX6_D);
