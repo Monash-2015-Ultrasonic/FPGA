@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADC
-Thu May 21 02:32:15 2015
+Fri May 22 02:13:22 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -57,15 +57,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 21 02:32:15 2015            ;
+; Analysis & Synthesis Status        ; Successful - Fri May 22 02:13:22 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 125                                              ;
-;     Total combinational functions  ; 109                                              ;
-;     Dedicated logic registers      ; 80                                               ;
-; Total registers                    ; 80                                               ;
+; Total logic elements               ; 109                                              ;
+;     Total combinational functions  ; 93                                               ;
+;     Dedicated logic registers      ; 64                                               ;
+; Total registers                    ; 64                                               ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
@@ -199,20 +199,20 @@ applicable agreement for further details.
 +---------------------------------------------+-------------------------------------+
 ; Resource                                    ; Usage                               ;
 +---------------------------------------------+-------------------------------------+
-; Estimated Total logic elements              ; 125                                 ;
+; Estimated Total logic elements              ; 109                                 ;
 ;                                             ;                                     ;
-; Total combinational functions               ; 109                                 ;
+; Total combinational functions               ; 93                                  ;
 ; Logic element usage by number of LUT inputs ;                                     ;
 ;     -- 4 input functions                    ; 34                                  ;
 ;     -- 3 input functions                    ; 19                                  ;
-;     -- <=2 input functions                  ; 56                                  ;
+;     -- <=2 input functions                  ; 40                                  ;
 ;                                             ;                                     ;
 ; Logic elements by mode                      ;                                     ;
-;     -- normal mode                          ; 84                                  ;
-;     -- arithmetic mode                      ; 25                                  ;
+;     -- normal mode                          ; 82                                  ;
+;     -- arithmetic mode                      ; 11                                  ;
 ;                                             ;                                     ;
-; Total registers                             ; 80                                  ;
-;     -- Dedicated logic registers            ; 80                                  ;
+; Total registers                             ; 64                                  ;
+;     -- Dedicated logic registers            ; 64                                  ;
 ;     -- I/O registers                        ; 0                                   ;
 ;                                             ;                                     ;
 ; I/O pins                                    ; 170                                 ;
@@ -222,8 +222,8 @@ applicable agreement for further details.
 ;                                             ;                                     ;
 ; Maximum fan-out node                        ; SPI_MASTER_ADC:ADC0_instant|SPI_CLK ;
 ; Maximum fan-out                             ; 56                                  ;
-; Total fan-out                               ; 584                                 ;
-; Average fan-out                             ; 1.62                                ;
+; Total fan-out                               ; 491                                 ;
+; Average fan-out                             ; 1.50                                ;
 +---------------------------------------------+-------------------------------------+
 
 
@@ -232,7 +232,7 @@ applicable agreement for further details.
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |main                            ; 109 (26)          ; 80 (25)      ; 0           ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                            ; work         ;
+; |main                            ; 93 (10)           ; 64 (9)       ; 0           ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                            ; work         ;
 ;    |CLKPLL:CLKPLL_inst|          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                         ; work         ;
 ;       |altpll:altpll_component|  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component ; work         ;
 ;    |SPI_MASTER_ADC:ADC0_instant| ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                ; work         ;
@@ -275,8 +275,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 80    ;
-; Number of registers using Synchronous Clear  ; 24    ;
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -290,9 +290,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[14] ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[10] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[8]  ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|icounter[1]  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_in[12]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
@@ -301,8 +301,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------+
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
-; BITS           ; 6     ; Signed Integer                              ;
-; TOPBIT         ; 5     ; Signed Integer                              ;
+; BITS           ; 7     ; Signed Integer                              ;
+; TOPBIT         ; 6     ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -808,7 +808,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu May 21 02:32:12 2015
+    Info: Processing started: Fri May 22 02:13:19 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADC -c ADC
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_adc.v
@@ -825,14 +825,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file clkpll.
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
     Info (12023): Found entity 1: SPI_MASTER_UC
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.v(60): object "ADC1_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(61): object "ADC2_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(62): object "ADC3_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(63): object "ADC4_cmd" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at main.v(82): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(91): truncated value with size 32 to match size of target (16)
-Warning (10030): Net "ADC_fin[4..1]" at main.v(58) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "oLEDR[17..16]" at main.v(10) has no driver
+Warning (10036): Verilog HDL or VHDL warning at main.v(56): object "ADC1_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(57): object "ADC2_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(58): object "ADC3_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(59): object "ADC4_cmd" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at main.v(75): truncated value with size 32 to match size of target (7)
+Warning (10030): Net "ADC_fin[4..1]" at main.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "oLEDR" at main.v(10) has no driver
 Warning (10034): Output port "oLEDG[6..5]" at main.v(11) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLKPLL:CLKPLL_inst|altpll:altpll_component"
@@ -959,6 +958,22 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_0[3]~synth"
     Warning (13010): Node "GPIO_0[5]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "oLEDR[0]" is stuck at GND
+    Warning (13410): Pin "oLEDR[1]" is stuck at GND
+    Warning (13410): Pin "oLEDR[2]" is stuck at GND
+    Warning (13410): Pin "oLEDR[3]" is stuck at GND
+    Warning (13410): Pin "oLEDR[4]" is stuck at GND
+    Warning (13410): Pin "oLEDR[5]" is stuck at GND
+    Warning (13410): Pin "oLEDR[6]" is stuck at GND
+    Warning (13410): Pin "oLEDR[7]" is stuck at GND
+    Warning (13410): Pin "oLEDR[8]" is stuck at GND
+    Warning (13410): Pin "oLEDR[9]" is stuck at GND
+    Warning (13410): Pin "oLEDR[10]" is stuck at GND
+    Warning (13410): Pin "oLEDR[11]" is stuck at GND
+    Warning (13410): Pin "oLEDR[12]" is stuck at GND
+    Warning (13410): Pin "oLEDR[13]" is stuck at GND
+    Warning (13410): Pin "oLEDR[14]" is stuck at GND
+    Warning (13410): Pin "oLEDR[15]" is stuck at GND
     Warning (13410): Pin "oLEDR[16]" is stuck at GND
     Warning (13410): Pin "oLEDR[17]" is stuck at GND
     Warning (13410): Pin "oLEDG[1]" is stuck at GND
@@ -1000,15 +1015,15 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iKEY[1]"
     Warning (15610): No output dependent on input pin "iKEY[2]"
     Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 297 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 126 logic cells
+    Info (21061): Implemented 110 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 117 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 132 warnings
     Info: Peak virtual memory: 473 megabytes
-    Info: Processing ended: Thu May 21 02:32:15 2015
+    Info: Processing ended: Fri May 22 02:13:22 2015
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

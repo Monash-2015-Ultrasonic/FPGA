@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu May 21 02:32:30 2015
+Fitter Status : Successful - Fri May 22 02:13:37 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : ADC
 Top-level Entity Name : main
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 117 / 68,416 ( < 1 % )
-    Total combinational functions : 109 / 68,416 ( < 1 % )
-    Dedicated logic registers : 80 / 68,416 ( < 1 % )
-Total registers : 80
+Total logic elements : 99 / 68,416 ( < 1 % )
+    Total combinational functions : 93 / 68,416 ( < 1 % )
+    Dedicated logic registers : 64 / 68,416 ( < 1 % )
+Total registers : 64
 Total pins : 170 / 622 ( 27 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,152,000 ( 0 % )

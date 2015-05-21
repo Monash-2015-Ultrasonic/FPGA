@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SYSTEM
-Thu May 21 03:22:49 2015
+Fri May 22 02:59:33 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -67,13 +67,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 21 03:22:49 2015            ;
+; Analysis & Synthesis Status        ; Successful - Fri May 22 02:59:33 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 339                                              ;
-;     Total combinational functions  ; 271                                              ;
+; Total logic elements               ; 353                                              ;
+;     Total combinational functions  ; 285                                              ;
 ;     Dedicated logic registers      ; 201                                              ;
 ; Total registers                    ; 201                                              ;
 ; Total pins                         ; 170                                              ;
@@ -221,16 +221,16 @@ applicable agreement for further details.
 +---------------------------------------------+------------------------------+
 ; Resource                                    ; Usage                        ;
 +---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 339                          ;
+; Estimated Total logic elements              ; 353                          ;
 ;                                             ;                              ;
-; Total combinational functions               ; 271                          ;
+; Total combinational functions               ; 285                          ;
 ; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 98                           ;
-;     -- 3 input functions                    ; 75                           ;
+;     -- 4 input functions                    ; 111                          ;
+;     -- 3 input functions                    ; 76                           ;
 ;     -- <=2 input functions                  ; 98                           ;
 ;                                             ;                              ;
 ; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 222                          ;
+;     -- normal mode                          ; 236                          ;
 ;     -- arithmetic mode                      ; 49                           ;
 ;                                             ;                              ;
 ; Total registers                             ; 201                          ;
@@ -245,8 +245,8 @@ applicable agreement for further details.
 ;                                             ;                              ;
 ; Maximum fan-out node                        ; FIFO:FIFO_ADC0_instant|clock ;
 ; Maximum fan-out                             ; 158                          ;
-; Total fan-out                               ; 3064                         ;
-; Average fan-out                             ; 4.36                         ;
+; Total fan-out                               ; 3092                         ;
+; Average fan-out                             ; 4.31                         ;
 +---------------------------------------------+------------------------------+
 
 
@@ -255,16 +255,15 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
-; |main                                     ; 271 (25)          ; 201 (23)     ; 245760      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                    ; work         ;
+; |main                                     ; 285 (24)          ; 201 (22)     ; 245760      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                    ; work         ;
 ;    |CLKPLL:CLKPLL_inst|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                 ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                         ; work         ;
-;    |FIFO:FIFO_ADC0_instant|               ; 130 (97)          ; 98 (96)      ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant                                                                             ; work         ;
-;       |altsyncram:regarray_rtl_0|         ; 33 (0)            ; 2 (0)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0                                                   ; work         ;
-;          |altsyncram_05h1:auto_generated| ; 33 (0)            ; 2 (2)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated                    ; work         ;
+;    |FIFO:FIFO_ADC0_instant|               ; 146 (143)         ; 98 (96)      ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant                                                                             ; work         ;
+;       |altsyncram:regarray_rtl_0|         ; 3 (0)             ; 2 (0)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0                                                   ; work         ;
+;          |altsyncram_05h1:auto_generated| ; 3 (0)             ; 2 (2)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated                    ; work         ;
 ;             |decode_4oa:decode2|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated|decode_4oa:decode2 ; work         ;
-;             |mux_2kb:mux3|                ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated|mux_2kb:mux3       ; work         ;
 ;    |SPI_MASTER_ADC:ADC0_instant|          ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                        ; work         ;
-;    |SPI_MASTER_UC:mbed_instant|           ; 33 (33)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                         ; work         ;
+;    |SPI_MASTER_UC:mbed_instant|           ; 32 (32)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                         ; work         ;
 ;    |hex_encoder:hex0|                     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                                                                                   ; work         ;
 ;    |hex_encoder:hex1|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                                                                                   ; work         ;
 ;    |hex_encoder:hex2|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                                                                                   ; work         ;
@@ -312,6 +311,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SPI_MASTER_ADC:ADC0_instant|ocounter[5]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
 ; FIFO:FIFO_ADC0_instant|out[0]                    ; Stuck at GND due to stuck port data_in              ;
 ; SPI_MASTER_UC:mbed_instant|data_out[0]           ; Stuck at GND due to stuck port data_in              ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_5[0]          ; Merged with usonic[0]                               ;
 ; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[28] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[13]       ;
 ; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[26] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[12]       ;
 ; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[24] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[11]       ;
@@ -326,7 +326,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[6]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[2]        ;
 ; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[4]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[1]        ;
 ; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[2]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[0]        ;
-; Total Number of Removed Registers = 28           ;                                                     ;
+; Total Number of Removed Registers = 29           ;                                                     ;
 +--------------------------------------------------+-----------------------------------------------------+
 
 
@@ -347,7 +347,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Total registers                              ; 201   ;
 ; Number of registers using Synchronous Clear  ; 25    ;
-; Number of registers using Synchronous Load   ; 18    ;
+; Number of registers using Synchronous Load   ; 3     ;
 ; Number of registers using Asynchronous Clear ; 31    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 98    ;
@@ -417,20 +417,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------+---------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[14] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[8]  ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_in[10]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[2]   ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[8]   ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|wr_reg[1]         ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|out[12]           ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |main|FIFO:FIFO_ADC0_instant|Mux15             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[1] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[7] ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_in[12] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[3]  ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[9]  ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|wr_reg[2]        ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|out[14]          ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |main|FIFO:FIFO_ADC0_instant|Mux14            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -1033,6 +1033,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port      ; Type   ; Severity ; Details                                                                                                  ;
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; RST       ; Input  ; Info     ; Explicitly unconnected                                                                                   ;
 ; DATA_MISO ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
@@ -1055,7 +1056,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1065,7 +1066,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu May 21 03:22:46 2015
+    Info: Processing started: Fri May 22 02:59:29 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
@@ -1080,18 +1081,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_adc.v
     Info (12023): Found entity 1: SPI_MASTER_ADC
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.v(63): object "ADC1_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(64): object "ADC2_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(65): object "ADC3_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(66): object "ADC4_cmd" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at main.v(79): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at main.v(87): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at main.v(104): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(113): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at main.v(170): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(171): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(182): truncated value with size 32 to match size of target (1)
-Warning (10030): Net "ADC_fin[4..1]" at main.v(61) has no driver or initial value, using a default initial value '0'
+Warning (10036): Verilog HDL or VHDL warning at main.v(74): object "ADC1_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(75): object "ADC2_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(76): object "ADC3_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(77): object "ADC4_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(161): object "SPI_RST" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at main.v(53): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(93): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at main.v(158): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(168): truncated value with size 32 to match size of target (1)
+Warning (10030): Net "ADC_fin[4..1]" at main.v(72) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "oLEDR[15..0]" at main.v(10) has no driver
 Warning (10034): Output port "oLEDG[6..5]" at main.v(11) has no driver
 Warning (12125): Using design file clkpll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
@@ -1158,8 +1157,9 @@ Info (12128): Elaborating entity "FIFO" for hierarchy "FIFO:FIFO_ADC0_instant"
 Warning (10230): Verilog HDL assignment warning at FIFO.v(77): truncated value with size 32 to match size of target (14)
 Warning (10230): Verilog HDL assignment warning at FIFO.v(78): truncated value with size 32 to match size of target (14)
 Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(55): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(81): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(32): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(62): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(88): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:hex3"
 Warning (276020): Inferred RAM node "FIFO:FIFO_ADC0_instant|regarray_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
@@ -1329,17 +1329,17 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iKEY[1]"
     Warning (15610): No output dependent on input pin "iKEY[2]"
     Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 600 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 614 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 369 logic cells
+    Info (21061): Implemented 383 logic cells
     Info (21064): Implemented 60 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 146 warnings
-    Info: Peak virtual memory: 475 megabytes
-    Info: Processing ended: Thu May 21 03:22:49 2015
-    Info: Elapsed time: 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 145 warnings
+    Info: Peak virtual memory: 479 megabytes
+    Info: Processing ended: Fri May 22 02:59:33 2015
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

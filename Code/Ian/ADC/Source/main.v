@@ -26,10 +26,6 @@ module main(
 		.c0 		( CLK_40 	),
 	);
 	
-//	reg CLK_40;
-//	always @(posedge aCLK_40)
-//		CLK_40 <= ~iKEY[3];
-
 	// 20MHz Clock:
 	reg CLK20;
 	always @(posedge CLK_40) begin			
@@ -65,19 +61,16 @@ module main(
 	assign GPIO_1[31:26] = 6'bzzzzzz;				// Impedance Matching on Enable/CSbar
 
 	
-	
 
-	
-	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // ADC Modules:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	// Auto-sample at 312.5kHZ:
-	parameter BITS = 6;
+	parameter BITS = 7;
 	parameter TOPBIT = BITS-1;
 	reg	[TOPBIT:0]		auto_sample;
-	always @(posedge CLK20) begin		
+	always @(posedge CLK_40) begin		
 		//auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
 		auto_sample <= ~rst & on ? auto_sample + 1 : 0;
 	end
@@ -85,11 +78,6 @@ module main(
 	wire ADC0_en;
 	assign ADC0_en = ~&auto_sample[TOPBIT] & ~rst & on; //& ~FIFO_ADC0_FULL; 
 	assign oLEDG[8] = ADC0_en;
-	
-	reg [15:0] sample_count;				//
-	always @(posedge ADC0_en) begin			//
-		sample_count <= ~rst & on ? sample_count + 1 : 0; //
-	end		//
 	
 	SPI_MASTER_ADC # (.outBits (16)) ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
@@ -103,8 +91,6 @@ module main(
 		.DATA_MISO 	( ADC0_data 				)
 	);
 
-
-	assign oLEDR[15:0] = sample_count;
 	assign oLEDG[7] = on;
 
 	
@@ -152,18 +138,6 @@ module main(
 	hex_encoder hex7(5'b11111, 			oHEX7_D);
 	hex_encoder hex5(5'b11111, 			oHEX5_D);
 	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// DEBUG:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-//	reg manual_clk;
-//	always @(posedge CLK_40)
-//		manual_clk <= ~iKEY[0];
-
-//	reg manual_en;
-//	always @(posedge counter)
-//		manual_en <= ~iKEY[0];
-//
 	assign oLEDG[4:0] = ADC_fin;	
 	
 endmodule

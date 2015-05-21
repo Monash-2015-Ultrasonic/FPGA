@@ -12,54 +12,66 @@ module main(
 	inout		[31:0]	GPIO_0, GPIO_1
 );
 
-	wire 					CLK_40;
-	CLKPLL	CLKPLL_inst (
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Custom/System clock:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	wire 				CLK_40;
+	CLKPLL			CLKPLL_inst (
 		.inclk0 	( iCLK_50 	),
 		.c0 		( CLK_40 	),
 	);
 	
-	reg clk20;
-	always @(posedge CLK_40)
-		clk20 <= ~clk20;
 	
+	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Interactive connections:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	reg rst;
 	always @(posedge CLK_40)
 		rst <= ~iKEY[0];
+
 		
-	reg rd;
-	//always @(posedge CLK_40)
-		//rd <= ~iKEY[3];
+
+		
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Counter:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	reg [6:0] CLK_312k5HZ;
+	always @(posedge CLK_40)
+		CLK_312k5HZ <= CLK_312k5HZ + 1;
 	
+	// Increment counter:
+	reg [15:0] sample_counter;
+	always @(posedge CLK_312k5HZ[6])
+		sample_counter <= ~rst? sample_counter + 1 : 0;
+
+	// Edge detector for 312.5kHz Clock:
+	reg clk_prev;
+	always @(posedge CLK_40)
+		clk_prev <= CLK_312k5HZ[6];
+		
+	always @(posedge CLK_40)
+		wr <= CLK_312k5HZ[6] & ~clk_prev ? 1:0 ;	
+
+
+		
+		
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// FIFO:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	reg manual_rd;
 	always @(posedge CLK_40)
 		manual_rd = ~iKEY[3] & ~FIFO_EMPTY;
 		
 	reg wr, manual_wr;
 	always @(posedge CLK_40)
-		manual_wr <= ~iKEY[2];
-	
-	//always @(posedge CLK_40)
-		//wr <= SPI_ON | manual_wr ? 0 : 1;
-		
-	reg [6:0] CLK_312k5HZ;
-	always @(posedge CLK_40)
-		CLK_312k5HZ <= CLK_312k5HZ + 1;
-		
-	reg [15:0] sample_counter;
-	always @(posedge CLK_312k5HZ[6])
-		sample_counter <= ~rst? sample_counter + 1 : 0;
-	
-	// Edge detector:
-	reg ff_1;
-	always @(posedge CLK_40)
-		ff_1 <= CLK_312k5HZ[6];
-		
-	always @(posedge CLK_40)
-		wr <= CLK_312k5HZ[6] & ~ff_1 ? 1:0 ;
-			
+		manual_wr <= ~iKEY[2];			
 		
 	wire [15:0] FIFO_OUT;
-	
 	wire FIFO_EMPTY, FIFO_FULL;
 	assign oLEDR[16] = FIFO_EMPTY;
 	assign oLEDR[17] = FIFO_FULL;
@@ -67,23 +79,23 @@ module main(
 	FIFO # (.abits (14), .dbits (16)) FIFO_instant(
 		.SYS_CLK 	( CLK_40						),
 		.reset 		( rst							),
-		.wr 			( wr | manual_wr 				),
-		.rd 			( MBED_FIN | manual_rd				),
-		.din			( sample_counter				),		//fin_counter
-		.empty		( FIFO_EMPTY			),
-		.full			( FIFO_FULL			),
+		.wr 			( wr 			| manual_wr ),
+		.rd 			( MBED_FIN 	| manual_rd	),
+		.din			( sample_counter			),		
+		.empty		( FIFO_EMPTY				),
+		.full			( FIFO_FULL					),
 		.dout			( FIFO_OUT					)
     ); 
 
-	 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	 
+	 
+	 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MBED Microcontroller:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	
 	reg MBED_RDY;
 	always @(posedge CLK_40)
-		MBED_RDY <= GPIO_1[7] & ~FIFO_EMPTY;// manual_rd;
-	
-	//wire MBED_RDY = manual_rd;
+		MBED_RDY <= GPIO_1[7] & ~FIFO_EMPTY;
 		
 	reg MBED_RDY_PREV, MBED_RDY_EDGE;
 	always @(posedge CLK_40)
@@ -112,7 +124,7 @@ module main(
 	wire 			MBED_FIN;
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
 		.SYS_CLK 	( CLK_40						),
-		.RST			( ),
+		.RST			( 								),
 		.ENA 			( SPI_ON & ~FIFO_EMPTY  ),  	
 		.DATA_MOSI 	( FIFO_OUT 					),		//
 		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
@@ -124,7 +136,10 @@ module main(
 
 	 
 	 
-	 // ADC data:
+	 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// HEX Outputs:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	hex_encoder hex3(sample_counter[15:12], 	oHEX3_D);
 	hex_encoder hex2(sample_counter[11:8], 	oHEX2_D);
 	hex_encoder hex1(sample_counter[7:4], 	oHEX1_D);
@@ -136,4 +151,3 @@ module main(
 	hex_encoder hex4(FIFO_OUT[3:0], 	oHEX4_D);
 
 endmodule
-

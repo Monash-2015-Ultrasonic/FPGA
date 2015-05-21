@@ -3,13 +3,14 @@
 //=================================================
 module SPI_MASTER_UC # (parameter outBits = 16)(
 	input					SYS_CLK,
+	input					RST,
 	input 				ENA,
 	input		[15:0]	DATA_MOSI,
 	input 				MISO,
-	output  reg				MOSI,
-	output  reg				CSbar,
+	output  reg			MOSI,
+	output  reg			CSbar,
 	output 				SCK,
-	output  reg				FIN,
+	output  reg			FIN,
 	output  	[15:0]	DATA_MISO
 	);	
 
@@ -22,11 +23,17 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 	reg	[5 			:0]	icounter 			= 0;						// counter for MISO data
 	reg	[5 			:0]	ocounter 			= 0;						// counter for MOSI data
 	
-	reg					SPI_CLK;
-	always @(posedge SYS_CLK)
-		SPI_CLK <= ~SPI_CLK;
+	//reg					SPI_CLK;
+	//always @(posedge SYS_CLK)
+		//SPI_CLK <= ~SPI_CLK;
 	
-	assign SCK 				= SPI_CLK & ~CSbar & ~FIN;
+	reg [2:0] 		SPI_CLK_5;
+	always @(posedge SYS_CLK)
+		SPI_CLK_5 <= ~RST ? SPI_CLK_5 + 1 : 0;
+	
+	wire SPI_CLK = SPI_CLK_5[2];
+	
+	assign SCK 				= SPI_CLK;
 	
 	assign DATA_MISO 		= data_in_final<<1;
 	

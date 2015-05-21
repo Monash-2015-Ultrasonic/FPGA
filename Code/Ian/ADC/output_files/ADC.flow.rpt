@@ -1,5 +1,5 @@
 Flow report for ADC
-Thu May 21 02:32:38 2015
+Fri May 22 02:13:46 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Thu May 21 02:32:35 2015            ;
+; Flow Status                        ; Successful - Fri May 22 02:13:43 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ADC                                              ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C70F896C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 117 / 68,416 ( < 1 % )                           ;
-;     Total combinational functions  ; 109 / 68,416 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 80 / 68,416 ( < 1 % )                            ;
-; Total registers                    ; 80                                               ;
+; Total logic elements               ; 99 / 68,416 ( < 1 % )                            ;
+;     Total combinational functions  ; 93 / 68,416 ( < 1 % )                            ;
+;     Dedicated logic registers      ; 64 / 68,416 ( < 1 % )                            ;
+; Total registers                    ; 64                                               ;
 ; Total pins                         ; 170 / 622 ( 27 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                            ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/21/2015 02:32:14 ;
+; Start date & time ; 05/22/2015 02:13:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ADC                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 24062491136.143213953433788           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 24062491136.143222480124208           ; --            ; --          ; --         ;
 ; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                                    ; Off           ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --         ;
@@ -102,11 +102,11 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 463 MB              ; 00:00:01                           ;
-; I/O Assignment Analysis   ; 00:00:05     ; 1.0                     ; 703 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:10     ; 2.3                     ; 1153 MB             ; 00:00:11                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 440 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:18                           ;
+; I/O Assignment Analysis   ; 00:00:04     ; 1.0                     ; 703 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 1.9                     ; 1152 MB             ; 00:00:11                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 444 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 446 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

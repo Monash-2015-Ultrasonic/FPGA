@@ -19,23 +19,13 @@ module main(
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// Custom Clock:
+// Custom/System Clock:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	wire 					CLK_40;
-	CLKPLL	CLKPLL_inst (
+	CLKPLL				CLKPLL_inst (
 		.inclk0 	( iCLK_50 	),
 		.c0 		( CLK_40 	),
 	);
-	
-	//reg CLK_40;
-	//always @(posedge aCLK_40)
-		//CLK_40 <= ~iKEY[3];
-
-	// 20MHz Clock:
-	reg counter;
-	always @(posedge CLK_40) begin			
-			counter <= ~counter;
-	end
 	
 	
 	
@@ -55,6 +45,27 @@ module main(
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// Ultrasonic Transmitter:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// Generate 39.0625kHz pulse for the Ultrasonic Transmitter:
+	reg [9:0] usonic;
+	always @(posedge CLK_40)
+		usonic <= usonic + 1;
+
+	//reg [19:0] counter_burst;	
+	//always @(posedge CLK_40) begin
+		//counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
+		//if (rst)
+			//counter_burst <= 0;
+		//else
+			//counter_burst <= (counter_burst < 588799) & on ? counter_burst + 1 : counter_burst;
+	//end
+	
+	assign GPIO_1[24] = usonic[9] & ~rst & on;// & (counter_burst < 32);
+
+	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Connections from ADC Board:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	wire 		[15:0] 	ADC0_data, ADC1_data, ADC2_data, ADC3_data, ADC4_data;
@@ -65,29 +76,7 @@ module main(
 	wire		[15:0]	ADC3_cmd = {4'b0001, 1'b1, 2'b0, iSW[1:0], 7'b1000000};
 	wire		[15:0]	ADC4_cmd = {4'b0001, 1'b1, 2'b0, iSW[1:0], 7'b1000000};
 	
-	assign GPIO_1[31:26] = 6'bzzzzzz;				// Impedance Matching on Enable/CSbar
-
-	
-	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// Ultrasonic Transmitter:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	// Generate 39.0625kHz pulse for the Ultrasonic Transmitter:
-	reg [9:0] usonic;
-	always @(posedge CLK_40)
-		usonic <= usonic + 1;
-
-	reg [19:0] counter_burst;	
-	always @(posedge CLK_40) begin
-		//counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
-		if (rst)
-			counter_burst <= 0;
-		else
-			counter_burst <= (counter_burst < 588799) & on ? counter_burst + 1 : counter_burst;
-	end
-	
-	assign GPIO_1[24] = usonic[9] & ~rst & on;// & (counter_burst < 32);
+	assign 				GPIO_1[31:26] = 6'bzzzzzz;				// Impedance Matching on Enable/CSbar
 	
 	
 	
@@ -95,27 +84,20 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // ADC Modules:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	// Auto-sample at 312.5kHZ:
+	// Auto-sample at 625kHz: //312.5kHZ:
 	parameter BITS = 6;
 	parameter TOPBIT = BITS-1;
-	reg	[TOPBIT:0]		auto_sample;
-	always @(posedge counter) begin		
-		//auto_sample <= ~rst & on & (counter_burst < 588799) ? auto_sample + 1 : 0;
-		auto_sample <= ~rst & on ? auto_sample + 1 : 0;
-	end
 	
-	wire ADC0_en;
-	assign ADC0_en = ~&auto_sample[TOPBIT] & ~FIFO_ADC0_FULL & ~rst & on;
+	reg [TOPBIT:0] CLK_SAMPLE;
+	always @(posedge CLK_40)
+		CLK_SAMPLE <= ~rst & on? CLK_SAMPLE + 1 : 0;
+		
+	wire ADC0_en = ~&CLK_SAMPLE[TOPBIT:TOPBIT-1] & ~rst & on;
 	assign oLEDG[7] = ADC0_en;
-	
-	reg [15:0] sample_count;				//
-	always @(posedge ADC0_en) begin			//
-		sample_count <= ~rst & on ? sample_count + 1 : 0; //
-	end		//
 	
 	SPI_MASTER_ADC # (.outBits (16)) ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
-		.ENA 			( ADC0_en					),  	
+		.ENA 			( ADC0_en 					),  	
 		.DATA_MOSI 	( ADC0_cmd 					),
 		.MISO 		( GPIO_0[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_0[1] 				),		// MOSI = SDI 		= 4
@@ -125,14 +107,21 @@ module main(
 		.DATA_MISO 	( ADC0_data 				)
 	);
 
+	//reg fin_prev;
+	//always @(posedge CLK_40)
+	//	fin_prev <= ADC_fin[0];
 	
+	//reg wr;
+	//always @(posedge CLK_40)
+		//wr <= ADC_fin[0] & ~fin_prev ? 1 : 0;
+
+	wire wr = ADC_fin[0];
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // FIFO: 16bits width, 16384 Words depth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	// Data output to HEX 3:0 [MSB first]
-	wire		[15:0]	ADC_data;	
+	wire		[15:0]	FIFO_OUT;	
 	
 	wire 					FIFO_ADC0_EMPTY;
 	assign				oLEDR[16] = FIFO_ADC0_EMPTY;
@@ -143,12 +132,12 @@ module main(
 	FIFO # (.abits (14), .dbits (16)) FIFO_ADC0_instant(
 		.SYS_CLK 	( CLK_40						),
 		.reset 		( rst							),
-		.wr 			( ADC_fin[0] 				),
-		.rd 			( MBED_RDY  				),
-		.din			( ADC0_data				),		//
+		.wr 			( wr 							),		// CHECK LOGIC HERE
+		.rd 			( MBED_FIN  				),
+		.din			( ADC0_data					),		
 		.empty		( FIFO_ADC0_EMPTY			),
 		.full			( FIFO_ADC0_FULL			),
-		.dout			( ADC_data					)
+		.dout			( FIFO_OUT					)
     ); 
 	
 	
@@ -159,30 +148,28 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	reg MBED_RDY;
 	always @(posedge CLK_40)
-		MBED_RDY <= GPIO_1[7];
+		MBED_RDY <= GPIO_1[7] & ~FIFO_ADC0_EMPTY;		
+			
+	reg MBED_RDY_PREV, MBED_RDY_EDGE;
+	always @(posedge CLK_40)
+		MBED_RDY_PREV <= MBED_RDY;
 		
-	//assign oLEDG[7] = SPI_ON;
-
-	// Monostable multivibrator to detect positive edge:
-	reg SPI_ON, temp_mbed_1, temp_mbed_2;
+	always @(posedge CLK_40)
+		MBED_RDY_EDGE <= MBED_RDY & ~MBED_RDY_PREV ? 1 : 0;
 		
+	reg SPI_ON;
+	reg SPI_RST;
 	always @(posedge CLK_40) begin
-		temp_mbed_1 <= ~rst ? MBED_FIN 		: 0;
-		temp_mbed_2 <= ~rst ? temp_mbed_1 	: 0;
+		if (MBED_RDY_EDGE) begin
+			SPI_ON <= 1;
+			SPI_RST <= 1;
+		end
+		else if (SPI_ON) begin
+			SPI_ON <= ~MBED_FIN ? 1 : 0;
+			SPI_RST <= 0;
+		end
+		else ;
 	end
-	
-	// SPI on when MBED is ready or in middle of transmission:
-	always @(posedge CLK_40) begin			
-		// posedge MBED_FIN = SPI Finished
-		case ({temp_mbed_1, temp_mbed_2})
-		2'b10:	begin 
-			SPI_ON <= 0; 
-		end
-		default: begin
-			SPI_ON <= MBED_RDY & ~FIFO_ADC0_EMPTY ? 1 : SPI_ON;
-		end
-		endcase
-	end		
 	
 	assign oLEDG[8] = MBED_FIN;
 	
@@ -190,8 +177,9 @@ module main(
 	wire 			MBED_FIN;
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
 		.SYS_CLK 	( CLK_40						),
-		.ENA 			( SPI_ON 			),  	
-		.DATA_MOSI 	( ADC_data 				),		//
+		.RST			( 								),
+		.ENA 			( SPI_ON & ~FIFO_ADC0_EMPTY  ),  	
+		.DATA_MOSI 	( FIFO_OUT 					),		//
 		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
 		.SCK 			( GPIO_1[3]					),		// SCK = SCLK 		= 5
@@ -231,13 +219,20 @@ module main(
 //	end
 	
 	// ADC data:
-	hex_encoder hex3(ADC_data[15:12], 	oHEX3_D);
-	hex_encoder hex2(ADC_data[11:8], 	oHEX2_D);
-	hex_encoder hex1(ADC_data[7:4], 	oHEX1_D);
-	hex_encoder hex0(ADC_data[3:0], 	oHEX0_D);
+
+	hex_encoder hex3(FIFO_OUT[15:12], 	oHEX3_D);
+	hex_encoder hex2(FIFO_OUT[11:8], 	oHEX2_D);
+	hex_encoder hex1(FIFO_OUT[7:4], 		oHEX1_D);
+	hex_encoder hex0(FIFO_OUT[3:0], 		oHEX0_D);
+/*
+	hex_encoder hex3(ADC0_data[15:12], 	oHEX3_D);
+	hex_encoder hex2(ADC0_data[11:8], 	oHEX2_D);
+	hex_encoder hex1(ADC0_data[7:4], 	oHEX1_D);
+	hex_encoder hex0(ADC0_data[3:0], 	oHEX0_D);
+*/
 	
 	// ADC #:
-	hex_encoder hex6(iSW[17:15], 		oHEX6_D);
+	hex_encoder hex6(iSW[17:15], 			oHEX6_D);
 	
 	// Channel #:
 	hex_encoder hex4(iSW[1:0], 			oHEX4_D);
@@ -246,18 +241,6 @@ module main(
 	hex_encoder hex7(5'b11111, 			oHEX7_D);
 	hex_encoder hex5(5'b11111, 			oHEX5_D);
 	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// DEBUG:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-//	reg manual_clk;
-//	always @(posedge CLK_40)
-//		manual_clk <= ~iKEY[0];
-
-//	reg manual_en;
-//	always @(posedge counter)
-//		manual_en <= ~iKEY[0];
-//
 	assign oLEDG[4:0] = ADC_fin;	
 	
 endmodule

@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu May 21 02:32:15 2015
+Analysis & Synthesis Status : Successful - Fri May 22 02:13:22 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : ADC
 Top-level Entity Name : main
 Family : Cyclone II
-Total logic elements : 125
-    Total combinational functions : 109
-    Dedicated logic registers : 80
-Total registers : 80
+Total logic elements : 109
+    Total combinational functions : 93
+    Dedicated logic registers : 64
+Total registers : 64
 Total pins : 170
 Total virtual pins : 0
 Total memory bits : 0
