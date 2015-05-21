@@ -49,12 +49,12 @@ module FIFO # (parameter abits = 4, dbits = 3)(
 		if (reset)
 			out <= 0;
 		else if(db_rd) begin
-			if (empty_reg)
-				out <= 0;
-			else
+			//if (empty_reg)
+		//		out <= 0;
+			//else
 				out <= regarray[rd_reg];
 		end
-		else ;
+		//else ;
 	end
 	  
 	always @ (posedge clock or posedge reset) begin

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for check
-Thu May 21 02:30:24 2015
+Fri May 22 01:12:30 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -27,13 +27,17 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  19. Parameter Settings for Inferred Entity Instance: FIFO:FIFO_instant|altsyncram:regarray_rtl_0
  20. altpll Parameter Settings by Entity Instance
  21. altsyncram Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "hex_encoder:hex0"
- 23. Port Connectivity Checks: "hex_encoder:hex1"
- 24. Port Connectivity Checks: "hex_encoder:hex2"
- 25. Port Connectivity Checks: "hex_encoder:hex3"
- 26. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
+ 22. Port Connectivity Checks: "hex_encoder:hex4"
+ 23. Port Connectivity Checks: "hex_encoder:hex5"
+ 24. Port Connectivity Checks: "hex_encoder:hex6"
+ 25. Port Connectivity Checks: "hex_encoder:hex7"
+ 26. Port Connectivity Checks: "hex_encoder:hex0"
+ 27. Port Connectivity Checks: "hex_encoder:hex1"
+ 28. Port Connectivity Checks: "hex_encoder:hex2"
+ 29. Port Connectivity Checks: "hex_encoder:hex3"
+ 30. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +63,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 21 02:30:24 2015            ;
+; Analysis & Synthesis Status        ; Successful - Fri May 22 01:12:30 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; check                                            ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 274                                              ;
-;     Total combinational functions  ; 220                                              ;
-;     Dedicated logic registers      ; 152                                              ;
-; Total registers                    ; 152                                              ;
+; Total logic elements               ; 306                                              ;
+;     Total combinational functions  ; 253                                              ;
+;     Dedicated logic registers      ; 159                                              ;
+; Total registers                    ; 159                                              ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 262,144                                          ;
@@ -213,20 +217,20 @@ applicable agreement for further details.
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Estimated Total logic elements              ; 274                     ;
+; Estimated Total logic elements              ; 306                     ;
 ;                                             ;                         ;
-; Total combinational functions               ; 220                     ;
+; Total combinational functions               ; 253                     ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 94                      ;
-;     -- 3 input functions                    ; 54                      ;
-;     -- <=2 input functions                  ; 72                      ;
+;     -- 4 input functions                    ; 121                     ;
+;     -- 3 input functions                    ; 57                      ;
+;     -- <=2 input functions                  ; 75                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 174                     ;
-;     -- arithmetic mode                      ; 46                      ;
+;     -- normal mode                          ; 202                     ;
+;     -- arithmetic mode                      ; 51                      ;
 ;                                             ;                         ;
-; Total registers                             ; 152                     ;
-;     -- Dedicated logic registers            ; 152                     ;
+; Total registers                             ; 159                     ;
+;     -- Dedicated logic registers            ; 159                     ;
 ;     -- I/O registers                        ; 0                       ;
 ;                                             ;                         ;
 ; I/O pins                                    ; 170                     ;
@@ -237,8 +241,8 @@ applicable agreement for further details.
 ;                                             ;                         ;
 ; Maximum fan-out node                        ; FIFO:FIFO_instant|clock ;
 ; Maximum fan-out                             ; 165                     ;
-; Total fan-out                               ; 2920                    ;
-; Average fan-out                             ; 4.81                    ;
+; Total fan-out                               ; 3070                    ;
+; Average fan-out                             ; 4.74                    ;
 +---------------------------------------------+-------------------------+
 
 
@@ -247,19 +251,23 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |main                                     ; 220 (25)          ; 152 (25)     ; 262144      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                               ; work         ;
+; |main                                     ; 253 (33)          ; 159 (32)     ; 262144      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                               ; work         ;
 ;    |CLKPLL:CLKPLL_inst|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                            ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                    ; work         ;
-;    |FIFO:FIFO_instant|                    ; 133 (98)          ; 101 (99)     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_instant                                                                             ; work         ;
+;    |FIFO:FIFO_instant|                    ; 132 (97)          ; 101 (99)     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_instant                                                                             ; work         ;
 ;       |altsyncram:regarray_rtl_0|         ; 35 (0)            ; 2 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_instant|altsyncram:regarray_rtl_0                                                   ; work         ;
 ;          |altsyncram_25h1:auto_generated| ; 35 (0)            ; 2 (2)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_instant|altsyncram:regarray_rtl_0|altsyncram_25h1:auto_generated                    ; work         ;
 ;             |decode_4oa:decode2|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_instant|altsyncram:regarray_rtl_0|altsyncram_25h1:auto_generated|decode_4oa:decode2 ; work         ;
 ;             |mux_3kb:mux3|                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_instant|altsyncram:regarray_rtl_0|altsyncram_25h1:auto_generated|mux_3kb:mux3       ; work         ;
-;    |SPI_MASTER_UC:mbed_instant|           ; 34 (34)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                    ; work         ;
+;    |SPI_MASTER_UC:mbed_instant|           ; 32 (32)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                    ; work         ;
 ;    |hex_encoder:hex0|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                                                                              ; work         ;
 ;    |hex_encoder:hex1|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                                                                              ; work         ;
 ;    |hex_encoder:hex2|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                                                                              ; work         ;
 ;    |hex_encoder:hex3|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex3                                                                              ; work         ;
+;    |hex_encoder:hex4|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex4                                                                              ; work         ;
+;    |hex_encoder:hex5|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex5                                                                              ; work         ;
+;    |hex_encoder:hex6|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex6                                                                              ; work         ;
+;    |hex_encoder:hex7|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex7                                                                              ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -293,6 +301,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SPI_MASTER_UC:mbed_instant|ocounter[3]      ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3] ;
 ; SPI_MASTER_UC:mbed_instant|ocounter[4]      ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4] ;
 ; SPI_MASTER_UC:mbed_instant|ocounter[5]      ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5] ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_5[0]     ; Merged with CLK_312k5HZ[0]                         ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_5[1]     ; Merged with CLK_312k5HZ[1]                         ;
 ; FIFO:FIFO_instant|regarray_rtl_0_bypass[28] ; Merged with FIFO:FIFO_instant|rd_reg[13]           ;
 ; FIFO:FIFO_instant|regarray_rtl_0_bypass[26] ; Merged with FIFO:FIFO_instant|rd_reg[12]           ;
 ; FIFO:FIFO_instant|regarray_rtl_0_bypass[24] ; Merged with FIFO:FIFO_instant|rd_reg[11]           ;
@@ -307,7 +317,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; FIFO:FIFO_instant|regarray_rtl_0_bypass[6]  ; Merged with FIFO:FIFO_instant|rd_reg[2]            ;
 ; FIFO:FIFO_instant|regarray_rtl_0_bypass[4]  ; Merged with FIFO:FIFO_instant|rd_reg[1]            ;
 ; FIFO:FIFO_instant|regarray_rtl_0_bypass[2]  ; Merged with FIFO:FIFO_instant|rd_reg[0]            ;
-; Total Number of Removed Registers = 20      ;                                                    ;
+; Total Number of Removed Registers = 22      ;                                                    ;
 +---------------------------------------------+----------------------------------------------------+
 
 
@@ -316,12 +326,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 152   ;
+; Total registers                              ; 159   ;
 ; Number of registers using Synchronous Clear  ; 34    ;
 ; Number of registers using Synchronous Load   ; 17    ;
 ; Number of registers using Asynchronous Clear ; 31    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 83    ;
+; Number of registers using Clock Enable       ; 67    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -331,7 +341,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; FIFO:FIFO_instant|empty_reg            ; 6       ;
+; FIFO:FIFO_instant|empty_reg            ; 7       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -389,17 +399,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+----------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[2]  ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[11] ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |main|FIFO:FIFO_instant|wr_reg[2]             ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|FIFO:FIFO_instant|out[12]               ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |main|FIFO:FIFO_instant|Mux14                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[2] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[1] ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |main|FIFO:FIFO_instant|wr_reg[2]            ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |main|FIFO:FIFO_instant|out[11]              ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |main|FIFO:FIFO_instant|Mux20                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -905,6 +915,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_encoder:hex4"                                                                                                                               ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; number ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "number[4..4]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_encoder:hex5"                                                                                                                               ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; number ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "number[4..4]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_encoder:hex6"                                                                                                                               ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; number ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "number[4..4]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_encoder:hex7"                                                                                                                               ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; number ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "number[4..4]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "hex_encoder:hex0"                                                                                                                               ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
@@ -945,6 +991,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port      ; Type   ; Severity ; Details                                                                                                  ;
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; RST       ; Input  ; Info     ; Explicitly unconnected                                                                                   ;
 ; DATA_MISO ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
@@ -964,7 +1011,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu May 21 02:30:21 2015
+    Info: Processing started: Fri May 22 01:12:26 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off check -c check
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
@@ -979,18 +1026,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
 Info (12021): Found 1 design units, including 1 entities, in source file clkpll.v
     Info (12023): Found entity 1: CLKPLL
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(34): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(42): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(80): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(81): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(91): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at main.v(94): truncated value with size 32 to match size of target (1)
+Warning (10036): Verilog HDL or VHDL warning at main.v(96): object "SPI_RST" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at main.v(46): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at main.v(50): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at main.v(58): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(93): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(103): truncated value with size 32 to match size of target (1)
 Warning (10034): Output port "oLEDR[15..0]" at main.v(7) has no driver
 Warning (10034): Output port "oLEDG[7..0]" at main.v(8) has no driver
-Warning (10034): Output port "oHEX4_D" at main.v(10) has no driver
-Warning (10034): Output port "oHEX5_D" at main.v(10) has no driver
-Warning (10034): Output port "oHEX6_D" at main.v(10) has no driver
-Warning (10034): Output port "oHEX7_D" at main.v(10) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLKPLL:CLKPLL_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "CLKPLL:CLKPLL_inst|altpll:altpll_component"
@@ -1050,8 +1093,9 @@ Info (12128): Elaborating entity "FIFO" for hierarchy "FIFO:FIFO_instant"
 Warning (10230): Verilog HDL assignment warning at FIFO.v(77): truncated value with size 32 to match size of target (14)
 Warning (10230): Verilog HDL assignment warning at FIFO.v(78): truncated value with size 32 to match size of target (14)
 Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(55): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(81): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(32): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(62): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(88): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:hex3"
 Warning (276020): Inferred RAM node "FIFO:FIFO_instant|regarray_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
@@ -1094,7 +1138,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/deco
     Info (12023): Found entity 1: decode_4oa
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3kb.tdf
     Info (12023): Found entity 1: mux_3kb
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[3]" and its non-tri-state driver.
@@ -1192,34 +1236,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oLEDG[5]" is stuck at GND
     Warning (13410): Pin "oLEDG[6]" is stuck at GND
     Warning (13410): Pin "oLEDG[7]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[0]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[1]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[2]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[3]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[4]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[5]" is stuck at GND
-    Warning (13410): Pin "oHEX4_D[6]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[0]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[1]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[2]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[3]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[4]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[5]" is stuck at GND
-    Warning (13410): Pin "oHEX5_D[6]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[0]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[1]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[2]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[3]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[4]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[5]" is stuck at GND
-    Warning (13410): Pin "oHEX6_D[6]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[0]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[1]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[2]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[3]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[4]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[5]" is stuck at GND
-    Warning (13410): Pin "oHEX7_D[6]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 19 input pin(s) that do not drive logic
@@ -1240,19 +1256,19 @@ Warning (21074): Design contains 19 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[14]"
     Warning (15610): No output dependent on input pin "iSW[15]"
     Warning (15610): No output dependent on input pin "iSW[16]"
+    Warning (15610): No output dependent on input pin "iSW[17]"
     Warning (15610): No output dependent on input pin "iKEY[1]"
-    Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 538 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 570 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 303 logic cells
+    Info (21061): Implemented 335 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 162 warnings
-    Info: Peak virtual memory: 472 megabytes
-    Info: Processing ended: Thu May 21 02:30:24 2015
-    Info: Elapsed time: 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 131 warnings
+    Info: Peak virtual memory: 471 megabytes
+    Info: Processing ended: Fri May 22 01:12:30 2015
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

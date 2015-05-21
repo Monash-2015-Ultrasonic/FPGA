@@ -1,5 +1,5 @@
 Assembler report for check
-Thu May 21 02:30:51 2015
+Fri May 22 01:12:55 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu May 21 02:30:51 2015 ;
+; Assembler Status      ; Successful - Fri May 22 01:12:55 2015 ;
 ; Revision Name         ; check                                 ;
 ; Top-level Entity Name ; main                                  ;
 ; Family                ; Cyclone II                            ;
@@ -95,8 +95,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                                    ;
 +----------------+--------------------------------------------------------------------------------------------+
 ; Device         ; EP2C70F896C6                                                                               ;
-; JTAG usercode  ; 0x0067B051                                                                                 ;
-; Checksum       ; 0x0067B051                                                                                 ;
+; JTAG usercode  ; 0x006867C6                                                                                 ;
+; Checksum       ; 0x006867C6                                                                                 ;
 +----------------+--------------------------------------------------------------------------------------------+
 
 
@@ -107,7 +107,7 @@ applicable agreement for further details.
 +--------------------+----------------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                                 ;
 ; JTAG usercode      ; 0x00000000                                                                             ;
-; Checksum           ; 0x186B901B                                                                             ;
+; Checksum           ; 0x1869AAF0                                                                             ;
 ; Compression Ratio  ; 3                                                                                      ;
 +--------------------+----------------------------------------------------------------------------------------+
 
@@ -118,14 +118,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu May 21 02:30:45 2015
+    Info: Processing started: Fri May 22 01:12:50 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off check -c check
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 444 megabytes
-    Info: Processing ended: Thu May 21 02:30:51 2015
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 440 megabytes
+    Info: Processing ended: Fri May 22 01:12:55 2015
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:03
 
 

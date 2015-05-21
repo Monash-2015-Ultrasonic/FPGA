@@ -17,11 +17,11 @@ iSW[13] => ~NO_FANOUT~
 iSW[14] => ~NO_FANOUT~
 iSW[15] => ~NO_FANOUT~
 iSW[16] => ~NO_FANOUT~
-iSW[17] => on.DATAIN
+iSW[17] => ~NO_FANOUT~
 iKEY[0] => rst.DATAIN
 iKEY[1] => ~NO_FANOUT~
 iKEY[2] => manual_wr.DATAIN
-iKEY[3] => ~NO_FANOUT~
+iKEY[3] => manual_rd.IN1
 oLEDR[0] <= <GND>
 oLEDR[1] <= <GND>
 oLEDR[2] <= <GND>
@@ -77,34 +77,34 @@ oHEX3_D[3] <= hex_encoder:hex3.port1
 oHEX3_D[4] <= hex_encoder:hex3.port1
 oHEX3_D[5] <= hex_encoder:hex3.port1
 oHEX3_D[6] <= hex_encoder:hex3.port1
-oHEX4_D[0] <= <GND>
-oHEX4_D[1] <= <GND>
-oHEX4_D[2] <= <GND>
-oHEX4_D[3] <= <GND>
-oHEX4_D[4] <= <GND>
-oHEX4_D[5] <= <GND>
-oHEX4_D[6] <= <GND>
-oHEX5_D[0] <= <GND>
-oHEX5_D[1] <= <GND>
-oHEX5_D[2] <= <GND>
-oHEX5_D[3] <= <GND>
-oHEX5_D[4] <= <GND>
-oHEX5_D[5] <= <GND>
-oHEX5_D[6] <= <GND>
-oHEX6_D[0] <= <GND>
-oHEX6_D[1] <= <GND>
-oHEX6_D[2] <= <GND>
-oHEX6_D[3] <= <GND>
-oHEX6_D[4] <= <GND>
-oHEX6_D[5] <= <GND>
-oHEX6_D[6] <= <GND>
-oHEX7_D[0] <= <GND>
-oHEX7_D[1] <= <GND>
-oHEX7_D[2] <= <GND>
-oHEX7_D[3] <= <GND>
-oHEX7_D[4] <= <GND>
-oHEX7_D[5] <= <GND>
-oHEX7_D[6] <= <GND>
+oHEX4_D[0] <= hex_encoder:hex4.port1
+oHEX4_D[1] <= hex_encoder:hex4.port1
+oHEX4_D[2] <= hex_encoder:hex4.port1
+oHEX4_D[3] <= hex_encoder:hex4.port1
+oHEX4_D[4] <= hex_encoder:hex4.port1
+oHEX4_D[5] <= hex_encoder:hex4.port1
+oHEX4_D[6] <= hex_encoder:hex4.port1
+oHEX5_D[0] <= hex_encoder:hex5.port1
+oHEX5_D[1] <= hex_encoder:hex5.port1
+oHEX5_D[2] <= hex_encoder:hex5.port1
+oHEX5_D[3] <= hex_encoder:hex5.port1
+oHEX5_D[4] <= hex_encoder:hex5.port1
+oHEX5_D[5] <= hex_encoder:hex5.port1
+oHEX5_D[6] <= hex_encoder:hex5.port1
+oHEX6_D[0] <= hex_encoder:hex6.port1
+oHEX6_D[1] <= hex_encoder:hex6.port1
+oHEX6_D[2] <= hex_encoder:hex6.port1
+oHEX6_D[3] <= hex_encoder:hex6.port1
+oHEX6_D[4] <= hex_encoder:hex6.port1
+oHEX6_D[5] <= hex_encoder:hex6.port1
+oHEX6_D[6] <= hex_encoder:hex6.port1
+oHEX7_D[0] <= hex_encoder:hex7.port1
+oHEX7_D[1] <= hex_encoder:hex7.port1
+oHEX7_D[2] <= hex_encoder:hex7.port1
+oHEX7_D[3] <= hex_encoder:hex7.port1
+oHEX7_D[4] <= hex_encoder:hex7.port1
+oHEX7_D[5] <= hex_encoder:hex7.port1
+oHEX7_D[6] <= hex_encoder:hex7.port1
 GPIO_0[0] <> <UNC>
 GPIO_0[1] <> <UNC>
 GPIO_0[2] <> <UNC>
@@ -339,7 +339,12 @@ dout[15] <= out[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|SPI_MASTER_UC:mbed_instant
-SYS_CLK => SPI_CLK.CLK
+SYS_CLK => SPI_CLK_5[0].CLK
+SYS_CLK => SPI_CLK_5[1].CLK
+SYS_CLK => SPI_CLK_5[2].CLK
+RST => SPI_CLK_5.OUTPUTSELECT
+RST => SPI_CLK_5.OUTPUTSELECT
+RST => SPI_CLK_5.OUTPUTSELECT
 ENA => CSbar~reg0.DATAIN
 DATA_MOSI[0] => data_out.DATAB
 DATA_MOSI[1] => data_out.DATAB
@@ -360,7 +365,7 @@ DATA_MOSI[15] => data_out.DATAB
 MISO => data_in.DATAA
 MOSI <= MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CSbar <= CSbar~reg0.DB_MAX_OUTPUT_PORT_TYPE
-SCK <= SCK.DB_MAX_OUTPUT_PORT_TYPE
+SCK <= SPI_CLK_5[2].DB_MAX_OUTPUT_PORT_TYPE
 FIN <= FIN~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DATA_MISO[0] <= <GND>
 DATA_MISO[1] <= data_in_final[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -426,6 +431,66 @@ code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|hex_encoder:hex0
+number[0] => Decoder0.IN4
+number[1] => Decoder0.IN3
+number[2] => Decoder0.IN2
+number[3] => Decoder0.IN1
+number[4] => Decoder0.IN0
+code[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+code[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+code[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+code[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+code[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|hex_encoder:hex7
+number[0] => Decoder0.IN4
+number[1] => Decoder0.IN3
+number[2] => Decoder0.IN2
+number[3] => Decoder0.IN1
+number[4] => Decoder0.IN0
+code[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+code[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+code[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+code[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+code[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|hex_encoder:hex6
+number[0] => Decoder0.IN4
+number[1] => Decoder0.IN3
+number[2] => Decoder0.IN2
+number[3] => Decoder0.IN1
+number[4] => Decoder0.IN0
+code[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+code[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+code[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+code[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+code[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|hex_encoder:hex5
+number[0] => Decoder0.IN4
+number[1] => Decoder0.IN3
+number[2] => Decoder0.IN2
+number[3] => Decoder0.IN1
+number[4] => Decoder0.IN0
+code[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+code[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+code[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+code[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+code[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|hex_encoder:hex4
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
