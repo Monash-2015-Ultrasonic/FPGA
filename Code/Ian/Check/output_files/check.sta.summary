@@ -2,55 +2,35 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'FIFO:FIFO_instant|clock'
-Slack : -5.121
-TNS   : -4956.210
-
 Type  : Slow Model Setup 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -2.145
-TNS   : -6.201
+Slack : -5.245
+TNS   : -305.725
 
-Type  : Slow Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_5[2]'
-Slack : -1.619
-TNS   : -29.680
+Type  : Slow Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
+Slack : -2.909
+TNS   : -47.164
 
-Type  : Slow Model Setup 'CLK_312k5HZ[6]'
+Type  : Slow Model Setup 'CLK_SLOW[6]'
 Slack : -1.498
 TNS   : -14.432
 
-Type  : Slow Model Hold 'CLK_312k5HZ[6]'
-Slack : -1.303
-TNS   : -20.848
+Type  : Slow Model Hold 'CLK_SLOW[6]'
+Slack : -1.597
+TNS   : -25.552
 
-Type  : Slow Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_5[2]'
-Slack : -1.213
-TNS   : -1.213
-
-Type  : Slow Model Hold 'FIFO:FIFO_instant|clock'
-Slack : -1.186
-TNS   : -10.272
+Type  : Slow Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
+Slack : -1.264
+TNS   : -2.718
 
 Type  : Slow Model Hold 'CLKPLL_inst|altpll_component|pll|clk[0]'
 Slack : -0.049
-TNS   : -0.057
+TNS   : -0.049
 
-Type  : Slow Model Recovery 'FIFO:FIFO_instant|clock'
-Slack : 0.965
-TNS   : 0.000
-
-Type  : Slow Model Removal 'FIFO:FIFO_instant|clock'
-Slack : -1.212
-TNS   : -13.755
-
-Type  : Slow Model Minimum Pulse Width 'FIFO:FIFO_instant|clock'
-Slack : -1.627
-TNS   : -5722.912
-
-Type  : Slow Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_5[2]'
+Type  : Slow Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
 Slack : -0.500
 TNS   : -25.000
 
-Type  : Slow Model Minimum Pulse Width 'CLK_312k5HZ[6]'
+Type  : Slow Model Minimum Pulse Width 'CLK_SLOW[6]'
 Slack : -0.500
 TNS   : -16.000
 
@@ -59,58 +39,38 @@ Slack : 10.000
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : 11.500
+Slack : 10.373
 TNS   : 0.000
 
-Type  : Fast Model Setup 'FIFO:FIFO_instant|clock'
-Slack : -2.381
-TNS   : -1421.407
-
 Type  : Fast Model Setup 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -0.855
-TNS   : -2.493
+Slack : -2.388
+TNS   : -136.183
 
-Type  : Fast Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_5[2]'
-Slack : -0.284
-TNS   : -3.307
+Type  : Fast Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
+Slack : -0.937
+TNS   : -12.093
 
-Type  : Fast Model Setup 'CLK_312k5HZ[6]'
+Type  : Fast Model Setup 'CLK_SLOW[6]'
 Slack : -0.165
 TNS   : -0.475
 
-Type  : Fast Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_5[2]'
-Slack : -0.962
-TNS   : -0.962
+Type  : Fast Model Hold 'CLK_SLOW[6]'
+Slack : -1.169
+TNS   : -18.704
 
-Type  : Fast Model Hold 'FIFO:FIFO_instant|clock'
-Slack : -0.954
-TNS   : -11.059
-
-Type  : Fast Model Hold 'CLK_312k5HZ[6]'
-Slack : -0.938
-TNS   : -15.008
+Type  : Fast Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
+Slack : -0.966
+TNS   : -6.654
 
 Type  : Fast Model Hold 'CLKPLL_inst|altpll_component|pll|clk[0]'
 Slack : -0.030
 TNS   : -0.030
 
-Type  : Fast Model Recovery 'FIFO:FIFO_instant|clock'
-Slack : 1.275
-TNS   : 0.000
-
-Type  : Fast Model Removal 'FIFO:FIFO_instant|clock'
-Slack : -0.862
-TNS   : -15.836
-
-Type  : Fast Model Minimum Pulse Width 'FIFO:FIFO_instant|clock'
-Slack : -1.627
-TNS   : -5722.912
-
-Type  : Fast Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_5[2]'
+Type  : Fast Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
 Slack : -0.500
 TNS   : -25.000
 
-Type  : Fast Model Minimum Pulse Width 'CLK_312k5HZ[6]'
+Type  : Fast Model Minimum Pulse Width 'CLK_SLOW[6]'
 Slack : -0.500
 TNS   : -16.000
 
@@ -119,7 +79,7 @@ Slack : 10.000
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : 11.500
+Slack : 10.373
 TNS   : 0.000
 
 ------------------------------------------------------------

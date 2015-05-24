@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="SYSTEM">
-		<CBX_INST_ENTRY INSTANCE_NAME="|main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0" CBX_FILE_NAME="altsyncram_05h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_qf31.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

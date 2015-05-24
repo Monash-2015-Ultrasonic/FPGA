@@ -41,7 +41,7 @@ module FIFO # (parameter abits = 4, dbits = 3)(
 	//always block for write operation
 	always @ (posedge clock) begin
 	  if(wr_en)
-		regarray[wr_reg] <= din;  //at wr_reg location of regarray store what is given at din
+			regarray[wr_reg] <= din;  //at wr_reg location of regarray store what is given at din
 	end
 	  
 	//always block for read operation

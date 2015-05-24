@@ -49,12 +49,8 @@ module FIFO # (parameter abits = 4, dbits = 3)(
 		if (reset)
 			out <= 0;
 		else if(db_rd) begin
-			//if (empty_reg)
-		//		out <= 0;
-			//else
 				out <= regarray[rd_reg];
 		end
-		//else ;
 	end
 	  
 	always @ (posedge clock or posedge reset) begin
@@ -74,38 +70,38 @@ module FIFO # (parameter abits = 4, dbits = 3)(
 	end
 	  
 	always @(*) begin
-		wr_succ = wr_reg + 1; //assigned to new value as wr_next cannot be tested for in same always block
-		rd_succ = rd_reg + 1; //assigned to new value as rd_next cannot be tested for in same always block
-		wr_next = wr_reg;  //defaults state stays the same
-		rd_next = rd_reg;  //defaults state stays the same
-		full_next = full_reg;  //defaults state stays the same
-		empty_next = empty_reg;  //defaults state stays the same
+		wr_succ <= wr_reg + 1; //assigned to new value as wr_next cannot be tested for in same always block
+		rd_succ <= rd_reg + 1; //assigned to new value as rd_next cannot be tested for in same always block
+		wr_next <= wr_reg;  //defaults state stays the same
+		rd_next <= rd_reg;  //defaults state stays the same
+		full_next <= full_reg;  //defaults state stays the same
+		empty_next <= empty_reg;  //defaults state stays the same
 		
 		case({db_wr,db_rd})
 		 //2'b00: do nothing LOL..
 		 2'b01: begin //read
 			if(~empty) //if fifo is not empty continue
 			 begin
-			  rd_next = rd_succ;
-			  full_next = 1'b0;
+			  rd_next <= rd_succ;
+			  full_next <= 1'b0;
 			 if(rd_succ == wr_reg) //all data has been read
-				empty_next = 1'b1;  //its empty again
+				empty_next <= 1'b1;  //its empty again
 			 end
 		 end
 		  
 		 2'b10: begin //write			 
 			if(~full) //if fifo is not full continue
 			 begin
-			  wr_next = wr_succ;
-			  empty_next = 1'b0;
+			  wr_next <= wr_succ;
+			  empty_next <= 1'b0;
 			  if(wr_succ == (2**abits-1)) //all registers have been written to
-				full_next = 1'b1;   //its full now
+				full_next <= 1'b1;   //its full now
 			 end
 		 end
 			
 		 2'b11: begin //read and write
-			wr_next = wr_succ;
-			rd_next = rd_succ;
+			wr_next <= wr_succ;
+			rd_next <= rd_succ;
 		 end
 		  //no empty or full flag will be checked for or asserted in this state since data is being written to and read from together it can  not get full in this state.
 		  

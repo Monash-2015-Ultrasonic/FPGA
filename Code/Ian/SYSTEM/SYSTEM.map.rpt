@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SYSTEM
-Fri May 22 02:59:33 2015
+Sun May 24 21:26:07 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -11,37 +11,33 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
+  6. Analysis & Synthesis IP Cores Summary
+  7. Partition Status Summary
+  8. Dependent File Changes for Partition Top
+  9. Partition for Top-Level Resource Utilization by Entity
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Added for RAM Pass-Through Logic
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated
- 17. Parameter Settings for User Entity Instance: Top-level Entity: |main
- 18. Parameter Settings for User Entity Instance: CLKPLL:CLKPLL_inst|altpll:altpll_component
- 19. Parameter Settings for User Entity Instance: SPI_MASTER_ADC:ADC0_instant
- 20. Parameter Settings for User Entity Instance: FIFO:FIFO_ADC0_instant
- 21. Parameter Settings for User Entity Instance: SPI_MASTER_UC:mbed_instant
- 22. Parameter Settings for Inferred Entity Instance: FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0
- 23. altpll Parameter Settings by Entity Instance
- 24. altsyncram Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "hex_encoder:hex5"
- 26. Port Connectivity Checks: "hex_encoder:hex7"
- 27. Port Connectivity Checks: "hex_encoder:hex4"
- 28. Port Connectivity Checks: "hex_encoder:hex6"
- 29. Port Connectivity Checks: "hex_encoder:hex0"
- 30. Port Connectivity Checks: "hex_encoder:hex1"
- 31. Port Connectivity Checks: "hex_encoder:hex2"
- 32. Port Connectivity Checks: "hex_encoder:hex3"
- 33. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
- 34. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2
+ 13. Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |main
+ 15. Parameter Settings for User Entity Instance: CLKPLL:CLKPLL_inst|altpll:altpll_component
+ 16. Parameter Settings for User Entity Instance: SPI_MASTER_ADC:ADC0_instant
+ 17. Parameter Settings for User Entity Instance: FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component
+ 18. Parameter Settings for User Entity Instance: SPI_MASTER_UC:mbed_instant
+ 19. Partition Dependent Files
+ 20. Port Connectivity Checks: "hex_encoder:hex5"
+ 21. Port Connectivity Checks: "hex_encoder:hex7"
+ 22. Port Connectivity Checks: "hex_encoder:hex4"
+ 23. Port Connectivity Checks: "hex_encoder:hex6"
+ 24. Port Connectivity Checks: "hex_encoder:hex0"
+ 25. Port Connectivity Checks: "hex_encoder:hex1"
+ 26. Port Connectivity Checks: "hex_encoder:hex2"
+ 27. Port Connectivity Checks: "hex_encoder:hex3"
+ 28. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
+ 29. Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst"
+ 30. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -67,20 +63,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 22 02:59:33 2015            ;
+; Analysis & Synthesis Status        ; Successful - Sun May 24 21:26:07 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 353                                              ;
-;     Total combinational functions  ; 285                                              ;
-;     Dedicated logic registers      ; 201                                              ;
-; Total registers                    ; 201                                              ;
-; Total pins                         ; 170                                              ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 245,760                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 1                                                ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -93,6 +89,7 @@ applicable agreement for further details.
 ; Top-level entity name                                                      ; main               ; SYSTEM             ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; On                 ; Off                ;
+; Maximum processors allowed for parallel compilation                        ; All                ;                    ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
@@ -192,254 +189,149 @@ applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                                        ; Library ;
 +----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------------------+---------+
 ; Source/SPI_Master_UC.v           ; yes             ; User Verilog HDL File             ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/SPI_Master_UC.v  ;         ;
+; Source/SPI_Master_ADC.v          ; yes             ; User Verilog HDL File             ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/SPI_Master_ADC.v ;         ;
 ; Source/main.v                    ; yes             ; User Verilog HDL File             ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/main.v           ;         ;
 ; Source/Hex Encoder.v             ; yes             ; User Verilog HDL File             ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/Hex Encoder.v    ;         ;
-; Source/FIFO.v                    ; yes             ; User Verilog HDL File             ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/FIFO.v           ;         ;
-; Source/SPI_Master_ADC.v          ; yes             ; User Verilog HDL File             ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/SPI_Master_ADC.v ;         ;
+; FIFO_IP.v                        ; yes             ; User Wizard-Generated File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/FIFO_IP.v               ;         ;
 ; clkpll.v                         ; yes             ; Auto-Found Wizard-Generated File  ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/clkpll.v                ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                        ;         ;
 ; aglobal130.inc                   ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                   ;         ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                 ;         ;
 ; cycloneii_pll.inc                ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                 ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
-; altrom.inc                       ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                        ;         ;
-; altram.inc                       ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                        ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
-; db/altsyncram_05h1.tdf           ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/altsyncram_05h1.tdf  ;         ;
-; db/decode_4oa.tdf                ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/decode_4oa.tdf       ;         ;
-; db/mux_2kb.tdf                   ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/mux_2kb.tdf          ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/scfifo.tdf                        ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_regfifo.inc                     ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_dpfifo.inc                      ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_i2fifo.inc                      ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_fffifo.inc                      ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                      ; f:/altera/13.0sp1/quartus/libraries/megafunctions/a_f2fifo.inc                      ;         ;
+; db/scfifo_qf31.tdf               ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/scfifo_qf31.tdf      ;         ;
+; db/a_dpfifo_d731.tdf             ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/a_dpfifo_d731.tdf    ;         ;
+; db/a_fefifo_nce.tdf              ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/a_fefifo_nce.tdf     ;         ;
+; db/cntr_al7.tdf                  ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/cntr_al7.tdf         ;         ;
+; db/dpram_s011.tdf                ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/dpram_s011.tdf       ;         ;
+; db/altsyncram_22k1.tdf           ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/altsyncram_22k1.tdf  ;         ;
+; db/altsyncram_3sc1.tdf           ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/altsyncram_3sc1.tdf  ;         ;
+; db/decode_r37.tdf                ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/decode_r37.tdf       ;         ;
+; db/mux_qv7.tdf                   ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/mux_qv7.tdf          ;         ;
+; db/cntr_ukb.tdf                  ; yes             ; Auto-Generated Megafunction       ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/db/cntr_ukb.tdf         ;         ;
 +----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                ;
-+---------------------------------------------+------------------------------+
-; Resource                                    ; Usage                        ;
-+---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 353                          ;
-;                                             ;                              ;
-; Total combinational functions               ; 285                          ;
-; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 111                          ;
-;     -- 3 input functions                    ; 76                           ;
-;     -- <=2 input functions                  ; 98                           ;
-;                                             ;                              ;
-; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 236                          ;
-;     -- arithmetic mode                      ; 49                           ;
-;                                             ;                              ;
-; Total registers                             ; 201                          ;
-;     -- Dedicated logic registers            ; 201                          ;
-;     -- I/O registers                        ; 0                            ;
-;                                             ;                              ;
-; I/O pins                                    ; 170                          ;
-; Total memory bits                           ; 245760                       ;
-; Embedded Multiplier 9-bit elements          ; 0                            ;
-; Total PLLs                                  ; 1                            ;
-;     -- PLLs                                 ; 1                            ;
-;                                             ;                              ;
-; Maximum fan-out node                        ; FIFO:FIFO_ADC0_instant|clock ;
-; Maximum fan-out                             ; 158                          ;
-; Total fan-out                               ; 3092                         ;
-; Average fan-out                             ; 4.31                         ;
-+---------------------------------------------+------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                              ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                       ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |main|CLKPLL:CLKPLL_inst   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/clkpll.v  ;
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |main|FIFO_IP:FIFO_IP_inst ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/FIFO_IP.v ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
-; |main                                     ; 285 (24)          ; 201 (22)     ; 245760      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                    ; work         ;
-;    |CLKPLL:CLKPLL_inst|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                 ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                         ; work         ;
-;    |FIFO:FIFO_ADC0_instant|               ; 146 (143)         ; 98 (96)      ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant                                                                             ; work         ;
-;       |altsyncram:regarray_rtl_0|         ; 3 (0)             ; 2 (0)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0                                                   ; work         ;
-;          |altsyncram_05h1:auto_generated| ; 3 (0)             ; 2 (2)        ; 245760      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated                    ; work         ;
-;             |decode_4oa:decode2|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated|decode_4oa:decode2 ; work         ;
-;    |SPI_MASTER_ADC:ADC0_instant|          ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                        ; work         ;
-;    |SPI_MASTER_UC:mbed_instant|           ; 32 (32)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                         ; work         ;
-;    |hex_encoder:hex0|                     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                                                                                   ; work         ;
-;    |hex_encoder:hex1|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                                                                                   ; work         ;
-;    |hex_encoder:hex2|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                                                                                   ; work         ;
-;    |hex_encoder:hex3|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex3                                                                                   ; work         ;
-;    |hex_encoder:hex4|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex4                                                                                   ; work         ;
-;    |hex_encoder:hex6|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex6                                                                                   ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
++--------------------------------------------------------+
+; Partition Status Summary                               ;
++----------------+-------------+-------------------------+
+; Partition Name ; Synthesized ; Reason                  ;
++----------------+-------------+-------------------------+
+; Top            ; yes         ; Dependent files changed ;
++----------------+-------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition Top                                                                                       ;
++-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy ; File Name     ; Relative Location ; Change   ; Old                              ; New                              ;
++-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
+; |         ; Source/main.v ; Project Directory ; Checksum ; 0f379973a81e913039f5de1390caa320 ; 3f84bc430ab8637a96ce177a30b61715 ;
++-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                            ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                               ; Library Name ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |main                                              ; 291 (58)          ; 179 (52)     ; 262144      ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                                                                                                                                                                             ; work         ;
+;    |CLKPLL:CLKPLL_inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                                                                                                          ; work         ;
+;       |altpll:altpll_component|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                                                                                                                  ; work         ;
+;    |FIFO_IP:FIFO_IP_inst|                          ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                        ; work         ;
+;       |scfifo:scfifo_component|                    ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component                                                                                                                                                ; work         ;
+;          |scfifo_qf31:auto_generated|              ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated                                                                                                                     ; work         ;
+;             |a_dpfifo_d731:dpfifo|                 ; 113 (16)          ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo                                                                                                ; work         ;
+;                |a_fefifo_nce:fifo_state|           ; 28 (13)           ; 16 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state                                                                        ; work         ;
+;                   |cntr_al7:count_usedw|           ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw                                                   ; work         ;
+;                |cntr_ukb:rd_ptr_count|             ; 14 (14)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count                                                                          ; work         ;
+;                |cntr_ukb:wr_ptr|                   ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:wr_ptr                                                                                ; work         ;
+;                |dpram_s011:FIFOram|                ; 40 (0)            ; 2 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram                                                                             ; work         ;
+;                   |altsyncram_22k1:altsyncram2|    ; 40 (0)            ; 2 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2                                                 ; work         ;
+;                      |altsyncram_3sc1:altsyncram3| ; 40 (0)            ; 2 (2)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3                     ; work         ;
+;                         |decode_r37:decode6|       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode6  ; work         ;
+;                         |decode_r37:decode_a|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_a ; work         ;
+;                         |mux_qv7:mux7|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux7        ; work         ;
+;    |SPI_MASTER_ADC:ADC0_instant|                   ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                                                                                                                 ; work         ;
+;    |SPI_MASTER_UC:mbed_instant|                    ; 32 (32)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                                                                                                                  ; work         ;
+;    |hex_encoder:hex0|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                                                                                                                                                                            ; work         ;
+;    |hex_encoder:hex1|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                                                                                                                                                                            ; work         ;
+;    |hex_encoder:hex2|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                                                                                                                                                                            ; work         ;
+;    |hex_encoder:hex3|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex3                                                                                                                                                                            ; work         ;
+;    |hex_encoder:hex4|                              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex4                                                                                                                                                                            ; work         ;
+;    |hex_encoder:hex6|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex6                                                                                                                                                                            ; work         ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16384        ; 15           ; 16384        ; 15           ; 245760 ; None ;
-+--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-----------------------------------------+-----------------------------------------------------+
+; Register name                           ; Reason for Removal                                  ;
++-----------------------------------------+-----------------------------------------------------+
+; SPI_MASTER_UC:mbed_instant|ocounter[0]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[1]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[2]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[3]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[4]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[5]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5]  ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[0] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[1] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[2] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[3] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[4] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[5] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_5[0] ; Merged with usonic[0]                               ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_5[1] ; Merged with usonic[1]                               ;
+; Total Number of Removed Registers = 14  ;                                                     ;
++-----------------------------------------+-----------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                           ;
-+--------+--------------+---------+--------------+--------------+--------------------------+----------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance          ; IP Include File                                                      ;
-+--------+--------------+---------+--------------+--------------+--------------------------+----------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |main|CLKPLL:CLKPLL_inst ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/clkpll.v ;
-+--------+--------------+---------+--------------+--------------+--------------------------+----------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[13] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[7]  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_in[1]   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[1]   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[10]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                     ;
-+--------------------------------------------------+-----------------------------------------------------+
-; Register name                                    ; Reason for Removal                                  ;
-+--------------------------------------------------+-----------------------------------------------------+
-; SPI_MASTER_UC:mbed_instant|ocounter[0]           ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[1]           ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[2]           ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[3]           ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[4]           ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[5]           ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5]  ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[0]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[1]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[2]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[3]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[4]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[5]          ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
-; FIFO:FIFO_ADC0_instant|out[0]                    ; Stuck at GND due to stuck port data_in              ;
-; SPI_MASTER_UC:mbed_instant|data_out[0]           ; Stuck at GND due to stuck port data_in              ;
-; SPI_MASTER_UC:mbed_instant|SPI_CLK_5[0]          ; Merged with usonic[0]                               ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[28] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[13]       ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[26] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[12]       ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[24] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[11]       ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[22] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[10]       ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[20] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[9]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[18] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[8]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[16] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[7]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[14] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[6]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[12] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[5]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[10] ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[4]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[8]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[3]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[6]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[2]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[4]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[1]        ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[2]  ; Merged with FIFO:FIFO_ADC0_instant|rd_reg[0]        ;
-; Total Number of Removed Registers = 29           ;                                                     ;
-+--------------------------------------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2 ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                        ;
-+-------------------------------+---------------------------+----------------------------------------+
-; Register name                 ; Reason for Removal        ; Registers Removed due to This Register ;
-+-------------------------------+---------------------------+----------------------------------------+
-; FIFO:FIFO_ADC0_instant|out[0] ; Stuck at GND              ; SPI_MASTER_UC:mbed_instant|data_out[0] ;
-;                               ; due to stuck port data_in ;                                        ;
-+-------------------------------+---------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 201   ;
-; Number of registers using Synchronous Clear  ; 25    ;
-; Number of registers using Synchronous Load   ; 3     ;
-; Number of registers using Asynchronous Clear ; 31    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 98    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; FIFO:FIFO_ADC0_instant|empty_reg       ; 6       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------+
-; Registers Added for RAM Pass-Through Logic                                               ;
-+--------------------------------------------------+---------------------------------------+
-; Register Name                                    ; RAM Name                              ;
-+--------------------------------------------------+---------------------------------------+
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[0]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[1]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[2]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[3]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[4]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[5]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[6]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[7]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[8]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[9]  ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[10] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[11] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[12] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[13] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[14] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[15] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[16] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[17] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[18] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[19] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[20] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[21] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[22] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[23] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[24] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[25] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[26] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[27] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[28] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[29] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[30] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[31] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[32] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[33] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[34] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[35] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[36] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[37] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[38] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[39] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[40] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[41] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[42] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-; FIFO:FIFO_ADC0_instant|regarray_rtl_0_bypass[43] ; FIFO:FIFO_ADC0_instant|regarray_rtl_0 ;
-+--------------------------------------------------+---------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[1] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[7] ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_in[12] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[3]  ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[9]  ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|wr_reg[2]        ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |main|FIFO:FIFO_ADC0_instant|out[14]          ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |main|FIFO:FIFO_ADC0_instant|Mux14            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Source assignments for FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0|altsyncram_05h1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                       ;
-+---------------------------------+--------------------+------+------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
-+---------------------------------+--------------------+------+------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                               ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------+
@@ -449,6 +341,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------+
 ; BITS           ; 6     ; Signed Integer                              ;
 ; TOPBIT         ; 5     ; Signed Integer                              ;
+; out_clk_bits   ; 14    ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -837,14 +730,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: FIFO:FIFO_ADC0_instant ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; abits          ; 14    ; Signed Integer                             ;
-; dbits          ; 16    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                              ;
++-------------------------+-------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                    ;
+; lpm_width               ; 16          ; Signed Integer                                    ;
+; LPM_NUMWORDS            ; 16384       ; Signed Integer                                    ;
+; LPM_WIDTHU              ; 14          ; Signed Integer                                    ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                           ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                           ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                           ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                           ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                           ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                           ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                           ;
+; USE_EAB                 ; ON          ; Untyped                                           ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                           ;
+; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                           ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                           ;
+; CBXI_PARAMETER          ; scfifo_qf31 ; Untyped                                           ;
++-------------------------+-------------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -858,102 +768,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0 ;
-+------------------------------------+----------------------+---------------------------------------+
-; Parameter Name                     ; Value                ; Type                                  ;
-+------------------------------------+----------------------+---------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                               ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                            ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                          ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                          ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                        ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                               ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                               ;
-; WIDTH_A                            ; 15                   ; Untyped                               ;
-; WIDTHAD_A                          ; 14                   ; Untyped                               ;
-; NUMWORDS_A                         ; 16384                ; Untyped                               ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                               ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                               ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                               ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                               ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                               ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                               ;
-; WIDTH_B                            ; 15                   ; Untyped                               ;
-; WIDTHAD_B                          ; 14                   ; Untyped                               ;
-; NUMWORDS_B                         ; 16384                ; Untyped                               ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                               ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                               ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                               ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                               ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                               ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                               ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                               ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                               ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                               ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                               ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                               ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                               ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                               ;
-; BYTE_SIZE                          ; 8                    ; Untyped                               ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
-; INIT_FILE                          ; UNUSED               ; Untyped                               ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                               ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                               ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                               ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                               ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                               ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                               ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                               ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                               ;
-; CBXI_PARAMETER                     ; altsyncram_05h1      ; Untyped                               ;
-+------------------------------------+----------------------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; altpll Parameter Settings by Entity Instance                               ;
-+-------------------------------+--------------------------------------------+
-; Name                          ; Value                                      ;
-+-------------------------------+--------------------------------------------+
-; Number of entity instances    ; 1                                          ;
-; Entity Instance               ; CLKPLL:CLKPLL_inst|altpll:altpll_component ;
-;     -- OPERATION_MODE         ; NORMAL                                     ;
-;     -- PLL_TYPE               ; AUTO                                       ;
-;     -- PRIMARY_CLOCK          ; INCLK0                                     ;
-;     -- INCLK0_INPUT_FREQUENCY ; 20000                                      ;
-;     -- INCLK1_INPUT_FREQUENCY ; 0                                          ;
-;     -- VCO_MULTIPLY_BY        ; 0                                          ;
-;     -- VCO_DIVIDE_BY          ; 0                                          ;
-+-------------------------------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                             ;
-+-------------------------------------------+--------------------------------------------------+
-; Name                                      ; Value                                            ;
-+-------------------------------------------+--------------------------------------------------+
-; Number of entity instances                ; 1                                                ;
-; Entity Instance                           ; FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                        ;
-;     -- WIDTH_A                            ; 15                                               ;
-;     -- NUMWORDS_A                         ; 16384                                            ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                     ;
-;     -- WIDTH_B                            ; 15                                               ;
-;     -- NUMWORDS_B                         ; 16384                                            ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                         ;
-+-------------------------------------------+--------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                                   ;
++-------------------------------------------+--------------------+---------+----------------------------------+
+; File                                      ; Location           ; Library ; Checksum                         ;
++-------------------------------------------+--------------------+---------+----------------------------------+
+; clkpll.v                                  ; Project Directory  ; work    ; c842bdc1bdb3a149a5275a8c186a4ea1 ;
+; db/a_dpfifo_d731.tdf                      ; Project Directory  ; work    ; df8dc0dd06aff1b19804e9b1e5cede94 ;
+; db/a_fefifo_nce.tdf                       ; Project Directory  ; work    ; 8b1b37a672acc4b49d5f828e378d754e ;
+; db/altsyncram_22k1.tdf                    ; Project Directory  ; work    ; ed57faa271575f1fa52439f558f6f90f ;
+; db/altsyncram_3sc1.tdf                    ; Project Directory  ; work    ; e488c3f6f58ecaf5493cd5269bdc6b42 ;
+; db/cntr_al7.tdf                           ; Project Directory  ; work    ; 32cc6729e283aae628872dbbdb67cd42 ;
+; db/cntr_ukb.tdf                           ; Project Directory  ; work    ; 331a8da14d09781e27213568016cd61f ;
+; db/decode_r37.tdf                         ; Project Directory  ; work    ; 9a1172630e5a407c1efb6d031582bfad ;
+; db/dpram_s011.tdf                         ; Project Directory  ; work    ; 67b6ca2134a59992eace03bfd4f81e86 ;
+; db/mux_qv7.tdf                            ; Project Directory  ; work    ; 7bcc87da1d093182d5fdf06cc2605bab ;
+; db/scfifo_qf31.tdf                        ; Project Directory  ; work    ; e9e9ab739488bb5ab5ce9f55da038d49 ;
+; FIFO_IP.v                                 ; Project Directory  ; work    ; 9fb051dfef1e29b5ed7f2aa23226f46e ;
+; Source/Hex Encoder.v                      ; Project Directory  ; work    ; 7c3546970d213530ce63236e6ec46e0d ;
+; Source/main.v                             ; Project Directory  ; work    ; 3f84bc430ab8637a96ce177a30b61715 ;
+; Source/SPI_Master_ADC.v                   ; Project Directory  ; work    ; bf2f7d8c25e24f0dfc4294ac66eac7a4 ;
+; Source/SPI_Master_UC.v                    ; Project Directory  ; work    ; 9eb49377b566fd9469ae9809eac13b13 ;
+; libraries/megafunctions/a_dpfifo.inc      ; Quartus II Install ; work    ; 37c2d0bb70d5a3f83a4aa09e62c75080 ;
+; libraries/megafunctions/a_f2fifo.inc      ; Quartus II Install ; work    ; cebe3836bad826c95e765f77477e8a8b ;
+; libraries/megafunctions/a_fffifo.inc      ; Quartus II Install ; work    ; aa34dd03c645beef0c31a3e4ef186db4 ;
+; libraries/megafunctions/a_i2fifo.inc      ; Quartus II Install ; work    ; bfe272f05af0cf849bd8b4748efceffe ;
+; libraries/megafunctions/a_regfifo.inc     ; Quartus II Install ; work    ; 8b2977668c08752c10a1f1977c9b9ee6 ;
+; libraries/megafunctions/aglobal130.inc    ; Quartus II Install ; work    ; 6fc5170a475a9c6f00c3fd7627b30d31 ;
+; libraries/megafunctions/altpll.tdf        ; Quartus II Install ; work    ; f8c6da9aeecfb4ea26e5731664857545 ;
+; libraries/megafunctions/cycloneii_pll.inc ; Quartus II Install ; work    ; c2ee779f089b03bc181df753ea85b3ef ;
+; libraries/megafunctions/scfifo.tdf        ; Quartus II Install ; work    ; ba2fd84a10b38985dc49a4e1306ed8d7 ;
+; libraries/megafunctions/stratix_pll.inc   ; Quartus II Install ; work    ; a9a94c5b0e18105f7ae8c218a67ec9f7 ;
+; libraries/megafunctions/stratixii_pll.inc ; Quartus II Install ; work    ; 6797ab505ed700f1a221e4a213e106a6 ;
++-------------------------------------------+--------------------+---------+----------------------------------+
 
 
 +----------------------------------------------+
@@ -1038,17 +885,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------+
-; Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant" ;
-+-------------------+-------+----------+------------------+
-; Port              ; Type  ; Severity ; Details          ;
-+-------------------+-------+----------+------------------+
-; DATA_MOSI[12..11] ; Input ; Info     ; Stuck at VCC     ;
-; DATA_MOSI[15..13] ; Input ; Info     ; Stuck at GND     ;
-; DATA_MOSI[10..9]  ; Input ; Info     ; Stuck at GND     ;
-; DATA_MOSI[5..0]   ; Input ; Info     ; Stuck at GND     ;
-; DATA_MOSI[6]      ; Input ; Info     ; Stuck at VCC     ;
-+-------------------+-------+----------+------------------+
++--------------------------------------------------+
+; Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; data[15] ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"                                                                     ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; DATA_MOSI[12..11] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; DATA_MOSI[15..13] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; DATA_MOSI[10..9]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; DATA_MOSI[5..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; DATA_MOSI[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; DATA_MISO[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -1056,7 +913,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1066,11 +923,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri May 22 02:59:29 2015
+    Info: Processing started: Sun May 24 21:26:04 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
     Info (12023): Found entity 1: SPI_MASTER_UC
+Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_adc.v
+    Info (12023): Found entity 1: SPI_MASTER_ADC
 Warning (10275): Verilog HDL Module Instantiation warning at main.v(28): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file source/main.v
     Info (12023): Found entity 1: main
@@ -1078,19 +937,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
     Info (12023): Found entity 1: hex_encoder
 Info (12021): Found 1 design units, including 1 entities, in source file source/fifo.v
     Info (12023): Found entity 1: FIFO
-Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_adc.v
-    Info (12023): Found entity 1: SPI_MASTER_ADC
+Info (12021): Found 1 design units, including 1 entities, in source file fifo_ip.v
+    Info (12023): Found entity 1: FIFO_IP
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.v(74): object "ADC1_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(75): object "ADC2_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(76): object "ADC3_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(77): object "ADC4_cmd" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(161): object "SPI_RST" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(72): object "ADC1_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(73): object "ADC2_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(74): object "ADC3_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(75): object "ADC4_cmd" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at main.v(53): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at main.v(93): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(158): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(168): truncated value with size 32 to match size of target (1)
-Warning (10030): Net "ADC_fin[4..1]" at main.v(72) has no driver or initial value, using a default initial value '0'
+Warning (10230): Verilog HDL assignment warning at main.v(57): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(91): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at main.v(118): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(130): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(174): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at main.v(181): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(188): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(190): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(214): truncated value with size 32 to match size of target (1)
+Warning (10030): Net "ADC_fin[4..1]" at main.v(70) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "oLEDR[15..0]" at main.v(10) has no driver
 Warning (10034): Output port "oLEDG[6..5]" at main.v(11) has no driver
 Warning (12125): Using design file clkpll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
@@ -1153,56 +1017,60 @@ Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_compon
 Info (12128): Elaborating entity "SPI_MASTER_ADC" for hierarchy "SPI_MASTER_ADC:ADC0_instant"
 Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(54): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(79): truncated value with size 32 to match size of target (6)
-Info (12128): Elaborating entity "FIFO" for hierarchy "FIFO:FIFO_ADC0_instant"
-Warning (10230): Verilog HDL assignment warning at FIFO.v(77): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at FIFO.v(78): truncated value with size 32 to match size of target (14)
+Info (12128): Elaborating entity "FIFO_IP" for hierarchy "FIFO_IP:FIFO_IP_inst"
+Info (12128): Elaborating entity "scfifo" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component"
+Info (12130): Elaborated megafunction instantiation "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component"
+Info (12133): Instantiated megafunction "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component" with the following parameter:
+    Info (12134): Parameter "add_ram_output_register" = "OFF"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_numwords" = "16384"
+    Info (12134): Parameter "lpm_showahead" = "OFF"
+    Info (12134): Parameter "lpm_type" = "scfifo"
+    Info (12134): Parameter "lpm_width" = "16"
+    Info (12134): Parameter "lpm_widthu" = "14"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_qf31.tdf
+    Info (12023): Found entity 1: scfifo_qf31
+Info (12128): Elaborating entity "scfifo_qf31" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_d731.tdf
+    Info (12023): Found entity 1: a_dpfifo_d731
+Info (12128): Elaborating entity "a_dpfifo_d731" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_nce.tdf
+    Info (12023): Found entity 1: a_fefifo_nce
+Info (12128): Elaborating entity "a_fefifo_nce" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_al7.tdf
+    Info (12023): Found entity 1: cntr_al7
+Info (12128): Elaborating entity "cntr_al7" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dpram_s011.tdf
+    Info (12023): Found entity 1: dpram_s011
+Info (12128): Elaborating entity "dpram_s011" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_22k1.tdf
+    Info (12023): Found entity 1: altsyncram_22k1
+Info (12128): Elaborating entity "altsyncram_22k1" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3sc1.tdf
+    Info (12023): Found entity 1: altsyncram_3sc1
+Info (12128): Elaborating entity "altsyncram_3sc1" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_r37.tdf
+    Info (12023): Found entity 1: decode_r37
+Info (12128): Elaborating entity "decode_r37" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_qv7.tdf
+    Info (12023): Found entity 1: mux_qv7
+Info (12128): Elaborating entity "mux_qv7" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux7"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ukb.tdf
+    Info (12023): Found entity 1: cntr_ukb
+Info (12128): Elaborating entity "cntr_ukb" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count"
 Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
 Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(32): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(62): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(88): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:hex3"
-Warning (276020): Inferred RAM node "FIFO:FIFO_ADC0_instant|regarray_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "FIFO:FIFO_ADC0_instant|regarray_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 15
-        Info (286033): Parameter WIDTHAD_A set to 14
-        Info (286033): Parameter NUMWORDS_A set to 16384
-        Info (286033): Parameter WIDTH_B set to 15
-        Info (286033): Parameter WIDTHAD_B set to 14
-        Info (286033): Parameter NUMWORDS_B set to 16384
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
-Info (12130): Elaborated megafunction instantiation "FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0"
-Info (12133): Instantiated megafunction "FIFO:FIFO_ADC0_instant|altsyncram:regarray_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "15"
-    Info (12134): Parameter "WIDTHAD_A" = "14"
-    Info (12134): Parameter "NUMWORDS_A" = "16384"
-    Info (12134): Parameter "WIDTH_B" = "15"
-    Info (12134): Parameter "WIDTHAD_B" = "14"
-    Info (12134): Parameter "NUMWORDS_B" = "16384"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_05h1.tdf
-    Info (12023): Found entity 1: altsyncram_05h1
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4oa.tdf
-    Info (12023): Found entity 1: decode_4oa
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_2kb.tdf
-    Info (12023): Found entity 1: mux_2kb
+Info (12205): 1 design partition requires Analysis and Synthesis
+    Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
+Info (12209): No design partitions will skip synthesis in the current incremental compilation
 Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver.
@@ -1214,7 +1082,6 @@ Warning (13034): The following nodes have both tri-state and non-tri-state drive
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[0]" has no driver
     Warning (13040): Bidir "GPIO_1[0]" has no driver
-    Warning (13040): Bidir "GPIO_1[7]" has no driver
     Warning (13040): Bidir "GPIO_0[2]" has no driver
     Warning (13040): Bidir "GPIO_0[4]" has no driver
     Warning (13040): Bidir "GPIO_0[6]" has no driver
@@ -1246,6 +1113,7 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_1[2]" has no driver
     Warning (13040): Bidir "GPIO_1[4]" has no driver
     Warning (13040): Bidir "GPIO_1[6]" has no driver
+    Warning (13040): Bidir "GPIO_1[7]" has no driver
     Warning (13040): Bidir "GPIO_1[8]" has no driver
     Warning (13040): Bidir "GPIO_1[9]" has no driver
     Warning (13040): Bidir "GPIO_1[10]" has no driver
@@ -1263,8 +1131,6 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_1[22]" has no driver
     Warning (13040): Bidir "GPIO_1[23]" has no driver
     Warning (13040): Bidir "GPIO_1[25]" has no driver
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_0[1]~synth"
     Warning (13010): Node "GPIO_0[3]~synth"
@@ -1311,35 +1177,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oHEX7_D[4]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[5]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[6]" is stuck at VCC
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "iSW[2]"
-    Warning (15610): No output dependent on input pin "iSW[3]"
-    Warning (15610): No output dependent on input pin "iSW[4]"
-    Warning (15610): No output dependent on input pin "iSW[5]"
-    Warning (15610): No output dependent on input pin "iSW[6]"
-    Warning (15610): No output dependent on input pin "iSW[7]"
-    Warning (15610): No output dependent on input pin "iSW[8]"
-    Warning (15610): No output dependent on input pin "iSW[10]"
-    Warning (15610): No output dependent on input pin "iSW[11]"
-    Warning (15610): No output dependent on input pin "iSW[12]"
-    Warning (15610): No output dependent on input pin "iSW[13]"
-    Warning (15610): No output dependent on input pin "iSW[14]"
-    Warning (15610): No output dependent on input pin "iKEY[1]"
-    Warning (15610): No output dependent on input pin "iKEY[2]"
-    Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 614 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 611 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
-    Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 383 logic cells
-    Info (21064): Implemented 60 RAM segments
+    Info (21060): Implemented 128 bidirectional pins
+    Info (21061): Implemented 312 logic cells
+    Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 145 warnings
-    Info: Peak virtual memory: 479 megabytes
-    Info: Processing ended: Fri May 22 02:59:33 2015
-    Info: Elapsed time: 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 131 warnings
+    Info: Peak virtual memory: 469 megabytes
+    Info: Processing ended: Sun May 24 21:26:07 2015
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

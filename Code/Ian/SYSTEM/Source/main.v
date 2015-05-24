@@ -51,18 +51,16 @@ module main(
 	reg [9:0] usonic;
 	always @(posedge CLK_40)
 		usonic <= usonic + 1;
-
-	//reg [19:0] counter_burst;	
-	//always @(posedge CLK_40) begin
-		//counter_burst <= (counter_burst < 588799) & ~rst & on ? counter_burst + 1 : 0;
-		//if (rst)
-			//counter_burst <= 0;
-		//else
-			//counter_burst <= (counter_burst < 588799) & on ? counter_burst + 1 : counter_burst;
-	//end
 	
-	assign GPIO_1[24] = usonic[9] & ~rst & on;// & (counter_burst < 32);
+	reg [9:0] counter_burst;
+	always @(posedge usonic[9])
+		counter_burst <= ~rst & on & (counter_burst < 574) ? counter_burst + 1 : 0;
+	
+	reg usonicpulse;
+	always @(posedge CLK_40)
+		usonicpulse <= usonic[9] & (counter_burst < 32);
 
+	assign GPIO_1[24] = usonicpulse & ~rst & on;	
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
@@ -92,7 +90,9 @@ module main(
 	always @(posedge CLK_40)
 		CLK_SAMPLE <= ~rst & on? CLK_SAMPLE + 1 : 0;
 		
-	wire ADC0_en = ~&CLK_SAMPLE[TOPBIT:TOPBIT-1] & ~rst & on;
+	//wire ADC0_en = ~&CLK_SAMPLE[TOPBIT] & ~rst & on;
+	wire ADC0_en = ~&CLK_SAMPLE[TOPBIT:TOPBIT-1] & ~rst & on & ~ADC_OFF;
+	
 	assign oLEDG[7] = ADC0_en;
 	
 	SPI_MASTER_ADC # (.outBits (16)) ADC0_instant(
@@ -107,16 +107,28 @@ module main(
 		.DATA_MISO 	( ADC0_data 				)
 	);
 
-	//reg fin_prev;
-	//always @(posedge CLK_40)
-	//	fin_prev <= ADC_fin[0];
+	//wire wr = ADC_fin[0] & ~ADC_OFF;
+	//wire wr = ADC_fin[0];
 	
-	//reg wr;
-	//always @(posedge CLK_40)
-		//wr <= ADC_fin[0] & ~fin_prev ? 1 : 0;
-
-	wire wr = ADC_fin[0];
+	reg wr, wr_prev, wr_edge;
+	always @(posedge CLK_40)
+		wr_prev <= ADC_fin[0];
+		
+	always @(posedge CLK_40)
+		wr_edge <= ~wr_prev & ADC_fin[0] & ~ADC_OFF & ~rst & on ? 1 : 0;
 	
+	
+	reg FIFO_FULL_prev;
+	always @(posedge CLK_40)
+		FIFO_FULL_prev <= FIFO_ADC0_FULL;
+	
+	reg ADC_OFF = 0;
+	always @(posedge CLK_40) begin
+		if (rst | ~on)
+			ADC_OFF <= 0;
+		else 
+			ADC_OFF <= FIFO_ADC0_FULL & ~FIFO_FULL_prev ? 1 : ADC_OFF;
+	end
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // FIFO: 16bits width, 16384 Words depth
@@ -128,47 +140,54 @@ module main(
 	
 	wire 					FIFO_ADC0_FULL;
 	assign				oLEDR[17] = FIFO_ADC0_FULL;
-	
-	FIFO # (.abits (14), .dbits (16)) FIFO_ADC0_instant(
-		.SYS_CLK 	( CLK_40						),
-		.reset 		( rst							),
-		.wr 			( wr 							),		// CHECK LOGIC HERE
-		.rd 			( MBED_FIN  				),
-		.din			( ADC0_data					),		
-		.empty		( FIFO_ADC0_EMPTY			),
-		.full			( FIFO_ADC0_FULL			),
-		.dout			( FIFO_OUT					)
-    ); 
-	
+
+	FIFO_IP	FIFO_IP_inst (
+		.clock 	( CLK_40 							),
+		.sclr 	( rst 								),
+		.rdreq 	( MBED_FIN_EDGE ),
+		.wrreq 	( wr_edge 			),
+		.data 	( ADC0_data>>1 					),
+		.empty 	( FIFO_ADC0_EMPTY 						),
+		.full 	( FIFO_ADC0_FULL 						),
+		.q 		( FIFO_OUT 							)
+	);
 	
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MBED Microcontroller:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	reg MBED_RDY;
-	always @(posedge CLK_40)
-		MBED_RDY <= GPIO_1[7] & ~FIFO_ADC0_EMPTY;		
+	//reg MBED_RDY;
+	//always @(posedge CLK_40)
+	//	MBED_RDY <= GPIO_1[7] & ~FIFO_ADC0_EMPTY;		
 			
-	reg MBED_RDY_PREV, MBED_RDY_EDGE;
+	//reg MBED_RDY_PREV, MBED_RDY_EDGE;
+	//always @(posedge CLK_40)
+	//	MBED_RDY_PREV <= MBED_RDY;
+		
+	//always @(posedge CLK_40)
+	//	MBED_RDY_EDGE <= MBED_RDY & ~MBED_RDY_PREV ? 1 : 0;
+		
+	parameter out_clk_bits = 14;
+	reg [out_clk_bits-1:0] out_clk;
 	always @(posedge CLK_40)
-		MBED_RDY_PREV <= MBED_RDY;
+		out_clk <= ~rst ? out_clk + 1 : 0;
+		
+	reg out_clk_prev, out_clk_edge;
+	always @(posedge CLK_40)
+		out_clk_prev <= out_clk[out_clk_bits-1];
 		
 	always @(posedge CLK_40)
-		MBED_RDY_EDGE <= MBED_RDY & ~MBED_RDY_PREV ? 1 : 0;
-		
+		out_clk_edge <= ~out_clk_prev & out_clk[out_clk_bits-1] ? 1 : 0;
+	
 	reg SPI_ON;
-	reg SPI_RST;
 	always @(posedge CLK_40) begin
-		if (MBED_RDY_EDGE) begin
-			SPI_ON <= 1;
-			SPI_RST <= 1;
-		end
-		else if (SPI_ON) begin
-			SPI_ON <= ~MBED_FIN ? 1 : 0;
-			SPI_RST <= 0;
-		end
-		else ;
+		//if (manual_wr_mbed_edge)
+		//if (MBED_RDY_EDGE | manual_wr_mbed_edge)
+		if (out_clk_edge)
+			SPI_ON <= ~FIFO_ADC0_EMPTY ? 1 : 0;
+		else 
+			SPI_ON <= ~MBED_FIN ? SPI_ON : 0;	
 	end
 	
 	assign oLEDG[8] = MBED_FIN;
@@ -187,7 +206,12 @@ module main(
 		.FIN			( MBED_FIN					)
 	); 
 
-
+	reg MBED_FIN_PREV, MBED_FIN_EDGE;
+	 always @(posedge CLK_40)
+		MBED_FIN_PREV <= MBED_FIN;
+		
+	always @(posedge CLK_40)
+		MBED_FIN_EDGE <= ~MBED_FIN_PREV & MBED_FIN ? 1 : 0;
 
 	
 	 
@@ -224,7 +248,8 @@ module main(
 	hex_encoder hex2(FIFO_OUT[11:8], 	oHEX2_D);
 	hex_encoder hex1(FIFO_OUT[7:4], 		oHEX1_D);
 	hex_encoder hex0(FIFO_OUT[3:0], 		oHEX0_D);
-/*
+	
+	/*
 	hex_encoder hex3(ADC0_data[15:12], 	oHEX3_D);
 	hex_encoder hex2(ADC0_data[11:8], 	oHEX2_D);
 	hex_encoder hex1(ADC0_data[7:4], 	oHEX1_D);
