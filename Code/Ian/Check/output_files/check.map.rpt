@@ -1,5 +1,5 @@
 Analysis & Synthesis report for check
-Sun May 24 21:18:17 2015
+Tue May 26 02:32:10 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -63,15 +63,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 24 21:18:16 2015            ;
+; Analysis & Synthesis Status        ; Successful - Tue May 26 02:32:10 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; check                                            ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 262                                              ;
-;     Total combinational functions  ; 256                                              ;
-;     Dedicated logic registers      ; 127                                              ;
-; Total registers                    ; 127                                              ;
+; Total logic elements               ; 261                                              ;
+;     Total combinational functions  ; 255                                              ;
+;     Dedicated logic registers      ; 126                                              ;
+; Total registers                    ; 126                                              ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 262,144                                          ;
@@ -222,20 +222,20 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------+
 ; Resource                                    ; Usage                                            ;
 +---------------------------------------------+--------------------------------------------------+
-; Estimated Total logic elements              ; 262                                              ;
+; Estimated Total logic elements              ; 261                                              ;
 ;                                             ;                                                  ;
-; Total combinational functions               ; 256                                              ;
+; Total combinational functions               ; 255                                              ;
 ; Logic element usage by number of LUT inputs ;                                                  ;
 ;     -- 4 input functions                    ; 107                                              ;
 ;     -- 3 input functions                    ; 44                                               ;
-;     -- <=2 input functions                  ; 105                                              ;
+;     -- <=2 input functions                  ; 104                                              ;
 ;                                             ;                                                  ;
 ; Logic elements by mode                      ;                                                  ;
 ;     -- normal mode                          ; 179                                              ;
-;     -- arithmetic mode                      ; 77                                               ;
+;     -- arithmetic mode                      ; 76                                               ;
 ;                                             ;                                                  ;
-; Total registers                             ; 127                                              ;
-;     -- Dedicated logic registers            ; 127                                              ;
+; Total registers                             ; 126                                              ;
+;     -- Dedicated logic registers            ; 126                                              ;
 ;     -- I/O registers                        ; 0                                                ;
 ;                                             ;                                                  ;
 ; I/O pins                                    ; 170                                              ;
@@ -245,9 +245,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                ;
 ;                                             ;                                                  ;
 ; Maximum fan-out node                        ; CLKPLL:CLKPLL_inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 150                                              ;
-; Total fan-out                               ; 3047                                             ;
-; Average fan-out                             ; 4.93                                             ;
+; Maximum fan-out                             ; 149                                              ;
+; Total fan-out                               ; 3042                                             ;
+; Average fan-out                             ; 4.94                                             ;
 +---------------------------------------------+--------------------------------------------------+
 
 
@@ -256,7 +256,7 @@ applicable agreement for further details.
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                               ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                              ; 256 (53)          ; 127 (55)     ; 262144      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                                                                                                             ; work         ;
+; |main                                              ; 255 (52)          ; 126 (54)     ; 262144      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                                                                                                             ; work         ;
 ;    |CLKPLL:CLKPLL_inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                                                                                                          ; work         ;
 ;       |altpll:altpll_component|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                                                                                                                  ; work         ;
 ;    |FIFO_IP:FIFO_IP_inst|                          ; 115 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                        ; work         ;
@@ -326,7 +326,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 127   ;
+; Total registers                              ; 126   ;
 ; Number of registers using Synchronous Clear  ; 34    ;
 ; Number of registers using Synchronous Load   ; 42    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -369,7 +369,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------+
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
-; bits           ; 7     ; Signed Integer                              ;
+; bits           ; 6     ; Signed Integer                              ;
 ; out_clk_bits   ; 14    ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -916,14 +916,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sun May 24 21:18:11 2015
+    Info: Processing started: Tue May 26 02:32:06 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off check -c check
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
     Info (12023): Found entity 1: SPI_MASTER_UC
 Info (12021): Found 1 design units, including 1 entities, in source file source/hex encoder.v
     Info (12023): Found entity 1: hex_encoder
-Warning (10275): Verilog HDL Module Instantiation warning at main.v(25): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file source/main.v
     Info (12023): Found entity 1: main
 Info (12021): Found 1 design units, including 1 entities, in source file clkpll.v
@@ -931,18 +930,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file clkpll.
 Info (12021): Found 1 design units, including 1 entities, in source file fifo_ip.v
     Info (12023): Found entity 1: FIFO_IP
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(48): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at main.v(53): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at main.v(62): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(73): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(85): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(92): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(135): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(140): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at main.v(147): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(154): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(156): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(182): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(47): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at main.v(51): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at main.v(61): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(71): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(82): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(89): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(118): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(125): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at main.v(130): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(136): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(144): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(146): truncated value with size 32 to match size of target (1)
 Warning (10034): Output port "oLEDR[15..0]" at main.v(7) has no driver
 Warning (10034): Output port "oLEDG[7..0]" at main.v(8) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
@@ -1045,16 +1044,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_ukb
 Info (12128): Elaborating entity "cntr_ukb" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count"
 Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(39): truncated value with size 32 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(70): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(96): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(35): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(68): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(94): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:hex3"
 Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[3]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[5]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[9]" and its non-tri-state driver.
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_1[0]" has no driver
     Warning (13040): Bidir "GPIO_0[0]" has no driver
@@ -1094,6 +1092,7 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_1[6]" has no driver
     Warning (13040): Bidir "GPIO_1[7]" has no driver
     Warning (13040): Bidir "GPIO_1[8]" has no driver
+    Warning (13040): Bidir "GPIO_1[9]" has no driver
     Warning (13040): Bidir "GPIO_1[10]" has no driver
     Warning (13040): Bidir "GPIO_1[11]" has no driver
     Warning (13040): Bidir "GPIO_1[12]" has no driver
@@ -1120,7 +1119,6 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_1[1]~synth"
     Warning (13010): Node "GPIO_1[3]~synth"
     Warning (13010): Node "GPIO_1[5]~synth"
-    Warning (13010): Node "GPIO_1[9]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oLEDR[0]" is stuck at GND
     Warning (13410): Pin "oLEDR[1]" is stuck at GND
@@ -1168,17 +1166,17 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[15]"
     Warning (15610): No output dependent on input pin "iSW[16]"
     Warning (15610): No output dependent on input pin "iSW[17]"
-Info (21057): Implemented 497 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 496 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 262 logic cells
+    Info (21061): Implemented 261 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 134 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 132 warnings
     Info: Peak virtual memory: 479 megabytes
-    Info: Processing ended: Sun May 24 21:18:17 2015
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Tue May 26 02:32:10 2015
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

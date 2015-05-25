@@ -1,8 +1,12 @@
-module hex_encoder(
+//=================================================
+// HEX ENCODER MODULE
+//=================================================
+module HEX_ENCODER(
    input 			[4:0] 	number,
    output reg		[6:0] 	code
    );
 	
+	// Code to display hex on 7-Seg displays:
 	always @(number)
 	begin
 		case(number)
@@ -28,3 +32,6 @@ module hex_encoder(
 	end
 	
 endmodule
+//=================================================
+// END HEX ENCODER MODULE
+//=================================================

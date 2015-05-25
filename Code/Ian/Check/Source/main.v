@@ -21,7 +21,7 @@ module main(
 	wire 				CLK_40;
 	CLKPLL			CLKPLL_inst (
 		.inclk0 	( iCLK_50 	),
-		.c0 		( CLK_40 	),
+		.c0 		( CLK_40 	)
 	);
 	
 	
@@ -33,8 +33,6 @@ module main(
 	reg rst;
 	always @(posedge CLK_40)
 		rst <= ~iKEY[0];
-	
-	assign GPIO_1[9] = ~rst;
 
 		
 
@@ -42,12 +40,12 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Counter:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	parameter bits = 7;
+	// Counter speed = 625kHz:
+	parameter bits = 6;
 	reg [bits-1:0] CLK_SLOW;
 	always @(posedge CLK_40)
 		CLK_SLOW <= CLK_SLOW + 1;
 	
-	// Increment counter:
 	reg [15:0] sample_counter;
 	always @(posedge CLK_SLOW[bits-1])
 		sample_counter <= ~rst & ~ADC_OFF ? sample_counter + 1 : 0;
@@ -57,21 +55,20 @@ module main(
 	always @(posedge CLK_40)
 		clk_prev <= CLK_SLOW[bits-1];
 	
+	// Edge detector for Write to FIFO:
 	reg wr;
 	always @(posedge CLK_40) 
 		wr <= CLK_SLOW[bits-1] & ~clk_prev & ~ADC_OFF ? 1 : 0 ;	
 	
-	reg FIFO_FULL_PREV;
-	always @(posedge CLK_40)
-		FIFO_FULL_PREV <= FIFO_FULL;
-	
-	reg ADC_OFF;
+	// Turn off counter when FIFO overflows:
+	reg FIFO_FULL_PREV, ADC_OFF;
 	always @(posedge CLK_40) begin
+		FIFO_FULL_PREV <= FIFO_FULL; 
+		
 		if (rst)
 			ADC_OFF <= 0;
-		else begin
+		else 
 			ADC_OFF <= FIFO_FULL & ~FIFO_FULL_PREV ? 1 : ADC_OFF;
-		end
 	end	
 		
 		
@@ -101,7 +98,7 @@ module main(
 		.clock 	( CLK_40 							),
 		.sclr 	( rst 								),
 		.rdreq 	( MBED_FIN_EDGE | manual_rd_edge ),
-		.wrreq 	( wr 	| manual_wr_edge		),
+		.wrreq 	( wr 	| manual_wr_edge			),
 		.data 	( sample_counter 					),
 		.empty 	( FIFO_EMPTY 						),
 		.full 	( FIFO_FULL 						),
@@ -113,38 +110,31 @@ module main(
 	 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MBED Microcontroller:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	//reg MBED_RDY, MBED_RDY_PREV, MBED_RDY_EDGE;
-	//always @(posedge CLK_40)
-	//	MBED_RDY <= GPIO_1[7];
-		
-	//always @(posedge CLK_40)
-	//	MBED_RDY_PREV <= MBED_RDY;
-	
-	//always @(posedge CLK_40)
-	//	MBED_RDY_EDGE <= ~MBED_RDY_PREV & MBED_RDY ? 1 : 0;
-	
-	reg manual_wr_mbed_edge, manual_wr_mbed_prev, manual_wr_mbed;
-	always @(posedge CLK_40)	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
+	reg manual_wr_mbed, manual_wr_mbed_edge, manual_wr_mbed_prev;
+	always @(posedge CLK_40) begin
 		manual_wr_mbed <= ~iKEY[1];
-	
-	always @(posedge CLK_40)
 		manual_wr_mbed_prev <= manual_wr_mbed;
-	
-	always @(posedge CLK_40)
 		manual_wr_mbed_edge <= ~manual_wr_mbed_prev & manual_wr_mbed ? 1 : 0;
+	end
 	
+	// Periodically write to MBED @ 2kHz:
 	parameter out_clk_bits = 14;
 	reg [out_clk_bits-1:0] out_clk;
 	always @(posedge CLK_40)
 		out_clk <= ~rst ? out_clk + 1 : 0;
 		
 	reg out_clk_prev, out_clk_edge;
-	always @(posedge CLK_40)
+	always @(posedge CLK_40) begin
 		out_clk_prev <= out_clk[out_clk_bits-1];
-		
-	always @(posedge CLK_40)
 		out_clk_edge <= ~out_clk_prev & out_clk[out_clk_bits-1] ? 1 : 0;
+	end
+	
+	reg MBED_FIN_PREV, MBED_FIN_EDGE;
+	always @(posedge CLK_40) begin
+		MBED_FIN_PREV <= MBED_FIN;
+		MBED_FIN_EDGE <= ~MBED_FIN_PREV & MBED_FIN ? 1 : 0;
+	end
 		
 	reg SPI_ON;
 	always @(posedge CLK_40) begin
@@ -156,42 +146,34 @@ module main(
 			SPI_ON <= ~MBED_FIN ? SPI_ON : 0;	
 	end
 	
-	assign oLEDG[8] = MBED_FIN;
-	
-	//assign oLEDG[7] = MBED_RDY;
-	
 	// MBED SPI Master Module:
 	wire 			MBED_FIN;
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
 		.SYS_CLK 	( CLK_40						),
 		.RST			( 								),
 		.ENA 			( SPI_ON & ~FIFO_EMPTY ),  	
-		.DATA_MOSI 	( FIFO_OUT 					),		//
+		.DATA_MOSI 	( FIFO_OUT 					),		
 		.MISO 		( GPIO_1[0] 				),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_1[1] 				),		// MOSI = SDI 		= 4
 		.SCK 			( GPIO_1[3]					),		// SCK = SCLK 		= 5
 		.CSbar 		( GPIO_1[5] 				),		// CSbar = CSbar 	= 6
 		.FIN			( MBED_FIN					)
 	); 
-
-	 reg MBED_FIN_PREV, MBED_FIN_EDGE;
-	 always @(posedge CLK_40)
-		MBED_FIN_PREV <= MBED_FIN;
-		
-	always @(posedge CLK_40)
-		MBED_FIN_EDGE <= ~MBED_FIN_PREV & MBED_FIN ? 1 : 0;
+	 
+	assign oLEDG[8] = MBED_FIN;
+	 
 	 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// HEX Outputs:
+// 7-Seg Outputs:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	hex_encoder hex3(sample_counter[15:12], 	oHEX3_D);
 	hex_encoder hex2(sample_counter[11:8], 	oHEX2_D);
-	hex_encoder hex1(sample_counter[7:4], 	oHEX1_D);
-	hex_encoder hex0(sample_counter[3:0], 	oHEX0_D);
+	hex_encoder hex1(sample_counter[7:4], 		oHEX1_D);
+	hex_encoder hex0(sample_counter[3:0], 		oHEX0_D);
 	
-	hex_encoder hex7(FIFO_OUT[15:12], 	oHEX7_D);
-	hex_encoder hex6(FIFO_OUT[11:8], 	oHEX6_D);
-	hex_encoder hex5(FIFO_OUT[7:4], 	oHEX5_D);
-	hex_encoder hex4(FIFO_OUT[3:0], 	oHEX4_D);
+	hex_encoder hex7(FIFO_OUT[15:12], 			oHEX7_D);
+	hex_encoder hex6(FIFO_OUT[11:8], 			oHEX6_D);
+	hex_encoder hex5(FIFO_OUT[7:4], 				oHEX5_D);
+	hex_encoder hex4(FIFO_OUT[3:0], 				oHEX4_D);
 
 endmodule

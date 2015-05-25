@@ -23,9 +23,6 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 	reg	[5 			:0]	icounter 			= 0;						// counter for MISO data
 	reg	[5 			:0]	ocounter 			= 0;						// counter for MOSI data
 	
-	//reg					SPI_CLK;
-	//always @(posedge SYS_CLK)
-		//SPI_CLK <= ~SPI_CLK;
 	/*
 	reg [2:0] 		SPI_CLK_5;
 	always @(posedge SYS_CLK)
@@ -33,12 +30,13 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 	
 	wire SPI_CLK = SPI_CLK_5[2];
 	*/
-	
 	reg [1:0]			SPI_CLK_10;
 	always @(posedge SYS_CLK)
 		SPI_CLK_10 <= ~RST ? SPI_CLK_10 + 1 : 0;
 	
 	wire SPI_CLK = SPI_CLK_10[1];
+	
+	
 	
 	
 	assign SCK 				= SPI_CLK;

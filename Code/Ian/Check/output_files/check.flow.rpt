@@ -1,5 +1,5 @@
 Flow report for check
-Sun May 24 21:18:47 2015
+Tue May 26 02:32:37 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Sun May 24 21:18:40 2015            ;
+; Flow Status                        ; Successful - Tue May 26 02:32:34 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; check                                            ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C70F896C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 262 / 68,416 ( < 1 % )                           ;
-;     Total combinational functions  ; 256 / 68,416 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 127 / 68,416 ( < 1 % )                           ;
-; Total registers                    ; 127                                              ;
+; Total logic elements               ; 261 / 68,416 ( < 1 % )                           ;
+;     Total combinational functions  ; 255 / 68,416 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 126 / 68,416 ( < 1 % )                           ;
+; Total registers                    ; 126                                              ;
 ; Total pins                         ; 170 / 622 ( 27 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 262,144 / 1,152,000 ( 23 % )                     ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/24/2015 21:18:14 ;
+; Start date & time ; 05/26/2015 02:32:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; check               ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-----------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                       ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+-----------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 24062491136.143246629359316 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 24062491136.143257152812048 ; --            ; --          ; --         ;
 ; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                          ; Off           ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                      ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; FIFO                        ; --            ; --          ; --         ;
@@ -101,12 +101,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 469 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 469 MB              ; 00:00:02                           ;
 ; I/O Assignment Analysis   ; 00:00:05     ; 1.0                     ; 703 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:13     ; 1.9                     ; 1168 MB             ; 00:00:15                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 448 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 456 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:33     ; --                      ; --                  ; 00:00:24                           ;
+; Fitter                    ; 00:00:12     ; 1.6                     ; 1149 MB             ; 00:00:16                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 448 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 456 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

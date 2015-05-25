@@ -147,7 +147,7 @@ GPIO_1[5] <> SPI_MASTER_UC:mbed_instant.CSbar
 GPIO_1[6] <> <UNC>
 GPIO_1[7] <> <UNC>
 GPIO_1[8] <> <UNC>
-GPIO_1[9] <> GPIO_1[9]
+GPIO_1[9] <> <UNC>
 GPIO_1[10] <> <UNC>
 GPIO_1[11] <> <UNC>
 GPIO_1[12] <> <UNC>

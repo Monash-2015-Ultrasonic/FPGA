@@ -3,24 +3,24 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -5.245
-TNS   : -305.725
+Slack : -5.139
+TNS   : -299.528
 
 Type  : Slow Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
-Slack : -2.909
-TNS   : -47.164
+Slack : -2.505
+TNS   : -44.603
 
-Type  : Slow Model Setup 'CLK_SLOW[6]'
-Slack : -1.498
-TNS   : -14.432
+Type  : Slow Model Setup 'CLK_SLOW[5]'
+Slack : -1.502
+TNS   : -14.496
 
-Type  : Slow Model Hold 'CLK_SLOW[6]'
-Slack : -1.597
-TNS   : -25.552
+Type  : Slow Model Hold 'CLK_SLOW[5]'
+Slack : -1.758
+TNS   : -28.128
 
 Type  : Slow Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
-Slack : -1.264
-TNS   : -2.718
+Slack : -1.671
+TNS   : -2.170
 
 Type  : Slow Model Hold 'CLKPLL_inst|altpll_component|pll|clk[0]'
 Slack : -0.049
@@ -30,7 +30,7 @@ Type  : Slow Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]
 Slack : -0.500
 TNS   : -25.000
 
-Type  : Slow Model Minimum Pulse Width 'CLK_SLOW[6]'
+Type  : Slow Model Minimum Pulse Width 'CLK_SLOW[5]'
 Slack : -0.500
 TNS   : -16.000
 
@@ -43,24 +43,24 @@ Slack : 10.373
 TNS   : 0.000
 
 Type  : Fast Model Setup 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -2.388
-TNS   : -136.183
+Slack : -2.282
+TNS   : -131.618
 
 Type  : Fast Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
-Slack : -0.937
-TNS   : -12.093
+Slack : -0.798
+TNS   : -10.965
 
-Type  : Fast Model Setup 'CLK_SLOW[6]'
-Slack : -0.165
-TNS   : -0.475
+Type  : Fast Model Setup 'CLK_SLOW[5]'
+Slack : -0.167
+TNS   : -0.485
 
-Type  : Fast Model Hold 'CLK_SLOW[6]'
-Slack : -1.169
-TNS   : -18.704
+Type  : Fast Model Hold 'CLK_SLOW[5]'
+Slack : -1.203
+TNS   : -19.248
 
 Type  : Fast Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]'
-Slack : -0.966
-TNS   : -6.654
+Slack : -1.142
+TNS   : -5.009
 
 Type  : Fast Model Hold 'CLKPLL_inst|altpll_component|pll|clk[0]'
 Slack : -0.030
@@ -70,7 +70,7 @@ Type  : Fast Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_10[1]
 Slack : -0.500
 TNS   : -25.000
 
-Type  : Fast Model Minimum Pulse Width 'CLK_SLOW[6]'
+Type  : Fast Model Minimum Pulse Width 'CLK_SLOW[5]'
 Slack : -0.500
 TNS   : -16.000
 

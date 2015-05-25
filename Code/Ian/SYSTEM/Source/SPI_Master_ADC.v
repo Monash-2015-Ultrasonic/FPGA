@@ -19,20 +19,27 @@ module SPI_MASTER_ADC # (parameter outBits = 16)(
 	reg	[(outBits-1):0]	data_in 				= 0;			// Temp storage for MISO data
 	reg	[(outBits-1):0]	data_in_final 		= 0;			// Storage (HOLD) for MISO data 
 	reg	[(outBits-1):0]	data_out 			= 0;			// Temp storage for MOSI data
-	reg	[5 			:0]	icounter 			= 0;						// counter for MISO data
-	reg	[5 			:0]	ocounter 			= 0;						// counter for MOSI data
+	reg	[5 			:0]	icounter 			= 0;			// counter for MISO data
+	reg	[5 			:0]	ocounter 			= 0;			// counter for MOSI data
 	
+	
+	// Generate 20MHz clock:
 	reg					SPI_CLK;
 	always @(posedge SYS_CLK)
 		SPI_CLK <= ~SPI_CLK;
+	
+	
+	
 	
 	assign SCK 				= SPI_CLK;
 	
 	assign DATA_MISO 		= data_in_final << 1;
 	
+	// Synchronous Enable:
 	always @(posedge SPI_CLK)
 		CSbar					<= ~ENA;
 	
+	// Synchronous Finish signal:
 	always @(posedge SPI_CLK)
 		FIN 					<= (ocounter > (outBits-1)) & (icounter > (outBits-1));
 	
@@ -59,6 +66,9 @@ module SPI_MASTER_ADC # (parameter outBits = 16)(
 		end
 		endcase
 	end
+	
+	
+	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MOSI Component (Master Output/Slave Input):
@@ -88,5 +98,5 @@ module SPI_MASTER_ADC # (parameter outBits = 16)(
 
 endmodule
 //=================================================
-// END SPI MASTER MODULE
+// END SPI MASTER MODULE - ADC
 //=================================================

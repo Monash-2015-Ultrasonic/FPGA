@@ -1,7 +1,7 @@
 |main
 iCLK_50 => iCLK_50.IN1
-iSW[0] => ADC0_cmd[7].IN2
-iSW[1] => ADC0_cmd[8].IN2
+iSW[0] => ADC_CMD[7].IN2
+iSW[1] => ADC_CMD[8].IN2
 iSW[2] => ~NO_FANOUT~
 iSW[3] => ~NO_FANOUT~
 iSW[4] => ~NO_FANOUT~
@@ -9,7 +9,7 @@ iSW[5] => ~NO_FANOUT~
 iSW[6] => ~NO_FANOUT~
 iSW[7] => ~NO_FANOUT~
 iSW[8] => ~NO_FANOUT~
-iSW[9] => on.DATAIN
+iSW[9] => ON.DATAIN
 iSW[10] => ~NO_FANOUT~
 iSW[11] => ~NO_FANOUT~
 iSW[12] => ~NO_FANOUT~
@@ -18,7 +18,7 @@ iSW[14] => ~NO_FANOUT~
 iSW[15] => iSW[15].IN1
 iSW[16] => iSW[16].IN1
 iSW[17] => iSW[17].IN1
-iKEY[0] => rst.DATAIN
+iKEY[0] => RST.DATAIN
 iKEY[1] => ~NO_FANOUT~
 iKEY[2] => ~NO_FANOUT~
 iKEY[3] => ~NO_FANOUT~
@@ -47,64 +47,64 @@ oLEDG[3] <= <GND>
 oLEDG[4] <= <GND>
 oLEDG[5] <= <GND>
 oLEDG[6] <= <GND>
-oLEDG[7] <= ADC0_en.DB_MAX_OUTPUT_PORT_TYPE
+oLEDG[7] <= ADC0_EN.DB_MAX_OUTPUT_PORT_TYPE
 oLEDG[8] <= SPI_MASTER_UC:mbed_instant.FIN
-oHEX0_D[0] <= hex_encoder:hex0.port1
-oHEX0_D[1] <= hex_encoder:hex0.port1
-oHEX0_D[2] <= hex_encoder:hex0.port1
-oHEX0_D[3] <= hex_encoder:hex0.port1
-oHEX0_D[4] <= hex_encoder:hex0.port1
-oHEX0_D[5] <= hex_encoder:hex0.port1
-oHEX0_D[6] <= hex_encoder:hex0.port1
-oHEX1_D[0] <= hex_encoder:hex1.port1
-oHEX1_D[1] <= hex_encoder:hex1.port1
-oHEX1_D[2] <= hex_encoder:hex1.port1
-oHEX1_D[3] <= hex_encoder:hex1.port1
-oHEX1_D[4] <= hex_encoder:hex1.port1
-oHEX1_D[5] <= hex_encoder:hex1.port1
-oHEX1_D[6] <= hex_encoder:hex1.port1
-oHEX2_D[0] <= hex_encoder:hex2.port1
-oHEX2_D[1] <= hex_encoder:hex2.port1
-oHEX2_D[2] <= hex_encoder:hex2.port1
-oHEX2_D[3] <= hex_encoder:hex2.port1
-oHEX2_D[4] <= hex_encoder:hex2.port1
-oHEX2_D[5] <= hex_encoder:hex2.port1
-oHEX2_D[6] <= hex_encoder:hex2.port1
-oHEX3_D[0] <= hex_encoder:hex3.port1
-oHEX3_D[1] <= hex_encoder:hex3.port1
-oHEX3_D[2] <= hex_encoder:hex3.port1
-oHEX3_D[3] <= hex_encoder:hex3.port1
-oHEX3_D[4] <= hex_encoder:hex3.port1
-oHEX3_D[5] <= hex_encoder:hex3.port1
-oHEX3_D[6] <= hex_encoder:hex3.port1
-oHEX4_D[0] <= hex_encoder:hex4.port1
-oHEX4_D[1] <= hex_encoder:hex4.port1
-oHEX4_D[2] <= hex_encoder:hex4.port1
-oHEX4_D[3] <= hex_encoder:hex4.port1
-oHEX4_D[4] <= hex_encoder:hex4.port1
-oHEX4_D[5] <= hex_encoder:hex4.port1
-oHEX4_D[6] <= hex_encoder:hex4.port1
-oHEX5_D[0] <= hex_encoder:hex5.port1
-oHEX5_D[1] <= hex_encoder:hex5.port1
-oHEX5_D[2] <= hex_encoder:hex5.port1
-oHEX5_D[3] <= hex_encoder:hex5.port1
-oHEX5_D[4] <= hex_encoder:hex5.port1
-oHEX5_D[5] <= hex_encoder:hex5.port1
-oHEX5_D[6] <= hex_encoder:hex5.port1
-oHEX6_D[0] <= hex_encoder:hex6.port1
-oHEX6_D[1] <= hex_encoder:hex6.port1
-oHEX6_D[2] <= hex_encoder:hex6.port1
-oHEX6_D[3] <= hex_encoder:hex6.port1
-oHEX6_D[4] <= hex_encoder:hex6.port1
-oHEX6_D[5] <= hex_encoder:hex6.port1
-oHEX6_D[6] <= hex_encoder:hex6.port1
-oHEX7_D[0] <= hex_encoder:hex7.port1
-oHEX7_D[1] <= hex_encoder:hex7.port1
-oHEX7_D[2] <= hex_encoder:hex7.port1
-oHEX7_D[3] <= hex_encoder:hex7.port1
-oHEX7_D[4] <= hex_encoder:hex7.port1
-oHEX7_D[5] <= hex_encoder:hex7.port1
-oHEX7_D[6] <= hex_encoder:hex7.port1
+oHEX0_D[0] <= HEX_ENCODER:hex0.port1
+oHEX0_D[1] <= HEX_ENCODER:hex0.port1
+oHEX0_D[2] <= HEX_ENCODER:hex0.port1
+oHEX0_D[3] <= HEX_ENCODER:hex0.port1
+oHEX0_D[4] <= HEX_ENCODER:hex0.port1
+oHEX0_D[5] <= HEX_ENCODER:hex0.port1
+oHEX0_D[6] <= HEX_ENCODER:hex0.port1
+oHEX1_D[0] <= HEX_ENCODER:hex1.port1
+oHEX1_D[1] <= HEX_ENCODER:hex1.port1
+oHEX1_D[2] <= HEX_ENCODER:hex1.port1
+oHEX1_D[3] <= HEX_ENCODER:hex1.port1
+oHEX1_D[4] <= HEX_ENCODER:hex1.port1
+oHEX1_D[5] <= HEX_ENCODER:hex1.port1
+oHEX1_D[6] <= HEX_ENCODER:hex1.port1
+oHEX2_D[0] <= HEX_ENCODER:hex2.port1
+oHEX2_D[1] <= HEX_ENCODER:hex2.port1
+oHEX2_D[2] <= HEX_ENCODER:hex2.port1
+oHEX2_D[3] <= HEX_ENCODER:hex2.port1
+oHEX2_D[4] <= HEX_ENCODER:hex2.port1
+oHEX2_D[5] <= HEX_ENCODER:hex2.port1
+oHEX2_D[6] <= HEX_ENCODER:hex2.port1
+oHEX3_D[0] <= HEX_ENCODER:hex3.port1
+oHEX3_D[1] <= HEX_ENCODER:hex3.port1
+oHEX3_D[2] <= HEX_ENCODER:hex3.port1
+oHEX3_D[3] <= HEX_ENCODER:hex3.port1
+oHEX3_D[4] <= HEX_ENCODER:hex3.port1
+oHEX3_D[5] <= HEX_ENCODER:hex3.port1
+oHEX3_D[6] <= HEX_ENCODER:hex3.port1
+oHEX4_D[0] <= HEX_ENCODER:hex4.port1
+oHEX4_D[1] <= HEX_ENCODER:hex4.port1
+oHEX4_D[2] <= HEX_ENCODER:hex4.port1
+oHEX4_D[3] <= HEX_ENCODER:hex4.port1
+oHEX4_D[4] <= HEX_ENCODER:hex4.port1
+oHEX4_D[5] <= HEX_ENCODER:hex4.port1
+oHEX4_D[6] <= HEX_ENCODER:hex4.port1
+oHEX5_D[0] <= HEX_ENCODER:hex5.port1
+oHEX5_D[1] <= HEX_ENCODER:hex5.port1
+oHEX5_D[2] <= HEX_ENCODER:hex5.port1
+oHEX5_D[3] <= HEX_ENCODER:hex5.port1
+oHEX5_D[4] <= HEX_ENCODER:hex5.port1
+oHEX5_D[5] <= HEX_ENCODER:hex5.port1
+oHEX5_D[6] <= HEX_ENCODER:hex5.port1
+oHEX6_D[0] <= HEX_ENCODER:hex6.port1
+oHEX6_D[1] <= HEX_ENCODER:hex6.port1
+oHEX6_D[2] <= HEX_ENCODER:hex6.port1
+oHEX6_D[3] <= HEX_ENCODER:hex6.port1
+oHEX6_D[4] <= HEX_ENCODER:hex6.port1
+oHEX6_D[5] <= HEX_ENCODER:hex6.port1
+oHEX6_D[6] <= HEX_ENCODER:hex6.port1
+oHEX7_D[0] <= HEX_ENCODER:hex7.port1
+oHEX7_D[1] <= HEX_ENCODER:hex7.port1
+oHEX7_D[2] <= HEX_ENCODER:hex7.port1
+oHEX7_D[3] <= HEX_ENCODER:hex7.port1
+oHEX7_D[4] <= HEX_ENCODER:hex7.port1
+oHEX7_D[5] <= HEX_ENCODER:hex7.port1
+oHEX7_D[6] <= HEX_ENCODER:hex7.port1
 GPIO_0[0] <> SPI_MASTER_ADC:ADC0_instant.MISO
 GPIO_0[1] <> SPI_MASTER_ADC:ADC0_instant.MOSI
 GPIO_0[2] <> <UNC>
@@ -162,7 +162,7 @@ GPIO_1[21] <> <UNC>
 GPIO_1[22] <> <UNC>
 GPIO_1[23] <> <UNC>
 GPIO_1[24] <> GPIO_1[24]
-GPIO_1[25] <> <UNC>
+GPIO_1[25] <> GPIO_1[25]
 GPIO_1[26] <> GPIO_1[26]
 GPIO_1[27] <> GPIO_1[27]
 GPIO_1[28] <> GPIO_1[28]
@@ -3269,12 +3269,10 @@ sclr => _.IN0
 
 
 |main|SPI_MASTER_UC:mbed_instant
-SYS_CLK => SPI_CLK_5[0].CLK
-SYS_CLK => SPI_CLK_5[1].CLK
-SYS_CLK => SPI_CLK_5[2].CLK
-RST => SPI_CLK_5.OUTPUTSELECT
-RST => SPI_CLK_5.OUTPUTSELECT
-RST => SPI_CLK_5.OUTPUTSELECT
+SYS_CLK => SPI_CLK_10[0].CLK
+SYS_CLK => SPI_CLK_10[1].CLK
+RST => SPI_CLK_10.OUTPUTSELECT
+RST => SPI_CLK_10.OUTPUTSELECT
 ENA => CSbar~reg0.DATAIN
 DATA_MOSI[0] => data_out.DATAB
 DATA_MOSI[1] => data_out.DATAB
@@ -3295,7 +3293,7 @@ DATA_MOSI[15] => data_out.DATAB
 MISO => data_in.DATAA
 MOSI <= MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CSbar <= CSbar~reg0.DB_MAX_OUTPUT_PORT_TYPE
-SCK <= SPI_CLK_5[2].DB_MAX_OUTPUT_PORT_TYPE
+SCK <= SPI_CLK_10[1].DB_MAX_OUTPUT_PORT_TYPE
 FIN <= FIN~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DATA_MISO[0] <= <GND>
 DATA_MISO[1] <= data_in_final[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -3315,7 +3313,7 @@ DATA_MISO[14] <= data_in_final[13].DB_MAX_OUTPUT_PORT_TYPE
 DATA_MISO[15] <= data_in_final[14].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex3
+|main|HEX_ENCODER:hex3
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3330,7 +3328,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex2
+|main|HEX_ENCODER:hex2
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3345,7 +3343,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex1
+|main|HEX_ENCODER:hex1
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3360,7 +3358,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex0
+|main|HEX_ENCODER:hex0
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3375,7 +3373,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex6
+|main|HEX_ENCODER:hex6
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3390,7 +3388,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex4
+|main|HEX_ENCODER:hex4
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3405,7 +3403,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex7
+|main|HEX_ENCODER:hex7
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2
@@ -3420,7 +3418,7 @@ code[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 code[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|hex_encoder:hex5
+|main|HEX_ENCODER:hex5
 number[0] => Decoder0.IN4
 number[1] => Decoder0.IN3
 number[2] => Decoder0.IN2

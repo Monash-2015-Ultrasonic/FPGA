@@ -1,16 +1,15 @@
 //=================================================
-// SPI MASTER MODULE - MICROCONTROLLER
+// SPI MASTER MODULE - ADC
 //=================================================
-module SPI_MASTER_UC # (parameter outBits = 16)(
+module SPI_MASTER_ADC # (parameter outBits = 16)(
 	input					SYS_CLK,
-	input					RST,
 	input 				ENA,
 	input		[15:0]	DATA_MOSI,
 	input 				MISO,
-	output  reg			MOSI,
-	output  reg			CSbar,
+	output  				MOSI,
+	output  	reg			CSbar,
 	output 				SCK,
-	output  reg			FIN,
+	output  	reg			FIN,
 	output  	[15:0]	DATA_MISO
 	);	
 
@@ -20,41 +19,22 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 	reg	[(outBits-1):0]	data_in 				= 0;			// Temp storage for MISO data
 	reg	[(outBits-1):0]	data_in_final 		= 0;			// Storage (HOLD) for MISO data 
 	reg	[(outBits-1):0]	data_out 			= 0;			// Temp storage for MOSI data
-	reg	[5 			:0]	icounter 			= 0;			// counter for MISO data
-	reg	[5 			:0]	ocounter 			= 0;			// counter for MOSI data
-
-/*
-	// Generate 5MHz clock:	
-	reg [2:0] 		SPI_CLK_5;
+	reg	[5 			:0]	icounter 			= 0;						// counter for MISO data
+	reg	[5 			:0]	ocounter 			= 0;						// counter for MOSI data
+	
+	reg					SPI_CLK;
 	always @(posedge SYS_CLK)
-		SPI_CLK_5 <= ~RST ? SPI_CLK_5 + 1 : 0;
-	
-	wire SPI_CLK = SPI_CLK_5[2];
-*/
-	// Generate 10MHz clock:
-	reg [1:0]			SPI_CLK_10;
-	always @(posedge SYS_CLK)
-		SPI_CLK_10 <= ~RST ? SPI_CLK_10 + 1 : 0;
-	
-	wire SPI_CLK = SPI_CLK_10[1];
-	
-	
-	
+		SPI_CLK <= ~SPI_CLK;
 	
 	assign SCK 				= SPI_CLK;
 	
-	assign DATA_MISO 		= data_in_final<<1;
+	assign DATA_MISO 		= data_in_final << 1;
 	
-	// Synchronous Enable:
 	always @(posedge SPI_CLK)
 		CSbar					<= ~ENA;
 	
-	// Synchronous Finish signal:
 	always @(posedge SPI_CLK)
 		FIN 					<= (ocounter > (outBits-1)) & (icounter > (outBits-1));
-	
-	
-	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MISO Component (Master Input/Slave Output):
@@ -80,30 +60,26 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 		endcase
 	end
 	
-	
-	
-	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MOSI Component (Master Output/Slave Input):
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	assign MOSI 				= data_out[(outBits-1)];
+	
 	always @(posedge SPI_CLK) begin
 		case (CSbar)
 		1'b1: begin				
 			ocounter				<= 0;
 			data_out 			<= DATA_MOSI;	
-			MOSI <= 0;
 		end
 		1'b0: begin
-			MOSI <= data_out[(outBits-1)];
-			
-			case (ocounter > (outBits-1))
+			case (ocounter >  (outBits-1))
 			1'b0: begin
 				data_out 		<= {data_out[(outBits-2):0], 1'b0};
 				
 				ocounter 		<= ocounter + 1;
 			end
 			1'b1:	begin
-				;
+				data_out			<= 1;
 			end
 			endcase
 		end
@@ -112,5 +88,5 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 
 endmodule
 //=================================================
-// END SPI MASTER MODULE - MICROCONTROLLER
+// END SPI MASTER MODULE
 //=================================================
