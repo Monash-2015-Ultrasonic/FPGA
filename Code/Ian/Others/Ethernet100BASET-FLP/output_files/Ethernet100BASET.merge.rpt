@@ -1,0 +1,220 @@
+Partition Merge report for Ethernet100BASET
+Mon May 11 00:04:11 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                               ;
++------------------------------------+--------------------------------------------------+
+; Partition Merge Status             ; Successful - Mon May 11 00:04:11 2015            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; Ethernet100BASET                                 ;
+; Top-level Entity Name              ; main                                             ;
+; Family                             ; Cyclone II                                       ;
+; Total logic elements               ; 795 / 68,416 ( 1 % )                             ;
+;     Total combinational functions  ; 577 / 68,416 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 524 / 68,416 ( < 1 % )                           ;
+; Total registers                    ; 524                                              ;
+; Total pins                         ; 65 / 622 ( 10 % )                                ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 131,072 / 1,152,000 ( 11 % )                     ;
+; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                                  ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
++------------------------------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Post-Fit          ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                    ;
++----------------------------------------------------+--------------+-----------+----------------+-------------------+----------------------------------------------------+---------+
+; Name                                               ; Type         ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                                  ; Details ;
++----------------------------------------------------+--------------+-----------+----------------+-------------------+----------------------------------------------------+---------+
+; CLK_PLL:CLK_PLL_inst|altpll:altpll_component|_clk1 ; post-fitting ; connected ; Top            ; post-fit          ; CLK_PLL:CLK_PLL_inst|altpll:altpll_component|_clk1 ; N/A     ;
+; Ethernet100BASET:ethernet_instant|TXp              ; post-fitting ; connected ; Top            ; post-fit          ; Ethernet100BASET:ethernet_instant|TXp              ; N/A     ;
+; Ethernet100BASET:ethernet_instant|TXp              ; post-fitting ; connected ; Top            ; post-fit          ; Ethernet100BASET:ethernet_instant|TXp              ; N/A     ;
++----------------------------------------------------+--------------+-----------+----------------+-------------------+----------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                                         ;
++---------------------------------------------+----------------------+-----------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top                  ; sld_hub:auto_hub      ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+----------------------+-----------------------+--------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 31 / 68416 ( < 1 % ) ; 143 / 68416 ( < 1 % ) ; 621 / 68416 ( < 1 % )          ; 0 / 68416 ( 0 % )              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Total combinational functions               ; 31                   ; 119                   ; 427                            ; 0                              ;
+; Logic element usage by number of LUT inputs ;                      ;                       ;                                ;                                ;
+;     -- 4 input functions                    ; 7                    ; 51                    ; 227                            ; 0                              ;
+;     -- 3 input functions                    ; 5                    ; 32                    ; 111                            ; 0                              ;
+;     -- <=2 input functions                  ; 19                   ; 36                    ; 89                             ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Logic elements by mode                      ;                      ;                       ;                                ;                                ;
+;     -- normal mode                          ; 18                   ; 111                   ; 355                            ; 0                              ;
+;     -- arithmetic mode                      ; 13                   ; 8                     ; 72                             ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Total registers                             ; 23                   ; 86                    ; 415                            ; 0                              ;
+;     -- Dedicated logic registers            ; 23 / 68416 ( < 1 % ) ; 86 / 68416 ( < 1 % )  ; 415 / 68416 ( < 1 % )          ; 0 / 68416 ( 0 % )              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Virtual pins                                ; 0                    ; 0                     ; 0                              ; 0                              ;
+; I/O pins                                    ; 65                   ; 0                     ; 0                              ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 300 ( 0 % )      ; 0 / 300 ( 0 % )       ; 0 / 300 ( 0 % )                ; 0 / 300 ( 0 % )                ;
+; Total memory bits                           ; 0                    ; 0                     ; 131072                         ; 0                              ;
+; Total RAM block bits                        ; 0                    ; 0                     ; 147456                         ; 0                              ;
+; JTAG                                        ; 1 / 1 ( 100 % )      ; 0 / 1 ( 0 % )         ; 0 / 1 ( 0 % )                  ; 0 / 1 ( 0 % )                  ;
+; PLL                                         ; 0 / 4 ( 0 % )        ; 0 / 4 ( 0 % )         ; 0 / 4 ( 0 % )                  ; 1 / 4 ( 25 % )                 ;
+; M4K                                         ; 0 / 250 ( 0 % )      ; 0 / 250 ( 0 % )       ; 32 / 250 ( 12 % )              ; 0 / 250 ( 0 % )                ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Connections                                 ;                      ;                       ;                                ;                                ;
+;     -- Input Connections                    ; 13                   ; 128                   ; 639                            ; 1                              ;
+;     -- Registered Input Connections         ; 12                   ; 97                    ; 460                            ; 0                              ;
+;     -- Output Connections                   ; 354                  ; 163                   ; 2                              ; 262                            ;
+;     -- Registered Output Connections        ; 2                    ; 162                   ; 0                              ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Internal Connections                        ;                      ;                       ;                                ;                                ;
+;     -- Total Connections                    ; 487                  ; 810                   ; 3711                           ; 263                            ;
+;     -- Registered Connections               ; 70                   ; 590                   ; 2395                           ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; External Connections                        ;                      ;                       ;                                ;                                ;
+;     -- Top                                  ; 0                    ; 119                   ; 235                            ; 13                             ;
+;     -- sld_hub:auto_hub                     ; 119                  ; 16                    ; 156                            ; 0                              ;
+;     -- sld_signaltap:auto_signaltap_0       ; 235                  ; 156                   ; 0                              ; 250                            ;
+;     -- hard_block:auto_generated_inst       ; 13                   ; 0                     ; 250                            ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Partition Interface                         ;                      ;                       ;                                ;                                ;
+;     -- Input Ports                          ; 4                    ; 19                    ; 59                             ; 1                              ;
+;     -- Output Ports                         ; 1                    ; 37                    ; 12                             ; 1                              ;
+;     -- Bidir Ports                          ; 64                   ; 0                     ; 0                              ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Registered Ports                            ;                      ;                       ;                                ;                                ;
+;     -- Registered Input Ports               ; 0                    ; 4                     ; 8                              ; 0                              ;
+;     -- Registered Output Ports              ; 0                    ; 26                    ; 3                              ; 0                              ;
+;                                             ;                      ;                       ;                                ;                                ;
+; Port Connectivity                           ;                      ;                       ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0                    ; 1                     ; 0                              ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                    ; 1                     ; 0                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                    ; 0                     ; 0                              ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                    ; 0                     ; 0                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0                    ; 1                     ; 35                             ; 0                              ;
+;     -- Output Ports with no Source          ; 0                    ; 0                     ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                    ; 2                     ; 40                             ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                    ; 15                    ; 3                              ; 0                              ;
++---------------------------------------------+----------------------+-----------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++------------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                                 ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 795 / 68,416 ( 1 % )     ;
+;                                             ;                          ;
+; Total combinational functions               ; 577                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 285                      ;
+;     -- 3 input functions                    ; 148                      ;
+;     -- <=2 input functions                  ; 144                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 484                      ;
+;     -- arithmetic mode                      ; 93                       ;
+;                                             ;                          ;
+; Total registers                             ; 524                      ;
+;     -- Dedicated logic registers            ; 524                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 65                       ;
+; Total memory bits                           ; 131072                   ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+; Total PLLs                                  ; 1                        ;
+;     -- PLLs                                 ; 1                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 339                      ;
+; Total fan-out                               ; 4454                     ;
+; Average fan-out                             ; 3.70                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                                           ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                                                                                                                              ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_jp14:auto_generated|altsyncram_rdq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 131072       ; 1            ; 131072       ; 1            ; 131072 ; None ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Partition Merge
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon May 11 00:04:08 2015
+Info: Command: quartus_cdb --read_settings_files=on --write_settings_files=off Ethernet100BASET -c Ethernet100BASET --merge=on
+Info (35006): Using previously generated Fitter netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 3 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Info (35002): Resolved and merged 3 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 920 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21060): Implemented 64 bidirectional pins
+    Info (21061): Implemented 816 logic cells
+    Info (21064): Implemented 32 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 471 megabytes
+    Info: Processing ended: Mon May 11 00:04:11 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+
