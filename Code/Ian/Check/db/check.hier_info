@@ -9,7 +9,7 @@ iSW[5] => ~NO_FANOUT~
 iSW[6] => ~NO_FANOUT~
 iSW[7] => ~NO_FANOUT~
 iSW[8] => ~NO_FANOUT~
-iSW[9] => ~NO_FANOUT~
+iSW[9] => ON.DATAIN
 iSW[10] => ~NO_FANOUT~
 iSW[11] => ~NO_FANOUT~
 iSW[12] => ~NO_FANOUT~
@@ -18,11 +18,10 @@ iSW[14] => ~NO_FANOUT~
 iSW[15] => ~NO_FANOUT~
 iSW[16] => ~NO_FANOUT~
 iSW[17] => ~NO_FANOUT~
-iKEY[0] => rst.DATAIN
-iKEY[1] => manual_wr_mbed.DATAIN
-iKEY[2] => manual_wr.DATAIN
-iKEY[3] => manual_rd_edge.IN1
-iKEY[3] => manual_rd_prev.DATAIN
+iKEY[0] => RST.DATAIN
+iKEY[1] => ~NO_FANOUT~
+iKEY[2] => ~NO_FANOUT~
+iKEY[3] => ~NO_FANOUT~
 oLEDR[0] <= <GND>
 oLEDR[1] <= <GND>
 oLEDR[2] <= <GND>
@@ -173,8 +172,9 @@ GPIO_1[31] <> <UNC>
 
 
 |main|CLKPLL:CLKPLL_inst
-inclk0 => sub_wire3[0].IN1
+inclk0 => sub_wire4[0].IN1
 c0 <= altpll:altpll_component.clk
+c1 <= altpll:altpll_component.clk
 
 
 |main|CLKPLL:CLKPLL_inst|altpll:altpll_component
@@ -210,7 +210,7 @@ phasestep => ~NO_FANOUT~
 configupdate => ~NO_FANOUT~
 fbmimicbidir <> <GND>
 clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
-clk[1] <= <GND>
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
 clk[2] <= <GND>
 clk[3] <= <GND>
 clk[4] <= <GND>
@@ -3228,10 +3228,12 @@ sclr => _.IN0
 
 
 |main|SPI_MASTER_UC:mbed_instant
-SYS_CLK => SPI_CLK_10[0].CLK
-SYS_CLK => SPI_CLK_10[1].CLK
-RST => SPI_CLK_10.OUTPUTSELECT
-RST => SPI_CLK_10.OUTPUTSELECT
+SYS_CLK => SPI_CLK_8[0].CLK
+SYS_CLK => SPI_CLK_8[1].CLK
+SYS_CLK => SPI_CLK_8[2].CLK
+RST => SPI_CLK_8.OUTPUTSELECT
+RST => SPI_CLK_8.OUTPUTSELECT
+RST => SPI_CLK_8.OUTPUTSELECT
 ENA => CSbar~reg0.DATAIN
 DATA_MOSI[0] => data_out.DATAB
 DATA_MOSI[1] => data_out.DATAB
@@ -3252,7 +3254,7 @@ DATA_MOSI[15] => data_out.DATAB
 MISO => data_in.DATAA
 MOSI <= MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CSbar <= CSbar~reg0.DB_MAX_OUTPUT_PORT_TYPE
-SCK <= SPI_CLK_10[1].DB_MAX_OUTPUT_PORT_TYPE
+SCK <= SPI_CLK_8[1].DB_MAX_OUTPUT_PORT_TYPE
 FIN <= FIN~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DATA_MISO[0] <= <GND>
 DATA_MISO[1] <= data_in_final[0].DB_MAX_OUTPUT_PORT_TYPE

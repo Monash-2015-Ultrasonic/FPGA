@@ -1,5 +1,5 @@
 Analysis & Synthesis report for check
-Tue May 26 02:32:10 2015
+Mon Aug 03 23:32:41 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -35,9 +35,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  27. Port Connectivity Checks: "hex_encoder:hex2"
  28. Port Connectivity Checks: "hex_encoder:hex3"
  29. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
- 32. Analysis & Synthesis Suppressed Messages
+ 30. Port Connectivity Checks: "CLKPLL:CLKPLL_inst"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -63,15 +63,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 26 02:32:10 2015            ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 03 23:32:41 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; check                                            ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 261                                              ;
-;     Total combinational functions  ; 255                                              ;
-;     Dedicated logic registers      ; 126                                              ;
-; Total registers                    ; 126                                              ;
+; Total logic elements               ; 257                                              ;
+;     Total combinational functions  ; 252                                              ;
+;     Dedicated logic registers      ; 125                                              ;
+; Total registers                    ; 125                                              ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 262,144                                          ;
@@ -222,20 +222,20 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------+
 ; Resource                                    ; Usage                                            ;
 +---------------------------------------------+--------------------------------------------------+
-; Estimated Total logic elements              ; 261                                              ;
+; Estimated Total logic elements              ; 257                                              ;
 ;                                             ;                                                  ;
-; Total combinational functions               ; 255                                              ;
+; Total combinational functions               ; 252                                              ;
 ; Logic element usage by number of LUT inputs ;                                                  ;
-;     -- 4 input functions                    ; 107                                              ;
-;     -- 3 input functions                    ; 44                                               ;
-;     -- <=2 input functions                  ; 104                                              ;
+;     -- 4 input functions                    ; 112                                              ;
+;     -- 3 input functions                    ; 35                                               ;
+;     -- <=2 input functions                  ; 105                                              ;
 ;                                             ;                                                  ;
 ; Logic elements by mode                      ;                                                  ;
-;     -- normal mode                          ; 179                                              ;
-;     -- arithmetic mode                      ; 76                                               ;
+;     -- normal mode                          ; 170                                              ;
+;     -- arithmetic mode                      ; 82                                               ;
 ;                                             ;                                                  ;
-; Total registers                             ; 126                                              ;
-;     -- Dedicated logic registers            ; 126                                              ;
+; Total registers                             ; 125                                              ;
+;     -- Dedicated logic registers            ; 125                                              ;
 ;     -- I/O registers                        ; 0                                                ;
 ;                                             ;                                                  ;
 ; I/O pins                                    ; 170                                              ;
@@ -245,9 +245,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                ;
 ;                                             ;                                                  ;
 ; Maximum fan-out node                        ; CLKPLL:CLKPLL_inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 149                                              ;
-; Total fan-out                               ; 3042                                             ;
-; Average fan-out                             ; 4.94                                             ;
+; Maximum fan-out                             ; 148                                              ;
+; Total fan-out                               ; 3048                                             ;
+; Average fan-out                             ; 4.98                                             ;
 +---------------------------------------------+--------------------------------------------------+
 
 
@@ -256,14 +256,14 @@ applicable agreement for further details.
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                               ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                              ; 255 (52)          ; 126 (54)     ; 262144      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                                                                                                             ; work         ;
+; |main                                              ; 252 (51)          ; 125 (52)     ; 262144      ; 0            ; 0       ; 0         ; 170  ; 0            ; |main                                                                                                                                                                                             ; work         ;
 ;    |CLKPLL:CLKPLL_inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                                                                                                          ; work         ;
 ;       |altpll:altpll_component|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                                                                                                                  ; work         ;
-;    |FIFO_IP:FIFO_IP_inst|                          ; 115 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                        ; work         ;
-;       |scfifo:scfifo_component|                    ; 115 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component                                                                                                                                                ; work         ;
-;          |scfifo_qf31:auto_generated|              ; 115 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated                                                                                                                     ; work         ;
-;             |a_dpfifo_d731:dpfifo|                 ; 115 (17)          ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo                                                                                                ; work         ;
-;                |a_fefifo_nce:fifo_state|           ; 29 (14)           ; 16 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state                                                                        ; work         ;
+;    |FIFO_IP:FIFO_IP_inst|                          ; 112 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                        ; work         ;
+;       |scfifo:scfifo_component|                    ; 112 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component                                                                                                                                                ; work         ;
+;          |scfifo_qf31:auto_generated|              ; 112 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated                                                                                                                     ; work         ;
+;             |a_dpfifo_d731:dpfifo|                 ; 112 (16)          ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo                                                                                                ; work         ;
+;                |a_fefifo_nce:fifo_state|           ; 27 (12)           ; 16 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state                                                                        ; work         ;
 ;                   |cntr_al7:count_usedw|           ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw                                                   ; work         ;
 ;                |cntr_ukb:rd_ptr_count|             ; 14 (14)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count                                                                          ; work         ;
 ;                |cntr_ukb:wr_ptr|                   ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:wr_ptr                                                                                ; work         ;
@@ -273,7 +273,7 @@ applicable agreement for further details.
 ;                         |decode_r37:decode6|       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode6  ; work         ;
 ;                         |decode_r37:decode_a|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_a ; work         ;
 ;                         |mux_qv7:mux7|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux7        ; work         ;
-;    |SPI_MASTER_UC:mbed_instant|                    ; 32 (32)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                                                                                                                  ; work         ;
+;    |SPI_MASTER_UC:mbed_instant|                    ; 33 (33)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                                                                                                                  ; work         ;
 ;    |hex_encoder:hex0|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex0                                                                                                                                                                            ; work         ;
 ;    |hex_encoder:hex1|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex1                                                                                                                                                                            ; work         ;
 ;    |hex_encoder:hex2|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|hex_encoder:hex2                                                                                                                                                                            ; work         ;
@@ -305,20 +305,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+------------------------------------------+----------------------------------------------------+
-; Register name                            ; Reason for Removal                                 ;
-+------------------------------------------+----------------------------------------------------+
-; SPI_MASTER_UC:mbed_instant|ocounter[0]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0] ;
-; SPI_MASTER_UC:mbed_instant|ocounter[1]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1] ;
-; SPI_MASTER_UC:mbed_instant|ocounter[2]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2] ;
-; SPI_MASTER_UC:mbed_instant|ocounter[3]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3] ;
-; SPI_MASTER_UC:mbed_instant|ocounter[4]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4] ;
-; SPI_MASTER_UC:mbed_instant|ocounter[5]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5] ;
-; SPI_MASTER_UC:mbed_instant|SPI_CLK_10[0] ; Merged with CLK_SLOW[0]                            ;
-; Total Number of Removed Registers = 7    ;                                                    ;
-+------------------------------------------+----------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------+----------------------------------------------------+
+; Register name                           ; Reason for Removal                                 ;
++-----------------------------------------+----------------------------------------------------+
+; SPI_MASTER_UC:mbed_instant|ocounter[0]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0] ;
+; SPI_MASTER_UC:mbed_instant|ocounter[1]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1] ;
+; SPI_MASTER_UC:mbed_instant|ocounter[2]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2] ;
+; SPI_MASTER_UC:mbed_instant|ocounter[3]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3] ;
+; SPI_MASTER_UC:mbed_instant|ocounter[4]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4] ;
+; SPI_MASTER_UC:mbed_instant|ocounter[5]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5] ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_8[2] ; Lost fanout                                        ;
+; Total Number of Removed Registers = 7   ;                                                    ;
++-----------------------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -326,8 +326,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 126   ;
-; Number of registers using Synchronous Clear  ; 34    ;
+; Total registers                              ; 125   ;
+; Number of registers using Synchronous Clear  ; 44    ;
 ; Number of registers using Synchronous Load   ; 42    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -342,7 +342,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[1]  ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[12] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[14] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
@@ -369,8 +369,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------+
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
-; bits           ; 6     ; Signed Integer                              ;
-; out_clk_bits   ; 14    ; Signed Integer                              ;
+; sampler_bits   ; 10    ; Signed Integer                              ;
+; sampler_topbit ; 9     ; Signed Integer                              ;
+; mbed_clk_bits  ; 15    ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -416,8 +417,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_MULTIPLY_BY              ; 1                        ; Untyped                      ;
 ; CLK3_MULTIPLY_BY              ; 1                        ; Untyped                      ;
 ; CLK2_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK1_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK0_MULTIPLY_BY              ; 4                        ; Signed Integer               ;
+; CLK1_MULTIPLY_BY              ; 13                       ; Signed Integer               ;
+; CLK0_MULTIPLY_BY              ; 13                       ; Signed Integer               ;
 ; CLK9_DIVIDE_BY                ; 0                        ; Untyped                      ;
 ; CLK8_DIVIDE_BY                ; 0                        ; Untyped                      ;
 ; CLK7_DIVIDE_BY                ; 0                        ; Untyped                      ;
@@ -426,8 +427,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_DIVIDE_BY                ; 1                        ; Untyped                      ;
 ; CLK3_DIVIDE_BY                ; 1                        ; Untyped                      ;
 ; CLK2_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK1_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK0_DIVIDE_BY                ; 5                        ; Signed Integer               ;
+; CLK1_DIVIDE_BY                ; 16                       ; Signed Integer               ;
+; CLK0_DIVIDE_BY                ; 10                       ; Signed Integer               ;
 ; CLK9_PHASE_SHIFT              ; 0                        ; Untyped                      ;
 ; CLK8_PHASE_SHIFT              ; 0                        ; Untyped                      ;
 ; CLK7_PHASE_SHIFT              ; 0                        ; Untyped                      ;
@@ -452,7 +453,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_DUTY_CYCLE               ; 50                       ; Untyped                      ;
 ; CLK3_DUTY_CYCLE               ; 50                       ; Untyped                      ;
 ; CLK2_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK1_DUTY_CYCLE               ; 50                       ; Untyped                      ;
+; CLK1_DUTY_CYCLE               ; 50                       ; Signed Integer               ;
 ; CLK0_DUTY_CYCLE               ; 50                       ; Signed Integer               ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
 ; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
@@ -682,7 +683,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; PORT_CLKBAD0                  ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLKBAD1                  ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLK0                     ; PORT_USED                ; Untyped                      ;
-; PORT_CLK1                     ; PORT_UNUSED              ; Untyped                      ;
+; PORT_CLK1                     ; PORT_USED                ; Untyped                      ;
 ; PORT_CLK2                     ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLK3                     ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLK4                     ; PORT_UNUSED              ; Untyped                      ;
@@ -901,6 +902,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CLKPLL:CLKPLL_inst"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; c1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -916,7 +926,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue May 26 02:32:06 2015
+    Info: Processing started: Mon Aug 03 23:32:37 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off check -c check
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file source/spi_master_uc.v
@@ -930,28 +940,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file clkpll.
 Info (12021): Found 1 design units, including 1 entities, in source file fifo_ip.v
     Info (12023): Found entity 1: FIFO_IP
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(47): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(51): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at main.v(61): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(71): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(82): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(89): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(118): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(125): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at main.v(130): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(136): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(144): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(146): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(52): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(56): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at main.v(62): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(73): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(109): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at main.v(115): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(123): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(131): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(133): truncated value with size 32 to match size of target (1)
 Warning (10034): Output port "oLEDR[15..0]" at main.v(7) has no driver
 Warning (10034): Output port "oLEDG[7..0]" at main.v(8) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLKPLL:CLKPLL_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "CLKPLL:CLKPLL_inst|altpll:altpll_component"
 Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_component" with the following parameter:
-    Info (12134): Parameter "clk0_divide_by" = "5"
+    Info (12134): Parameter "clk0_divide_by" = "10"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "4"
+    Info (12134): Parameter "clk0_multiply_by" = "13"
     Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "16"
+    Info (12134): Parameter "clk1_duty_cycle" = "50"
+    Info (12134): Parameter "clk1_multiply_by" = "13"
+    Info (12134): Parameter "clk1_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
@@ -984,7 +995,7 @@ Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_compon
     Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
-    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk1" = "PORT_USED"
     Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
@@ -1044,7 +1055,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_ukb
 Info (12128): Elaborating entity "cntr_ukb" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count"
 Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(35): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(35): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(68): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(94): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "hex_encoder" for hierarchy "hex_encoder:hex3"
@@ -1144,10 +1155,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oLEDG[5]" is stuck at GND
     Warning (13410): Pin "oLEDG[6]" is stuck at GND
     Warning (13410): Pin "oLEDG[7]" is stuck at GND
-Info (144001): Generated suppressed messages file E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/Check/output_files/check.map.smsg
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 18 input pin(s) that do not drive logic
+Warning (21074): Design contains 20 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[0]"
     Warning (15610): No output dependent on input pin "iSW[1]"
     Warning (15610): No output dependent on input pin "iSW[2]"
@@ -1157,7 +1168,6 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[6]"
     Warning (15610): No output dependent on input pin "iSW[7]"
     Warning (15610): No output dependent on input pin "iSW[8]"
-    Warning (15610): No output dependent on input pin "iSW[9]"
     Warning (15610): No output dependent on input pin "iSW[10]"
     Warning (15610): No output dependent on input pin "iSW[11]"
     Warning (15610): No output dependent on input pin "iSW[12]"
@@ -1166,23 +1176,20 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[15]"
     Warning (15610): No output dependent on input pin "iSW[16]"
     Warning (15610): No output dependent on input pin "iSW[17]"
-Info (21057): Implemented 496 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "iKEY[1]"
+    Warning (15610): No output dependent on input pin "iKEY[2]"
+    Warning (15610): No output dependent on input pin "iKEY[3]"
+Info (21057): Implemented 492 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 261 logic cells
+    Info (21061): Implemented 257 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 132 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 131 warnings
     Info: Peak virtual memory: 479 megabytes
-    Info: Processing ended: Tue May 26 02:32:10 2015
+    Info: Processing ended: Mon Aug 03 23:32:41 2015
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/Check/output_files/check.map.smsg.
 
 

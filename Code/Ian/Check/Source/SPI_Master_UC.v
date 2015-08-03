@@ -30,11 +30,11 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 	
 	wire SPI_CLK = SPI_CLK_5[2];
 	*/
-	reg [1:0]			SPI_CLK_10;
+	reg [2:0]			SPI_CLK_8;
 	always @(posedge SYS_CLK)
-		SPI_CLK_10 <= ~RST ? SPI_CLK_10 + 1 : 0;
+		SPI_CLK_8 <= ~RST ? SPI_CLK_8 + 1 : 0;
 	
-	wire SPI_CLK = SPI_CLK_10[1];
+	wire SPI_CLK = SPI_CLK_8[1];
 	
 	
 	
