@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SYSTEM
-Tue May 26 02:36:29 2015
+Mon Aug 03 14:53:22 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -34,10 +34,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  26. Port Connectivity Checks: "HEX_ENCODER:hex2"
  27. Port Connectivity Checks: "HEX_ENCODER:hex3"
  28. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
- 29. Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst"
- 30. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
+ 29. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -63,7 +62,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 26 02:36:29 2015            ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 03 14:53:22 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
@@ -223,7 +222,7 @@ applicable agreement for further details.
 +--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                       ;
 +--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |main|CLKPLL:CLKPLL_inst   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/CLKPLL.v  ;
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |main|CLKPLL:CLKPLL_inst   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/CLKPLL.v  ;
 ; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |main|FIFO_IP:FIFO_IP_inst ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/FIFO_IP.v ;
 +--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------+
 
@@ -237,22 +236,13 @@ applicable agreement for further details.
 +----------------+-------------+-------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Dependent File Changes for Partition Top                                                                                                                   ;
-+-----------------------------+-------------------------+-------------------+----------+----------------------------------+----------------------------------+
-; Hierarchy                   ; File Name               ; Relative Location ; Change   ; Old                              ; New                              ;
-+-----------------------------+-------------------------+-------------------+----------+----------------------------------+----------------------------------+
-; HEX_ENCODER:hex0            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex1            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex2            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex3            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex4            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex5            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex6            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; HEX_ENCODER:hex7            ; Source/Hex Encoder.v    ; Project Directory ; Checksum ; c88217a10f3a56ff4d12c0a19d8b8e88 ; 8e77a097346915da1abeedaeb4037628 ;
-; SPI_MASTER_ADC:ADC0_instant ; Source/SPI_Master_ADC.v ; Project Directory ; Checksum ; bf2f7d8c25e24f0dfc4294ac66eac7a4 ; 8a8f1788e3fdc9f1ae34868bebea04dc ;
-; SPI_MASTER_UC:mbed_instant  ; Source/SPI_Master_UC.v  ; Project Directory ; Checksum ; 9eb49377b566fd9469ae9809eac13b13 ; 7212a24961ef5c7b0065f213bb9043e4 ;
-+-----------------------------+-------------------------+-------------------+----------+----------------------------------+----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition Top                                                                                       ;
++-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy ; File Name     ; Relative Location ; Change   ; Old                              ; New                              ;
++-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
+; |         ; Source/main.v ; Project Directory ; Checksum ; da6a6cbfbe799c1349197dc9e1432ef4 ; db10ff196a811d42f1032dc12c119c30 ;
++-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -260,7 +250,7 @@ applicable agreement for further details.
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                               ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                              ; 286 (53)          ; 173 (46)     ; 262144      ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                                                                                                                                                                             ; work         ;
+; |main                                              ; 293 (74)          ; 157 (59)     ; 262144      ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                                                                                                                                                                             ; work         ;
 ;    |CLKPLL:CLKPLL_inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                                                                                                          ; work         ;
 ;       |altpll:altpll_component|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                                                                                                                  ; work         ;
 ;    |FIFO_IP:FIFO_IP_inst|                          ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                        ; work         ;
@@ -283,51 +273,55 @@ applicable agreement for further details.
 ;    |HEX_ENCODER:hex3|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex3                                                                                                                                                                            ; work         ;
 ;    |HEX_ENCODER:hex4|                              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex4                                                                                                                                                                            ; work         ;
 ;    |HEX_ENCODER:hex6|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex6                                                                                                                                                                            ; work         ;
-;    |SPI_MASTER_ADC:ADC0_instant|                   ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                                                                                                                 ; work         ;
-;    |SPI_MASTER_UC:mbed_instant|                    ; 32 (32)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                                                                                                                  ; work         ;
+;    |SPI_MASTER_ADC:ADC0_instant|                   ; 31 (31)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                                                                                                                 ; work         ;
+;    |SPI_MASTER_UC:mbed_instant|                    ; 33 (33)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                                                                                                                  ; work         ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                             ;
-+------------------------------------------+-----------------------------------------------------+
-; Register name                            ; Reason for Removal                                  ;
-+------------------------------------------+-----------------------------------------------------+
-; SPI_MASTER_UC:mbed_instant|ocounter[0]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[1]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[2]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[3]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[4]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[5]   ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5]  ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[0]  ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[1]  ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[2]  ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[3]  ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[4]  ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[5]  ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
-; SPI_MASTER_UC:mbed_instant|SPI_CLK_10[0] ; Merged with usonic[0]                               ;
-; MBED_CLK[0]                              ; Merged with clk_sample[0]                           ;
-; clk_sample[1]                            ; Merged with MBED_CLK[1]                             ;
-; clk_sample[2]                            ; Merged with MBED_CLK[2]                             ;
-; clk_sample[3]                            ; Merged with MBED_CLK[3]                             ;
-; clk_sample[4]                            ; Merged with MBED_CLK[4]                             ;
-; clk_sample[5]                            ; Merged with MBED_CLK[5]                             ;
-; Total Number of Removed Registers = 19   ;                                                     ;
-+------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-----------------------------------------+-----------------------------------------------------+
+; Register name                           ; Reason for Removal                                  ;
++-----------------------------------------+-----------------------------------------------------+
+; SPI_MASTER_UC:mbed_instant|ocounter[0]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[1]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[2]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[3]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[4]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4]  ;
+; SPI_MASTER_UC:mbed_instant|ocounter[5]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5]  ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[0] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[1] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[2] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[3] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[4] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[5] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
+; MBED_CLK[0]                             ; Merged with clk_sample[0]                           ;
+; SPI_MASTER_ADC:ADC0_instant|CLK_16[0]   ; Merged with SPI_MASTER_UC:mbed_instant|SPI_CLK_8[0] ;
+; clk_sample[1]                           ; Merged with MBED_CLK[1]                             ;
+; clk_sample[2]                           ; Merged with MBED_CLK[2]                             ;
+; clk_sample[3]                           ; Merged with MBED_CLK[3]                             ;
+; clk_sample[4]                           ; Merged with MBED_CLK[4]                             ;
+; clk_sample[5]                           ; Merged with MBED_CLK[5]                             ;
+; clk_sample[6]                           ; Merged with MBED_CLK[6]                             ;
+; clk_sample[7]                           ; Merged with MBED_CLK[7]                             ;
+; clk_sample[8]                           ; Merged with MBED_CLK[8]                             ;
+; SPI_MASTER_UC:mbed_instant|SPI_CLK_8[2] ; Lost fanout                                         ;
+; Total Number of Removed Registers = 23  ;                                                     ;
++-----------------------------------------+-----------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[12] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[7]  ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|icounter[0]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[1]   ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[10]  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[5] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[7] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[3]  ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[9]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -353,9 +347,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------+
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
-; sampler_bits   ; 6     ; Signed Integer                              ;
-; sampler_topbit ; 5     ; Signed Integer                              ;
-; mbed_clk_bits  ; 14    ; Signed Integer                              ;
+; sampler_bits   ; 10    ; Signed Integer                              ;
+; sampler_topbit ; 9     ; Signed Integer                              ;
+; mbed_clk_bits  ; 10    ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -401,8 +395,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_MULTIPLY_BY              ; 1                        ; Untyped                      ;
 ; CLK3_MULTIPLY_BY              ; 1                        ; Untyped                      ;
 ; CLK2_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK1_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK0_MULTIPLY_BY              ; 4                        ; Signed Integer               ;
+; CLK1_MULTIPLY_BY              ; 13                       ; Signed Integer               ;
+; CLK0_MULTIPLY_BY              ; 13                       ; Signed Integer               ;
 ; CLK9_DIVIDE_BY                ; 0                        ; Untyped                      ;
 ; CLK8_DIVIDE_BY                ; 0                        ; Untyped                      ;
 ; CLK7_DIVIDE_BY                ; 0                        ; Untyped                      ;
@@ -411,8 +405,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_DIVIDE_BY                ; 1                        ; Untyped                      ;
 ; CLK3_DIVIDE_BY                ; 1                        ; Untyped                      ;
 ; CLK2_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK1_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK0_DIVIDE_BY                ; 5                        ; Signed Integer               ;
+; CLK1_DIVIDE_BY                ; 16                       ; Signed Integer               ;
+; CLK0_DIVIDE_BY                ; 10                       ; Signed Integer               ;
 ; CLK9_PHASE_SHIFT              ; 0                        ; Untyped                      ;
 ; CLK8_PHASE_SHIFT              ; 0                        ; Untyped                      ;
 ; CLK7_PHASE_SHIFT              ; 0                        ; Untyped                      ;
@@ -437,7 +431,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK4_DUTY_CYCLE               ; 50                       ; Untyped                      ;
 ; CLK3_DUTY_CYCLE               ; 50                       ; Untyped                      ;
 ; CLK2_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK1_DUTY_CYCLE               ; 50                       ; Untyped                      ;
+; CLK1_DUTY_CYCLE               ; 50                       ; Signed Integer               ;
 ; CLK0_DUTY_CYCLE               ; 50                       ; Signed Integer               ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
 ; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
@@ -667,7 +661,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; PORT_CLKBAD0                  ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLKBAD1                  ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLK0                     ; PORT_USED                ; Untyped                      ;
-; PORT_CLK1                     ; PORT_UNUSED              ; Untyped                      ;
+; PORT_CLK1                     ; PORT_USED                ; Untyped                      ;
 ; PORT_CLK2                     ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLK3                     ; PORT_UNUSED              ; Untyped                      ;
 ; PORT_CLK4                     ; PORT_UNUSED              ; Untyped                      ;
@@ -787,7 +781,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------+---------+----------------------------------+
 ; File                                      ; Location           ; Library ; Checksum                         ;
 +-------------------------------------------+--------------------+---------+----------------------------------+
-; CLKPLL.v                                  ; Project Directory  ; work    ; c842bdc1bdb3a149a5275a8c186a4ea1 ;
+; CLKPLL.v                                  ; Project Directory  ; work    ; 6c2e30f1494d9cf24842c28163f6efa2 ;
 ; db/a_dpfifo_d731.tdf                      ; Project Directory  ; work    ; df8dc0dd06aff1b19804e9b1e5cede94 ;
 ; db/a_fefifo_nce.tdf                       ; Project Directory  ; work    ; 8b1b37a672acc4b49d5f828e378d754e ;
 ; db/altsyncram_22k1.tdf                    ; Project Directory  ; work    ; ed57faa271575f1fa52439f558f6f90f ;
@@ -800,9 +794,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; db/scfifo_qf31.tdf                        ; Project Directory  ; work    ; e9e9ab739488bb5ab5ce9f55da038d49 ;
 ; FIFO_IP.v                                 ; Project Directory  ; work    ; 9fb051dfef1e29b5ed7f2aa23226f46e ;
 ; Source/Hex Encoder.v                      ; Project Directory  ; work    ; 8e77a097346915da1abeedaeb4037628 ;
-; Source/main.v                             ; Project Directory  ; work    ; b32806bd78a302fc319d38851d833c2d ;
-; Source/SPI_Master_ADC.v                   ; Project Directory  ; work    ; 8a8f1788e3fdc9f1ae34868bebea04dc ;
-; Source/SPI_Master_UC.v                    ; Project Directory  ; work    ; 7212a24961ef5c7b0065f213bb9043e4 ;
+; Source/main.v                             ; Project Directory  ; work    ; db10ff196a811d42f1032dc12c119c30 ;
+; Source/SPI_Master_ADC.v                   ; Project Directory  ; work    ; 161daea8831411da2f58c543c5428e9d ;
+; Source/SPI_Master_UC.v                    ; Project Directory  ; work    ; ba79baff1d349c8166d4508ad3aa3c76 ;
 ; libraries/megafunctions/a_dpfifo.inc      ; Quartus II Install ; work    ; 37c2d0bb70d5a3f83a4aa09e62c75080 ;
 ; libraries/megafunctions/a_f2fifo.inc      ; Quartus II Install ; work    ; cebe3836bad826c95e765f77477e8a8b ;
 ; libraries/megafunctions/a_fffifo.inc      ; Quartus II Install ; work    ; aa34dd03c645beef0c31a3e4ef186db4 ;
@@ -899,15 +893,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------+
-; Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst" ;
-+----------+-------+----------+--------------------+
-; Port     ; Type  ; Severity ; Details            ;
-+----------+-------+----------+--------------------+
-; data[15] ; Input ; Info     ; Stuck at GND       ;
-+----------+-------+----------+--------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"                                                                     ;
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -918,7 +903,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DATA_MOSI[10..9]  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; DATA_MOSI[5..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; DATA_MOSI[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; DATA_MISO[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; DATA_MISO         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -937,7 +922,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue May 26 02:36:26 2015
+    Info: Processing started: Mon Aug 03 14:53:19 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file clkpll.v
@@ -953,27 +938,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
 Info (12021): Found 1 design units, including 1 entities, in source file fifo_ip.v
     Info (12023): Found entity 1: FIFO_IP
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(49): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at main.v(54): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at main.v(81): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(90): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(101): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(156): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at main.v(162): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(170): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(178): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(180): truncated value with size 32 to match size of target (1)
-Warning (10030): Net "ADC_FIN[4..1]" at main.v(71) has no driver or initial value, using a default initial value '0'
+Warning (10230): Verilog HDL assignment warning at main.v(51): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(56): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(83): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(90): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at main.v(96): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(107): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(163): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at main.v(169): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(177): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(185): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at main.v(187): truncated value with size 32 to match size of target (1)
+Warning (10030): Net "ADC_FIN[4..1]" at main.v(73) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "oLEDR[15..0]" at main.v(10) has no driver
 Warning (10034): Output port "oLEDG[6..5]" at main.v(11) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLKPLL:CLKPLL_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "CLKPLL:CLKPLL_inst|altpll:altpll_component"
 Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_component" with the following parameter:
-    Info (12134): Parameter "clk0_divide_by" = "5"
+    Info (12134): Parameter "clk0_divide_by" = "10"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "4"
+    Info (12134): Parameter "clk0_multiply_by" = "13"
     Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "16"
+    Info (12134): Parameter "clk1_duty_cycle" = "50"
+    Info (12134): Parameter "clk1_multiply_by" = "13"
+    Info (12134): Parameter "clk1_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
@@ -1006,7 +996,7 @@ Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_compon
     Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
-    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk1" = "PORT_USED"
     Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
@@ -1022,8 +1012,9 @@ Info (12133): Instantiated megafunction "CLKPLL:CLKPLL_inst|altpll:altpll_compon
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
 Info (12128): Elaborating entity "SPI_MASTER_ADC" for hierarchy "SPI_MASTER_ADC:ADC0_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(61): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(89): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(29): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(63): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_ADC.v(91): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "FIFO_IP" for hierarchy "FIFO_IP:FIFO_IP_inst"
 Info (12128): Elaborating entity "scfifo" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component"
 Info (12130): Elaborated megafunction instantiation "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component"
@@ -1069,9 +1060,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_ukb
 Info (12128): Elaborating entity "cntr_ukb" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count"
 Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(37): truncated value with size 32 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(74): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(103): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(29): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(66): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(95): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "HEX_ENCODER" for hierarchy "HEX_ENCODER:hex3"
 Info (12205): 1 design partition requires Analysis and Synthesis
     Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
@@ -1185,16 +1176,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oHEX7_D[4]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[5]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[6]" is stuck at VCC
-Info (21057): Implemented 606 device resources after synthesis - the final resource count might be different
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 599 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 128 bidirectional pins
-    Info (21061): Implemented 307 logic cells
+    Info (21061): Implemented 300 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 126 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 128 warnings
     Info: Peak virtual memory: 469 megabytes
-    Info: Processing ended: Tue May 26 02:36:29 2015
+    Info: Processing ended: Mon Aug 03 14:53:22 2015
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

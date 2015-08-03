@@ -23,20 +23,12 @@ module SPI_MASTER_UC # (parameter outBits = 16)(
 	reg	[5 			:0]	icounter 			= 0;			// counter for MISO data
 	reg	[5 			:0]	ocounter 			= 0;			// counter for MOSI data
 
-/*
-	// Generate 5MHz clock:	
-	reg [2:0] 		SPI_CLK_5;
+	// Generate 8.125MHz clock:
+	reg [2:0]			SPI_CLK_8;
 	always @(posedge SYS_CLK)
-		SPI_CLK_5 <= ~RST ? SPI_CLK_5 + 1 : 0;
+		SPI_CLK_8 <= ~RST ? SPI_CLK_8 + 1 : 0;
 	
-	wire SPI_CLK = SPI_CLK_5[2];
-*/
-	// Generate 10MHz clock:
-	reg [1:0]			SPI_CLK_10;
-	always @(posedge SYS_CLK)
-		SPI_CLK_10 <= ~RST ? SPI_CLK_10 + 1 : 0;
-	
-	wire SPI_CLK = SPI_CLK_10[1];
+	wire SPI_CLK = SPI_CLK_8[1];
 	
 	
 	

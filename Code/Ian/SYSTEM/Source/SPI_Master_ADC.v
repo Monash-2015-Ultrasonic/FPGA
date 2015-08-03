@@ -7,9 +7,9 @@ module SPI_MASTER_ADC # (parameter outBits = 16)(
 	input		[15:0]	DATA_MOSI,
 	input 				MISO,
 	output  				MOSI,
-	output  	reg			CSbar,
+	output  	reg		CSbar,
 	output 				SCK,
-	output  	reg			FIN,
+	output  	reg		FIN,
 	output  	[15:0]	DATA_MISO
 	);	
 
@@ -23,10 +23,12 @@ module SPI_MASTER_ADC # (parameter outBits = 16)(
 	reg	[5 			:0]	ocounter 			= 0;			// counter for MOSI data
 	
 	
-	// Generate 20MHz clock:
-	reg					SPI_CLK;
+	// Generate 16.25MHz clock:
+	reg	[1:0]				CLK_16;
 	always @(posedge SYS_CLK)
-		SPI_CLK <= ~SPI_CLK;
+		CLK_16 <= CLK_16 + 1;
+	
+	wire SPI_CLK = CLK_16[1];
 	
 	
 	
