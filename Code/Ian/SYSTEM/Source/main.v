@@ -87,7 +87,7 @@ module main(
 	
 	reg [15:0] check_counter;
 	always @(posedge ADC0_EN)
-		check_counter <= ~RST & ON ? check_counter + 1 : 0;
+		check_counter <= ~RST & ON & ~ADC_OFF ? check_counter + 1 : 0;
 	
 	// Edge Detector for WR sinal to FIFO:
 	reg WR_PREV, WR_EDGE;
@@ -156,6 +156,33 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MBED Microcontroller:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~			
+	reg [1:0] counter_report;
+	reg [15:0] counter_wait;
+	reg MBED_ALLOWED = 0;
+	always @(posedge CLK_65) begin
+		case (counter_report)
+		3: begin
+				case (counter_wait)
+				63000: begin
+					counter_report <= 0;
+					counter_wait <= 0;
+					MBED_ALLOWED <= 1;
+				end 
+				
+				default: begin
+					counter_wait <= counter_wait + 1;
+					MBED_ALLOWED <= 0;
+				end 
+				endcase 
+		end 
+		
+		default: begin
+			counter_report <= MBED_FIN_EDGE ? counter_report + 1 : counter_report;
+			MBED_ALLOWED <= 1;
+		end 
+		endcase
+	end 
+	
 	// Generate clock to output data to MBED periodically: same rate as sampler
 	parameter mbed_clk_bits = 10;
 	reg [mbed_clk_bits-1:0] MBED_CLK;
@@ -182,7 +209,7 @@ module main(
 	always @(posedge CLK_65) begin
 		//if (MBED_CLK_EDGE | manual_wr_mbed_edge)
 		if (MBED_CLK_EDGE)
-			MBED_ON 		<= ~FIFO_ADC0_EMPTY ? 1 : 0;
+			MBED_ON 		<= ~FIFO_ADC0_EMPTY & MBED_ALLOWED ? 1 : 0;
 		else 
 			MBED_ON 		<= ~MBED_FIN ? MBED_ON : 0;	
 	end
@@ -191,7 +218,7 @@ module main(
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
 		.SYS_CLK 	( CLK_65				),
 		.RST			( 						),
-		.ENA 			( MBED_ON & ~FIFO_ADC0_EMPTY  ),  	
+		.ENA 			( MBED_ON   		),  	
 		.DATA_MOSI 	( FIFO_ADC0_OUT	),		
 		.MISO 		( GPIO_1[0] 		),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_1[1] 		),		// MOSI = SDI 		= 4

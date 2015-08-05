@@ -102,8 +102,35 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // MBED Microcontroller:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~			
-	// Generate clock to output data to MBED periodically: 
-	parameter mbed_clk_bits = 15;
+	reg [1:0] counter_report;
+	reg [15:0] counter_wait;
+	reg MBED_ALLOWED = 0;
+	always @(posedge CLK_65) begin
+		case (counter_report)
+		3: begin
+				case (counter_wait)
+				63000: begin
+					counter_report <= 0;
+					counter_wait <= 0;
+					MBED_ALLOWED <= 1;
+				end 
+				
+				default: begin
+					counter_wait <= counter_wait + 1;
+					MBED_ALLOWED <= 0;
+				end 
+				endcase 
+		end 
+		
+		default: begin
+			counter_report <= MBED_FIN_EDGE ? counter_report + 1 : counter_report;
+			MBED_ALLOWED <= 1;
+		end 
+		endcase
+	end 
+	
+	// Generate clock to output data to MBED periodically: same rate as sampler
+	parameter mbed_clk_bits = 10;
 	reg [mbed_clk_bits-1:0] MBED_CLK;
 	always @(posedge CLK_65)
 		MBED_CLK 		<= ~RST & ON ? MBED_CLK + 1 : 0;
@@ -128,7 +155,7 @@ module main(
 	always @(posedge CLK_65) begin
 		//if (MBED_CLK_EDGE | manual_wr_mbed_edge)
 		if (MBED_CLK_EDGE)
-			MBED_ON 		<= ~FIFO_EMPTY ? 1 : 0;
+			MBED_ON 		<= ~FIFO_EMPTY & MBED_ALLOWED ? 1 : 0;
 		else 
 			MBED_ON 		<= ~MBED_FIN ? MBED_ON : 0;	
 	end
@@ -137,8 +164,8 @@ module main(
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
 		.SYS_CLK 	( CLK_65				),
 		.RST			( 						),
-		.ENA 			( MBED_ON & ~FIFO_EMPTY  ),  	
-		.DATA_MOSI 	( FIFO_OUT	),		
+		.ENA 			( MBED_ON  			),  	
+		.DATA_MOSI 	( FIFO_OUT			),		
 		.MISO 		( GPIO_1[0] 		),		// MISO = SDO 		= 3
 		.MOSI 		( GPIO_1[1] 		),		// MOSI = SDI 		= 4
 		.SCK 			( GPIO_1[3]			),		// SCK = SCLK 		= 5

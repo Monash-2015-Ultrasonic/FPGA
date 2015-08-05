@@ -3,51 +3,51 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -6.538
-TNS   : -390.519
+Slack : -6.266
+TNS   : -380.368
 
 Type  : Slow Model Setup 'CLKPLL_inst|altpll_component|pll|clk[1]'
-Slack : -4.427
-TNS   : -4.793
+Slack : -4.318
+TNS   : -4.817
 
 Type  : Slow Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_8[1]'
-Slack : -3.566
-TNS   : -59.536
+Slack : -3.652
+TNS   : -60.313
 
 Type  : Slow Model Setup 'usonic[9]'
-Slack : -1.546
-TNS   : -15.460
+Slack : -1.524
+TNS   : -15.240
 
 Type  : Slow Model Setup 'clk_sample[9]'
 Slack : -1.498
 TNS   : -14.432
 
 Type  : Slow Model Setup 'SPI_MASTER_ADC:ADC0_instant|CLK_16[1]'
-Slack : -1.093
-TNS   : -13.977
-
-Type  : Slow Model Hold 'clk_sample[9]'
-Slack : -1.723
-TNS   : -27.568
-
-Type  : Slow Model Hold 'SPI_MASTER_ADC:ADC0_instant|CLK_16[1]'
-Slack : -1.196
-TNS   : -1.196
+Slack : -1.101
+TNS   : -13.812
 
 Type  : Slow Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_8[1]'
-Slack : -0.987
-TNS   : -1.801
+Slack : -1.675
+TNS   : -1.675
+
+Type  : Slow Model Hold 'clk_sample[9]'
+Slack : -1.385
+TNS   : -22.160
+
+Type  : Slow Model Hold 'SPI_MASTER_ADC:ADC0_instant|CLK_16[1]'
+Slack : -1.017
+TNS   : -1.017
 
 Type  : Slow Model Hold 'usonic[9]'
-Slack : -0.712
-TNS   : -7.120
+Slack : -0.794
+TNS   : -7.940
 
 Type  : Slow Model Hold 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -0.049
-TNS   : -0.098
+Slack : -0.067
+TNS   : -0.134
 
 Type  : Slow Model Hold 'CLKPLL_inst|altpll_component|pll|clk[1]'
-Slack : 0.141
+Slack : 0.274
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_8[1]'
@@ -79,51 +79,51 @@ Slack : 11.307
 TNS   : 0.000
 
 Type  : Fast Model Setup 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -3.495
-TNS   : -209.821
+Slack : -3.311
+TNS   : -203.380
 
 Type  : Fast Model Setup 'CLKPLL_inst|altpll_component|pll|clk[1]'
-Slack : -2.457
-TNS   : -2.615
+Slack : -2.381
+TNS   : -2.577
 
 Type  : Fast Model Setup 'SPI_MASTER_UC:mbed_instant|SPI_CLK_8[1]'
-Slack : -1.808
-TNS   : -26.261
+Slack : -1.883
+TNS   : -27.286
 
 Type  : Fast Model Setup 'usonic[9]'
-Slack : -0.193
-TNS   : -1.930
+Slack : -0.174
+TNS   : -1.740
 
 Type  : Fast Model Setup 'clk_sample[9]'
 Slack : -0.165
 TNS   : -0.475
 
 Type  : Fast Model Setup 'SPI_MASTER_ADC:ADC0_instant|CLK_16[1]'
-Slack : -0.015
-TNS   : -0.060
-
-Type  : Fast Model Hold 'clk_sample[9]'
-Slack : -1.194
-TNS   : -19.104
-
-Type  : Fast Model Hold 'SPI_MASTER_ADC:ADC0_instant|CLK_16[1]'
-Slack : -0.977
-TNS   : -0.977
+Slack : 0.046
+TNS   : 0.000
 
 Type  : Fast Model Hold 'SPI_MASTER_UC:mbed_instant|SPI_CLK_8[1]'
-Slack : -0.877
-TNS   : -4.122
+Slack : -1.135
+TNS   : -3.747
+
+Type  : Fast Model Hold 'clk_sample[9]'
+Slack : -0.929
+TNS   : -14.864
+
+Type  : Fast Model Hold 'SPI_MASTER_ADC:ADC0_instant|CLK_16[1]'
+Slack : -0.887
+TNS   : -0.887
 
 Type  : Fast Model Hold 'usonic[9]'
-Slack : -0.690
-TNS   : -6.900
+Slack : -0.682
+TNS   : -6.820
 
 Type  : Fast Model Hold 'CLKPLL_inst|altpll_component|pll|clk[0]'
-Slack : -0.030
-TNS   : -0.060
+Slack : -0.051
+TNS   : -0.102
 
 Type  : Fast Model Hold 'CLKPLL_inst|altpll_component|pll|clk[1]'
-Slack : 0.043
+Slack : 0.081
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'SPI_MASTER_UC:mbed_instant|SPI_CLK_8[1]'
