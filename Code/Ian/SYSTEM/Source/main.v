@@ -17,11 +17,11 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Custom/System Clock using PLL IP:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	// 65MHz and 40.625MHz clock:
-	wire 					CLK_65, CLK_40;
+	// 70MHz and 41.176471MHz clock:
+	wire 					CLK_FAST, CLK_40;
 	CLKPLL				CLKPLL_inst (
 		.inclk0 			( iCLK_50 	),
-		.c0 				( CLK_65 	),
+		.c0 				( CLK_FAST 	),
 		.c1				( CLK_40		)
 	);
 	
@@ -32,11 +32,11 @@ module main(
 // Connections from GPIO:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	reg RST;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		RST <= ~iKEY[0];
 
 	reg ON;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		ON <= iSW[9];
 	
 	
@@ -45,7 +45,7 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Ultrasonic Transmitter:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	// Generate 39.67285156kHz pulse for the Ultrasonic Transmitter:
+	// Generate 40.21139746kHz pulse for the Ultrasonic Transmitter:
 	reg [9:0] usonic;
 	always @(posedge CLK_40)
 		usonic <= usonic + 1;
@@ -75,30 +75,26 @@ module main(
 	// Impedance Matching for Enable/CSbar pin:
 	assign 				GPIO_1[31:26] = 6'bzzzzzz;				
 	
-	// Auto-sample at approx. 63kHz:
-	parameter sampler_bits = 10;
+	// Auto-sample at 68.359375 (10bits) / 273.4375 (8bits) kHz:
+	parameter sampler_bits = 8;
 	parameter sampler_topbit = sampler_bits - 1;
 	reg [sampler_topbit:0] clk_sample;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		clk_sample <= ~RST & ON ? clk_sample + 1 : 0;
 		
 	wire ADC0_EN = ~clk_sample[sampler_topbit] & ~RST & ON & ~ADC_OFF;
 	//wire ADC0_EN = ~&clk_sample[sampler_topbit:sampler_topbit-1] & ~RST & ON & ~ADC_OFF; 	// Variable duty cycle
 	
-	reg [15:0] check_counter;
-	always @(posedge ADC0_EN)
-		check_counter <= ~RST & ON & ~ADC_OFF ? check_counter + 1 : 0;
-	
 	// Edge Detector for WR sinal to FIFO:
 	reg WR_PREV, WR_EDGE;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		WR_PREV <= ADC_FIN[0];
 		WR_EDGE <= ~WR_PREV & ADC_FIN[0] & ~ADC_OFF & ~RST & ON ? 1 : 0;
 	end
 	
 	// Turn off all sampling when FIFO overflows:
 	reg ADC_OFF, FIFO_FULL_PREV;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		FIFO_FULL_PREV <= FIFO_ADC0_FULL;
 		
 		if (RST | ~ON)
@@ -109,7 +105,7 @@ module main(
 	
 	// ADC SPI Master Module:
 	SPI_MASTER_ADC # (.outBits (16)) ADC0_instant(
-		.SYS_CLK 	( CLK_65						),
+		.SYS_CLK 	( CLK_FAST						),
 		.ENA 			( ADC0_EN 					),  	
 		.DATA_MOSI 	( ADC_CMD 					),		// Command written to ADC
 		.MISO 		( GPIO_0[0] 				),		// MISO = SDO 		= 3
@@ -135,12 +131,11 @@ module main(
 	
 	// Altera IP FIFO Module:
 	FIFO_IP	FIFO_IP_inst (
-		.clock 	( CLK_65 				),
+		.clock 	( CLK_FAST 				),
 		.sclr 	( RST 					),				// Synchronous Clear
 		.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
 		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready
-		//.data 	( ADC0_DATA>>1 		),				
-		.data 	( check_counter		),
+		.data 	( ADC0_DATA>>1 		),				
 		.empty 	( FIFO_ADC0_EMPTY 	),
 		.full 	( FIFO_ADC0_FULL 		),
 		.q 		( FIFO_ADC0_OUT 		)
@@ -157,13 +152,14 @@ module main(
 // MBED Microcontroller:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~			
 	reg [1:0] counter_report;
-	reg [15:0] counter_wait;
+	reg [16:0] counter_wait;
 	reg MBED_ALLOWED = 0;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		case (counter_report)
 		3: begin
 				case (counter_wait)
-				63000: begin
+				//63000: begin
+				75000: begin
 					counter_report <= 0;
 					counter_wait <= 0;
 					MBED_ALLOWED <= 1;
@@ -184,14 +180,14 @@ module main(
 	end 
 	
 	// Generate clock to output data to MBED periodically: same rate as sampler
-	parameter mbed_clk_bits = 10;
+	parameter mbed_clk_bits = sampler_bits;
 	reg [mbed_clk_bits-1:0] MBED_CLK;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		MBED_CLK 		<= ~RST & ON ? MBED_CLK + 1 : 0;
 	
 	// Edge Detector for MBED periodic data output clock:
 	reg MBED_CLK_PREV, MBED_CLK_EDGE;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		MBED_CLK_PREV 	<= MBED_CLK[mbed_clk_bits-1];
 		MBED_CLK_EDGE 	<= ~MBED_CLK_PREV & MBED_CLK[mbed_clk_bits-1] ? 1 : 0;
 	end
@@ -199,14 +195,14 @@ module main(
 	// Edge Detector for when single write to MBED finishes:
 	wire MBED_FIN;
 	reg MBED_FIN_PREV, MBED_FIN_EDGE;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		MBED_FIN_PREV <= MBED_FIN;
 		MBED_FIN_EDGE <= ~MBED_FIN_PREV & MBED_FIN ? 1 : 0;
 	end
 	
 	// Control logic to enable SPI to MBED:
 	reg MBED_ON;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		//if (MBED_CLK_EDGE | manual_wr_mbed_edge)
 		if (MBED_CLK_EDGE)
 			MBED_ON 		<= ~FIFO_ADC0_EMPTY & MBED_ALLOWED ? 1 : 0;
@@ -216,7 +212,7 @@ module main(
 	
 	// MBED SPI Master Module:
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
-		.SYS_CLK 	( CLK_65				),
+		.SYS_CLK 	( CLK_FAST				),
 		.RST			( 						),
 		.ENA 			( MBED_ON   		),  	
 		.DATA_MOSI 	( FIFO_ADC0_OUT	),		

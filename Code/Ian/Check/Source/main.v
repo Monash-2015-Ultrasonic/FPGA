@@ -18,10 +18,10 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Custom/System clock:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	wire 				CLK_65, CLK_40;
+	wire 				CLK_FAST, CLK_40;
 	CLKPLL			CLKPLL_inst (
 		.inclk0 		( iCLK_50 	),
-		.c0 			( CLK_65 	),
+		.c0 			( CLK_FAST 	),
 		.c1			( CLK_40		)
 	);
 	
@@ -32,11 +32,11 @@ module main(
 // Interactive connections:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	reg RST;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		RST <= ~iKEY[0];
 
 	reg ON;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		ON <= iSW[9];
 		
 
@@ -44,11 +44,11 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Counter:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~			
-	// Auto-sample at approx. 63kHz:
-	parameter sampler_bits = 10;
+	// Auto-sample at 273.4375kHz:
+	parameter sampler_bits = 8;
 	parameter sampler_topbit = sampler_bits - 1;
 	reg [sampler_topbit:0] clk_sample;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		clk_sample <= ~RST ? clk_sample + 1 : 0;
 		
 	reg [15:0] check_counter;
@@ -57,14 +57,14 @@ module main(
 	
 	// Edge Detector for WR sinal to FIFO:
 	reg WR_PREV, WR_EDGE;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		WR_PREV <= clk_sample[sampler_topbit];
 		WR_EDGE <= ~WR_PREV & clk_sample[sampler_topbit] & ~sampler_off & ~RST & ON ? 1 : 0;
 	end
 
 	// Turn off all sampling when FIFO overflows:
 	reg sampler_off, FIFO_FULL_PREV;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		FIFO_FULL_PREV <= FIFO_FULL;
 		
 		if (RST | ~ON)
@@ -82,7 +82,7 @@ module main(
 	
 	// Altera IP FIFO Module:
 	FIFO_IP	FIFO_IP_inst (
-		.clock 	( CLK_65 				),
+		.clock 	( CLK_FAST 				),
 		.sclr 	( RST 					),				// Synchronous Clear
 		.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
 		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready			
@@ -103,13 +103,14 @@ module main(
 // MBED Microcontroller:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~			
 	reg [1:0] counter_report;
-	reg [15:0] counter_wait;
+	reg [16:0] counter_wait;
 	reg MBED_ALLOWED = 0;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		case (counter_report)
 		3: begin
 				case (counter_wait)
-				63000: begin
+				//63000: begin
+				75000: begin
 					counter_report <= 0;
 					counter_wait <= 0;
 					MBED_ALLOWED <= 1;
@@ -130,14 +131,14 @@ module main(
 	end 
 	
 	// Generate clock to output data to MBED periodically: same rate as sampler
-	parameter mbed_clk_bits = 10;
+	parameter mbed_clk_bits = 8;
 	reg [mbed_clk_bits-1:0] MBED_CLK;
-	always @(posedge CLK_65)
+	always @(posedge CLK_FAST)
 		MBED_CLK 		<= ~RST & ON ? MBED_CLK + 1 : 0;
 	
 	// Edge Detector for MBED periodic data output clock:
 	reg MBED_CLK_PREV, MBED_CLK_EDGE;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		MBED_CLK_PREV 	<= MBED_CLK[mbed_clk_bits-1];
 		MBED_CLK_EDGE 	<= ~MBED_CLK_PREV & MBED_CLK[mbed_clk_bits-1] ? 1 : 0;
 	end
@@ -145,14 +146,14 @@ module main(
 	// Edge Detector for when single write to MBED finishes:
 	wire MBED_FIN;
 	reg MBED_FIN_PREV, MBED_FIN_EDGE;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		MBED_FIN_PREV <= MBED_FIN;
 		MBED_FIN_EDGE <= ~MBED_FIN_PREV & MBED_FIN ? 1 : 0;
 	end
 	
 	// Control logic to enable SPI to MBED:
 	reg MBED_ON;
-	always @(posedge CLK_65) begin
+	always @(posedge CLK_FAST) begin
 		//if (MBED_CLK_EDGE | manual_wr_mbed_edge)
 		if (MBED_CLK_EDGE)
 			MBED_ON 		<= ~FIFO_EMPTY & MBED_ALLOWED ? 1 : 0;
@@ -162,7 +163,7 @@ module main(
 	
 	// MBED SPI Master Module:
 	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
-		.SYS_CLK 	( CLK_65				),
+		.SYS_CLK 	( CLK_FAST				),
 		.RST			( 						),
 		.ENA 			( MBED_ON  			),  	
 		.DATA_MOSI 	( FIFO_OUT			),		
@@ -181,7 +182,7 @@ module main(
 // 7-Seg Outputs:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	hex_encoder hex3(check_counter[15:12], 	oHEX3_D);
-	hex_encoder hex2(check_counter[11:8], 	oHEX2_D);
+	hex_encoder hex2(check_counter[11:8], 		oHEX2_D);
 	hex_encoder hex1(check_counter[7:4], 		oHEX1_D);
 	hex_encoder hex0(check_counter[3:0], 		oHEX0_D);
 	
