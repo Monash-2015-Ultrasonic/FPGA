@@ -1,5 +1,5 @@
 Partition Merge report for SYSTEM
-Fri Aug 07 09:35:05 2015
+Sun Aug 23 23:43:29 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Partition Merge Summary                                                               ;
 +------------------------------------+--------------------------------------------------+
-; Partition Merge Status             ; Successful - Fri Aug 07 09:35:05 2015            ;
+; Partition Merge Status             ; Successful - Sun Aug 23 23:43:29 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 332                                              ;
-;     Total combinational functions  ; 312                                              ;
-;     Dedicated logic registers      ; 188                                              ;
-; Total registers                    ; 188                                              ;
+; Total logic elements               ; 206                                              ;
+;     Total combinational functions  ; 188                                              ;
+;     Dedicated logic registers      ; 133                                              ;
+; Total registers                    ; 133                                              ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 262,144                                          ;
+; Total memory bits                  ; 65,536                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
 ; Total PLLs                         ; 1                                                ;
 +------------------------------------+--------------------------------------------------+
@@ -65,66 +65,66 @@ applicable agreement for further details.
 +--------------------------------+----------------+-------------------+------------------------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Partition Merge Partition Statistics                                                  ;
-+---------------------------------------------+--------+--------------------------------+
-; Statistic                                   ; Top    ; hard_block:auto_generated_inst ;
-+---------------------------------------------+--------+--------------------------------+
-; Estimated Total logic elements              ; 332    ; 0                              ;
-;                                             ;        ;                                ;
-; Total combinational functions               ; 312    ; 0                              ;
-; Logic element usage by number of LUT inputs ;        ;                                ;
-;     -- 4 input functions                    ; 110    ; 0                              ;
-;     -- 3 input functions                    ; 61     ; 0                              ;
-;     -- <=2 input functions                  ; 141    ; 0                              ;
-;                                             ;        ;                                ;
-; Logic elements by mode                      ;        ;                                ;
-;     -- normal mode                          ; 223    ; 0                              ;
-;     -- arithmetic mode                      ; 89     ; 0                              ;
-;                                             ;        ;                                ;
-; Total registers                             ; 188    ; 0                              ;
-;     -- Dedicated logic registers            ; 188    ; 0                              ;
-;                                             ;        ;                                ;
-; Virtual pins                                ; 0      ; 0                              ;
-; I/O pins                                    ; 170    ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0      ; 0                              ;
-; Total memory bits                           ; 262144 ; 0                              ;
-; Total RAM block bits                        ; 0      ; 0                              ;
-; PLL                                         ; 0      ; 1                              ;
-;                                             ;        ;                                ;
-; Connections                                 ;        ;                                ;
-;     -- Input Connections                    ; 227    ; 1                              ;
-;     -- Registered Input Connections         ; 99     ; 0                              ;
-;     -- Output Connections                   ; 1      ; 227                            ;
-;     -- Registered Output Connections        ; 0      ; 0                              ;
-;                                             ;        ;                                ;
-; Internal Connections                        ;        ;                                ;
-;     -- Total Connections                    ; 3465   ; 228                            ;
-;     -- Registered Connections               ; 1580   ; 0                              ;
-;                                             ;        ;                                ;
-; External Connections                        ;        ;                                ;
-;     -- Top                                  ; 0      ; 228                            ;
-;     -- hard_block:auto_generated_inst       ; 228    ; 0                              ;
-;                                             ;        ;                                ;
-; Partition Interface                         ;        ;                                ;
-;     -- Input Ports                          ; 23     ; 1                              ;
-;     -- Output Ports                         ; 83     ; 2                              ;
-;     -- Bidir Ports                          ; 64     ; 0                              ;
-;                                             ;        ;                                ;
-; Registered Ports                            ;        ;                                ;
-;     -- Registered Input Ports               ; 0      ; 0                              ;
-;     -- Registered Output Ports              ; 0      ; 0                              ;
-;                                             ;        ;                                ;
-; Port Connectivity                           ;        ;                                ;
-;     -- Input Ports driven by GND            ; 0      ; 0                              ;
-;     -- Output Ports driven by GND           ; 0      ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0      ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0      ; 0                              ;
-;     -- Input Ports with no Source           ; 0      ; 0                              ;
-;     -- Output Ports with no Source          ; 0      ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0      ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0      ; 0                              ;
-+---------------------------------------------+--------+--------------------------------+
++--------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                 ;
++---------------------------------------------+-------+--------------------------------+
+; Statistic                                   ; Top   ; hard_block:auto_generated_inst ;
++---------------------------------------------+-------+--------------------------------+
+; Estimated Total logic elements              ; 206   ; 0                              ;
+;                                             ;       ;                                ;
+; Total combinational functions               ; 188   ; 0                              ;
+; Logic element usage by number of LUT inputs ;       ;                                ;
+;     -- 4 input functions                    ; 54    ; 0                              ;
+;     -- 3 input functions                    ; 32    ; 0                              ;
+;     -- <=2 input functions                  ; 102   ; 0                              ;
+;                                             ;       ;                                ;
+; Logic elements by mode                      ;       ;                                ;
+;     -- normal mode                          ; 122   ; 0                              ;
+;     -- arithmetic mode                      ; 66    ; 0                              ;
+;                                             ;       ;                                ;
+; Total registers                             ; 133   ; 0                              ;
+;     -- Dedicated logic registers            ; 133   ; 0                              ;
+;                                             ;       ;                                ;
+; Virtual pins                                ; 0     ; 0                              ;
+; I/O pins                                    ; 170   ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0     ; 0                              ;
+; Total memory bits                           ; 65536 ; 0                              ;
+; Total RAM block bits                        ; 0     ; 0                              ;
+; PLL                                         ; 0     ; 1                              ;
+;                                             ;       ;                                ;
+; Connections                                 ;       ;                                ;
+;     -- Input Connections                    ; 101   ; 1                              ;
+;     -- Registered Input Connections         ; 69    ; 0                              ;
+;     -- Output Connections                   ; 1     ; 101                            ;
+;     -- Registered Output Connections        ; 0     ; 0                              ;
+;                                             ;       ;                                ;
+; Internal Connections                        ;       ;                                ;
+;     -- Total Connections                    ; 1479  ; 102                            ;
+;     -- Registered Connections               ; 700   ; 0                              ;
+;                                             ;       ;                                ;
+; External Connections                        ;       ;                                ;
+;     -- Top                                  ; 0     ; 102                            ;
+;     -- hard_block:auto_generated_inst       ; 102   ; 0                              ;
+;                                             ;       ;                                ;
+; Partition Interface                         ;       ;                                ;
+;     -- Input Ports                          ; 23    ; 1                              ;
+;     -- Output Ports                         ; 83    ; 2                              ;
+;     -- Bidir Ports                          ; 64    ; 0                              ;
+;                                             ;       ;                                ;
+; Registered Ports                            ;       ;                                ;
+;     -- Registered Input Ports               ; 0     ; 0                              ;
+;     -- Registered Output Ports              ; 0     ; 0                              ;
+;                                             ;       ;                                ;
+; Port Connectivity                           ;       ;                                ;
+;     -- Input Ports driven by GND            ; 0     ; 0                              ;
+;     -- Output Ports driven by GND           ; 0     ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0     ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0     ; 0                              ;
+;     -- Input Ports with no Source           ; 0     ; 0                              ;
+;     -- Output Ports with no Source          ; 0     ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0     ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0     ; 0                              ;
++---------------------------------------------+-------+--------------------------------+
 Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
 
 
@@ -133,32 +133,32 @@ Note: Resource usage numbers presented for Partitions containing post-synthesis 
 +---------------------------------------------+--------------------------------------------------+
 ; Resource                                    ; Usage                                            ;
 +---------------------------------------------+--------------------------------------------------+
-; Estimated Total logic elements              ; 332                                              ;
+; Estimated Total logic elements              ; 206                                              ;
 ;                                             ;                                                  ;
-; Total combinational functions               ; 312                                              ;
+; Total combinational functions               ; 188                                              ;
 ; Logic element usage by number of LUT inputs ;                                                  ;
-;     -- 4 input functions                    ; 110                                              ;
-;     -- 3 input functions                    ; 61                                               ;
-;     -- <=2 input functions                  ; 141                                              ;
+;     -- 4 input functions                    ; 54                                               ;
+;     -- 3 input functions                    ; 32                                               ;
+;     -- <=2 input functions                  ; 102                                              ;
 ;                                             ;                                                  ;
 ; Logic elements by mode                      ;                                                  ;
-;     -- normal mode                          ; 223                                              ;
-;     -- arithmetic mode                      ; 89                                               ;
+;     -- normal mode                          ; 122                                              ;
+;     -- arithmetic mode                      ; 66                                               ;
 ;                                             ;                                                  ;
-; Total registers                             ; 188                                              ;
-;     -- Dedicated logic registers            ; 188                                              ;
+; Total registers                             ; 133                                              ;
+;     -- Dedicated logic registers            ; 133                                              ;
 ;     -- I/O registers                        ; 0                                                ;
 ;                                             ;                                                  ;
 ; I/O pins                                    ; 170                                              ;
-; Total memory bits                           ; 262144                                           ;
+; Total memory bits                           ; 65536                                            ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                ;
 ; Total PLLs                                  ; 1                                                ;
 ;     -- PLLs                                 ; 1                                                ;
 ;                                             ;                                                  ;
 ; Maximum fan-out node                        ; CLKPLL:CLKPLL_inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 163                                              ;
-; Total fan-out                               ; 3337                                             ;
-; Average fan-out                             ; 4.54                                             ;
+; Maximum fan-out                             ; 85                                               ;
+; Total fan-out                               ; 1435                                             ;
+; Average fan-out                             ; 2.82                                             ;
 +---------------------------------------------+--------------------------------------------------+
 
 
@@ -177,7 +177,7 @@ Note: Resource usage numbers presented for Partitions containing post-synthesis 
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Partition Merge
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Aug 07 09:35:03 2015
+    Info: Processing started: Sun Aug 23 23:43:27 2015
 Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
 Warning (35010): Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
     Info (35011): Set the option to Ignore source file changes to force the Quartus II software to always use a previously generated Fitter netlist
@@ -201,16 +201,16 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iKEY[1]"
     Warning (15610): No output dependent on input pin "iKEY[2]"
     Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 568 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 394 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 333 logic cells
-    Info (21064): Implemented 64 RAM segments
+    Info (21061): Implemented 207 logic cells
+    Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 465 megabytes
-    Info: Processing ended: Fri Aug 07 09:35:05 2015
+    Info: Peak virtual memory: 464 megabytes
+    Info: Processing ended: Sun Aug 23 23:43:29 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

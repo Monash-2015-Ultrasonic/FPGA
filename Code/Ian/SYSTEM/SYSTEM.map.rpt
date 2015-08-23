@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SYSTEM
-Fri Aug 07 09:35:02 2015
+Sun Aug 23 23:43:26 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,31 +13,29 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis IP Cores Summary
   7. Partition Status Summary
-  8. Dependent File Changes for Partition Top
-  9. Partition for Top-Level Resource Utilization by Entity
- 10. Registers Removed During Synthesis
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2
- 13. Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |main
- 15. Parameter Settings for User Entity Instance: CLKPLL:CLKPLL_inst|altpll:altpll_component
- 16. Parameter Settings for User Entity Instance: SPI_MASTER_ADC:ADC0_instant
- 17. Parameter Settings for User Entity Instance: FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component
- 18. Parameter Settings for User Entity Instance: SPI_MASTER_UC:mbed_instant
- 19. Partition Dependent Files
- 20. Port Connectivity Checks: "HEX_ENCODER:hex5"
- 21. Port Connectivity Checks: "HEX_ENCODER:hex7"
- 22. Port Connectivity Checks: "HEX_ENCODER:hex4"
- 23. Port Connectivity Checks: "HEX_ENCODER:hex6"
- 24. Port Connectivity Checks: "HEX_ENCODER:hex0"
- 25. Port Connectivity Checks: "HEX_ENCODER:hex1"
- 26. Port Connectivity Checks: "HEX_ENCODER:hex2"
- 27. Port Connectivity Checks: "HEX_ENCODER:hex3"
- 28. Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"
- 29. Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst"
- 30. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
+  8. Partition for Top-Level Resource Utilization by Entity
+  9. Registers Removed During Synthesis
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2
+ 12. Source assignments for FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |main
+ 14. Parameter Settings for User Entity Instance: CLKPLL:CLKPLL_inst|altpll:altpll_component
+ 15. Parameter Settings for User Entity Instance: SPI_MASTER_ADC:ADC0_instant
+ 16. Parameter Settings for User Entity Instance: FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component
+ 17. Partition Dependent Files
+ 18. Port Connectivity Checks: "HEX_ENCODER:hex5"
+ 19. Port Connectivity Checks: "HEX_ENCODER:hex7"
+ 20. Port Connectivity Checks: "HEX_ENCODER:hex4"
+ 21. Port Connectivity Checks: "HEX_ENCODER:hex6"
+ 22. Port Connectivity Checks: "HEX_ENCODER:hex0"
+ 23. Port Connectivity Checks: "HEX_ENCODER:hex1"
+ 24. Port Connectivity Checks: "HEX_ENCODER:hex2"
+ 25. Port Connectivity Checks: "HEX_ENCODER:hex3"
+ 26. Port Connectivity Checks: "FIR_FILTER:filter_instant"
+ 27. Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst"
+ 28. Port Connectivity Checks: "SPI_MASTER_ADC:ADC0_instant"
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -63,7 +61,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 07 09:35:02 2015            ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug 23 23:43:26 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
@@ -189,11 +187,11 @@ applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 ; CLKPLL.v                         ; yes             ; User Wizard-Generated File   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/CLKPLL.v                ;         ;
-; Source/SPI_Master_UC.v           ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/SPI_Master_UC.v  ;         ;
 ; Source/SPI_Master_ADC.v          ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/SPI_Master_ADC.v ;         ;
 ; Source/main.v                    ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/main.v           ;         ;
 ; Source/Hex Encoder.v             ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/Hex Encoder.v    ;         ;
 ; FIFO_IP.v                        ; yes             ; User Wizard-Generated File   ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/FIFO_IP.v               ;         ;
+; Source/FIR_Filter.v              ; yes             ; User Verilog HDL File        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/FIR_Filter.v     ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                        ;         ;
 ; aglobal130.inc                   ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                 ; f:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                   ;         ;
@@ -237,78 +235,52 @@ applicable agreement for further details.
 +----------------+-------------+-------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Dependent File Changes for Partition Top                                                                                       ;
-+-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
-; Hierarchy ; File Name     ; Relative Location ; Change   ; Old                              ; New                              ;
-+-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
-; |         ; Source/main.v ; Project Directory ; Checksum ; d629fb64aff7e8a17d4b6b61875a5fe8 ; 84e305b794045aab9d4ed76a773fa28c ;
-+-----------+---------------+-------------------+----------+----------------------------------+----------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                            ;
-+----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                               ; Library Name ;
-+----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                              ; 319 (84)          ; 188 (60)     ; 262144      ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                                                                                                                                                                             ; work         ;
-;    |CLKPLL:CLKPLL_inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                                                                                                          ; work         ;
-;       |altpll:altpll_component|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                                                                                                                  ; work         ;
-;    |FIFO_IP:FIFO_IP_inst|                          ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                        ; work         ;
-;       |scfifo:scfifo_component|                    ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component                                                                                                                                                ; work         ;
-;          |scfifo_qf31:auto_generated|              ; 113 (0)           ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated                                                                                                                     ; work         ;
-;             |a_dpfifo_d731:dpfifo|                 ; 113 (16)          ; 46 (0)       ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo                                                                                                ; work         ;
-;                |a_fefifo_nce:fifo_state|           ; 28 (13)           ; 16 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state                                                                        ; work         ;
-;                   |cntr_al7:count_usedw|           ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw                                                   ; work         ;
-;                |cntr_ukb:rd_ptr_count|             ; 14 (14)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count                                                                          ; work         ;
-;                |cntr_ukb:wr_ptr|                   ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:wr_ptr                                                                                ; work         ;
-;                |dpram_s011:FIFOram|                ; 40 (0)            ; 2 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram                                                                             ; work         ;
-;                   |altsyncram_22k1:altsyncram2|    ; 40 (0)            ; 2 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2                                                 ; work         ;
-;                      |altsyncram_3sc1:altsyncram3| ; 40 (0)            ; 2 (2)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3                     ; work         ;
-;                         |decode_r37:decode6|       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode6  ; work         ;
-;                         |decode_r37:decode_a|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_a ; work         ;
-;                         |mux_qv7:mux7|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux7        ; work         ;
-;    |HEX_ENCODER:hex0|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex0                                                                                                                                                                            ; work         ;
-;    |HEX_ENCODER:hex1|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex1                                                                                                                                                                            ; work         ;
-;    |HEX_ENCODER:hex2|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex2                                                                                                                                                                            ; work         ;
-;    |HEX_ENCODER:hex3|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex3                                                                                                                                                                            ; work         ;
-;    |HEX_ENCODER:hex4|                              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex4                                                                                                                                                                            ; work         ;
-;    |HEX_ENCODER:hex6|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex6                                                                                                                                                                            ; work         ;
-;    |SPI_MASTER_ADC:ADC0_instant|                   ; 46 (46)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                                                                                                                 ; work         ;
-;    |SPI_MASTER_UC:mbed_instant|                    ; 34 (34)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_UC:mbed_instant                                                                                                                                                                  ; work         ;
-+----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                           ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                              ; Library Name ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |main                                              ; 195 (43)          ; 133 (35)     ; 65536       ; 0            ; 0       ; 0         ; 64   ; 0            ; |main                                                                                                                                                                                            ; work         ;
+;    |CLKPLL:CLKPLL_inst|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst                                                                                                                                                                         ; work         ;
+;       |altpll:altpll_component|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|CLKPLL:CLKPLL_inst|altpll:altpll_component                                                                                                                                                 ; work         ;
+;    |FIFO_IP:FIFO_IP_inst|                          ; 63 (0)            ; 42 (0)       ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst                                                                                                                                                                       ; work         ;
+;       |scfifo:scfifo_component|                    ; 63 (0)            ; 42 (0)       ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component                                                                                                                                               ; work         ;
+;          |scfifo_qf31:auto_generated|              ; 63 (0)            ; 42 (0)       ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated                                                                                                                    ; work         ;
+;             |a_dpfifo_d731:dpfifo|                 ; 63 (13)           ; 42 (0)       ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo                                                                                               ; work         ;
+;                |a_fefifo_nce:fifo_state|           ; 23 (8)            ; 16 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state                                                                       ; work         ;
+;                   |cntr_al7:count_usedw|           ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw                                                  ; work         ;
+;                |cntr_ukb:rd_ptr_count|             ; 12 (12)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count                                                                         ; work         ;
+;                |cntr_ukb:wr_ptr|                   ; 14 (14)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:wr_ptr                                                                               ; work         ;
+;                |dpram_s011:FIFOram|                ; 1 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram                                                                            ; work         ;
+;                   |altsyncram_22k1:altsyncram2|    ; 1 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2                                                ; work         ;
+;                      |altsyncram_3sc1:altsyncram3| ; 1 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3                    ; work         ;
+;                         |decode_r37:decode6|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode6 ; work         ;
+;    |HEX_ENCODER:hex0|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex0                                                                                                                                                                           ; work         ;
+;    |HEX_ENCODER:hex1|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex1                                                                                                                                                                           ; work         ;
+;    |HEX_ENCODER:hex2|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex2                                                                                                                                                                           ; work         ;
+;    |HEX_ENCODER:hex3|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex3                                                                                                                                                                           ; work         ;
+;    |HEX_ENCODER:hex4|                              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex4                                                                                                                                                                           ; work         ;
+;    |HEX_ENCODER:hex6|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|HEX_ENCODER:hex6                                                                                                                                                                           ; work         ;
+;    |SPI_MASTER_ADC:ADC0_instant|                   ; 47 (47)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|SPI_MASTER_ADC:ADC0_instant                                                                                                                                                                ; work         ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+-----------------------------------------+-----------------------------------------------------+
-; Register name                           ; Reason for Removal                                  ;
-+-----------------------------------------+-----------------------------------------------------+
-; clk_sample[6]                           ; Merged with MBED_CLK[6]                             ;
-; clk_sample[5]                           ; Merged with MBED_CLK[5]                             ;
-; clk_sample[4]                           ; Merged with MBED_CLK[4]                             ;
-; clk_sample[0]                           ; Merged with MBED_CLK[0]                             ;
-; clk_sample[3]                           ; Merged with MBED_CLK[3]                             ;
-; clk_sample[2]                           ; Merged with MBED_CLK[2]                             ;
-; clk_sample[1]                           ; Merged with MBED_CLK[1]                             ;
-; clk_sample[7]                           ; Merged with MBED_CLK[7]                             ;
-; SPI_MASTER_UC:mbed_instant|ocounter[0]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[0]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[1]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[1]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[2]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[2]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[3]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[3]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[4]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[4]  ;
-; SPI_MASTER_UC:mbed_instant|ocounter[5]  ; Merged with SPI_MASTER_UC:mbed_instant|icounter[5]  ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[0] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[1] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[2] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[3] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[4] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
-; SPI_MASTER_ADC:ADC0_instant|ocounter[5] ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
-; SPI_MASTER_ADC:ADC0_instant|CLK_16[0]   ; Merged with SPI_MASTER_UC:mbed_instant|SPI_CLK_8[0] ;
-; SPI_MASTER_UC:mbed_instant|SPI_CLK_8[2] ; Lost fanout                                         ;
-; Total Number of Removed Registers = 22  ;                                                     ;
-+-----------------------------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                               ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+; Register name                                                                                                                                                                              ; Reason for Removal                                  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+; SPI_MASTER_ADC:ADC0_instant|ocounter[0]                                                                                                                                                    ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[0] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[1]                                                                                                                                                    ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[1] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[2]                                                                                                                                                    ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[2] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[3]                                                                                                                                                    ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[3] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[4]                                                                                                                                                    ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[4] ;
+; SPI_MASTER_ADC:ADC0_instant|ocounter[5]                                                                                                                                                    ; Merged with SPI_MASTER_ADC:ADC0_instant|icounter[5] ;
+; FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|address_reg_a[0,1] ; Stuck at GND due to stuck port data_in              ;
+; FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count|safe_q[12,13]                                                           ; Lost fanout                                         ;
+; Total Number of Removed Registers = 10                                                                                                                                                     ;                                                     ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -316,12 +288,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|counter_report[0]                        ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[14] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[8]  ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_in[13]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|icounter[2]   ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |main|SPI_MASTER_UC:mbed_instant|data_out[15]  ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[10] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|data_out[7]  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |main|SPI_MASTER_ADC:ADC0_instant|icounter[3]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
@@ -350,7 +319,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------+
 ; sampler_bits   ; 8     ; Signed Integer                              ;
 ; sampler_topbit ; 7     ; Signed Integer                              ;
-; mbed_clk_bits  ; 8     ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -767,16 +735,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_MASTER_UC:mbed_instant ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; outBits        ; 16    ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------------------------------------------------+
 ; Partition Dependent Files                                                                                   ;
 +-------------------------------------------+--------------------+---------+----------------------------------+
@@ -794,10 +752,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; db/mux_qv7.tdf                            ; Project Directory  ; work    ; 7bcc87da1d093182d5fdf06cc2605bab ;
 ; db/scfifo_qf31.tdf                        ; Project Directory  ; work    ; e9e9ab739488bb5ab5ce9f55da038d49 ;
 ; FIFO_IP.v                                 ; Project Directory  ; work    ; 9fb051dfef1e29b5ed7f2aa23226f46e ;
+; Source/FIR_Filter.v                       ; Project Directory  ; work    ; 94f5d1f1edd34b391075b31d4d39fd09 ;
 ; Source/Hex Encoder.v                      ; Project Directory  ; work    ; 8e77a097346915da1abeedaeb4037628 ;
-; Source/main.v                             ; Project Directory  ; work    ; 84e305b794045aab9d4ed76a773fa28c ;
+; Source/main.v                             ; Project Directory  ; work    ; 707b281f0d5a6a3b78aad59f95b75c98 ;
 ; Source/SPI_Master_ADC.v                   ; Project Directory  ; work    ; 161daea8831411da2f58c543c5428e9d ;
-; Source/SPI_Master_UC.v                    ; Project Directory  ; work    ; ba79baff1d349c8166d4508ad3aa3c76 ;
 ; libraries/megafunctions/a_dpfifo.inc      ; Quartus II Install ; work    ; 37c2d0bb70d5a3f83a4aa09e62c75080 ;
 ; libraries/megafunctions/a_f2fifo.inc      ; Quartus II Install ; work    ; cebe3836bad826c95e765f77477e8a8b ;
 ; libraries/megafunctions/a_fffifo.inc      ; Quartus II Install ; work    ; aa34dd03c645beef0c31a3e4ef186db4 ;
@@ -884,23 +842,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "SPI_MASTER_UC:mbed_instant"                                                                                   ;
-+-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                  ;
-+-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; RST       ; Input  ; Info     ; Explicitly unconnected                                                                                   ;
-; DATA_MISO ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FIR_FILTER:filter_instant"                                                                                                                            ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                            ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; inData  ; Input  ; Warning  ; Input port expression (16 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "inData[31..16]" will be connected to GND. ;
+; outData ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------+
-; Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst" ;
-+----------+-------+----------+--------------------+
-; Port     ; Type  ; Severity ; Details            ;
-+----------+-------+----------+--------------------+
-; data[15] ; Input ; Info     ; Stuck at GND       ;
-+----------+-------+----------+--------------------+
++------------------------------------------------------+
+; Port Connectivity Checks: "FIFO_IP:FIFO_IP_inst"     ;
++----------+-------+----------+------------------------+
+; Port     ; Type  ; Severity ; Details                ;
++----------+-------+----------+------------------------+
+; rdreq    ; Input ; Info     ; Explicitly unconnected ;
+; data[15] ; Input ; Info     ; Stuck at GND           ;
++----------+-------+----------+------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -932,7 +891,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Aug 07 09:34:58 2015
+    Info: Processing started: Sun Aug 23 23:43:22 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file clkpll.v
@@ -947,21 +906,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file source/
     Info (12023): Found entity 1: HEX_ENCODER
 Info (12021): Found 1 design units, including 1 entities, in source file fifo_ip.v
     Info (12023): Found entity 1: FIFO_IP
+Info (12021): Found 2 design units, including 2 entities, in source file source/fir_filter.v
+    Info (12023): Found entity 1: FIR_FILTER_MultiplyBlock
+    Info (12023): Found entity 2: FIR_FILTER
 Info (12127): Elaborating entity "main" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at main.v(51): truncated value with size 32 to match size of target (10)
 Warning (10230): Verilog HDL assignment warning at main.v(56): truncated value with size 32 to match size of target (10)
 Warning (10230): Verilog HDL assignment warning at main.v(83): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at main.v(92): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at main.v(103): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(169): truncated value with size 32 to match size of target (17)
-Warning (10230): Verilog HDL assignment warning at main.v(176): truncated value with size 32 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at main.v(186): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(192): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(200): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(208): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at main.v(210): truncated value with size 32 to match size of target (1)
 Warning (10030): Net "ADC_FIN[4..1]" at main.v(73) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "oLEDR[15..0]" at main.v(10) has no driver
+Warning (10034): Output port "oLEDG[8]" at main.v(11) has no driver
 Warning (10034): Output port "oLEDG[6..5]" at main.v(11) has no driver
 Info (12128): Elaborating entity "CLKPLL" for hierarchy "CLKPLL:CLKPLL_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "CLKPLL:CLKPLL_inst|altpll:altpll_component"
@@ -1070,28 +1026,72 @@ Info (12128): Elaborating entity "mux_qv7" for hierarchy "FIFO_IP:FIFO_IP_inst|s
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ukb.tdf
     Info (12023): Found entity 1: cntr_ukb
 Info (12128): Elaborating entity "cntr_ukb" for hierarchy "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count"
-Info (12128): Elaborating entity "SPI_MASTER_UC" for hierarchy "SPI_MASTER_UC:mbed_instant"
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(29): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(66): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at SPI_Master_UC.v(95): truncated value with size 32 to match size of target (6)
+Info (12128): Elaborating entity "FIR_FILTER" for hierarchy "FIR_FILTER:filter_instant"
+Info (12128): Elaborating entity "FIR_FILTER_MultiplyBlock" for hierarchy "FIR_FILTER:filter_instant|FIR_FILTER_MultiplyBlock:my_FIR_FILTER_MultiplyBlock"
 Info (12128): Elaborating entity "HEX_ENCODER" for hierarchy "HEX_ENCODER:hex3"
 Info (12205): 1 design partition requires Analysis and Synthesis
     Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
 Info (12209): No design partitions will skip synthesis in the current incremental compilation
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a16"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a32"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a48"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a17"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a33"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a49"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a18"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a34"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a50"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a19"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a35"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a51"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a20"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a36"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a52"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a21"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a37"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a53"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a22"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a38"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a54"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a23"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a39"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a55"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a24"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a40"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a56"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a25"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a41"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a57"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a26"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a42"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a58"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a27"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a43"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a59"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a28"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a44"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a60"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a29"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a45"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a61"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a30"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a46"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a62"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a31"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a47"
+        Warning (14320): Synthesized away node "FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|ram_block4a63"
 Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[5]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[3]" and its non-tri-state driver.
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[5]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[25]" and its non-tri-state driver.
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[0]" has no driver
-    Warning (13040): Bidir "GPIO_1[0]" has no driver
     Warning (13040): Bidir "GPIO_0[2]" has no driver
     Warning (13040): Bidir "GPIO_0[4]" has no driver
     Warning (13040): Bidir "GPIO_0[6]" has no driver
@@ -1120,8 +1120,12 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO_0[29]" has no driver
     Warning (13040): Bidir "GPIO_0[30]" has no driver
     Warning (13040): Bidir "GPIO_0[31]" has no driver
+    Warning (13040): Bidir "GPIO_1[0]" has no driver
+    Warning (13040): Bidir "GPIO_1[1]" has no driver
     Warning (13040): Bidir "GPIO_1[2]" has no driver
+    Warning (13040): Bidir "GPIO_1[3]" has no driver
     Warning (13040): Bidir "GPIO_1[4]" has no driver
+    Warning (13040): Bidir "GPIO_1[5]" has no driver
     Warning (13040): Bidir "GPIO_1[6]" has no driver
     Warning (13040): Bidir "GPIO_1[7]" has no driver
     Warning (13040): Bidir "GPIO_1[8]" has no driver
@@ -1144,9 +1148,6 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO_0[1]~synth"
     Warning (13010): Node "GPIO_0[3]~synth"
     Warning (13010): Node "GPIO_0[5]~synth"
-    Warning (13010): Node "GPIO_1[1]~synth"
-    Warning (13010): Node "GPIO_1[3]~synth"
-    Warning (13010): Node "GPIO_1[5]~synth"
     Warning (13010): Node "GPIO_1[24]~synth"
     Warning (13010): Node "GPIO_1[25]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
@@ -1172,6 +1173,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oLEDG[4]" is stuck at GND
     Warning (13410): Pin "oLEDG[5]" is stuck at GND
     Warning (13410): Pin "oLEDG[6]" is stuck at GND
+    Warning (13410): Pin "oLEDG[8]" is stuck at GND
     Warning (13410): Pin "oHEX4_D[1]" is stuck at GND
     Warning (13410): Pin "oHEX5_D[0]" is stuck at VCC
     Warning (13410): Pin "oHEX5_D[1]" is stuck at VCC
@@ -1187,17 +1189,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "oHEX7_D[4]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[5]" is stuck at VCC
     Warning (13410): Pin "oHEX7_D[6]" is stuck at VCC
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 639 device resources after synthesis - the final resource count might be different
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 465 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 128 bidirectional pins
-    Info (21061): Implemented 340 logic cells
-    Info (21064): Implemented 64 RAM segments
+    Info (21061): Implemented 214 logic cells
+    Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 129 warnings
-    Info: Peak virtual memory: 469 megabytes
-    Info: Processing ended: Fri Aug 07 09:35:02 2015
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 168 warnings
+    Info: Peak virtual memory: 468 megabytes
+    Info: Processing ended: Sun Aug 23 23:43:26 2015
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 

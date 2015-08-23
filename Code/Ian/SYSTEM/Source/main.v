@@ -133,7 +133,8 @@ module main(
 	FIFO_IP	FIFO_IP_inst (
 		.clock 	( CLK_FAST 				),
 		.sclr 	( RST 					),				// Synchronous Clear
-		.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
+		//.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
+		.rdreq	(	),
 		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready
 		.data 	( ADC0_DATA>>1 		),				
 		.empty 	( FIFO_ADC0_EMPTY 	),
@@ -145,7 +146,51 @@ module main(
 	assign oLEDR[16] = FIFO_ADC0_EMPTY;
 	assign oLEDR[17] = FIFO_ADC0_FULL;
 	
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// FIR Filter
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	wire [31:0] filter_dataOut;
+
+	FIR_FILTER filter_instant(
+    .inData		(FIFO_ADC0_OUT),
+    .CLK			(CLK_FAST),
+    .outData	(filter_dataOut),
+    .reset		(iKEY[0])
+	);
 	
+	
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// 7-Seg Displays:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	// ADC Data:
+	HEX_ENCODER hex3(FIFO_ADC0_OUT[15:12], oHEX3_D);
+	HEX_ENCODER hex2(FIFO_ADC0_OUT[11:8], 	oHEX2_D);
+	HEX_ENCODER hex1(FIFO_ADC0_OUT[7:4], 	oHEX1_D);
+	HEX_ENCODER hex0(FIFO_ADC0_OUT[3:0], 	oHEX0_D);
+	
+	// ADC #:
+	HEX_ENCODER hex6(iSW[17:15], 				oHEX6_D);
+	
+	// Channel #:
+	HEX_ENCODER hex4(iSW[1:0], 				oHEX4_D);
+	
+	// Turn off unnecessary 7-Seg Displays:
+	HEX_ENCODER hex7(5'b11111, 				oHEX7_D);
+	HEX_ENCODER hex5(5'b11111, 				oHEX5_D);	
+	
+	
+	
+	
+endmodule
+//=================================================
+// END TOPLEVEL MODULE
+//=================================================
+
+
+/*
+// JUNKYARD
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
@@ -227,31 +272,4 @@ module main(
 	assign oLEDG[8] 	= MBED_FIN;
 	
 	
-	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// 7-Seg Displays:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	// ADC Data:
-	HEX_ENCODER hex3(FIFO_ADC0_OUT[15:12], oHEX3_D);
-	HEX_ENCODER hex2(FIFO_ADC0_OUT[11:8], 	oHEX2_D);
-	HEX_ENCODER hex1(FIFO_ADC0_OUT[7:4], 	oHEX1_D);
-	HEX_ENCODER hex0(FIFO_ADC0_OUT[3:0], 	oHEX0_D);
-	
-	// ADC #:
-	HEX_ENCODER hex6(iSW[17:15], 				oHEX6_D);
-	
-	// Channel #:
-	HEX_ENCODER hex4(iSW[1:0], 				oHEX4_D);
-	
-	// Turn off unnecessary 7-Seg Displays:
-	HEX_ENCODER hex7(5'b11111, 				oHEX7_D);
-	HEX_ENCODER hex5(5'b11111, 				oHEX5_D);	
-	
-	
-	
-	
-endmodule
-//=================================================
-// END TOPLEVEL MODULE
-//=================================================
+	*/

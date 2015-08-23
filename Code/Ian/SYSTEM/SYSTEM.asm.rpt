@@ -1,5 +1,5 @@
 Assembler report for SYSTEM
-Fri Aug 07 09:35:29 2015
+Sun Aug 23 23:43:50 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Aug 07 09:35:29 2015 ;
+; Assembler Status      ; Successful - Sun Aug 23 23:43:50 2015 ;
 ; Revision Name         ; SYSTEM                                ;
 ; Top-level Entity Name ; main                                  ;
 ; Family                ; Cyclone II                            ;
@@ -93,8 +93,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                         ;
 +----------------+---------------------------------------------------------------------------------+
 ; Device         ; EP2C70F896C6                                                                    ;
-; JTAG usercode  ; 0x00687AC7                                                                      ;
-; Checksum       ; 0x00687AC7                                                                      ;
+; JTAG usercode  ; 0x0062DAF7                                                                      ;
+; Checksum       ; 0x0062DAF7                                                                      ;
 +----------------+---------------------------------------------------------------------------------+
 
 
@@ -104,14 +104,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Aug 07 09:35:24 2015
+    Info: Processing started: Sun Aug 23 23:43:46 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 448 megabytes
-    Info: Processing ended: Fri Aug 07 09:35:29 2015
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 435 megabytes
+    Info: Processing ended: Sun Aug 23 23:43:50 2015
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 
