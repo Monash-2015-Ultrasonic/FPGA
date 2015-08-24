@@ -1,8 +1,12 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="9b0359c5dae70b53718b"/>
+    <hash md5_digest_80b="091cc2fe1df06a510800"/>
   </project>
   <file_info>
-    <file device="EP2C70F896C6" path="SYSTEM.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP2C70F896C6" path="SYSTEM_time_limited.sof" usercode="0xFFFFFFFF"/>
   </file_info>
+  <hub_info hub_ir_width="4" ir_width="2" node_addr_width="1" node_count="1"/>
+  <node_info>
+    <node hpath="pzdyqx:nabboc" instance_id="0" mfg_id="110" node_id="1" sld_node_info="0x86E00" version="0"/>
+  </node_info>
 </sld_project_info>

@@ -1,5 +1,5 @@
 Flow report for SYSTEM
-Sun Aug 23 23:43:53 2015
+Mon Aug 24 21:36:05 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Sun Aug 23 23:43:50 2015            ;
+; Flow Status                        ; Successful - Mon Aug 24 21:36:02 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C70F896C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 207 / 68,416 ( < 1 % )                           ;
-;     Total combinational functions  ; 188 / 68,416 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 133 / 68,416 ( < 1 % )                           ;
-; Total registers                    ; 133                                              ;
+; Total logic elements               ; 459 / 68,416 ( < 1 % )                           ;
+;     Total combinational functions  ; 438 / 68,416 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 283 / 68,416 ( < 1 % )                           ;
+; Total registers                    ; 283                                              ;
 ; Total pins                         ; 170 / 622 ( 27 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 65,536 / 1,152,000 ( 6 % )                       ;
@@ -348,7 +348,35 @@ applicable agreement for further details.
 ; Fitter                    ; 00:00:11     ; 1.8                     ; 1156 MB             ; 00:00:13                           ;
 ; Assembler                 ; 00:00:04     ; 1.0                     ; 435 MB              ; 00:00:03                           ;
 ; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 451 MB              ; 00:00:01                           ;
-; Total                     ; 00:23:09     ; --                      ; --                  ; 00:17:56                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 526 MB              ; 00:00:03                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 521 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 529 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 463 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 479 MB              ; 00:00:02                           ;
+; Partition Merge           ; 00:00:03     ; 1.0                     ; 464 MB              ; 00:00:01                           ;
+; I/O Assignment Analysis   ; 00:00:07     ; 1.0                     ; 703 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:13     ; 1.8                     ; 1156 MB             ; 00:00:12                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 435 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 451 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 523 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:02     ; 1.0                     ; 469 MB              ; 00:00:01                           ;
+; I/O Assignment Analysis   ; 00:00:04     ; 1.0                     ; 703 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:10     ; 2.1                     ; 1174 MB             ; 00:00:13                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 439 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 451 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 510 MB              ; 00:00:02                           ;
+; Partition Merge           ; 00:00:03     ; 1.0                     ; 469 MB              ; 00:00:01                           ;
+; I/O Assignment Analysis   ; 00:00:04     ; 1.0                     ; 703 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 2.0                     ; 1152 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 439 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 451 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:44     ; 1.2                     ; 651 MB              ; 00:00:16                           ;
+; Partition Merge           ; 00:00:02     ; 1.0                     ; 470 MB              ; 00:00:01                           ;
+; I/O Assignment Analysis   ; 00:00:05     ; 1.0                     ; 713 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:10     ; 2.3                     ; 1157 MB             ; 00:00:10                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 443 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 449 MB              ; 00:00:01                           ;
+; Total                     ; 00:26:19     ; --                      ; --                  ; 00:19:41                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -607,6 +635,34 @@ applicable agreement for further details.
 ; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
 ; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MrBigBear-PC     ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -851,6 +907,34 @@ quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTE
 quartus_asm --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
 quartus_sta SYSTEM -c SYSTEM
 quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --check_ios
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_asm --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_sta SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --check_ios
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_asm --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_sta SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --check_ios
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_asm --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_sta SYSTEM -c SYSTEM
+quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
+quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --check_ios
+quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_asm --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM
+quartus_sta SYSTEM -c SYSTEM
 quartus_map --read_settings_files=on --write_settings_files=off SYSTEM -c SYSTEM
 quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --check_ios

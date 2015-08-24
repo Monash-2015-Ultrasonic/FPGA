@@ -129,14 +129,16 @@ module main(
 	wire		[15:0]	FIFO_ADC0_OUT;	
 	wire 					FIFO_ADC0_EMPTY, FIFO_ADC0_FULL;
 	
+
+	
 	// Altera IP FIFO Module:
 	FIFO_IP	FIFO_IP_inst (
 		.clock 	( CLK_FAST 				),
 		.sclr 	( RST 					),				// Synchronous Clear
 		//.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
-		.rdreq	(	),
+		.rdreq	(  	), // Posedge FIR_SOURCE_RDY & SINK_RDY
 		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready
-		.data 	( ADC0_DATA>>1 		),				
+		.data 	( (ADC0_DATA>>1) - 12'h7FFF		),				
 		.empty 	( FIFO_ADC0_EMPTY 	),
 		.full 	( FIFO_ADC0_FULL 		),
 		.q 		( FIFO_ADC0_OUT 		)
@@ -150,14 +152,30 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // FIR Filter
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	wire [31:0] filter_dataOut;
-
-	FIR_FILTER filter_instant(
-    .inData		(FIFO_ADC0_OUT),
-    .CLK			(CLK_FAST),
-    .outData	(filter_dataOut),
-    .reset		(iKEY[0])
-	);
+	wire FIR_FILTER_RDY;
+	wire FIR_SINK_RDY;
+	// Posedge FIR_FILTER_RDY means read FIFO
+	
+	wire FIR_OUTPUT_RDY;
+	reg [29:30] FIR_OUTPUT;
+	
+		FIR_FILTER_ast	FIR_FILTER_ast_inst(
+			.clk					( CLK_FAST 			),
+			.reset_n				( RST 				),
+			.ast_sink_data		( FIFO_ADC0_OUT 	),		
+			.ast_sink_valid	( ~ADC0_EN			),
+			.ast_source_ready	( FIR_FILTER_RDY 	),
+			.ast_sink_error	( ),
+			.ast_source_data	( FIR_OUTPUT 		),
+			.ast_sink_ready	( FIR_SINK_RDY 	),
+			.ast_source_valid	( FIR_OUTPUT_RDY	),
+			.ast_source_error	( )
+		);
+	
+	
+	
+	
+	
 	
 	
 	

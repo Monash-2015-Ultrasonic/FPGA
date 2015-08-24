@@ -1,12 +1,12 @@
-Partition Merge Status : Successful - Sun Aug 23 23:43:29 2015
+Partition Merge Status : Successful - Mon Aug 24 21:35:35 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : SYSTEM
 Top-level Entity Name : main
 Family : Cyclone II
-Total logic elements : 206
-    Total combinational functions : 188
-    Dedicated logic registers : 133
-Total registers : 133
+Total logic elements : 479
+    Total combinational functions : 438
+    Dedicated logic registers : 283
+Total registers : 283
 Total pins : 170
 Total virtual pins : 0
 Total memory bits : 65,536
