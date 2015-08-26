@@ -4,7 +4,7 @@ blank_gen    : READ
 alpha     : 0
 fc1       : 1.25e+006
 fc2       : 3.75e+006
-length    : 163
+length    : 260
 samp_rate : 1e+007
 win_type  : NON 
 flt_type  : LPF 
@@ -35,7 +35,7 @@ arch_reload_coef_sgl_clock : 0
 arch_num_mbs     : 2
 arch_no_sym      : 0
 num_bank_set    : 1
-num_mac         : 163
+num_mac         : 260
 num_cycles      : 1
 arch_pipeline      : 2
 poly_type       : 0
@@ -53,15 +53,15 @@ rate_ctrl       : RATE_CTRL_OFF
 atlantic_out    : MASTER 
 atlantic_in     : MASTER 
 fir_bit_width   : 30
-num_coef_mem     : 163
+num_coef_mem     : 260
 coef_mem_width  : 12
 coef_mem_addr   : 0
 num_coef_one_mem : 1
-fmax			: 260
-num_lc			: 6373
+fmax			: 250
+num_lc			: 10112
 num_m4k			: 0
 num_m512			: 0
 num_MRAM			: 0
-num_mul			: 163
+num_mul			: 260
 num_mul_bit		: 18
 num_MLAB			: 0

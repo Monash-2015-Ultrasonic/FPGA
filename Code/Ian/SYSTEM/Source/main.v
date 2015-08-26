@@ -157,7 +157,7 @@ module main(
 	// Posedge FIR_FILTER_RDY means read FIFO
 	
 	wire FIR_OUTPUT_RDY;
-	reg [29:30] FIR_OUTPUT;
+	reg [29:0] FIR_OUTPUT;
 	
 		FIR_FILTER_ast	FIR_FILTER_ast_inst(
 			.clk					( CLK_FAST 			),
