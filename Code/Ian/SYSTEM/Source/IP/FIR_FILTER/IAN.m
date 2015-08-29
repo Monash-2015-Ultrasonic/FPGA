@@ -23,18 +23,21 @@ clear dataBin;
 
 %dataDec = dataDec ./ 4096 * 5;
 
-data = dataDec(3000:11000) - 1528;% - floor(4095/2);
+data = dataDec(3000:7000) - 1528;% - floor(4095/2);
 
 dataCoeff = importdata('FIR_FILTER_coef_int.txt');
 
+%data = [zeros(10,1); 1; zeros(100,1)];
 %data = dataCoeff;
+%data = [zeros(500,1); flipud(dataCoeff(:,1)); dataCoeff(:,1); zeros(500,1)];
+%data = [zeros(500,1); flipud(dataCoeff(:,1))];
 %data = flipud(data);
 %data = [zeros(100,1); data; zeros(200,1); data; flipud(data); zeros(200,1); data.*randi(10, length(data), 1)./10; zeros(100,1)];
 
 %data = 0.5*data;
-data = [data; 0.25*flipud(dataCoeff); 0.25*dataCoeff; zeros(500,1); flipud(dataCoeff); dataCoeff];
+%data = [data; 0.25*flipud(dataCoeff); 0.25*dataCoeff; zeros(500,1); flipud(dataCoeff); dataCoeff; zeros(100,1)];
 
-%data = [zeros(500,1); flipud(dataCoeff); dataCoeff; zeros(500,1)];
+data = [zeros(100,1); 0.5*data; zeros(400,1); flipud(dataCoeff(:,1)); dataCoeff(:,1); zeros(500,1)];
 
 %%
 
@@ -51,18 +54,14 @@ FIR_FILTER_model
 
 %%
 %dataCoeff = importdata('FIR_FILTER_coef_int.txt');
-%dataIn = importdata('FIR_FILTER_input.txt');
+dataIn = importdata('FIR_FILTER_input.txt');
 dataIn = data;
 dataOut = importdata('FIR_FILTER_model_output.txt');
 
-%dOut_sq = dataOut.^2;
-%E = sum(dOut_sq);
-%maxDataOut = 186533673;
-
 subplot(3,1,1);
-plot(dataCoeff);
+plot(dataCoeff(:,1));
 subplot(3,1,2);
 plot(dataIn);
 subplot(3,1,3);
-%plot((dataOut) ./ maxDataOut);
-plot(dataOut);
+plot(dataOut / sum(dataCoeff.^2));
+

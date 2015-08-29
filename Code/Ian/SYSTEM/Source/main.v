@@ -118,7 +118,7 @@ module main(
 	
 	// Connect signals to Green LEDs:
 	assign oLEDG[7] 	= ADC0_EN;
-	assign oLEDG[4:0] = ADC_FIN;
+	//assign oLEDG[4:0] = ADC_FIN;
 
 	
 	
@@ -136,9 +136,9 @@ module main(
 		.clock 	( CLK_FAST 				),
 		.sclr 	( RST 					),				// Synchronous Clear
 		//.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
-		.rdreq	(  	), // Posedge FIR_SOURCE_RDY & SINK_RDY
+		.rdreq	( FIR_SINK_EDGE 		), 
 		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready
-		.data 	( (ADC0_DATA>>1) - 12'h7FFF		),				
+		.data 	( (ADC0_DATA>>1)		),				
 		.empty 	( FIFO_ADC0_EMPTY 	),
 		.full 	( FIFO_ADC0_FULL 		),
 		.q 		( FIFO_ADC0_OUT 		)
@@ -152,29 +152,50 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // FIR Filter
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	wire FIR_FILTER_RDY;
+	
 	wire FIR_SINK_RDY;
-	// Posedge FIR_FILTER_RDY means read FIFO
+	reg FIR_SINK_PREV, FIR_SINK_EDGE;
+	always @(posedge CLK_FAST) begin
+		FIR_SINK_PREV <= FIR_SINK_RDY;
+		FIR_SINK_EDGE <= ~FIR_SINK_PREV & FIR_SINK_RDY;
+	end
 	
-	wire FIR_OUTPUT_RDY;
-	reg [29:0] FIR_OUTPUT;
+	wire FIR_SOURCE_RDY, FIR_SOURCE_VALID;
+	wire [27:0] FIR_SOURCE;
 	
-		FIR_FILTER_ast	FIR_FILTER_ast_inst(
-			.clk					( CLK_FAST 			),
-			.reset_n				( RST 				),
-			.ast_sink_data		( FIFO_ADC0_OUT 	),		
-			.ast_sink_valid	( ~ADC0_EN			),
-			.ast_source_ready	( FIR_FILTER_RDY 	),
-			.ast_sink_error	( ),
-			.ast_source_data	( FIR_OUTPUT 		),
-			.ast_sink_ready	( FIR_SINK_RDY 	),
-			.ast_source_valid	( FIR_OUTPUT_RDY	),
-			.ast_source_error	( )
-		);
+	FIR_FILTER	FIR_CHANNEL0_inst(
+		.clk					( CLK_FAST 			),
+		.reset_n				( RST 				),
+		//.coef_set			( 1'b0				),
+		.ast_sink_ready	( FIR_SINK_RDY 	),
+		.ast_sink_data		( FIFO_ADC0_OUT[11:0] - 12'h5FA	),		
+		.ast_sink_valid	( ~FIFO_ADC0_FULL			),
+		.ast_sink_error	( ),
+		.ast_source_ready	( 1'b1 	),
+		.ast_source_data	( FIR_SOURCE 		),
+		.ast_source_valid	( FIR_SOURCE_VALID	),
+		.ast_source_error	( )
+	);
+		
+	reg test;
+//	wire [23:0] sumInSquare;
+//	
+//	inSumSquare inSumSquare_instant(
+//		.SYS_CLK 			( CLK_FAST ),
+//		.inValue 			( FIFO_ADC0_OUT[11:0] - 12'h5FA ),
+//		.validCondition 	( ~ADC0_EN & ~FIFO_ADC0_EMPTY ),
+//		.outValue 			( sumInSquare )
+//	);
 	
+	always @(posedge CLK_FAST) begin
+		if (FIR_SOURCE_VALID)  begin
+			test <= (FIR_SOURCE*FIR_SOURCE > 10082342) ? 1:0;
+		end
+		else begin
+		end
+	end
 	
-	
-	
+	assign oLEDG[0] = test;	
 	
 	
 	

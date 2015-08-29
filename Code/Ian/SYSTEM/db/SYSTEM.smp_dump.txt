@@ -1,5 +1,5 @@
 
-State Machine - |main|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|source_state
+State Machine - |main|FIR_FILTER:FIR_CHANNEL0_inst|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|source_state
 Name source_state.end1 source_state.st_err source_state.run1 source_state.sop source_state.start 
 source_state.start 0 0 0 0 0 
 source_state.sop 0 0 0 1 1 
@@ -7,13 +7,13 @@ source_state.run1 0 0 1 0 1
 source_state.st_err 0 1 0 0 1 
 source_state.end1 1 0 0 0 1 
 
-State Machine - |main|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|sink_out_state
+State Machine - |main|FIR_FILTER:FIR_CHANNEL0_inst|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|sink_out_state
 Name sink_out_state.empty_and_ready sink_out_state.empty_and_not_ready sink_out_state.normal 
 sink_out_state.normal 0 0 0 
 sink_out_state.empty_and_not_ready 0 1 1 
 sink_out_state.empty_and_ready 1 0 1 
 
-State Machine - |main|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|sink_state
+State Machine - |main|FIR_FILTER:FIR_CHANNEL0_inst|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|sink_state
 Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
 sink_state.start 0 0 0 0 0 
 sink_state.stall 0 0 0 1 1 
@@ -21,12 +21,12 @@ sink_state.run1 0 0 1 0 1
 sink_state.st_err 0 1 0 0 1 
 sink_state.end1 1 0 0 0 1 
 
-State Machine - |main|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|scfifo:\normal_fifo:fifo_eab_off:in_fifo|sm_almost_full
+State Machine - |main|FIR_FILTER:FIR_CHANNEL0_inst|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|scfifo:\normal_fifo:fifo_eab_off:in_fifo|sm_almost_full
 Name state_af 
 state_naf 0 
 state_af 1 
 
-State Machine - |main|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|scfifo:\normal_fifo:fifo_eab_off:in_fifo|a_fffifo:subfifo|a_fefifo:fifo_state|sm_emptyfull
+State Machine - |main|FIR_FILTER:FIR_CHANNEL0_inst|FIR_FILTER_ast:FIR_FILTER_ast_inst|auk_dspip_avalon_streaming_sink_fir_130:sink|scfifo:\normal_fifo:fifo_eab_off:in_fifo|a_fffifo:subfifo|a_fefifo:fifo_state|sm_emptyfull
 Name state_middle state_full state_empty 
 state_empty 0 0 0 
 state_middle 1 0 1 
