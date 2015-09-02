@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<MEGACORE title="FIR Compiler"  version="13.0"  build="232"  iptb_version="1.3.0 Build 232"  format_version="120" >
+<NETLIST_SECTION class="altera.ipbu.flowbase.netlist.model.FIRModelClass"  active_core="FIR_FILTER_ast" >
+<STATIC_SECTION>
+<PRIVATES>
+<NAMESPACE name = "parameterization">
+<PRIVATE name = "use_mem" value="1"  type="BOOLEAN"  enable="1" />
+<PRIVATE name = "mem_type" value="M512"  type="STRING"  enable="1" />
+<PRIVATE name = "filter_rate" value="Single Rate"  type="STRING"  enable="1" />
+<PRIVATE name = "filter_factor" value="2"  type="INTEGER"  enable="0" />
+<PRIVATE name = "coefficient_scaling_type" value="Auto"  type="STRING"  enable="1" />
+<PRIVATE name = "coefficient_scaling_factor" value="2047.0"  type="STRING"  enable="0" />
+<PRIVATE name = "coefficient_bit_width" value="12"  type="INTEGER"  enable="1" />
+<PRIVATE name = "coefficient_binary_point_position" value="0"  type="INTEGER"  enable="0" />
+<PRIVATE name = "number_of_input_channels" value="1"  type="INTEGER"  enable="1" />
+<PRIVATE name = "input_number_system" value="Signed Binary"  type="STRING"  enable="1" />
+<PRIVATE name = "input_bit_width" value="12"  type="INTEGER"  enable="1" />
+<PRIVATE name = "input_binary_point_position" value="0"  type="INTEGER"  enable="0" />
+<PRIVATE name = "output_bit_width_method" value="Actual Coefficients"  type="STRING"  enable="1" />
+<PRIVATE name = "output_number_system" value="Full Resolution"  type="STRING"  enable="1" />
+<PRIVATE name = "output_bit_width" value="30"  type="INTEGER"  enable="1" />
+<PRIVATE name = "output_bits_right_of_binary_point" value="22"  type="INTEGER"  enable="0" />
+<PRIVATE name = "output_bits_removed_from_lsb" value="0"  type="INTEGER"  enable="0" />
+<PRIVATE name = "output_lsb_remove_type" value="Truncate"  type="STRING"  enable="1" />
+<PRIVATE name = "output_msb_remove_type" value="Truncate"  type="STRING"  enable="1" />
+<PRIVATE name = "flow_control" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "flow_control_input" value="Slave Sink"  type="STRING"  enable="1" />
+<PRIVATE name = "flow_control_output" value="Master Source"  type="STRING"  enable="1" />
+<PRIVATE name = "device_family" value="Cyclone II"  type="STRING"  enable="1" />
+<PRIVATE name = "structure" value="Variable/Fixed Coefficient : Multi-Cycle"  type="STRING"  enable="1" />
+<PRIVATE name = "pipeline_level" value="2"  type="INTEGER"  enable="1" />
+<PRIVATE name = "clocks_to_compute" value="1"  type="INTEGER"  enable="1" />
+<PRIVATE name = "number_of_serial_units" value="2"  type="INTEGER"  enable="0" />
+<PRIVATE name = "data_storage" value="Logic Cells"  type="STRING"  enable="1" />
+<PRIVATE name = "coefficient_storage" value="Logic Cells"  type="STRING"  enable="1" />
+<PRIVATE name = "multiplier_storage" value="DSP Blocks"  type="STRING"  enable="1" />
+<PRIVATE name = "force_non_symmetric_structure" value="0"  type="BOOLEAN"  enable="1" />
+<PRIVATE name = "coefficients_reload" value="0"  type="BOOLEAN"  enable="1" />
+<PRIVATE name = "coefficients_reload_sgl_clock" value="0"  type="BOOLEAN"  enable="1" />
+<PRIVATE name = "max_clocks_to_compute" value="4"  type="INTEGER"  enable="1" />
+<PRIVATE name = "number_of_sets" value="1"  type="INTEGER"  enable="1" />
+<PRIVATE name = "output_full_bit_width" value="30"  type="INTEGER"  enable="1" />
+<PRIVATE name = "output_full_bits_right_of_binary_point" value="22"  type="INTEGER"  enable="1" />
+<PRIVATE name = "coefficient_reload_bit_width" value="11"  type="INTEGER"  enable="1" />
+<PRIVATE name = "logic_cell" value="10632"  type="INTEGER"  enable="1" />
+<PRIVATE name = "m512" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "m4k" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "m144k" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "m9k" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "m20k" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "mlab" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "megaram" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "dsp_block" value="163"  type="INTEGER"  enable="1" />
+<PRIVATE name = "input_clock_period" value="1"  type="INTEGER"  enable="1" />
+<PRIVATE name = "output_clock_period" value="1"  type="INTEGER"  enable="1" />
+<PRIVATE name = "throughput" value="1"  type="INTEGER"  enable="1" />
+<PRIVATE name = "memory_units" value="0"  type="INTEGER"  enable="1" />
+<PRIVATE name = "set_1" value="Matched Filter, Imported, K:\FYP\Catherine\MATLAB\imp_response_FPGA.txt, 1.0, 0.433806, -0.356919, -0.811757, -0.777211, -0.130383, 0.773551, 0.963535, 0.312914, -0.437506, -0.82903, -0.731326, 0.0039175, 0.857977, 0.894435, 0.165113, -0.504679, -0.855899, -0.64477, 0.153648, 0.915554, 0.833027, 0.0710673, -0.581462, -0.852061, -0.569933, 0.280314, 0.959706, 0.738984, -0.0632556, -0.648622, -0.838623, -0.456699, 0.414634, 0.97505, 0.63149, -0.157322, -0.700441, -0.802161, -0.354969, 0.533646, 0.957777, 0.52403, -0.237929, -0.750345, -0.786807, -0.235987, 0.627689, 0.953942, 0.429988, -0.318514, -0.765505, -0.723462, -0.109317, 0.69868, 0.884846, 0.310975, -0.385804, -0.773372, -0.665895, -0.00373249, 0.738994, 0.836865, 0.178568, -0.45288, -0.765702, -0.575691, 0.111395, 0.790807, 0.735129, 0.0710908, -0.493164, -0.759934, -0.491231, 0.218872, 0.792723, 0.660296, 0.011581, -0.520163, -0.719634, -0.397202, 0.312938, 0.781201, 0.547061, -0.0690133, -0.546916, -0.665892, -0.285887, 0.382007, 0.737068, 0.454931, -0.147702, -0.560337, -0.608308, -0.195669, 0.439584, 0.700599, 0.358976, -0.203373, -0.546903, -0.52963, -0.111237, 0.430001, 0.606706, 0.261095, -0.234067, -0.493174, -0.460527, -0.0267902, 0.458776, 0.533623, 0.167039, -0.260937, -0.479729, -0.366485, 0.0595887, 0.439584, 0.431907, 0.0960408, -0.276294, -0.439426, -0.270533, 0.113314, 0.426152, 0.343622, 0.0288676, -0.276291, -0.372249, -0.203346, 0.142102, 0.345541, 0.251495, -0.0287162, -0.249421, -0.264775, -0.0843571, 0.168975, 0.259176, 0.142102, -0.072836, -0.199518, -0.170733, -0.00759789, 0.157456, 0.172807, 0.0557368, -0.0728518, -0.143864, -0.0901182, 0.00776367, 0.119072, 0.105637, 0.00199156, -0.0728551, -0.0670941, -0.0229518, 0.0346319, 0.0634071, 0.0173522, -0.0229518, -0.0459859, -0.00951712, 0.0173522"  type="STRING"  enable="1" />
+</NAMESPACE>
+<NAMESPACE name = "simgen_enable">
+<PRIVATE name = "matlab_enable" value="1"  type="BOOLEAN"  enable="1" />
+<PRIVATE name = "testbench_enable" value="1"  type="BOOLEAN"  enable="1" />
+<PRIVATE name = "testbench_simulation_clock_period" value="14.2857142587"  type="STRING"  enable="1" />
+<PRIVATE name = "language" value="Verilog HDL"  type="STRING"  enable="1" />
+<PRIVATE name = "enabled" value="1"  type="BOOLEAN"  enable="1" />
+</NAMESPACE>
+<NAMESPACE name = "simgen">
+<PRIVATE name = "filename" value="FIR_FILTER.vo"  type="STRING"  enable="1" />
+</NAMESPACE>
+<NAMESPACE name = "quartus_settings">
+<PRIVATE name = "DEVICE" value="EP2C70F896C6"  type="STRING"  enable="1" />
+<PRIVATE name = "FAMILY" value="Cyclone II"  type="STRING"  enable="1" />
+</NAMESPACE>
+<NAMESPACE name = "serializer"/>
+</PRIVATES>
+<FILES/>
+<PORTS/>
+<LIBRARIES/>
+</STATIC_SECTION>
+</NETLIST_SECTION>
+</MEGACORE>
