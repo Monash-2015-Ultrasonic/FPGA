@@ -25,15 +25,15 @@
 catch {set testbench_files [glob -nocomplain *.hex]} error_msg
 puts "$error_msg"
   
-catch {set coef_files [glob -nocomplain FIR_FILTER_coef*.txt]} error_msg
+catch {set coef_files [glob -nocomplain fir_filter_coef*.txt]} error_msg
 puts "$error_msg"
   
 # The top-level in HDL type "VERILOG"
 set ipfs_ext vo
-if {[file exists FIR_FILTER.vo]} {
+if {[file exists fir_filter.vo]} {
 	set hdl_ext v
 } else {
-	puts "Warning: Could not find FIR_FILTER.$ipfs_ext!"
+	puts "Warning: Could not find fir_filter.$ipfs_ext!"
 }
 
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VERILOG -section_id eda_simulation
@@ -44,11 +44,11 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tb -section_id eda_simulation
 
 # test bench settings
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME work.tb_FIR_FILTER -section_id tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME work.tb_fir_filter -section_id tb
 set_global_assignment -name EDA_TEST_BENCH_GATE_LEVEL_NETLIST_LIBRARY work -section_id tb
 
 # IPFS file
-set_global_assignment -name EDA_IPFS_FILE FIR_FILTER.$ipfs_ext -section_id eda_simulation -library work
+set_global_assignment -name EDA_IPFS_FILE fir_filter.$ipfs_ext -section_id eda_simulation -library work
 
 # Add Testbench files
 foreach i $testbench_files {
@@ -58,9 +58,9 @@ foreach i $testbench_files {
 foreach i $coef_files {
   set_global_assignment -name EDA_TEST_BENCH_FILE $i -section_id tb -library work
 }
-set_global_assignment -name EDA_TEST_BENCH_FILE FIR_FILTER_input.txt -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_FILE fir_filter_input.txt -section_id tb -library work
 
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_FIR_FILTER.vhd -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_fir_filter.vhd -section_id tb -library work
 
 # Specify testbench mode for nativelink
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation

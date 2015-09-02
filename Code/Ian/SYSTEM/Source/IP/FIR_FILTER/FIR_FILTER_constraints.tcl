@@ -22,7 +22,7 @@ proc add_fir_constraints {args} {
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -remove -entity "sadd_reg_top"
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -remove -entity "sadd_lpm_cen"
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -remove -entity "tsadd_reg_top_cen"
-	set_global_assignment -name "DSP_BLOCK_BALANCING" -remove -entity "FIR_FILTER_st"
+	set_global_assignment -name "DSP_BLOCK_BALANCING" -remove -entity "fir_filter_st"
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -remove -entity "mlu_nd_lc"
 	################################################################################################ 
 	# uncomment the following lines if you want to disable shift register recognition              # 
@@ -56,6 +56,6 @@ proc add_fir_constraints {args} {
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -entity "tsadd_lpm_reg_top_cen" "OFF"
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -entity "sadd_lpm_reg_top_cen" "OFF"
 	set_global_assignment -name "AUTO_SHIFT_REGISTER_RECOGNITION" -entity "mlu_nd_lc" "OFF"
-	set_global_assignment -name "DSP_BLOCK_BALANCING" -entity "FIR_FILTER_st" "DSP BLOCKS"
+	set_global_assignment -name "DSP_BLOCK_BALANCING" -entity "fir_filter_st" "DSP BLOCKS"
 }
 add_fir_constraints

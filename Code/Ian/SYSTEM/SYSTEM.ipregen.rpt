@@ -1,0 +1,76 @@
+IP Upgrade report for SYSTEM
+Mon Aug 31 18:29:23 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. IP Upgrade Summary
+  3. Successful Upgrade IP Components
+  4. IP Upgrade Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; IP Upgrade Summary                                                              ;
++------------------------------+--------------------------------------------------+
+; IP Components Upgrade Status ; Passed - Mon Aug 31 18:29:23 2015                ;
+; Quartus II 64-Bit Version    ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                ; SYSTEM                                           ;
+; Top-level Entity Name        ; main                                             ;
+; Family                       ; Cyclone II                                       ;
++------------------------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Successful Upgrade IP Components                                                                                                                                                                                                          ;
++------------+--------------------+---------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+; Entity     ; IP Components Name ; Version ; QIP File Path                                                                                 ; Variation File Path                                                                           ;
++------------+--------------------+---------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+; FIR_FILTER ; FIR Compiler       ;         ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIR_FILTER/fir_filter.v ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIR_FILTER/fir_filter.v ;
+; FIFO_IP    ; FIFO               ;         ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIFO/FIFO_IP.v          ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIFO/FIFO_IP.v          ;
+; CLKPLL     ; ALTPLL             ;         ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/CLK_PLL/CLKPLL.v        ; E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/CLK_PLL/CLKPLL.v        ;
++------------+--------------------+---------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+
++---------------------+
+; IP Upgrade Messages ;
++---------------------+
+Info (11837): Started upgrading IP component FIR Compiler with file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIR_FILTER/fir_filter.v"
+Info (11902): Backing up file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIR_FILTER/fir_filter.v" to "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIR_FILTER/fir_filter_BAK.v"
+Info (11837): Started upgrading IP component FIFO with file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIFO/FIFO_IP.v"
+Info (11902): Backing up file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIFO/FIFO_IP.v" to "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIFO/FIFO_IP_BAK.v"
+Info (11837): Started upgrading IP component ALTPLL with file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/CLK_PLL/CLKPLL.v"
+Info (11902): Backing up file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/CLK_PLL/CLKPLL.v" to "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/CLK_PLL/CLKPLL_BAK.v"
+Info (11131): Completed upgrading IP component FIR Compiler with file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIR_FILTER/fir_filter.v"
+Info (11131): Completed upgrading IP component FIFO with file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/FIFO/FIFO_IP.v"
+Info (11131): Completed upgrading IP component ALTPLL with file "E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/SYSTEM/Source/IP/CLK_PLL/CLKPLL.v"
+Info (23030): Evaluation of Tcl script f:/altera/13.0sp1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
+Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 338 megabytes
+    Info: Processing ended: Mon Aug 31 18:29:25 2015
+    Info: Elapsed time: 00:01:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

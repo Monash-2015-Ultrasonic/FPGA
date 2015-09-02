@@ -35,7 +35,7 @@ module SPI_MASTER_ADC # (parameter outBits = 16)(
 	
 	assign SCK 				= SPI_CLK;
 	
-	assign DATA_MISO 		= data_in_final << 1;
+	assign DATA_MISO 		= data_in_final;
 	
 	// Synchronous Enable:
 	always @(posedge SPI_CLK)

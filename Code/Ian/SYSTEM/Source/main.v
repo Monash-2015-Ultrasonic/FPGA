@@ -39,6 +39,10 @@ module main(
 	always @(posedge CLK_FAST)
 		ON <= iSW[9];
 	
+	reg CLK_MAN;
+	always @(posedge CLK_FAST)
+		CLK_MAN <= ~iKEY[1];
+		
 	
 	
 	
@@ -117,14 +121,14 @@ module main(
 	);
 	
 	// Connect signals to Green LEDs:
-	assign oLEDG[7] 	= ADC0_EN;
+	assign oLEDG[8] 	= ADC0_EN;
 	//assign oLEDG[4:0] = ADC_FIN;
 
 	
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// FIFO: 16-bits width, 16384-words depth
+// FIFO: 16-bits width, 4096-words depth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
 	wire		[15:0]	FIFO_ADC0_OUT;	
 	wire 					FIFO_ADC0_EMPTY, FIFO_ADC0_FULL;
@@ -136,9 +140,9 @@ module main(
 		.clock 	( CLK_FAST 				),
 		.sclr 	( RST 					),				// Synchronous Clear
 		//.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
-		.rdreq	( FIR_SINK_EDGE 		), 
+		.rdreq	( FIFO_READ 			), 
 		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready
-		.data 	( (ADC0_DATA>>1)		),				
+		.data 	( ADC0_DATA				),				
 		.empty 	( FIFO_ADC0_EMPTY 	),
 		.full 	( FIFO_ADC0_FULL 		),
 		.q 		( FIFO_ADC0_OUT 		)
@@ -152,50 +156,82 @@ module main(
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // FIR Filter
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	
-	wire FIR_SINK_RDY;
-	reg FIR_SINK_PREV, FIR_SINK_EDGE;
+	reg FIFO_READ;
 	always @(posedge CLK_FAST) begin
-		FIR_SINK_PREV <= FIR_SINK_RDY;
-		FIR_SINK_EDGE <= ~FIR_SINK_PREV & FIR_SINK_RDY;
+		if (~FIR_SINK_RDY | ~ON) begin
+			FIFO_READ <= 0;
+		end
+		else begin
+			FIFO_READ <= ~FIFO_READ;
+		end
 	end
+
 	
-	wire FIR_SOURCE_RDY, FIR_SOURCE_VALID;
+	wire FIR_SINK_RDY, FIR_SOURCE_VALID;
 	wire [27:0] FIR_SOURCE;
+	wire [1:0] FIR_ERROR;
 	
-	FIR_FILTER	FIR_CHANNEL0_inst(
-		.clk					( CLK_FAST 			),
-		.reset_n				( RST 				),
-		//.coef_set			( 1'b0				),
-		.ast_sink_ready	( FIR_SINK_RDY 	),
+	fir_filter	FIR_inst(
+		.clk					( CLK_FAST 								),
+		.reset_n				( ~RST 									),
+		.ast_sink_ready	( FIR_SINK_RDY 						),
 		.ast_sink_data		( FIFO_ADC0_OUT[11:0] - 12'h5FA	),		
-		.ast_sink_valid	( ~FIFO_ADC0_FULL			),
-		.ast_sink_error	( ),
-		.ast_source_ready	( 1'b1 	),
-		.ast_source_data	( FIR_SOURCE 		),
-		.ast_source_valid	( FIR_SOURCE_VALID	),
+		.ast_sink_valid	( ~FIFO_ADC0_EMPTY & ON				),
+		.ast_sink_error	( 2'b00 									),
+		.ast_source_ready	( 1'b1 									),
+		.ast_source_data	( FIR_SOURCE 							),
+		.ast_source_valid	( FIR_SOURCE_VALID					),
 		.ast_source_error	( )
 	);
-		
-	reg test;
-//	wire [23:0] sumInSquare;
-//	
-//	inSumSquare inSumSquare_instant(
-//		.SYS_CLK 			( CLK_FAST ),
-//		.inValue 			( FIFO_ADC0_OUT[11:0] - 12'h5FA ),
-//		.validCondition 	( ~ADC0_EN & ~FIFO_ADC0_EMPTY ),
-//		.outValue 			( sumInSquare )
-//	);
+	
+	reg [8:0] counter;
+	always @(posedge FIFO_READ) begin
+		if (~FIFO_ADC0_EMPTY & ON)
+			counter <= counter < 260 ? counter + 1 : counter;
+	end
+	
+	wire [23:0] norm_out;
+	wire [23:0] currentXsquared;
+	assign currentXsquared = (FIFO_ADC0_OUT[11:0] - 12'h5FA) * (FIFO_ADC0_OUT[11:0] - 12'h5FA);
+	FIFO_NORM FIFO_NORM_inst(
+		.clock 	( CLK_FAST					),
+		.data		( currentXsquared			),
+		.rdreq	( FIR_SOURCE_VALID & (counter > 259) & ON	),
+		.wrreq	( FIFO_READ 				),
+		.empty	( ),
+		.full		( ),
+		.q			( norm_out					)
+	);
+	
+	wire FIR_SOURCE_NEGATIVE;
+	COMPARE_NEGATIVE compare_neg_inst(
+		.dataa 	( FIR_SOURCE				),
+		.alb 		( FIR_SOURCE_NEGATIVE	)
+	);
+	
+	reg [23:0] sumXsquared;
+	reg FIR_MATCH;
+	wire test;
+	COMPARE_HUGE compare_huge_inst(
+		.dataa 	( FIR_SOURCE * FIR_SOURCE),
+		.datab	( 10082342 * sumXsquared ),
+		.agb		( test)
+	);
 	
 	always @(posedge CLK_FAST) begin
-		if (FIR_SOURCE_VALID)  begin
-			test <= (FIR_SOURCE*FIR_SOURCE > 10082342) ? 1:0;
+		if (FIR_SOURCE_VALID & ON)  begin
+			sumXsquared <= sumXsquared - norm_out + currentXsquared;
+			if (~FIR_SOURCE_NEGATIVE) begin
+				FIR_MATCH <= test ? 1 : 0; // 0.5*20164685
+			end
 		end
 		else begin
 		end
 	end
 	
-	assign oLEDG[0] = test;	
+	assign oLEDG[0] = FIR_SINK_RDY;	
+	assign oLEDG[1] = FIR_SOURCE_VALID;
+	assign oLEDG[7] = FIR_MATCH;
 	
 	
 	

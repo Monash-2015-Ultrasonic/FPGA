@@ -1,0 +1,16 @@
+
+
+E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/AlteraExamples/coef_reload91/fir91.v
+
+Aug 31 05PM:42:04>: Megafunction FIR Compiler v9.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/AlteraExamples/coef_reload91/fir91.v
+
+Aug 31 05PM:42:11>: Megafunction FIR Compiler v9.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+E:/Users/MrBigBear/My Documents/GitHub/FPGA/Code/Ian/AlteraExamples/coef_reload91/fir91.v
+
+Aug 31 06PM:28:55>: Megafunction FIR Compiler v9.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted

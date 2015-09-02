@@ -37,7 +37,7 @@ arch_no_sym      : 0
 num_bank_set    : 1
 num_mac         : 260
 num_cycles      : 1
-arch_pipeline      : 2
+arch_pipeline      : 1
 poly_type       : 0
 poly_fact       : 1
 device_family   : 0
@@ -57,7 +57,7 @@ num_coef_mem     : 260
 coef_mem_width  : 10
 coef_mem_addr   : 0
 num_coef_one_mem : 1
-fmax			: 250
+fmax			: 210
 num_lc			: 9318
 num_m4k			: 0
 num_m512			: 0
