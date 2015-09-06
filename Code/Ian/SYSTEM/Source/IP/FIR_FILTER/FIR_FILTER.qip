@@ -221,6 +221,7 @@ set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_compil
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_compiler-library/uadd_cen.v ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_compiler-library/wr_en_gen.v ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter.v ]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter_bb.v ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter.bsf ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter_ast.vhd ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter_constraints.tcl ]
@@ -236,3 +237,4 @@ set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter_silent_param.txt ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter.vo ]
 set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter.qip ]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) fir_filter.html ]

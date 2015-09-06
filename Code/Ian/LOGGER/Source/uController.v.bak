@@ -1,0 +1,82 @@
+module uController (
+
+);
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+// MBED Microcontroller:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~			
+	reg [1:0] counter_report;
+	reg [16:0] counter_wait;
+	reg MBED_ALLOWED = 0;
+	always @(posedge CLK_FAST) begin
+		case (counter_report)
+		3: begin
+				case (counter_wait)
+				//63000: begin
+				75000: begin
+					counter_report <= 0;
+					counter_wait <= 0;
+					MBED_ALLOWED <= 1;
+				end 
+				
+				default: begin
+					counter_wait <= counter_wait + 1;
+					MBED_ALLOWED <= 0;
+				end 
+				endcase 
+		end 
+		
+		default: begin
+			counter_report <= MBED_FIN_EDGE ? counter_report + 1 : counter_report;
+			MBED_ALLOWED <= 1;
+		end 
+		endcase
+	end 
+	
+	// Generate clock to output data to MBED periodically: same rate as sampler
+	parameter mbed_clk_bits = sampler_bits;
+	reg [mbed_clk_bits-1:0] MBED_CLK;
+	always @(posedge CLK_FAST)
+		MBED_CLK 		<= ~RST & ON ? MBED_CLK + 1 : 0;
+	
+	// Edge Detector for MBED periodic data output clock:
+	reg MBED_CLK_PREV, MBED_CLK_EDGE;
+	always @(posedge CLK_FAST) begin
+		MBED_CLK_PREV 	<= MBED_CLK[mbed_clk_bits-1];
+		MBED_CLK_EDGE 	<= ~MBED_CLK_PREV & MBED_CLK[mbed_clk_bits-1] ? 1 : 0;
+	end
+	
+	// Edge Detector for when single write to MBED finishes:
+	wire MBED_FIN;
+	reg MBED_FIN_PREV, MBED_FIN_EDGE;
+	always @(posedge CLK_FAST) begin
+		MBED_FIN_PREV <= MBED_FIN;
+		MBED_FIN_EDGE <= ~MBED_FIN_PREV & MBED_FIN ? 1 : 0;
+	end
+	
+	// Control logic to enable SPI to MBED:
+	reg MBED_ON;
+	always @(posedge CLK_FAST) begin
+		//if (MBED_CLK_EDGE | manual_wr_mbed_edge)
+		if (MBED_CLK_EDGE)
+			MBED_ON 		<= ~FIFO_ADC0_EMPTY & MBED_ALLOWED ? 1 : 0;
+		else 
+			MBED_ON 		<= ~MBED_FIN ? MBED_ON : 0;	
+	end
+	
+	// MBED SPI Master Module:
+	SPI_MASTER_UC # (.outBits (16)) mbed_instant(
+		.SYS_CLK 	( CLK_FAST				),
+		.RST			( 						),
+		.ENA 			( MBED_ON   		),  	
+		.DATA_MOSI 	( FIFO_ADC0_OUT	),		
+		.MISO 		( GPIO_1[0] 		),		// MISO = SDO 		= 3
+		.MOSI 		( GPIO_1[1] 		),		// MOSI = SDI 		= 4
+		.SCK 			( GPIO_1[3]			),		// SCK = SCLK 		= 5
+		.CSbar 		( GPIO_1[5] 		),		// CSbar = CSbar 	= 6
+		.FIN			( MBED_FIN			)
+	); 
+
+	// Connect signals to Green LEDs:
+	assign oLEDG[8] 	= MBED_FIN;
+	
+endmodule

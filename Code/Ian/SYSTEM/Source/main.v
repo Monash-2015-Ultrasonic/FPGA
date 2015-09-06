@@ -14,22 +14,20 @@ module main(
 	
 	inout		[31:0]	GPIO_0, GPIO_1
 	);
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// Custom/System Clock using PLL IP:
+	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
+// Clocks:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	// 70MHz and 41.176471MHz clock:
 	wire 					CLK_FAST, CLK_40;
 	CLKPLL				CLKPLL_inst (
-		.inclk0 			( iCLK_50 	),
-		.c0 				( CLK_FAST 	),
-		.c1				( CLK_40		)
+		.inclk0 			( iCLK_50 						),
+		.c0 				( CLK_FAST 						),
+		.c1				( CLK_40							)
 	);
 	
-	
-	
-	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// Connections from GPIO:
+// I/O:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	reg RST;
 	always @(posedge CLK_FAST)
@@ -38,212 +36,49 @@ module main(
 	reg ON;
 	always @(posedge CLK_FAST)
 		ON <= iSW[9];
-	
-	reg CLK_MAN;
-	always @(posedge CLK_FAST)
-		CLK_MAN <= ~iKEY[1];
+			
+	// Impedance Matching for Enable/CSbar pin:
+	assign 				GPIO_1[31:26] = 6'bzzzzzz;	
 		
-	
-	
-	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // Ultrasonic Transmitter:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	// Generate 40.21139746kHz pulse for the Ultrasonic Transmitter:
-	reg [9:0] usonic;
-	always @(posedge CLK_40)
-		usonic <= usonic + 1;
-	
-	// Generate a burst of 32 pulses, then wait approx 14ms:
-	reg [9:0] counter_burst;
-	always @(posedge usonic[9])
-		counter_burst <= ~RST & ON & (counter_burst < 574) ? counter_burst + 1 : 0;
-	
-	reg usonicpulse;
-	always @(posedge CLK_40)
-		usonicpulse <= usonic[9] & (counter_burst < 32);
-
-	assign GPIO_1[24] = usonicpulse 	& ~RST & ON;	
-	assign GPIO_1[25] = ~usonicpulse & ~RST & ON;
-
-	
-	
-	
+	wire burstSent;
+	ultrasonicTransmitter 	#(.initial_delay(0)) 		usonicTX_inst(
+		.SYS_CLK			( CLK_FAST							),
+		.CLK_40 			( CLK_40 							),
+		.RST				( RST 								), 
+		.ON				( ON									),
+		.burstStart		( burstSent							),
+		.pulseOutput	( GPIO_1[25:24]  					)
+	);
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// ADC Modules:
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	wire		[15:0]	ADC_CMD = {4'b0001, 1'b1, 2'b0, iSW[1:0], 7'b1000000};
-	wire 		[15:0] 	ADC0_DATA, ADC1_DATA, ADC2_DATA, ADC3_DATA, ADC4_DATA;
-	wire		[4:0]		ADC_FIN;
-
-	// Impedance Matching for Enable/CSbar pin:
-	assign 				GPIO_1[31:26] = 6'bzzzzzz;				
-	
-	// Auto-sample at 68.359375 (10bits) / 273.4375 (8bits) kHz:
-	parameter sampler_bits = 8;
-	parameter sampler_topbit = sampler_bits - 1;
-	reg [sampler_topbit:0] clk_sample;
-	always @(posedge CLK_FAST)
-		clk_sample <= ~RST & ON ? clk_sample + 1 : 0;
-		
-	wire ADC0_EN = ~clk_sample[sampler_topbit] & ~RST & ON & ~ADC_OFF;
-	//wire ADC0_EN = ~&clk_sample[sampler_topbit:sampler_topbit-1] & ~RST & ON & ~ADC_OFF; 	// Variable duty cycle
-	
-	// Edge Detector for WR sinal to FIFO:
-	reg WR_PREV, WR_EDGE;
-	always @(posedge CLK_FAST) begin
-		WR_PREV <= ADC_FIN[0];
-		WR_EDGE <= ~WR_PREV & ADC_FIN[0] & ~ADC_OFF & ~RST & ON ? 1 : 0;
-	end
-	
-	// Turn off all sampling when FIFO overflows:
-	reg ADC_OFF, FIFO_FULL_PREV;
-	always @(posedge CLK_FAST) begin
-		FIFO_FULL_PREV <= FIFO_ADC0_FULL;
-		
-		if (RST | ~ON)
-			ADC_OFF <= 0;
-		else 
-			ADC_OFF <= ~FIFO_FULL_PREV & FIFO_ADC0_FULL ? 1 : ADC_OFF;
-	end
-	
-	// ADC SPI Master Module:
-	SPI_MASTER_ADC # (.outBits (16)) ADC0_instant(
-		.SYS_CLK 	( CLK_FAST						),
-		.ENA 			( ADC0_EN 					),  	
-		.DATA_MOSI 	( ADC_CMD 					),		// Command written to ADC
-		.MISO 		( GPIO_0[0] 				),		// MISO = SDO 		= 3
-		.MOSI 		( GPIO_0[1] 				),		// MOSI = SDI 		= 4
-		.SCK 			( GPIO_0[3]					),		// SCK = SCLK 		= 5
-		.CSbar 		( GPIO_0[5] 				),		// CSbar = CSbar 	= 6
-		.FIN 			( ADC_FIN[0] 				),		// Sample from ADC
-		.DATA_MISO 	( ADC0_DATA 				)	
-	);
-	
-	// Connect signals to Green LEDs:
-	assign oLEDG[8] 	= ADC0_EN;
-	//assign oLEDG[4:0] = ADC_FIN;
-
-	
-	
-	
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// FIFO: 16-bits width, 4096-words depth
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-	wire		[15:0]	FIFO_ADC0_OUT;	
-	wire 					FIFO_ADC0_EMPTY, FIFO_ADC0_FULL;
-	
-
-	
-	// Altera IP FIFO Module:
-	FIFO_IP	FIFO_IP_inst (
-		.clock 	( CLK_FAST 				),
-		.sclr 	( RST 					),				// Synchronous Clear
-		//.rdreq 	( MBED_FIN_EDGE 		),				// Read when MBED has finished
-		.rdreq	( FIFO_READ 			), 
-		.wrreq 	( WR_EDGE 				),				// Write when a sample is ready
-		.data 	( ADC0_DATA				),				
-		.empty 	( FIFO_ADC0_EMPTY 	),
-		.full 	( FIFO_ADC0_FULL 		),
-		.q 		( FIFO_ADC0_OUT 		)
-	);
-	
-	// Connect signals to Red LEDs:	
-	assign oLEDR[16] = FIFO_ADC0_EMPTY;
-	assign oLEDR[17] = FIFO_ADC0_FULL;
-	
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-// FIR Filter
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	reg FIFO_READ;
-	always @(posedge CLK_FAST) begin
-		if (~FIR_SINK_RDY | ~ON) begin
-			FIFO_READ <= 0;
-		end
-		else begin
-			FIFO_READ <= ~FIFO_READ;
-		end
-	end
-
-	
-	wire FIR_SINK_RDY, FIR_SOURCE_VALID;
-	wire [27:0] FIR_SOURCE;
-	wire [1:0] FIR_ERROR;
-	
-	fir_filter	FIR_inst(
-		.clk					( CLK_FAST 								),
-		.reset_n				( ~RST 									),
-		.ast_sink_ready	( FIR_SINK_RDY 						),
-		.ast_sink_data		( FIFO_ADC0_OUT[11:0] - 12'h5FA	),		
-		.ast_sink_valid	( ~FIFO_ADC0_EMPTY & ON				),
-		.ast_sink_error	( 2'b00 									),
-		.ast_source_ready	( 1'b1 									),
-		.ast_source_data	( FIR_SOURCE 							),
-		.ast_source_valid	( FIR_SOURCE_VALID					),
-		.ast_source_error	( )
-	);
-	
-	reg [8:0] counter;
-	always @(posedge FIFO_READ) begin
-		if (~FIFO_ADC0_EMPTY & ON)
-			counter <= counter < 260 ? counter + 1 : counter;
-	end
-	
-	wire [23:0] norm_out;
-	wire [23:0] currentXsquared;
-	assign currentXsquared = (FIFO_ADC0_OUT[11:0] - 12'h5FA) * (FIFO_ADC0_OUT[11:0] - 12'h5FA);
-	FIFO_NORM FIFO_NORM_inst(
-		.clock 	( CLK_FAST					),
-		.data		( currentXsquared			),
-		.rdreq	( FIR_SOURCE_VALID & (counter > 259) & ON	),
-		.wrreq	( FIFO_READ 				),
-		.empty	( ),
-		.full		( ),
-		.q			( norm_out					)
-	);
-	
-	wire FIR_SOURCE_NEGATIVE;
-	COMPARE_NEGATIVE compare_neg_inst(
-		.dataa 	( FIR_SOURCE				),
-		.alb 		( FIR_SOURCE_NEGATIVE	)
-	);
-	
-	reg [23:0] sumXsquared;
-	reg FIR_MATCH;
-	wire test;
-	COMPARE_HUGE compare_huge_inst(
-		.dataa 	( FIR_SOURCE * FIR_SOURCE),
-		.datab	( 10082342 * sumXsquared ),
-		.agb		( test)
-	);
-	
-	always @(posedge CLK_FAST) begin
-		if (FIR_SOURCE_VALID & ON)  begin
-			sumXsquared <= sumXsquared - norm_out + currentXsquared;
-			if (~FIR_SOURCE_NEGATIVE) begin
-				FIR_MATCH <= test ? 1 : 0; // 0.5*20164685
-			end
-		end
-		else begin
-		end
-	end
-	
-	assign oLEDG[0] = FIR_SINK_RDY;	
-	assign oLEDG[1] = FIR_SOURCE_VALID;
-	assign oLEDG[7] = FIR_MATCH;
-	
-	
+// Ultrasonic Receiver Channel 0:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	wire [9:0]		CHANNEL0_OUTPUT;
+	ultrasonicReceiver 		#(.sampler_bits(8)) 		usonicRX_ch0_inst(
+		.SYS_CLK				( CLK_FAST						),
+		.RST					( RST								), 
+		.ON					( ON								),
+		.ADC_MISO			( GPIO_0[0]						), // MISO = SDO 		= 3
+		.ADC_MOSI			( GPIO_0[1]						),	// MOSI = SDI 		= 4
+		.ADC_SCK				( GPIO_0[3]						), // SCK = SCLK 		= 5
+		.ADC_CSbar			( GPIO_0[5]						), // CSbar = CSbar 	= 6
+		.ADC_channel_sel	( iSW[1:0]						),
+		.burstSent			( burstSent						),			
+		.ARRIVAL_TIME		( CHANNEL0_OUTPUT				)
+	);	
 	
 	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 // 7-Seg Displays:
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	// ADC Data:
-	HEX_ENCODER hex3(FIFO_ADC0_OUT[15:12], oHEX3_D);
-	HEX_ENCODER hex2(FIFO_ADC0_OUT[11:8], 	oHEX2_D);
-	HEX_ENCODER hex1(FIFO_ADC0_OUT[7:4], 	oHEX1_D);
-	HEX_ENCODER hex0(FIFO_ADC0_OUT[3:0], 	oHEX0_D);
+	//HEX_ENCODER hex3(CHANNEL0_OUTPUT[15:12], 	oHEX3_D);
+	HEX_ENCODER hex3(5'b11111, 					oHEX3_D);
+	HEX_ENCODER hex2(CHANNEL0_OUTPUT[9:8], 	oHEX2_D);
+	HEX_ENCODER hex1(CHANNEL0_OUTPUT[7:4], 	oHEX1_D);
+	HEX_ENCODER hex0(CHANNEL0_OUTPUT[3:0], 	oHEX0_D);
 	
 	// ADC #:
 	HEX_ENCODER hex6(iSW[17:15], 				oHEX6_D);

@@ -1,5 +1,5 @@
 Partition Merge report for SYSTEM
-Mon Aug 31 21:49:22 2015
+Mon Sep 07 00:00:24 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -9,12 +9,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   1. Legal Notice
   2. Partition Merge Summary
   3. Partition Merge Netlist Types Used
-  4. Connections to In-System Debugging Instance "auto_signaltap_0"
-  5. Partition Merge Partition Statistics
-  6. Partition Merge Resource Usage Summary
-  7. Partition Merge RAM Summary
-  8. Partition Merge DSP Block Usage Summary
-  9. Partition Merge Messages
+  4. Partition Merge Partition Statistics
+  5. Partition Merge Resource Usage Summary
+  6. Partition Merge RAM Summary
+  7. Partition Merge DSP Block Usage Summary
+  8. Partition Merge Messages
 
 
 
@@ -40,18 +39,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Partition Merge Summary                                                               ;
 +------------------------------------+--------------------------------------------------+
-; Partition Merge Status             ; Successful - Mon Aug 31 21:49:22 2015            ;
+; Partition Merge Status             ; Successful - Mon Sep 07 00:00:24 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SYSTEM                                           ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 32,243                                           ;
-;     Total combinational functions  ; 27,690                                           ;
-;     Dedicated logic registers      ; 16,044                                           ;
-; Total registers                    ; 16044                                            ;
+; Total logic elements               ; 13,416                                           ;
+;     Total combinational functions  ; 11,625                                           ;
+;     Dedicated logic registers      ; 6,755                                            ;
+; Total registers                    ; 6755                                             ;
 ; Total pins                         ; 170                                              ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 132,188                                          ;
+; Total memory bits                  ; 122,943                                          ;
 ; Embedded Multiplier 9-bit elements ; 14                                               ;
 ; Total PLLs                         ; 1                                                ;
 +------------------------------------+--------------------------------------------------+
@@ -65,190 +64,73 @@ applicable agreement for further details.
 ; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
 ; pzdyqx:nabboc                  ; Auto-generated ; Source File       ; Source File            ; pzdyqx:nabboc                  ;
 ; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
-; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
 ; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
 +--------------------------------+----------------+-------------------+------------------------+--------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                                                        ;
-+----------------------------------------------------------------------------------------------------------------------+--------------+-----------+----------------+-------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-; Name                                                                                                                 ; Type         ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                                                                                                    ; Details ;
-+----------------------------------------------------------------------------------------------------------------------+--------------+-----------+----------------+-------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-; CLKPLL:CLKPLL_inst|altpll:altpll_component|_clk0                                                                     ; post-fitting ; connected ; Top            ; post-synthesis    ; CLKPLL:CLKPLL_inst|altpll:altpll_component|_clk0                                                                     ; N/A     ;
-; FIR_MATCH                                                                                                            ; post-fitting ; connected ; Top            ; post-synthesis    ; FIR_MATCH                                                                                                            ; N/A     ;
-; FIR_MATCH                                                                                                            ; post-fitting ; connected ; Top            ; post-synthesis    ; FIR_MATCH                                                                                                            ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[0]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[0]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[0]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[0]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[10] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[10] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[10] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[10] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[11] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[11] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[11] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[11] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[12] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[12] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[12] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[12] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[13] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[13] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[13] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[13] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[14] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[14] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[14] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[14] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[15] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[15] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[15] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[15] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[16] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[16] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[16] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[16] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[17] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[17] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[17] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[17] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[18] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[18] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[18] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[18] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[19] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[19] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[19] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[19] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[1]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[1]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[1]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[1]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[20] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[20] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[20] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[20] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[21] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[21] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[21] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[21] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[22] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[22] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[22] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[22] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[23] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[23] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[23] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[23] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[24] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[24] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[24] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[24] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[25] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[25] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[25] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[25] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[26] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[26] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[26] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[26] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[27] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[27] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[27] ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[27] ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[2]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[2]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[2]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[2]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[3]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[3]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[3]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[3]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[4]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[4]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[4]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[4]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[5]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[5]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[5]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[5]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[6]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[6]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[6]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[6]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[7]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[7]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[7]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[7]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[8]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[8]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[8]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[8]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[9]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[9]  ; N/A     ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[9]  ; post-fitting ; connected ; Top            ; post-synthesis    ; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|auk_dspip_avalon_streaming_source_fir_130:source|data_int[9]  ; N/A     ;
-; sumXsquared[0]~24                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[0]~24                                                                                                    ; N/A     ;
-; sumXsquared[0]~24                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[0]~24                                                                                                    ; N/A     ;
-; sumXsquared[10]~44                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[10]~44                                                                                                   ; N/A     ;
-; sumXsquared[10]~44                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[10]~44                                                                                                   ; N/A     ;
-; sumXsquared[11]~46                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[11]~46                                                                                                   ; N/A     ;
-; sumXsquared[11]~46                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[11]~46                                                                                                   ; N/A     ;
-; sumXsquared[12]~48                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[12]~48                                                                                                   ; N/A     ;
-; sumXsquared[12]~48                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[12]~48                                                                                                   ; N/A     ;
-; sumXsquared[13]~50                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[13]~50                                                                                                   ; N/A     ;
-; sumXsquared[13]~50                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[13]~50                                                                                                   ; N/A     ;
-; sumXsquared[14]~52                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[14]~52                                                                                                   ; N/A     ;
-; sumXsquared[14]~52                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[14]~52                                                                                                   ; N/A     ;
-; sumXsquared[15]~54                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[15]~54                                                                                                   ; N/A     ;
-; sumXsquared[15]~54                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[15]~54                                                                                                   ; N/A     ;
-; sumXsquared[16]~56                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[16]~56                                                                                                   ; N/A     ;
-; sumXsquared[16]~56                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[16]~56                                                                                                   ; N/A     ;
-; sumXsquared[17]~58                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[17]~58                                                                                                   ; N/A     ;
-; sumXsquared[17]~58                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[17]~58                                                                                                   ; N/A     ;
-; sumXsquared[18]~60                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[18]~60                                                                                                   ; N/A     ;
-; sumXsquared[18]~60                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[18]~60                                                                                                   ; N/A     ;
-; sumXsquared[19]~62                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[19]~62                                                                                                   ; N/A     ;
-; sumXsquared[19]~62                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[19]~62                                                                                                   ; N/A     ;
-; sumXsquared[1]~26                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[1]~26                                                                                                    ; N/A     ;
-; sumXsquared[1]~26                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[1]~26                                                                                                    ; N/A     ;
-; sumXsquared[20]~64                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[20]~64                                                                                                   ; N/A     ;
-; sumXsquared[20]~64                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[20]~64                                                                                                   ; N/A     ;
-; sumXsquared[21]~66                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[21]~66                                                                                                   ; N/A     ;
-; sumXsquared[21]~66                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[21]~66                                                                                                   ; N/A     ;
-; sumXsquared[22]~68                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[22]~68                                                                                                   ; N/A     ;
-; sumXsquared[22]~68                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[22]~68                                                                                                   ; N/A     ;
-; sumXsquared[23]~70                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[23]~70                                                                                                   ; N/A     ;
-; sumXsquared[23]~70                                                                                                   ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[23]~70                                                                                                   ; N/A     ;
-; sumXsquared[2]~28                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[2]~28                                                                                                    ; N/A     ;
-; sumXsquared[2]~28                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[2]~28                                                                                                    ; N/A     ;
-; sumXsquared[3]~30                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[3]~30                                                                                                    ; N/A     ;
-; sumXsquared[3]~30                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[3]~30                                                                                                    ; N/A     ;
-; sumXsquared[4]~32                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[4]~32                                                                                                    ; N/A     ;
-; sumXsquared[4]~32                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[4]~32                                                                                                    ; N/A     ;
-; sumXsquared[5]~34                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[5]~34                                                                                                    ; N/A     ;
-; sumXsquared[5]~34                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[5]~34                                                                                                    ; N/A     ;
-; sumXsquared[6]~36                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[6]~36                                                                                                    ; N/A     ;
-; sumXsquared[6]~36                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[6]~36                                                                                                    ; N/A     ;
-; sumXsquared[7]~38                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[7]~38                                                                                                    ; N/A     ;
-; sumXsquared[7]~38                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[7]~38                                                                                                    ; N/A     ;
-; sumXsquared[8]~40                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[8]~40                                                                                                    ; N/A     ;
-; sumXsquared[8]~40                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[8]~40                                                                                                    ; N/A     ;
-; sumXsquared[9]~42                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[9]~42                                                                                                    ; N/A     ;
-; sumXsquared[9]~42                                                                                                    ; post-fitting ; connected ; Top            ; post-synthesis    ; sumXsquared[9]~42                                                                                                    ; N/A     ;
-+----------------------------------------------------------------------------------------------------------------------+--------------+-----------+----------------+-------------------+----------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Partition Merge Partition Statistics                                                                                                                      ;
-+---------------------------------------------+--------+---------------+------------------+--------------------------------+--------------------------------+
-; Statistic                                   ; Top    ; pzdyqx:nabboc ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
-+---------------------------------------------+--------+---------------+------------------+--------------------------------+--------------------------------+
-; Estimated Total logic elements              ; 30861  ; 125           ; 188              ; 1069                           ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Total combinational functions               ; 26973  ; 122           ; 172              ; 423                            ; 0                              ;
-; Logic element usage by number of LUT inputs ;        ;               ;                  ;                                ;                                ;
-;     -- 4 input functions                    ; 5016   ; 53            ; 70               ; 210                            ; 0                              ;
-;     -- 3 input functions                    ; 11356  ; 24            ; 62               ; 125                            ; 0                              ;
-;     -- <=2 input functions                  ; 10601  ; 45            ; 40               ; 88                             ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Logic elements by mode                      ;        ;               ;                  ;                                ;                                ;
-;     -- normal mode                          ; 15732  ; 118           ; 164              ; 374                            ; 0                              ;
-;     -- arithmetic mode                      ; 11241  ; 4             ; 8                ; 49                             ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Total registers                             ; 14954  ; 72            ; 112              ; 906                            ; 0                              ;
-;     -- Dedicated logic registers            ; 14954  ; 72            ; 112              ; 906                            ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Virtual pins                                ; 0      ; 0             ; 0                ; 0                              ; 0                              ;
-; I/O pins                                    ; 170    ; 0             ; 0                ; 0                              ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 14     ; 0             ; 0                ; 0                              ; 0                              ;
-; Total memory bits                           ; 77916  ; 0             ; 0                ; 54272                          ; 0                              ;
-; Total RAM block bits                        ; 0      ; 0             ; 0                ; 0                              ; 0                              ;
-; JTAG                                        ; 1      ; 0             ; 0                ; 0                              ; 0                              ;
-; PLL                                         ; 0      ; 0             ; 0                ; 0                              ; 1                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Connections                                 ;        ;               ;                  ;                                ;                                ;
-;     -- Input Connections                    ; 20099  ; 72            ; 163              ; 1301                           ; 1                              ;
-;     -- Registered Input Connections         ; 14902  ; 32            ; 122              ; 1036                           ; 0                              ;
-;     -- Output Connections                   ; 694    ; 5119          ; 230              ; 1                              ; 15592                          ;
-;     -- Registered Output Connections        ; 58     ; 5118          ; 229              ; 0                              ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Internal Connections                        ;        ;               ;                  ;                                ;                                ;
-;     -- Total Connections                    ; 122488 ; 5679          ; 1166             ; 5291                           ; 15593                          ;
-;     -- Registered Connections               ; 71711  ; 5435          ; 844              ; 3950                           ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; External Connections                        ;        ;               ;                  ;                                ;                                ;
-;     -- Top                                  ; 0      ; 5146          ; 152              ; 512                            ; 14983                          ;
-;     -- pzdyqx:nabboc                        ; 5146   ; 0             ; 45               ; 0                              ; 0                              ;
-;     -- sld_hub:auto_hub                     ; 152    ; 45            ; 16               ; 180                            ; 0                              ;
-;     -- sld_signaltap:auto_signaltap_0       ; 512    ; 0             ; 180              ; 0                              ; 610                            ;
-;     -- hard_block:auto_generated_inst       ; 14983  ; 0             ; 0                ; 610                            ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Partition Interface                         ;        ;               ;                  ;                                ;                                ;
-;     -- Input Ports                          ; 27     ; 11            ; 29               ; 163                            ; 1                              ;
-;     -- Output Ports                         ; 84     ; 4             ; 46               ; 116                            ; 2                              ;
-;     -- Bidir Ports                          ; 64     ; 0             ; 0                ; 0                              ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Registered Ports                            ;        ;               ;                  ;                                ;                                ;
-;     -- Registered Input Ports               ; 0      ; 3             ; 3                ; 111                            ; 0                              ;
-;     -- Registered Output Ports              ; 0      ; 3             ; 35               ; 107                            ; 0                              ;
-;                                             ;        ;               ;                  ;                                ;                                ;
-; Port Connectivity                           ;        ;               ;                  ;                                ;                                ;
-;     -- Input Ports driven by GND            ; 0      ; 0             ; 8                ; 0                              ; 0                              ;
-;     -- Output Ports driven by GND           ; 0      ; 0             ; 1                ; 0                              ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0      ; 0             ; 0                ; 0                              ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0      ; 0             ; 0                ; 0                              ; 0                              ;
-;     -- Input Ports with no Source           ; 0      ; 0             ; 1                ; 35                             ; 0                              ;
-;     -- Output Ports with no Source          ; 0      ; 0             ; 0                ; 0                              ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0      ; 2             ; 2                ; 40                             ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0      ; 0             ; 21               ; 107                            ; 0                              ;
-+---------------------------------------------+--------+---------------+------------------+--------------------------------+--------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                     ;
++---------------------------------------------+--------+---------------+------------------+--------------------------------+
+; Statistic                                   ; Top    ; pzdyqx:nabboc ; sld_hub:auto_hub ; hard_block:auto_generated_inst ;
++---------------------------------------------+--------+---------------+------------------+--------------------------------+
+; Estimated Total logic elements              ; 13160  ; 125           ; 131              ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Total combinational functions               ; 11392  ; 122           ; 111              ; 0                              ;
+; Logic element usage by number of LUT inputs ;        ;               ;                  ;                                ;
+;     -- 4 input functions                    ; 1987   ; 53            ; 46               ; 0                              ;
+;     -- 3 input functions                    ; 4767   ; 24            ; 28               ; 0                              ;
+;     -- <=2 input functions                  ; 4638   ; 45            ; 37               ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Logic elements by mode                      ;        ;               ;                  ;                                ;
+;     -- normal mode                          ; 6658   ; 118           ; 103              ; 0                              ;
+;     -- arithmetic mode                      ; 4734   ; 4             ; 8                ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Total registers                             ; 6605   ; 72            ; 78               ; 0                              ;
+;     -- Dedicated logic registers            ; 6605   ; 72            ; 78               ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Virtual pins                                ; 0      ; 0             ; 0                ; 0                              ;
+; I/O pins                                    ; 170    ; 0             ; 0                ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 14     ; 0             ; 0                ; 0                              ;
+; Total memory bits                           ; 122943 ; 0             ; 0                ; 0                              ;
+; Total RAM block bits                        ; 0      ; 0             ; 0                ; 0                              ;
+; JTAG                                        ; 1      ; 0             ; 0                ; 0                              ;
+; PLL                                         ; 0      ; 0             ; 0                ; 1                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Connections                                 ;        ;               ;                  ;                                ;
+;     -- Input Connections                    ; 8813   ; 72            ; 116              ; 1                              ;
+;     -- Registered Input Connections         ; 6589   ; 32            ; 87               ; 0                              ;
+;     -- Output Connections                   ; 143    ; 2131          ; 43               ; 6685                           ;
+;     -- Registered Output Connections        ; 0      ; 2129          ; 42               ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Internal Connections                        ;        ;               ;                  ;                                ;
+;     -- Total Connections                    ; 53525  ; 2691          ; 639              ; 6686                           ;
+;     -- Registered Connections               ; 31387  ; 2446          ; 432              ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; External Connections                        ;        ;               ;                  ;                                ;
+;     -- Top                                  ; 0      ; 2157          ; 113              ; 6686                           ;
+;     -- pzdyqx:nabboc                        ; 2157   ; 0             ; 46               ; 0                              ;
+;     -- sld_hub:auto_hub                     ; 113    ; 46            ; 0                ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 6686   ; 0             ; 0                ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Partition Interface                         ;        ;               ;                  ;                                ;
+;     -- Input Ports                          ; 27     ; 11            ; 15               ; 1                              ;
+;     -- Output Ports                         ; 84     ; 4             ; 33               ; 2                              ;
+;     -- Bidir Ports                          ; 64     ; 0             ; 0                ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Registered Ports                            ;        ;               ;                  ;                                ;
+;     -- Registered Input Ports               ; 0      ; 3             ; 4                ; 0                              ;
+;     -- Registered Output Ports              ; 0      ; 3             ; 22               ; 0                              ;
+;                                             ;        ;               ;                  ;                                ;
+; Port Connectivity                           ;        ;               ;                  ;                                ;
+;     -- Input Ports driven by GND            ; 0      ; 0             ; 3                ; 0                              ;
+;     -- Output Ports driven by GND           ; 0      ; 0             ; 1                ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0      ; 0             ; 0                ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0      ; 0             ; 0                ; 0                              ;
+;     -- Input Ports with no Source           ; 0      ; 0             ; 1                ; 0                              ;
+;     -- Output Ports with no Source          ; 0      ; 0             ; 0                ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0      ; 2             ; 2                ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0      ; 0             ; 21               ; 0                              ;
++---------------------------------------------+--------+---------------+------------------+--------------------------------+
 Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
 
 
@@ -257,45 +139,44 @@ Note: Resource usage numbers presented for Partitions containing post-synthesis 
 +---------------------------------------------+--------------------------------------------------+
 ; Resource                                    ; Usage                                            ;
 +---------------------------------------------+--------------------------------------------------+
-; Estimated Total logic elements              ; 32,243                                           ;
+; Estimated Total logic elements              ; 13,416                                           ;
 ;                                             ;                                                  ;
-; Total combinational functions               ; 27690                                            ;
+; Total combinational functions               ; 11625                                            ;
 ; Logic element usage by number of LUT inputs ;                                                  ;
-;     -- 4 input functions                    ; 5349                                             ;
-;     -- 3 input functions                    ; 11567                                            ;
-;     -- <=2 input functions                  ; 10774                                            ;
+;     -- 4 input functions                    ; 2086                                             ;
+;     -- 3 input functions                    ; 4819                                             ;
+;     -- <=2 input functions                  ; 4720                                             ;
 ;                                             ;                                                  ;
 ; Logic elements by mode                      ;                                                  ;
-;     -- normal mode                          ; 16388                                            ;
-;     -- arithmetic mode                      ; 11302                                            ;
+;     -- normal mode                          ; 6879                                             ;
+;     -- arithmetic mode                      ; 4746                                             ;
 ;                                             ;                                                  ;
-; Total registers                             ; 16044                                            ;
-;     -- Dedicated logic registers            ; 16044                                            ;
+; Total registers                             ; 6755                                             ;
+;     -- Dedicated logic registers            ; 6755                                             ;
 ;     -- I/O registers                        ; 0                                                ;
 ;                                             ;                                                  ;
 ; I/O pins                                    ; 170                                              ;
-; Total memory bits                           ; 132188                                           ;
+; Total memory bits                           ; 122943                                           ;
 ; Embedded Multiplier 9-bit elements          ; 14                                               ;
 ; Total PLLs                                  ; 1                                                ;
 ;     -- PLLs                                 ; 1                                                ;
 ;                                             ;                                                  ;
 ; Maximum fan-out node                        ; CLKPLL:CLKPLL_inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 15552                                            ;
-; Total fan-out                               ; 128164                                           ;
+; Maximum fan-out                             ; 6616                                             ;
+; Total fan-out                               ; 54158                                            ;
 ; Average fan-out                             ; 2.91                                             ;
 +---------------------------------------------+--------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                                            ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-; Name                                                                                                                                                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-; FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_5e31:auto_generated|a_dpfifo_o531:dpfifo|dpram_q011:FIFOram|altsyncram_u1k1:altsyncram2|altsyncram_vrc1:altsyncram3|ALTSYNCRAM                                                ; AUTO ; True Dual Port   ; 4096         ; 16           ; 4096         ; 16           ; 65536 ; None ;
-; FIFO_NORM:FIFO_NORM_inst|scfifo:scfifo_component|scfifo_bs21:auto_generated|a_dpfifo_i231:dpfifo|dpram_fv01:FIFOram|altsyncram_avj1:altsyncram2|altsyncram_apc1:altsyncram3|ALTSYNCRAM                                            ; AUTO ; True Dual Port   ; 512          ; 24           ; 512          ; 24           ; 12288 ; None ;
-; fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|fir_filter_st:fircore|sadd_cen:Uaddl_2_n_32_n|altshift_taps:res_rtl_0|shift_taps_8jm:auto_generated|altsyncram_e981:altsyncram2|ALTSYNCRAM                                 ; AUTO ; Simple Dual Port ; 4            ; 23           ; 4            ; 23           ; 92    ; None ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_is14:auto_generated|altsyncram_qgq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port   ; 1024         ; 53           ; 1024         ; 53           ; 54272 ; None ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                                                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_7e31:auto_generated|a_dpfifo_q531:dpfifo|dpram_r011:FIFOram|altsyncram_02k1:altsyncram2|altsyncram_1sc1:altsyncram3|ALTSYNCRAM                ; AUTO ; True Dual Port   ; 8192         ; 16           ; 8192         ; 16           ; 131072 ; None ;
+; ultrasonicReceiver:usonicRX_ch0_inst|FIFO_NORM:FIFO_NORM_inst|scfifo:scfifo_component|scfifo_2v21:auto_generated|a_dpfifo_9531:dpfifo|dpram_n011:FIFOram|altsyncram_q1k1:altsyncram2|altsyncram_qrc1:altsyncram3|ALTSYNCRAM            ; AUTO ; True Dual Port   ; 1024         ; 24           ; 1024         ; 24           ; 24576  ; None ;
+; ultrasonicReceiver:usonicRX_ch0_inst|fir_filter:FIR_inst|fir_filter_ast:fir_filter_ast_inst|fir_filter_st:fircore|sadd_cen:Uaddl_1_n_28_n|altshift_taps:res_rtl_0|shift_taps_3jm:auto_generated|altsyncram_9g31:altsyncram4|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 21           ; 3            ; 21           ; 63     ; None ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 
 
 +-----------------------------------------------------+
@@ -322,16 +203,14 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Partition Merge
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Aug 31 21:49:16 2015
+    Info: Processing started: Mon Sep 07 00:00:18 2015
 Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off SYSTEM -c SYSTEM --merge=on
 Warning (35010): Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
     Info (35011): Set the option to Ignore source file changes to force the Quartus II software to always use a previously generated Fitter netlist
 Info (35007): Using synthesis netlist for partition "Top"
 Info (35007): Using synthesis netlist for partition "pzdyqx:nabboc"
 Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
-Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
-Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 107 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
-Info (35002): Resolved and merged 4 partition(s)
+Info (35002): Resolved and merged 3 partition(s)
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 15 input pin(s) that do not drive logic
@@ -350,18 +229,18 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iKEY[1]"
     Warning (15610): No output dependent on input pin "iKEY[2]"
     Warning (15610): No output dependent on input pin "iKEY[3]"
-Info (21057): Implemented 32600 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13691 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 26 input pins
     Info (21059): Implemented 84 output pins
     Info (21060): Implemented 64 bidirectional pins
-    Info (21061): Implemented 32294 logic cells
-    Info (21064): Implemented 116 RAM segments
+    Info (21061): Implemented 13432 logic cells
+    Info (21064): Implemented 69 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 14 DSP elements
 Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 589 megabytes
-    Info: Processing ended: Mon Aug 31 21:49:23 2015
+    Info: Peak virtual memory: 563 megabytes
+    Info: Processing ended: Mon Sep 07 00:00:25 2015
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

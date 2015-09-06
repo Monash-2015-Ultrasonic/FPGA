@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for SYSTEM
-Mon Aug 31 21:51:52 2015
+Mon Sep 07 00:01:37 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -149,37 +149,37 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; iSW[0]     ; oHEX4_D[0]  ; 12.967 ;        ;        ; 12.967 ;
-; iSW[0]     ; oHEX4_D[2]  ;        ; 14.267 ; 14.267 ;        ;
-; iSW[0]     ; oHEX4_D[3]  ; 12.933 ;        ;        ; 12.933 ;
-; iSW[0]     ; oHEX4_D[4]  ; 11.026 ;        ;        ; 11.026 ;
-; iSW[0]     ; oHEX4_D[5]  ; 12.914 ;        ;        ; 12.914 ;
-; iSW[1]     ; oHEX4_D[0]  ;        ; 12.815 ; 12.815 ;        ;
-; iSW[1]     ; oHEX4_D[2]  ; 14.156 ;        ;        ; 14.156 ;
-; iSW[1]     ; oHEX4_D[3]  ;        ; 12.781 ; 12.781 ;        ;
-; iSW[1]     ; oHEX4_D[5]  ; 12.732 ;        ;        ; 12.732 ;
-; iSW[1]     ; oHEX4_D[6]  ;        ; 11.038 ; 11.038 ;        ;
+; iSW[0]     ; oHEX4_D[0]  ; 12.517 ;        ;        ; 12.517 ;
+; iSW[0]     ; oHEX4_D[2]  ;        ; 12.248 ; 12.248 ;        ;
+; iSW[0]     ; oHEX4_D[3]  ; 12.421 ;        ;        ; 12.421 ;
+; iSW[0]     ; oHEX4_D[4]  ; 11.035 ;        ;        ; 11.035 ;
+; iSW[0]     ; oHEX4_D[5]  ; 12.531 ;        ;        ; 12.531 ;
+; iSW[1]     ; oHEX4_D[0]  ;        ; 11.951 ; 11.951 ;        ;
+; iSW[1]     ; oHEX4_D[2]  ; 11.683 ;        ;        ; 11.683 ;
+; iSW[1]     ; oHEX4_D[3]  ;        ; 11.855 ; 11.855 ;        ;
+; iSW[1]     ; oHEX4_D[5]  ; 11.997 ;        ;        ; 11.997 ;
+; iSW[1]     ; oHEX4_D[6]  ;        ; 11.037 ; 11.037 ;        ;
 ; iSW[15]    ; oHEX6_D[0]  ; 9.658  ; 9.658  ; 9.658  ; 9.658  ;
-; iSW[15]    ; oHEX6_D[1]  ; 9.981  ; 9.981  ; 9.981  ; 9.981  ;
-; iSW[15]    ; oHEX6_D[2]  ;        ; 9.951  ; 9.951  ;        ;
+; iSW[15]    ; oHEX6_D[1]  ; 9.968  ; 9.968  ; 9.968  ; 9.968  ;
+; iSW[15]    ; oHEX6_D[2]  ;        ; 9.936  ; 9.936  ;        ;
 ; iSW[15]    ; oHEX6_D[3]  ; 9.932  ; 9.932  ; 9.932  ; 9.932  ;
 ; iSW[15]    ; oHEX6_D[4]  ; 9.659  ;        ;        ; 9.659  ;
-; iSW[15]    ; oHEX6_D[5]  ; 9.949  ;        ;        ; 9.949  ;
-; iSW[15]    ; oHEX6_D[6]  ; 9.963  ;        ;        ; 9.963  ;
+; iSW[15]    ; oHEX6_D[5]  ; 9.965  ;        ;        ; 9.965  ;
+; iSW[15]    ; oHEX6_D[6]  ; 9.974  ;        ;        ; 9.974  ;
 ; iSW[16]    ; oHEX6_D[0]  ;        ; 8.893  ; 8.893  ;        ;
-; iSW[16]    ; oHEX6_D[1]  ; 9.213  ; 9.213  ; 9.213  ; 9.213  ;
-; iSW[16]    ; oHEX6_D[2]  ; 9.183  ;        ;        ; 9.183  ;
+; iSW[16]    ; oHEX6_D[1]  ; 9.200  ; 9.200  ; 9.200  ; 9.200  ;
+; iSW[16]    ; oHEX6_D[2]  ; 9.168  ;        ;        ; 9.168  ;
 ; iSW[16]    ; oHEX6_D[3]  ; 9.165  ; 9.165  ; 9.165  ; 9.165  ;
 ; iSW[16]    ; oHEX6_D[4]  ;        ; 8.920  ; 8.920  ;        ;
-; iSW[16]    ; oHEX6_D[5]  ; 9.184  ;        ;        ; 9.184  ;
-; iSW[16]    ; oHEX6_D[6]  ; 9.195  ; 9.195  ; 9.195  ; 9.195  ;
+; iSW[16]    ; oHEX6_D[5]  ; 9.200  ;        ;        ; 9.200  ;
+; iSW[16]    ; oHEX6_D[6]  ; 9.206  ; 9.206  ; 9.206  ; 9.206  ;
 ; iSW[17]    ; oHEX6_D[0]  ; 9.169  ; 9.169  ; 9.169  ; 9.169  ;
-; iSW[17]    ; oHEX6_D[1]  ; 9.487  ;        ;        ; 9.487  ;
-; iSW[17]    ; oHEX6_D[2]  ;        ; 9.409  ; 9.409  ;        ;
+; iSW[17]    ; oHEX6_D[1]  ; 9.474  ;        ;        ; 9.474  ;
+; iSW[17]    ; oHEX6_D[2]  ;        ; 9.394  ; 9.394  ;        ;
 ; iSW[17]    ; oHEX6_D[3]  ; 9.439  ; 9.439  ; 9.439  ; 9.439  ;
 ; iSW[17]    ; oHEX6_D[4]  ; 9.197  ;        ;        ; 9.197  ;
-; iSW[17]    ; oHEX6_D[5]  ;        ; 9.434  ; 9.434  ;        ;
-; iSW[17]    ; oHEX6_D[6]  ; 9.443  ; 9.443  ; 9.443  ; 9.443  ;
+; iSW[17]    ; oHEX6_D[5]  ;        ; 9.450  ; 9.450  ;        ;
+; iSW[17]    ; oHEX6_D[6]  ; 9.454  ; 9.454  ; 9.454  ; 9.454  ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -188,37 +188,37 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; iSW[0]     ; oHEX4_D[0]  ; 12.967 ;        ;        ; 12.967 ;
-; iSW[0]     ; oHEX4_D[2]  ;        ; 14.267 ; 14.267 ;        ;
-; iSW[0]     ; oHEX4_D[3]  ; 12.933 ;        ;        ; 12.933 ;
-; iSW[0]     ; oHEX4_D[4]  ; 11.026 ;        ;        ; 11.026 ;
-; iSW[0]     ; oHEX4_D[5]  ; 12.914 ;        ;        ; 12.914 ;
-; iSW[1]     ; oHEX4_D[0]  ;        ; 12.815 ; 12.815 ;        ;
-; iSW[1]     ; oHEX4_D[2]  ; 14.156 ;        ;        ; 14.156 ;
-; iSW[1]     ; oHEX4_D[3]  ;        ; 12.781 ; 12.781 ;        ;
-; iSW[1]     ; oHEX4_D[5]  ; 12.732 ;        ;        ; 12.732 ;
-; iSW[1]     ; oHEX4_D[6]  ;        ; 11.038 ; 11.038 ;        ;
+; iSW[0]     ; oHEX4_D[0]  ; 12.517 ;        ;        ; 12.517 ;
+; iSW[0]     ; oHEX4_D[2]  ;        ; 12.248 ; 12.248 ;        ;
+; iSW[0]     ; oHEX4_D[3]  ; 12.421 ;        ;        ; 12.421 ;
+; iSW[0]     ; oHEX4_D[4]  ; 11.035 ;        ;        ; 11.035 ;
+; iSW[0]     ; oHEX4_D[5]  ; 12.531 ;        ;        ; 12.531 ;
+; iSW[1]     ; oHEX4_D[0]  ;        ; 11.951 ; 11.951 ;        ;
+; iSW[1]     ; oHEX4_D[2]  ; 11.683 ;        ;        ; 11.683 ;
+; iSW[1]     ; oHEX4_D[3]  ;        ; 11.855 ; 11.855 ;        ;
+; iSW[1]     ; oHEX4_D[5]  ; 11.997 ;        ;        ; 11.997 ;
+; iSW[1]     ; oHEX4_D[6]  ;        ; 11.037 ; 11.037 ;        ;
 ; iSW[15]    ; oHEX6_D[0]  ; 9.658  ; 9.658  ; 9.658  ; 9.658  ;
-; iSW[15]    ; oHEX6_D[1]  ; 9.981  ; 9.981  ; 9.981  ; 9.981  ;
-; iSW[15]    ; oHEX6_D[2]  ;        ; 9.951  ; 9.951  ;        ;
+; iSW[15]    ; oHEX6_D[1]  ; 9.968  ; 9.968  ; 9.968  ; 9.968  ;
+; iSW[15]    ; oHEX6_D[2]  ;        ; 9.936  ; 9.936  ;        ;
 ; iSW[15]    ; oHEX6_D[3]  ; 9.932  ; 9.932  ; 9.932  ; 9.932  ;
 ; iSW[15]    ; oHEX6_D[4]  ; 9.659  ;        ;        ; 9.659  ;
-; iSW[15]    ; oHEX6_D[5]  ; 9.949  ;        ;        ; 9.949  ;
-; iSW[15]    ; oHEX6_D[6]  ; 9.963  ;        ;        ; 9.963  ;
+; iSW[15]    ; oHEX6_D[5]  ; 9.965  ;        ;        ; 9.965  ;
+; iSW[15]    ; oHEX6_D[6]  ; 9.974  ;        ;        ; 9.974  ;
 ; iSW[16]    ; oHEX6_D[0]  ;        ; 8.893  ; 8.893  ;        ;
-; iSW[16]    ; oHEX6_D[1]  ; 9.213  ; 9.213  ; 9.213  ; 9.213  ;
-; iSW[16]    ; oHEX6_D[2]  ; 9.183  ;        ;        ; 9.183  ;
+; iSW[16]    ; oHEX6_D[1]  ; 9.200  ; 9.200  ; 9.200  ; 9.200  ;
+; iSW[16]    ; oHEX6_D[2]  ; 9.168  ;        ;        ; 9.168  ;
 ; iSW[16]    ; oHEX6_D[3]  ; 9.165  ; 9.165  ; 9.165  ; 9.165  ;
 ; iSW[16]    ; oHEX6_D[4]  ;        ; 8.920  ; 8.920  ;        ;
-; iSW[16]    ; oHEX6_D[5]  ; 9.184  ;        ;        ; 9.184  ;
-; iSW[16]    ; oHEX6_D[6]  ; 9.195  ; 9.195  ; 9.195  ; 9.195  ;
+; iSW[16]    ; oHEX6_D[5]  ; 9.200  ;        ;        ; 9.200  ;
+; iSW[16]    ; oHEX6_D[6]  ; 9.206  ; 9.206  ; 9.206  ; 9.206  ;
 ; iSW[17]    ; oHEX6_D[0]  ; 9.169  ; 9.169  ; 9.169  ; 9.169  ;
-; iSW[17]    ; oHEX6_D[1]  ; 9.487  ;        ;        ; 9.487  ;
-; iSW[17]    ; oHEX6_D[2]  ;        ; 9.409  ; 9.409  ;        ;
+; iSW[17]    ; oHEX6_D[1]  ; 9.474  ;        ;        ; 9.474  ;
+; iSW[17]    ; oHEX6_D[2]  ;        ; 9.394  ; 9.394  ;        ;
 ; iSW[17]    ; oHEX6_D[3]  ; 9.439  ; 9.439  ; 9.439  ; 9.439  ;
 ; iSW[17]    ; oHEX6_D[4]  ; 9.197  ;        ;        ; 9.197  ;
-; iSW[17]    ; oHEX6_D[5]  ;        ; 9.434  ; 9.434  ;        ;
-; iSW[17]    ; oHEX6_D[6]  ; 9.443  ; 9.443  ; 9.443  ; 9.443  ;
+; iSW[17]    ; oHEX6_D[5]  ;        ; 9.450  ; 9.450  ;        ;
+; iSW[17]    ; oHEX6_D[6]  ; 9.454  ; 9.454  ; 9.454  ; 9.454  ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -269,37 +269,37 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; iSW[0]     ; oHEX4_D[0]  ; 7.100 ;       ;       ; 7.100 ;
-; iSW[0]     ; oHEX4_D[2]  ;       ; 7.630 ; 7.630 ;       ;
-; iSW[0]     ; oHEX4_D[3]  ; 7.070 ;       ;       ; 7.070 ;
-; iSW[0]     ; oHEX4_D[4]  ; 6.247 ;       ;       ; 6.247 ;
-; iSW[0]     ; oHEX4_D[5]  ; 7.079 ;       ;       ; 7.079 ;
-; iSW[1]     ; oHEX4_D[0]  ;       ; 7.039 ; 7.039 ;       ;
-; iSW[1]     ; oHEX4_D[2]  ; 7.607 ;       ;       ; 7.607 ;
-; iSW[1]     ; oHEX4_D[3]  ;       ; 7.009 ; 7.009 ;       ;
-; iSW[1]     ; oHEX4_D[5]  ; 7.026 ;       ;       ; 7.026 ;
-; iSW[1]     ; oHEX4_D[6]  ;       ; 6.263 ; 6.263 ;       ;
+; iSW[0]     ; oHEX4_D[0]  ; 6.917 ;       ;       ; 6.917 ;
+; iSW[0]     ; oHEX4_D[2]  ;       ; 6.760 ; 6.760 ;       ;
+; iSW[0]     ; oHEX4_D[3]  ; 6.865 ;       ;       ; 6.865 ;
+; iSW[0]     ; oHEX4_D[4]  ; 6.248 ;       ;       ; 6.248 ;
+; iSW[0]     ; oHEX4_D[5]  ; 6.916 ;       ;       ; 6.916 ;
+; iSW[1]     ; oHEX4_D[0]  ;       ; 6.663 ; 6.663 ;       ;
+; iSW[1]     ; oHEX4_D[2]  ; 6.534 ;       ;       ; 6.534 ;
+; iSW[1]     ; oHEX4_D[3]  ;       ; 6.611 ; 6.611 ;       ;
+; iSW[1]     ; oHEX4_D[5]  ; 6.690 ;       ;       ; 6.690 ;
+; iSW[1]     ; oHEX4_D[6]  ;       ; 6.261 ; 6.261 ;       ;
 ; iSW[15]    ; oHEX6_D[0]  ; 5.385 ; 5.385 ; 5.385 ; 5.385 ;
-; iSW[15]    ; oHEX6_D[1]  ; 5.537 ; 5.537 ; 5.537 ; 5.537 ;
-; iSW[15]    ; oHEX6_D[2]  ;       ; 5.512 ; 5.512 ;       ;
+; iSW[15]    ; oHEX6_D[1]  ; 5.531 ; 5.531 ; 5.531 ; 5.531 ;
+; iSW[15]    ; oHEX6_D[2]  ;       ; 5.504 ; 5.504 ;       ;
 ; iSW[15]    ; oHEX6_D[3]  ; 5.502 ; 5.502 ; 5.502 ; 5.502 ;
 ; iSW[15]    ; oHEX6_D[4]  ; 5.415 ;       ;       ; 5.415 ;
-; iSW[15]    ; oHEX6_D[5]  ; 5.524 ;       ;       ; 5.524 ;
-; iSW[15]    ; oHEX6_D[6]  ; 5.535 ;       ;       ; 5.535 ;
+; iSW[15]    ; oHEX6_D[5]  ; 5.530 ;       ;       ; 5.530 ;
+; iSW[15]    ; oHEX6_D[6]  ; 5.540 ;       ;       ; 5.540 ;
 ; iSW[16]    ; oHEX6_D[0]  ;       ; 5.005 ; 5.005 ;       ;
-; iSW[16]    ; oHEX6_D[1]  ; 5.160 ; 5.160 ; 5.160 ; 5.160 ;
-; iSW[16]    ; oHEX6_D[2]  ; 5.134 ;       ;       ; 5.134 ;
+; iSW[16]    ; oHEX6_D[1]  ; 5.154 ; 5.154 ; 5.154 ; 5.154 ;
+; iSW[16]    ; oHEX6_D[2]  ; 5.126 ;       ;       ; 5.126 ;
 ; iSW[16]    ; oHEX6_D[3]  ; 5.122 ; 5.122 ; 5.122 ; 5.122 ;
 ; iSW[16]    ; oHEX6_D[4]  ;       ; 5.035 ; 5.035 ;       ;
-; iSW[16]    ; oHEX6_D[5]  ; 5.145 ;       ;       ; 5.145 ;
-; iSW[16]    ; oHEX6_D[6]  ; 5.154 ; 5.154 ; 5.154 ; 5.154 ;
+; iSW[16]    ; oHEX6_D[5]  ; 5.151 ;       ;       ; 5.151 ;
+; iSW[16]    ; oHEX6_D[6]  ; 5.159 ; 5.159 ; 5.159 ; 5.159 ;
 ; iSW[17]    ; oHEX6_D[0]  ; 5.130 ; 5.130 ; 5.130 ; 5.130 ;
-; iSW[17]    ; oHEX6_D[1]  ; 5.284 ;       ;       ; 5.284 ;
-; iSW[17]    ; oHEX6_D[2]  ;       ; 5.252 ; 5.252 ;       ;
+; iSW[17]    ; oHEX6_D[1]  ; 5.278 ;       ;       ; 5.278 ;
+; iSW[17]    ; oHEX6_D[2]  ;       ; 5.244 ; 5.244 ;       ;
 ; iSW[17]    ; oHEX6_D[3]  ; 5.245 ; 5.245 ; 5.245 ; 5.245 ;
 ; iSW[17]    ; oHEX6_D[4]  ; 5.152 ;       ;       ; 5.152 ;
-; iSW[17]    ; oHEX6_D[5]  ;       ; 5.263 ; 5.263 ;       ;
-; iSW[17]    ; oHEX6_D[6]  ; 5.277 ; 5.277 ; 5.277 ; 5.277 ;
+; iSW[17]    ; oHEX6_D[5]  ;       ; 5.269 ; 5.269 ;       ;
+; iSW[17]    ; oHEX6_D[6]  ; 5.282 ; 5.282 ; 5.282 ; 5.282 ;
 +------------+-------------+-------+-------+-------+-------+
 
 
@@ -308,37 +308,37 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; iSW[0]     ; oHEX4_D[0]  ; 7.100 ;       ;       ; 7.100 ;
-; iSW[0]     ; oHEX4_D[2]  ;       ; 7.630 ; 7.630 ;       ;
-; iSW[0]     ; oHEX4_D[3]  ; 7.070 ;       ;       ; 7.070 ;
-; iSW[0]     ; oHEX4_D[4]  ; 6.247 ;       ;       ; 6.247 ;
-; iSW[0]     ; oHEX4_D[5]  ; 7.079 ;       ;       ; 7.079 ;
-; iSW[1]     ; oHEX4_D[0]  ;       ; 7.039 ; 7.039 ;       ;
-; iSW[1]     ; oHEX4_D[2]  ; 7.607 ;       ;       ; 7.607 ;
-; iSW[1]     ; oHEX4_D[3]  ;       ; 7.009 ; 7.009 ;       ;
-; iSW[1]     ; oHEX4_D[5]  ; 7.026 ;       ;       ; 7.026 ;
-; iSW[1]     ; oHEX4_D[6]  ;       ; 6.263 ; 6.263 ;       ;
+; iSW[0]     ; oHEX4_D[0]  ; 6.917 ;       ;       ; 6.917 ;
+; iSW[0]     ; oHEX4_D[2]  ;       ; 6.760 ; 6.760 ;       ;
+; iSW[0]     ; oHEX4_D[3]  ; 6.865 ;       ;       ; 6.865 ;
+; iSW[0]     ; oHEX4_D[4]  ; 6.248 ;       ;       ; 6.248 ;
+; iSW[0]     ; oHEX4_D[5]  ; 6.916 ;       ;       ; 6.916 ;
+; iSW[1]     ; oHEX4_D[0]  ;       ; 6.663 ; 6.663 ;       ;
+; iSW[1]     ; oHEX4_D[2]  ; 6.534 ;       ;       ; 6.534 ;
+; iSW[1]     ; oHEX4_D[3]  ;       ; 6.611 ; 6.611 ;       ;
+; iSW[1]     ; oHEX4_D[5]  ; 6.690 ;       ;       ; 6.690 ;
+; iSW[1]     ; oHEX4_D[6]  ;       ; 6.261 ; 6.261 ;       ;
 ; iSW[15]    ; oHEX6_D[0]  ; 5.385 ; 5.385 ; 5.385 ; 5.385 ;
-; iSW[15]    ; oHEX6_D[1]  ; 5.537 ; 5.537 ; 5.537 ; 5.537 ;
-; iSW[15]    ; oHEX6_D[2]  ;       ; 5.512 ; 5.512 ;       ;
+; iSW[15]    ; oHEX6_D[1]  ; 5.531 ; 5.531 ; 5.531 ; 5.531 ;
+; iSW[15]    ; oHEX6_D[2]  ;       ; 5.504 ; 5.504 ;       ;
 ; iSW[15]    ; oHEX6_D[3]  ; 5.502 ; 5.502 ; 5.502 ; 5.502 ;
 ; iSW[15]    ; oHEX6_D[4]  ; 5.415 ;       ;       ; 5.415 ;
-; iSW[15]    ; oHEX6_D[5]  ; 5.524 ;       ;       ; 5.524 ;
-; iSW[15]    ; oHEX6_D[6]  ; 5.535 ;       ;       ; 5.535 ;
+; iSW[15]    ; oHEX6_D[5]  ; 5.530 ;       ;       ; 5.530 ;
+; iSW[15]    ; oHEX6_D[6]  ; 5.540 ;       ;       ; 5.540 ;
 ; iSW[16]    ; oHEX6_D[0]  ;       ; 5.005 ; 5.005 ;       ;
-; iSW[16]    ; oHEX6_D[1]  ; 5.160 ; 5.160 ; 5.160 ; 5.160 ;
-; iSW[16]    ; oHEX6_D[2]  ; 5.134 ;       ;       ; 5.134 ;
+; iSW[16]    ; oHEX6_D[1]  ; 5.154 ; 5.154 ; 5.154 ; 5.154 ;
+; iSW[16]    ; oHEX6_D[2]  ; 5.126 ;       ;       ; 5.126 ;
 ; iSW[16]    ; oHEX6_D[3]  ; 5.122 ; 5.122 ; 5.122 ; 5.122 ;
 ; iSW[16]    ; oHEX6_D[4]  ;       ; 5.035 ; 5.035 ;       ;
-; iSW[16]    ; oHEX6_D[5]  ; 5.145 ;       ;       ; 5.145 ;
-; iSW[16]    ; oHEX6_D[6]  ; 5.154 ; 5.154 ; 5.154 ; 5.154 ;
+; iSW[16]    ; oHEX6_D[5]  ; 5.151 ;       ;       ; 5.151 ;
+; iSW[16]    ; oHEX6_D[6]  ; 5.159 ; 5.159 ; 5.159 ; 5.159 ;
 ; iSW[17]    ; oHEX6_D[0]  ; 5.130 ; 5.130 ; 5.130 ; 5.130 ;
-; iSW[17]    ; oHEX6_D[1]  ; 5.284 ;       ;       ; 5.284 ;
-; iSW[17]    ; oHEX6_D[2]  ;       ; 5.252 ; 5.252 ;       ;
+; iSW[17]    ; oHEX6_D[1]  ; 5.278 ;       ;       ; 5.278 ;
+; iSW[17]    ; oHEX6_D[2]  ;       ; 5.244 ; 5.244 ;       ;
 ; iSW[17]    ; oHEX6_D[3]  ; 5.245 ; 5.245 ; 5.245 ; 5.245 ;
 ; iSW[17]    ; oHEX6_D[4]  ; 5.152 ;       ;       ; 5.152 ;
-; iSW[17]    ; oHEX6_D[5]  ;       ; 5.263 ; 5.263 ;       ;
-; iSW[17]    ; oHEX6_D[6]  ; 5.277 ; 5.277 ; 5.277 ; 5.277 ;
+; iSW[17]    ; oHEX6_D[5]  ;       ; 5.269 ; 5.269 ;       ;
+; iSW[17]    ; oHEX6_D[6]  ; 5.282 ; 5.282 ; 5.282 ; 5.282 ;
 +------------+-------------+-------+-------+-------+-------+
 
 
@@ -359,37 +359,37 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; iSW[0]     ; oHEX4_D[0]  ; 12.967 ;        ;        ; 12.967 ;
-; iSW[0]     ; oHEX4_D[2]  ;        ; 14.267 ; 14.267 ;        ;
-; iSW[0]     ; oHEX4_D[3]  ; 12.933 ;        ;        ; 12.933 ;
-; iSW[0]     ; oHEX4_D[4]  ; 11.026 ;        ;        ; 11.026 ;
-; iSW[0]     ; oHEX4_D[5]  ; 12.914 ;        ;        ; 12.914 ;
-; iSW[1]     ; oHEX4_D[0]  ;        ; 12.815 ; 12.815 ;        ;
-; iSW[1]     ; oHEX4_D[2]  ; 14.156 ;        ;        ; 14.156 ;
-; iSW[1]     ; oHEX4_D[3]  ;        ; 12.781 ; 12.781 ;        ;
-; iSW[1]     ; oHEX4_D[5]  ; 12.732 ;        ;        ; 12.732 ;
-; iSW[1]     ; oHEX4_D[6]  ;        ; 11.038 ; 11.038 ;        ;
+; iSW[0]     ; oHEX4_D[0]  ; 12.517 ;        ;        ; 12.517 ;
+; iSW[0]     ; oHEX4_D[2]  ;        ; 12.248 ; 12.248 ;        ;
+; iSW[0]     ; oHEX4_D[3]  ; 12.421 ;        ;        ; 12.421 ;
+; iSW[0]     ; oHEX4_D[4]  ; 11.035 ;        ;        ; 11.035 ;
+; iSW[0]     ; oHEX4_D[5]  ; 12.531 ;        ;        ; 12.531 ;
+; iSW[1]     ; oHEX4_D[0]  ;        ; 11.951 ; 11.951 ;        ;
+; iSW[1]     ; oHEX4_D[2]  ; 11.683 ;        ;        ; 11.683 ;
+; iSW[1]     ; oHEX4_D[3]  ;        ; 11.855 ; 11.855 ;        ;
+; iSW[1]     ; oHEX4_D[5]  ; 11.997 ;        ;        ; 11.997 ;
+; iSW[1]     ; oHEX4_D[6]  ;        ; 11.037 ; 11.037 ;        ;
 ; iSW[15]    ; oHEX6_D[0]  ; 9.658  ; 9.658  ; 9.658  ; 9.658  ;
-; iSW[15]    ; oHEX6_D[1]  ; 9.981  ; 9.981  ; 9.981  ; 9.981  ;
-; iSW[15]    ; oHEX6_D[2]  ;        ; 9.951  ; 9.951  ;        ;
+; iSW[15]    ; oHEX6_D[1]  ; 9.968  ; 9.968  ; 9.968  ; 9.968  ;
+; iSW[15]    ; oHEX6_D[2]  ;        ; 9.936  ; 9.936  ;        ;
 ; iSW[15]    ; oHEX6_D[3]  ; 9.932  ; 9.932  ; 9.932  ; 9.932  ;
 ; iSW[15]    ; oHEX6_D[4]  ; 9.659  ;        ;        ; 9.659  ;
-; iSW[15]    ; oHEX6_D[5]  ; 9.949  ;        ;        ; 9.949  ;
-; iSW[15]    ; oHEX6_D[6]  ; 9.963  ;        ;        ; 9.963  ;
+; iSW[15]    ; oHEX6_D[5]  ; 9.965  ;        ;        ; 9.965  ;
+; iSW[15]    ; oHEX6_D[6]  ; 9.974  ;        ;        ; 9.974  ;
 ; iSW[16]    ; oHEX6_D[0]  ;        ; 8.893  ; 8.893  ;        ;
-; iSW[16]    ; oHEX6_D[1]  ; 9.213  ; 9.213  ; 9.213  ; 9.213  ;
-; iSW[16]    ; oHEX6_D[2]  ; 9.183  ;        ;        ; 9.183  ;
+; iSW[16]    ; oHEX6_D[1]  ; 9.200  ; 9.200  ; 9.200  ; 9.200  ;
+; iSW[16]    ; oHEX6_D[2]  ; 9.168  ;        ;        ; 9.168  ;
 ; iSW[16]    ; oHEX6_D[3]  ; 9.165  ; 9.165  ; 9.165  ; 9.165  ;
 ; iSW[16]    ; oHEX6_D[4]  ;        ; 8.920  ; 8.920  ;        ;
-; iSW[16]    ; oHEX6_D[5]  ; 9.184  ;        ;        ; 9.184  ;
-; iSW[16]    ; oHEX6_D[6]  ; 9.195  ; 9.195  ; 9.195  ; 9.195  ;
+; iSW[16]    ; oHEX6_D[5]  ; 9.200  ;        ;        ; 9.200  ;
+; iSW[16]    ; oHEX6_D[6]  ; 9.206  ; 9.206  ; 9.206  ; 9.206  ;
 ; iSW[17]    ; oHEX6_D[0]  ; 9.169  ; 9.169  ; 9.169  ; 9.169  ;
-; iSW[17]    ; oHEX6_D[1]  ; 9.487  ;        ;        ; 9.487  ;
-; iSW[17]    ; oHEX6_D[2]  ;        ; 9.409  ; 9.409  ;        ;
+; iSW[17]    ; oHEX6_D[1]  ; 9.474  ;        ;        ; 9.474  ;
+; iSW[17]    ; oHEX6_D[2]  ;        ; 9.394  ; 9.394  ;        ;
 ; iSW[17]    ; oHEX6_D[3]  ; 9.439  ; 9.439  ; 9.439  ; 9.439  ;
 ; iSW[17]    ; oHEX6_D[4]  ; 9.197  ;        ;        ; 9.197  ;
-; iSW[17]    ; oHEX6_D[5]  ;        ; 9.434  ; 9.434  ;        ;
-; iSW[17]    ; oHEX6_D[6]  ; 9.443  ; 9.443  ; 9.443  ; 9.443  ;
+; iSW[17]    ; oHEX6_D[5]  ;        ; 9.450  ; 9.450  ;        ;
+; iSW[17]    ; oHEX6_D[6]  ; 9.454  ; 9.454  ; 9.454  ; 9.454  ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -398,37 +398,37 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; iSW[0]     ; oHEX4_D[0]  ; 7.100 ;       ;       ; 7.100 ;
-; iSW[0]     ; oHEX4_D[2]  ;       ; 7.630 ; 7.630 ;       ;
-; iSW[0]     ; oHEX4_D[3]  ; 7.070 ;       ;       ; 7.070 ;
-; iSW[0]     ; oHEX4_D[4]  ; 6.247 ;       ;       ; 6.247 ;
-; iSW[0]     ; oHEX4_D[5]  ; 7.079 ;       ;       ; 7.079 ;
-; iSW[1]     ; oHEX4_D[0]  ;       ; 7.039 ; 7.039 ;       ;
-; iSW[1]     ; oHEX4_D[2]  ; 7.607 ;       ;       ; 7.607 ;
-; iSW[1]     ; oHEX4_D[3]  ;       ; 7.009 ; 7.009 ;       ;
-; iSW[1]     ; oHEX4_D[5]  ; 7.026 ;       ;       ; 7.026 ;
-; iSW[1]     ; oHEX4_D[6]  ;       ; 6.263 ; 6.263 ;       ;
+; iSW[0]     ; oHEX4_D[0]  ; 6.917 ;       ;       ; 6.917 ;
+; iSW[0]     ; oHEX4_D[2]  ;       ; 6.760 ; 6.760 ;       ;
+; iSW[0]     ; oHEX4_D[3]  ; 6.865 ;       ;       ; 6.865 ;
+; iSW[0]     ; oHEX4_D[4]  ; 6.248 ;       ;       ; 6.248 ;
+; iSW[0]     ; oHEX4_D[5]  ; 6.916 ;       ;       ; 6.916 ;
+; iSW[1]     ; oHEX4_D[0]  ;       ; 6.663 ; 6.663 ;       ;
+; iSW[1]     ; oHEX4_D[2]  ; 6.534 ;       ;       ; 6.534 ;
+; iSW[1]     ; oHEX4_D[3]  ;       ; 6.611 ; 6.611 ;       ;
+; iSW[1]     ; oHEX4_D[5]  ; 6.690 ;       ;       ; 6.690 ;
+; iSW[1]     ; oHEX4_D[6]  ;       ; 6.261 ; 6.261 ;       ;
 ; iSW[15]    ; oHEX6_D[0]  ; 5.385 ; 5.385 ; 5.385 ; 5.385 ;
-; iSW[15]    ; oHEX6_D[1]  ; 5.537 ; 5.537 ; 5.537 ; 5.537 ;
-; iSW[15]    ; oHEX6_D[2]  ;       ; 5.512 ; 5.512 ;       ;
+; iSW[15]    ; oHEX6_D[1]  ; 5.531 ; 5.531 ; 5.531 ; 5.531 ;
+; iSW[15]    ; oHEX6_D[2]  ;       ; 5.504 ; 5.504 ;       ;
 ; iSW[15]    ; oHEX6_D[3]  ; 5.502 ; 5.502 ; 5.502 ; 5.502 ;
 ; iSW[15]    ; oHEX6_D[4]  ; 5.415 ;       ;       ; 5.415 ;
-; iSW[15]    ; oHEX6_D[5]  ; 5.524 ;       ;       ; 5.524 ;
-; iSW[15]    ; oHEX6_D[6]  ; 5.535 ;       ;       ; 5.535 ;
+; iSW[15]    ; oHEX6_D[5]  ; 5.530 ;       ;       ; 5.530 ;
+; iSW[15]    ; oHEX6_D[6]  ; 5.540 ;       ;       ; 5.540 ;
 ; iSW[16]    ; oHEX6_D[0]  ;       ; 5.005 ; 5.005 ;       ;
-; iSW[16]    ; oHEX6_D[1]  ; 5.160 ; 5.160 ; 5.160 ; 5.160 ;
-; iSW[16]    ; oHEX6_D[2]  ; 5.134 ;       ;       ; 5.134 ;
+; iSW[16]    ; oHEX6_D[1]  ; 5.154 ; 5.154 ; 5.154 ; 5.154 ;
+; iSW[16]    ; oHEX6_D[2]  ; 5.126 ;       ;       ; 5.126 ;
 ; iSW[16]    ; oHEX6_D[3]  ; 5.122 ; 5.122 ; 5.122 ; 5.122 ;
 ; iSW[16]    ; oHEX6_D[4]  ;       ; 5.035 ; 5.035 ;       ;
-; iSW[16]    ; oHEX6_D[5]  ; 5.145 ;       ;       ; 5.145 ;
-; iSW[16]    ; oHEX6_D[6]  ; 5.154 ; 5.154 ; 5.154 ; 5.154 ;
+; iSW[16]    ; oHEX6_D[5]  ; 5.151 ;       ;       ; 5.151 ;
+; iSW[16]    ; oHEX6_D[6]  ; 5.159 ; 5.159 ; 5.159 ; 5.159 ;
 ; iSW[17]    ; oHEX6_D[0]  ; 5.130 ; 5.130 ; 5.130 ; 5.130 ;
-; iSW[17]    ; oHEX6_D[1]  ; 5.284 ;       ;       ; 5.284 ;
-; iSW[17]    ; oHEX6_D[2]  ;       ; 5.252 ; 5.252 ;       ;
+; iSW[17]    ; oHEX6_D[1]  ; 5.278 ;       ;       ; 5.278 ;
+; iSW[17]    ; oHEX6_D[2]  ;       ; 5.244 ; 5.244 ;       ;
 ; iSW[17]    ; oHEX6_D[3]  ; 5.245 ; 5.245 ; 5.245 ; 5.245 ;
 ; iSW[17]    ; oHEX6_D[4]  ; 5.152 ;       ;       ; 5.152 ;
-; iSW[17]    ; oHEX6_D[5]  ;       ; 5.263 ; 5.263 ;       ;
-; iSW[17]    ; oHEX6_D[6]  ; 5.277 ; 5.277 ; 5.277 ; 5.277 ;
+; iSW[17]    ; oHEX6_D[5]  ;       ; 5.269 ; 5.269 ;       ;
+; iSW[17]    ; oHEX6_D[6]  ; 5.282 ; 5.282 ; 5.282 ; 5.282 ;
 +------------+-------------+-------+-------+-------+-------+
 
 
@@ -456,11 +456,11 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 4     ; 4    ;
+; Unconstrained Clocks            ; 3     ; 3    ;
 ; Unconstrained Input Ports       ; 8     ; 8    ;
 ; Unconstrained Input Port Paths  ; 36    ; 36   ;
-; Unconstrained Output Ports      ; 52    ; 52   ;
-; Unconstrained Output Port Paths ; 1393  ; 1393 ;
+; Unconstrained Output Ports      ; 38    ; 38   ;
+; Unconstrained Output Port Paths ; 102   ; 102  ;
 +---------------------------------+-------+------+
 
 
@@ -470,7 +470,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Aug 31 21:51:44 2015
+    Info: Processing started: Mon Sep 07 00:01:33 2015
 Info: Command: quartus_sta SYSTEM -c SYSTEM
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -495,9 +495,8 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'SYSTEM.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Warning (332060): Node: iCLK_50 was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: SPI_MASTER_ADC:ADC0_instant|CLK_16[1] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: FIFO_READ was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: usonic[9] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ultrasonicTransmitter:usonicTX_inst|usonic[9] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ultrasonicReceiver:usonicRX_ch0_inst|SPI_MASTER_ADC:ADC_instant|CLK_16[1] was determined to be a clock but was found without an associated clock assignment.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: CLKPLL_inst|altpll_component|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: CLKPLL_inst|altpll_component|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
@@ -515,9 +514,8 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Warning (332060): Node: iCLK_50 was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: SPI_MASTER_ADC:ADC0_instant|CLK_16[1] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: FIFO_READ was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: usonic[9] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ultrasonicTransmitter:usonicTX_inst|usonic[9] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ultrasonicReceiver:usonicRX_ch0_inst|SPI_MASTER_ADC:ADC_instant|CLK_16[1] was determined to be a clock but was found without an associated clock assignment.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: CLKPLL_inst|altpll_component|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: CLKPLL_inst|altpll_component|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
@@ -532,10 +530,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 805 megabytes
-    Info: Processing ended: Mon Aug 31 21:51:52 2015
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 608 megabytes
+    Info: Processing ended: Mon Sep 07 00:01:37 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu Sep 03 01:27:39 2015
+Analysis & Synthesis Status : Successful - Fri Sep 04 16:21:15 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : LOGGER
 Top-level Entity Name : main
 Family : Cyclone II
-Total logic elements : 333
-    Total combinational functions : 312
-    Dedicated logic registers : 190
-Total registers : 190
+Total logic elements : 334
+    Total combinational functions : 311
+    Dedicated logic registers : 192
+Total registers : 192
 Total pins : 170
 Total virtual pins : 0
 Total memory bits : 262,144

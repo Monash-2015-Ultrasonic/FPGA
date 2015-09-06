@@ -1,7 +1,7 @@
 |main
 iCLK_50 => iCLK_50.IN1
-iSW[0] => ADC_CMD[7].IN2
-iSW[1] => ADC_CMD[8].IN2
+iSW[0] => iSW[0].IN2
+iSW[1] => iSW[1].IN2
 iSW[2] => ~NO_FANOUT~
 iSW[3] => ~NO_FANOUT~
 iSW[4] => ~NO_FANOUT~
@@ -38,9 +38,9 @@ oLEDR[12] <= <GND>
 oLEDR[13] <= <GND>
 oLEDR[14] <= <GND>
 oLEDR[15] <= <GND>
-oLEDR[16] <= FIFO_IP:FIFO_IP_inst.empty
-oLEDR[17] <= FIFO_IP:FIFO_IP_inst.full
-oLEDG[0] <= SPI_MASTER_ADC:ADC0_instant.FIN
+oLEDR[16] <= <GND>
+oLEDR[17] <= <GND>
+oLEDG[0] <= <GND>
 oLEDG[1] <= <GND>
 oLEDG[2] <= <GND>
 oLEDG[3] <= <GND>
@@ -48,7 +48,7 @@ oLEDG[4] <= <GND>
 oLEDG[5] <= <GND>
 oLEDG[6] <= <GND>
 oLEDG[7] <= <GND>
-oLEDG[8] <= SPI_MASTER_UC:mbed_instant.FIN
+oLEDG[8] <= <GND>
 oHEX0_D[0] <= HEX_ENCODER:hex0.port1
 oHEX0_D[1] <= HEX_ENCODER:hex0.port1
 oHEX0_D[2] <= HEX_ENCODER:hex0.port1
@@ -105,12 +105,12 @@ oHEX7_D[3] <= HEX_ENCODER:hex7.port1
 oHEX7_D[4] <= HEX_ENCODER:hex7.port1
 oHEX7_D[5] <= HEX_ENCODER:hex7.port1
 oHEX7_D[6] <= HEX_ENCODER:hex7.port1
-GPIO_0[0] <> SPI_MASTER_ADC:ADC0_instant.MISO
-GPIO_0[1] <> SPI_MASTER_ADC:ADC0_instant.MOSI
+GPIO_0[0] <> ultrasonicReceiver:usonicRX_ch0_inst.ADC_MISO
+GPIO_0[1] <> ultrasonicReceiver:usonicRX_ch0_inst.ADC_MOSI
 GPIO_0[2] <> <UNC>
-GPIO_0[3] <> SPI_MASTER_ADC:ADC0_instant.SCK
+GPIO_0[3] <> ultrasonicReceiver:usonicRX_ch0_inst.ADC_SCK
 GPIO_0[4] <> <UNC>
-GPIO_0[5] <> SPI_MASTER_ADC:ADC0_instant.CSbar
+GPIO_0[5] <> ultrasonicReceiver:usonicRX_ch0_inst.ADC_CSbar
 GPIO_0[6] <> <UNC>
 GPIO_0[7] <> <UNC>
 GPIO_0[8] <> <UNC>
@@ -137,12 +137,12 @@ GPIO_0[28] <> <UNC>
 GPIO_0[29] <> <UNC>
 GPIO_0[30] <> <UNC>
 GPIO_0[31] <> <UNC>
-GPIO_1[0] <> SPI_MASTER_UC:mbed_instant.MISO
-GPIO_1[1] <> SPI_MASTER_UC:mbed_instant.MOSI
+GPIO_1[0] <> uController:uController_inst.UC_MISO
+GPIO_1[1] <> uController:uController_inst.UC_MOSI
 GPIO_1[2] <> <UNC>
-GPIO_1[3] <> SPI_MASTER_UC:mbed_instant.SCK
+GPIO_1[3] <> uController:uController_inst.UC_SCK
 GPIO_1[4] <> <UNC>
-GPIO_1[5] <> SPI_MASTER_UC:mbed_instant.CSbar
+GPIO_1[5] <> uController:uController_inst.UC_CSbar
 GPIO_1[6] <> <UNC>
 GPIO_1[7] <> <UNC>
 GPIO_1[8] <> <UNC>
@@ -161,8 +161,8 @@ GPIO_1[20] <> <UNC>
 GPIO_1[21] <> <UNC>
 GPIO_1[22] <> <UNC>
 GPIO_1[23] <> <UNC>
-GPIO_1[24] <> GPIO_1[24]
-GPIO_1[25] <> GPIO_1[25]
+GPIO_1[24] <> ultrasonicTransmitter:usonicTX_inst.pulseOutput
+GPIO_1[25] <> ultrasonicTransmitter:usonicTX_inst.pulseOutput
 GPIO_1[26] <> GPIO_1[26]
 GPIO_1[27] <> GPIO_1[27]
 GPIO_1[28] <> GPIO_1[28]
@@ -238,7 +238,63 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|main|SPI_MASTER_ADC:ADC0_instant
+|main|ultrasonicTransmitter:usonicTX_inst
+CLK_40 => usonicpulse.CLK
+CLK_40 => usonic[0].CLK
+CLK_40 => usonic[1].CLK
+CLK_40 => usonic[2].CLK
+CLK_40 => usonic[3].CLK
+CLK_40 => usonic[4].CLK
+CLK_40 => usonic[5].CLK
+CLK_40 => usonic[6].CLK
+CLK_40 => usonic[7].CLK
+CLK_40 => usonic[8].CLK
+CLK_40 => usonic[9].CLK
+RST => always1.IN0
+RST => usonicpulse.IN1
+RST => usonic.IN0
+ON => usonic.IN1
+ON => usonicpulse.IN1
+ON => always1.IN1
+pulseOutput[0] <= usonicpulse.DB_MAX_OUTPUT_PORT_TYPE
+pulseOutput[1] <= usonicpulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|ultrasonicReceiver:usonicRX_ch0_inst
+SYS_CLK => SYS_CLK.IN2
+RST => RST.IN1
+ON => clk_sample.IN0
+ON => comb.IN1
+ON => WR_EDGE.IN1
+ON => always3.IN0
+ADC_MISO => ADC_MISO.IN1
+ADC_MOSI <= SPI_MASTER_ADC:ADC_instant.MOSI
+ADC_CSbar <= SPI_MASTER_ADC:ADC_instant.CSbar
+ADC_SCK <= SPI_MASTER_ADC:ADC_instant.SCK
+ADC_channel_sel[0] => ADC_CMD[7].DATAIN
+ADC_channel_sel[1] => ADC_CMD[8].DATAIN
+READ_REQ => READ_REQ.IN1
+EMPTY <= FIFO_IP:FIFO_IP_inst.empty
+FULL <= FIFO_IP:FIFO_IP_inst.full
+OUTPUT[0] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[1] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[2] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[3] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[4] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[5] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[6] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[7] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[8] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[9] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[10] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[11] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[12] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[13] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[14] <= FIFO_IP:FIFO_IP_inst.q
+OUTPUT[15] <= FIFO_IP:FIFO_IP_inst.q
+
+
+|main|ultrasonicReceiver:usonicRX_ch0_inst|SPI_MASTER_ADC:ADC_instant
 SYS_CLK => CLK_16[0].CLK
 SYS_CLK => CLK_16[1].CLK
 ENA => CSbar~reg0.DATAIN
@@ -281,7 +337,7 @@ DATA_MISO[14] <= data_in_final[14].DB_MAX_OUTPUT_PORT_TYPE
 DATA_MISO[15] <= data_in_final[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|FIFO_IP:FIFO_IP_inst
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst
 clock => clock.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -322,7 +378,7 @@ q[14] <= scfifo:scfifo_component.q
 q[15] <= scfifo:scfifo_component.q
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component
 data[0] => scfifo_qf31:auto_generated.data[0]
 data[1] => scfifo_qf31:auto_generated.data[1]
 data[2] => scfifo_qf31:auto_generated.data[2]
@@ -380,7 +436,7 @@ usedw[12] <= <GND>
 usedw[13] <= <GND>
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated
 clock => a_dpfifo_d731:dpfifo.clock
 data[0] => a_dpfifo_d731:dpfifo.data[0]
 data[1] => a_dpfifo_d731:dpfifo.data[1]
@@ -421,7 +477,7 @@ sclr => a_dpfifo_d731:dpfifo.sclr
 wrreq => a_dpfifo_d731:dpfifo.wreq
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo
 clock => a_fefifo_nce:fifo_state.clock
 clock => dpram_s011:FIFOram.inclock
 clock => dpram_s011:FIFOram.outclock
@@ -472,7 +528,7 @@ wreq => a_fefifo_nce:fifo_state.wreq
 wreq => valid_wreq.IN0
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state
 aclr => b_full.IN0
 aclr => b_non_empty.IN0
 aclr => cntr_al7:count_usedw.aclr
@@ -497,7 +553,7 @@ wreq => _.IN0
 wreq => valid_wreq.IN0
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|a_fefifo_nce:fifo_state|cntr_al7:count_usedw
 aclr => counter_reg_bit1a[13].ACLR
 aclr => counter_reg_bit1a[12].ACLR
 aclr => counter_reg_bit1a[11].ACLR
@@ -560,7 +616,7 @@ updown => counter_comb_bita12.DATAB
 updown => counter_comb_bita13.DATAB
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram
 data[0] => altsyncram_22k1:altsyncram2.data_a[0]
 data[1] => altsyncram_22k1:altsyncram2.data_a[1]
 data[2] => altsyncram_22k1:altsyncram2.data_a[2]
@@ -627,7 +683,7 @@ wraddress[13] => altsyncram_22k1:altsyncram2.address_a[13]
 wren => altsyncram_22k1:altsyncram2.wren_a
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2
 address_a[0] => altsyncram_3sc1:altsyncram3.address_b[0]
 address_a[1] => altsyncram_3sc1:altsyncram3.address_b[1]
 address_a[2] => altsyncram_3sc1:altsyncram3.address_b[2]
@@ -695,7 +751,7 @@ wren_a => altsyncram_3sc1:altsyncram3.clocken1
 wren_a => altsyncram_3sc1:altsyncram3.wren_b
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3
 address_a[0] => ram_block4a0.PORTAADDR
 address_a[0] => ram_block4a1.PORTAADDR
 address_a[0] => ram_block4a2.PORTAADDR
@@ -2546,7 +2602,7 @@ wren_a => decode_r37:decode5.enable
 wren_b => decode_r37:decode6.enable
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode5
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode5
 data[0] => w_anode1032w[1].IN0
 data[0] => w_anode1045w[1].IN1
 data[0] => w_anode1053w[1].IN0
@@ -2565,7 +2621,7 @@ eq[2] <= w_anode1053w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode1061w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode6
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode6
 data[0] => w_anode1032w[1].IN0
 data[0] => w_anode1045w[1].IN1
 data[0] => w_anode1053w[1].IN0
@@ -2584,7 +2640,7 @@ eq[2] <= w_anode1053w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode1061w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_a
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_a
 data[0] => w_anode1032w[1].IN0
 data[0] => w_anode1045w[1].IN1
 data[0] => w_anode1053w[1].IN0
@@ -2603,7 +2659,7 @@ eq[2] <= w_anode1053w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode1061w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_b
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|decode_r37:decode_b
 data[0] => w_anode1032w[1].IN0
 data[0] => w_anode1045w[1].IN1
 data[0] => w_anode1053w[1].IN0
@@ -2622,7 +2678,7 @@ eq[2] <= w_anode1053w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode1061w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux7
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux7
 data[0] => _.IN0
 data[0] => _.IN0
 data[1] => _.IN0
@@ -2897,7 +2953,7 @@ sel[1] => _.IN0
 sel[1] => _.IN0
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux8
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|dpram_s011:FIFOram|altsyncram_22k1:altsyncram2|altsyncram_3sc1:altsyncram3|mux_qv7:mux8
 data[0] => _.IN0
 data[0] => _.IN0
 data[1] => _.IN0
@@ -3172,7 +3228,7 @@ sel[1] => _.IN0
 sel[1] => _.IN0
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:rd_ptr_count
 aclr => counter_reg_bit9a[13].ACLR
 aclr => counter_reg_bit9a[12].ACLR
 aclr => counter_reg_bit9a[11].ACLR
@@ -3221,7 +3277,7 @@ sclr => _.IN0
 sclr => _.IN0
 
 
-|main|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:wr_ptr
+|main|ultrasonicReceiver:usonicRX_ch0_inst|FIFO_IP:FIFO_IP_inst|scfifo:scfifo_component|scfifo_qf31:auto_generated|a_dpfifo_d731:dpfifo|cntr_ukb:wr_ptr
 aclr => counter_reg_bit9a[13].ACLR
 aclr => counter_reg_bit9a[12].ACLR
 aclr => counter_reg_bit9a[11].ACLR
@@ -3270,7 +3326,35 @@ sclr => _.IN0
 sclr => _.IN0
 
 
-|main|SPI_MASTER_UC:mbed_instant
+|main|uController:uController_inst
+SYS_CLK => SYS_CLK.IN1
+RST => MBED_CLK.IN0
+ON => MBED_CLK.IN1
+CHANNEL_EMPTY => MBED_ON.IN1
+CHANNEL_DATA[0] => CHANNEL_DATA[0].IN1
+CHANNEL_DATA[1] => CHANNEL_DATA[1].IN1
+CHANNEL_DATA[2] => CHANNEL_DATA[2].IN1
+CHANNEL_DATA[3] => CHANNEL_DATA[3].IN1
+CHANNEL_DATA[4] => CHANNEL_DATA[4].IN1
+CHANNEL_DATA[5] => CHANNEL_DATA[5].IN1
+CHANNEL_DATA[6] => CHANNEL_DATA[6].IN1
+CHANNEL_DATA[7] => CHANNEL_DATA[7].IN1
+CHANNEL_DATA[8] => CHANNEL_DATA[8].IN1
+CHANNEL_DATA[9] => CHANNEL_DATA[9].IN1
+CHANNEL_DATA[10] => CHANNEL_DATA[10].IN1
+CHANNEL_DATA[11] => CHANNEL_DATA[11].IN1
+CHANNEL_DATA[12] => CHANNEL_DATA[12].IN1
+CHANNEL_DATA[13] => CHANNEL_DATA[13].IN1
+CHANNEL_DATA[14] => CHANNEL_DATA[14].IN1
+CHANNEL_DATA[15] => CHANNEL_DATA[15].IN1
+UC_MISO => UC_MISO.IN1
+UC_MOSI <= SPI_MASTER_UC:mbed_SPI_instant.MOSI
+UC_CSbar <= SPI_MASTER_UC:mbed_SPI_instant.CSbar
+UC_SCK <= SPI_MASTER_UC:mbed_SPI_instant.SCK
+UC_FIN_EDGE <= UC_FIN_EDGE~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|uController:uController_inst|SPI_MASTER_UC:mbed_SPI_instant
 SYS_CLK => SPI_CLK_8[0].CLK
 SYS_CLK => SPI_CLK_8[1].CLK
 SYS_CLK => SPI_CLK_8[2].CLK
